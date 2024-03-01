@@ -1,6 +1,10 @@
 ---
 import ComingSoon from "../images/coming-soon.png";
 import { Image } from "astro:assets";
+
+const title = "FujoCoded – Coming April 1st, 2024";
+const description = "Not a joke. (Well, ok, a tad bit of a joke.)";
+const preview = "http://fujocoded.com/og-preview.png";
 ---
 
 <html lang="en">
@@ -9,7 +13,49 @@ import { Image } from "astro:assets";
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>FujoCoded – Coming April 1st, 2024</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>{title}</title>
+    <meta property="og:title" content={title} />
+    <meta property="twitter:title" content={title} />
+
+    <meta name="description" content={description} />
+    <meta property="og:description" content={description} />
+    <meta property="twitter:description" content={description} />
+
+    <meta property="og:image" content={preview} />
+    <meta name="twitter:image" content={preview} />
+
+    <meta property="twitter:card" content="summary_large_image" />
+
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="favicons/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="favicons/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="favicons/favicon-16x16.png"
+    />
+    <link rel="manifest" href="favicons/site.webmanifest" />
+    <link
+      rel="mask-icon"
+      href="favicons/safari-pinned-tab.svg"
+      color="#f6d880"
+    />
+    <link rel="shortcut icon" href="favicons/favicon.ico" />
+    <meta name="msapplication-TileColor" content="#f6d880" />
+    <meta name="msapplication-config" content="favicons/browserconfig.xml" />
+    <meta name="theme-color" content="#ffffff" />
   </head>
   <body>
     <Image src={ComingSoon} alt="" />
@@ -67,6 +113,10 @@ import { Image } from "astro:assets";
     padding: 0 11px;
     font-weight: 600;
     background-color: #f0be28;
+  }
+  input[type="submit"]:hover {
+    cursor: pointer;
+    background-color: #f0ae28;
   }
 
   @media (max-width: 400px) {

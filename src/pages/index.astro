@@ -13,6 +13,23 @@ import { Image } from "astro:assets";
   </head>
   <body>
     <Image src={ComingSoon} alt="" />
+    <form
+      action="https://buttondown.email/api/emails/embed-subscribe/fujocoded"
+      method="post"
+      target="popupwindow"
+      onsubmit="window.open('https://buttondown.email/fujocoded', 'popupwindow')"
+      class="embeddable-buttondown-form"
+    >
+      <input
+        type="email"
+        name="email"
+        id="bd-email"
+        aria-label="email"
+        placeholder="boba-tan@fujocoded.com"
+        required="true"
+      />
+      <input type="submit" value="Subscribe" />
+    </form>
   </body>
 </html>
 <style>
@@ -22,8 +39,42 @@ import { Image } from "astro:assets";
     height: 100dvh;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
     margin: 0;
   }
+
+  form {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    max-width: 100%;
+    margin: 0 20px;
+    padding-inline: 10px;
+  }
+  input[type="email"] {
+    height: 40px;
+    width: 300px;
+    max-width: 100%;
+    border-radius: 15px;
+    border: 3px solid black;
+    padding: 11px;
+  }
+
+  input[type="submit"] {
+    height: 40px;
+    border-radius: 15px;
+    border: 3px solid black;
+    padding: 0 11px;
+    font-weight: 600;
+    background-color: #f0be28;
+  }
+
+  @media (max-width: 400px) {
+    form {
+      flex-direction: column;
+    }
+  }
+
   body img {
     max-width: 50%;
     height: auto;

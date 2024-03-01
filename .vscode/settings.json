@@ -1,0 +1,12 @@
+{
+  "frontMatter.content.pageFolders": [],
+  "workbench.colorCustomizations": {
+    "commandCenter.border": "#15202b99",
+    "sash.hoverBorder": "#f9e7b0",
+    "titleBar.activeBackground": "#f6d880",
+    "titleBar.activeForeground": "#15202b",
+    "titleBar.inactiveBackground": "#f6d88099",
+    "titleBar.inactiveForeground": "#15202b99"
+  },
+  "peacock.color": "#f6d880"
+}

@@ -1,0 +1,54 @@
+<svg width="300" height="300" viewBox="-5 -5 55 55" version="1.1" xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    style="--color-neon-glow: green; --color-neon-fill: red;">
+    <defs>
+        <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur
+                result="blurred"
+                in="SourceGraphic"
+                stdDeviation="0.5"
+            />
+            <feMerge>
+                <feMergeNode in="blurred" />
+                <feMergeNode in="blurred" />
+                <feMergeNode in="blurred" />
+                <feMergeNode in="blurred" />
+                <feMergeNode in="blurred" />
+            </feMerge>
+        </filter>
+
+        <filter id="shadow" x="0" y="0" width="200%" height="200%">
+            <feOffset result="offOut" in="SourceAlpha" dx="20" dy="20" />
+            <feColorMatrix
+                result="matrixOut"
+                in="offOut"
+                type="matrix"
+                values="1 0 0 0 0
+                    0 1 0 0 0
+                    0 0 1 0.05 0
+                    0 0 0 0.2 0"
+            />
+            <feGaussianBlur result="blurOut" in="matrixOut" stdDeviation="10" />
+        </filter>
+
+        <g id="always-open">
+            <path
+                d="M41.1653 18.3976C39.2075 20.1749 36.6079 21.2588 33.7552 21.2588C27.6648 21.2588 22.7278 16.3219 22.7278 10.2316C22.7278 7.38207 23.8086 4.78476 25.5828 2.82781C20.9418 1.55961 16.3375 1.91336 11.9082 2.7872C11.0952 3.02694 10.2229 2.96837 9.44904 2.62086C8.72747 2.22885 7.92 2.01956 7.09926 2.01254C4.32465 1.98599 2.05374 4.2147 2.02719 6.98927C1.95534 8.65495 3.44143 10.2363 2.80498 11.8208C-1.62283 31.2154 12.7789 45.6208 32.1808 41.1962C33.7786 40.5613 35.3459 42.0458 37.0124 41.974C37.8316 41.9662 38.6367 41.7577 39.3575 41.3672C41.7978 40.0451 42.7045 36.9941 41.3824 34.5538C41.0349 33.7791 40.9763 32.9061 41.2161 32.0916C42.0891 27.6552 42.4398 23.044 41.1661 18.3983L41.1653 18.3976Z"
+                stroke-width="4" stroke-linecap="round" stroke-linejoin="round"
+            />
+        </g>
+
+    </defs>
+    <use xlink:href="#always-open" filter="url(#shadow)" />
+    <use
+        xlink:href="#always-open"
+        stroke="var(--color-neon-glow)"
+        fill="none"
+        filter="url(#glow)"
+    />
+    <use
+        xlink:href="#always-open"
+        fill="none"
+        stroke="var(--color-neon-fill)"
+    />
+</svg>

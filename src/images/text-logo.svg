@@ -1,0 +1,46 @@
+<svg width="500" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    style="--color-neon-glow: #ffbf00; --color-neon-fill: #f6d880; --color-neon-inner-glow: #f6d880;">
+    <style>
+        #fujo {
+        color: white;
+        font-size: 10px;
+        font-family: zeitung-mono, sans-serif;
+        font-style: italic;
+        font-weight: 700;
+        }
+        #coded {
+        color: white;
+        font-size: 10px;
+        font-family: hatch;
+        }
+    </style>
+    <defs>
+        <g id="logo">
+            <text id="fujo" x="0" y="50">Fujo</text>
+            <text id="coded" x="30" y="50">coded
+            </text>
+        </g>
+
+    </defs>
+    <!--  -->
+    <use
+        xlink:href="#logo"
+        stroke="var(--color-neon-glow)"
+        fill="none"
+        filter="url(#glow)"
+        stroke-width="0.8"
+    />
+    <use
+        xlink:href="#logo"
+        fill="none"
+        stroke-width="0.3"
+        stroke="var(--color-neon-inner-glow)"
+    />
+    <use
+        xlink:href="#logo"
+        fill="var(--color-neon-fill)"
+        stroke="var(--color-neon-fill)"
+        stroke-width="0"
+    />
+</svg>

@@ -10,6 +10,9 @@ const preview = "http://fujocoded.com/og-image.png";
 const lemonLogoSvg = readFileSync("./src/images/lemon-logo.svg", {
   encoding: "utf8",
 });
+const wordLogoSvg = readFileSync("./src/images/text-logo.svg", {
+  encoding: "utf8",
+});
 ---
 
 <html lang="en">
@@ -33,6 +36,7 @@ const lemonLogoSvg = readFileSync("./src/images/lemon-logo.svg", {
     <meta name="twitter:image" content={preview} />
 
     <meta property="twitter:card" content="summary_large_image" />
+    <link rel="stylesheet" href="https://use.typekit.net/ruy6yjo.css" />
 
     <link
       rel="apple-touch-icon"
@@ -64,6 +68,13 @@ const lemonLogoSvg = readFileSync("./src/images/lemon-logo.svg", {
   </head>
   <body>
     <Fragment set:html={lemonLogoSvg} />
+    <!-- <Fragment set:html={wordLogoSvg} /> -->
+    <div class="shiny-font">Projects</div>
+    <div class="shiny-font">About</div>
+    <div class="shiny-font">More</div>
+    <div class="shiny-font">Blog</div>
+    <div class="background"></div>
+    <main>This is the actual text of the page</main>
     <style>
       body {
         background-color: #f6d880;
@@ -73,6 +84,17 @@ const lemonLogoSvg = readFileSync("./src/images/lemon-logo.svg", {
         justify-content: center;
         flex-direction: column;
         margin: 0;
+        /* background-image: url("https://as2.ftcdn.net/v2/jpg/02/39/31/53/1000_F_239315313_RTpKCbEPulGCsYWR8A0wJalKFvD21eBI.jpg"); */
+      }
+
+      .background {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 20%;
+        right: 20%;
+        background-color: black;
+        z-index: -1;
       }
 
       form {
@@ -116,6 +138,14 @@ const lemonLogoSvg = readFileSync("./src/images/lemon-logo.svg", {
       .socials a {
         flex-shrink: 0;
         display: flex;
+      }
+      .shiny-font {
+        color: #fffcf4;
+    font-size: 40px;
+    font-family: "hatch";
+    font-style: italic;
+    text-shadow: 0 0 6px #f6d880, 0 0 0px #f6d880, 0 0 15px #ffbf00, 0 0 36px #ffbf00;
+}
       }
 
       .socials img,

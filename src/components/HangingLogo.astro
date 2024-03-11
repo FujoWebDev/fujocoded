@@ -14,9 +14,15 @@ const wordLogoSvg = readFileSync("./src/images/word-logo.svg", {
 ---
 
 <div class="hanging-container">
-  <Fragment set:html={lemonLogoSvg} />
-  <Fragment set:html={wordLogoSvg} />
-  <Fragment set:html={llcSvg} />
+  <div class="lemon">
+    <Fragment set:html={lemonLogoSvg} />
+  </div>
+  <div class="logo">
+    <Fragment set:html={wordLogoSvg} />
+  </div>
+  <div class="llc">
+    <Fragment set:html={llcSvg} />
+  </div>
 </div>
 
 <style>
@@ -27,8 +33,9 @@ const wordLogoSvg = readFileSync("./src/images/word-logo.svg", {
     top: 0;
     left: 50%;
     transform: translateX(-50%);
+    --rope-color: #c6c4c39e;
   }
-  .hanging-container :global(svg):nth-child(1) {
+  .lemon {
     width: 120px;
     position: absolute;
     height: auto;
@@ -36,20 +43,94 @@ const wordLogoSvg = readFileSync("./src/images/word-logo.svg", {
     left: 50%;
     transform: translateX(-50%);
   }
-  .hanging-container :global(svg):nth-child(2) {
+  .lemon :global(svg) {
+    width: 100%;
+    height: auto;
+  }
+  .lemon::before {
+    content: "";
+    position: absolute;
+    top: -1000px;
+    bottom: 59px;
+    left: 15px;
+    width: 2px;
+    background-color: var(--rope-color);
+    z-index: -1;
+  }
+  .lemon::after {
+    content: "";
+    position: absolute;
+    top: -1000px;
+    bottom: 59px;
+    right: 18px;
+    width: 2px;
+    background-color: var(--rope-color);
+    z-index: -1;
+  }
+
+  .logo {
     width: 200px;
     position: absolute;
     height: auto;
     top: 126px;
     left: 50%;
-    transform: translateX(-50%) rotate(356deg);
+    transform: translateX(-50%);
   }
-  .hanging-container :global(svg):nth-child(3) {
-    width: 60px;
+  .logo :global(svg) {
+    width: 100%;
+    height: auto;
+    transform: rotate(356deg);
+  }
+  .logo::before {
+    content: "";
+    position: absolute;
+    top: -1000px;
+    bottom: 25px;
+    left: 21px;
+    width: 2px;
+    background-color: var(--rope-color);
+    z-index: -1;
+  }
+  .logo::after {
+    content: "";
+    position: absolute;
+    top: -1000px;
+    bottom: 47px;
+    right: 13px;
+    width: 2px;
+    background-color: var(--rope-color);
+    z-index: -1;
+  }
+  .llc {
+    width: 53px;
     position: absolute;
     height: auto;
-    top: 173px;
-    right: 2%;
+    top: 169px;
+    right: 7px;
+  }
+  .llc :global(svg) {
+    width: 100%;
+    height: auto;
     transform: rotate(2deg);
+  }
+  .llc::before {
+    content: "";
+    position: absolute;
+    top: -11px;
+    bottom: 25px;
+    left: 10px;
+    width: 2px;
+    background-color: var(--rope-color);
+    z-index: -1;
+  }
+  .llc::after {
+    content: "";
+    position: absolute;
+    top: -17px;
+    bottom: 22px;
+    right: 13px;
+    width: 2px;
+    background-color: var(--rope-color);
+    z-index: -1;
   }
 </style>

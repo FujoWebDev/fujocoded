@@ -1,0 +1,55 @@
+---
+import { readFileSync } from "node:fs";
+
+const lemonLogoSvg = readFileSync("./src/images/lemon-logo.svg", {
+  encoding: "utf8",
+});
+const llcSvg = readFileSync("./src/images/LLC.svg", {
+  encoding: "utf8",
+});
+
+const wordLogoSvg = readFileSync("./src/images/word-logo.svg", {
+  encoding: "utf8",
+});
+---
+
+<div class="hanging-container">
+  <Fragment set:html={lemonLogoSvg} />
+  <Fragment set:html={wordLogoSvg} />
+  <Fragment set:html={llcSvg} />
+</div>
+
+<style>
+  .hanging-container {
+    position: fixed;
+    width: 200px;
+    height: 200px;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .hanging-container :global(svg):nth-child(1) {
+    width: 120px;
+    position: absolute;
+    height: auto;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .hanging-container :global(svg):nth-child(2) {
+    width: 200px;
+    position: absolute;
+    height: auto;
+    top: 126px;
+    left: 50%;
+    transform: translateX(-50%) rotate(356deg);
+  }
+  .hanging-container :global(svg):nth-child(3) {
+    width: 60px;
+    position: absolute;
+    height: auto;
+    top: 173px;
+    right: 2%;
+    transform: rotate(2deg);
+  }
+</style>

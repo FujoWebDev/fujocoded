@@ -1,18 +1,11 @@
 ---
 import { readFileSync } from "node:fs";
-import { Image } from "astro:assets";
-import { Icon } from "astro-icon/components";
+import Nav from "../components/Nav.astro"
 
 const title = "FujoCoded – Coming April 1st, 2024";
 const description = "Not a joke. (Well, ok, a tad bit of a joke.)";
 const preview = "http://fujocoded.com/og-image.png";
 
-const lemonLogoSvg = readFileSync("./src/images/lemon-logo.svg", {
-  encoding: "utf8",
-});
-const wordLogoSvg = readFileSync("./src/images/text-logo.svg", {
-  encoding: "utf8",
-});
 ---
 
 <html lang="en">
@@ -67,24 +60,205 @@ const wordLogoSvg = readFileSync("./src/images/text-logo.svg", {
     <meta name="theme-color" content="#ffffff" />
   </head>
   <body>
-    <Fragment set:html={lemonLogoSvg} />
-    <!-- <Fragment set:html={wordLogoSvg} /> -->
-    <div class="shiny-font">Projects</div>
+    <Nav />
+    <!-- <div class="shiny-font">Projects</div>
     <div class="shiny-font">About</div>
     <div class="shiny-font">More</div>
-    <div class="shiny-font">Blog</div>
+    <div class="shiny-font">Blog</div> -->
     <div class="background"></div>
-    <main>This is the actual text of the page</main>
+    <main>According to all known laws
+      of aviation,
+      
+        
+      there is no way a bee
+      should be able to fly.
+      
+        
+      Its wings are too small to get
+      its fat little body off the ground.
+      
+        
+      The bee, of course, flies anyway
+      
+        
+      because bees don't care
+      what humans think is impossible.
+      
+        
+      Yellow, black. Yellow, black.
+      Yellow, black. Yellow, black.
+      
+        
+      Ooh, black and yellow!
+      Let's shake it up a little.
+      
+        
+      Barry! Breakfast is ready!
+      
+        
+      Ooming!
+      
+        
+      Hang on a second.
+      
+        
+      Hello?
+      
+        
+      - Barry?
+      - Adam?
+      
+        
+      - Oan you believe this is happening?
+      - I can't. I'll pick you up.
+      
+        
+      Looking sharp.
+      
+        
+      Use the stairs. Your father
+      paid good money for those.
+      
+        
+      Sorry. I'm excited.
+      
+        
+      Here's the graduate.
+      We're very proud of you, son.
+      
+        
+      A perfect report card, all B's.
+      
+        
+      Very proud.
+      
+        
+      Ma! I got a thing going here.
+      
+        
+      - You got lint on your fuzz.
+      - Ow! That's me!
+      
+        
+      - Wave to us! We'll be in row 118,000.
+      - Bye!
+      
+        
+      Barry, I told you,
+      stop flying in the house!
+      
+        
+      - Hey, Adam.
+      - Hey, Barry.
+      
+        
+      - Is that fuzz gel?
+      - A little. Special day, graduation.
+      
+        
+      Never thought I'd make it.
+      
+        
+      Three days grade school,
+      three days high school.
+      
+        
+      Those were awkward.
+      
+        
+      Three days college. I'm glad I took
+      a day and hitchhiked around the hive.
+      
+        
+      You did come back different.
+      
+        
+      - Hi, Barry.
+      - Artie, growing a mustache? Looks good.
+      
+        
+      - Hear about Frankie?
+      - Yeah.
+      
+        
+      - You going to the funeral?
+      - No, I'm not going.
+      
+        
+      Everybody knows,
+      sting someone, you die.
+        
+      Three days grade school,
+      three days high school.
+      
+        
+      Those were awkward.
+      
+        
+      Three days college. I'm glad I took
+      a day and hitchhiked around the hive.
+      
+        
+      You did come back different.
+      
+        
+      - Hi, Barry.
+      - Artie, growing a mustache? Looks good.
+      
+        
+      - Hear about Frankie?
+      - Yeah.
+      
+        
+      - You going to the funeral?
+      - No, I'm not going.
+      
+        
+      Everybody knows,
+      sting someone, you die.
+        
+      Three days grade school,
+      three days high school.
+      
+        
+      Those were awkward.
+      
+        
+      Three days college. I'm glad I took
+      a day and hitchhiked around the hive.
+      
+        
+      You did come back different.
+      
+        
+      - Hi, Barry.
+      - Artie, growing a mustache? Looks good.
+      
+        
+      - Hear about Frankie?
+      - Yeah.
+      
+        
+      - You going to the funeral?
+      - No, I'm not going.
+      
+        
+      Everybody knows,
+      sting someone, you die.</main>
     <style>
       body {
         background-color: #f6d880;
         display: flex;
-        height: 100dvh;
         align-items: center;
         justify-content: center;
         flex-direction: column;
         margin: 0;
         /* background-image: url("https://as2.ftcdn.net/v2/jpg/02/39/31/53/1000_F_239315313_RTpKCbEPulGCsYWR8A0wJalKFvD21eBI.jpg"); */
+      }
+
+      main {
+        width: 300px;
+        color: transparent;
       }
 
       .background {
@@ -93,7 +267,7 @@ const wordLogoSvg = readFileSync("./src/images/text-logo.svg", {
         bottom: 0;
         left: 20%;
         right: 20%;
-        background-color: black;
+        background-color: #ffd3f0;
         z-index: -1;
         
       }

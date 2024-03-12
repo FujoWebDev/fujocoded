@@ -1,0 +1,35 @@
+---
+import { Image } from "astro:assets";
+import SimpleLemon from "../images/simple-lemon.svg";
+import GripVertical from "../images/grip-vertical.svg";
+interface Props {
+  title?: string;
+  class?: string;
+}
+const { class: className } = Astro.props;
+---
+
+<div class:list={[className, "rounded-lg"]}>
+  <div
+    class="relative border-2 border-teal-dark bg-teal py-1 pr-4 pl-1 rounded-tl-lg rounded-tr-lg flex justify-between gap-2 items-center"
+  >
+    <div class="flex shrink-0">
+      <Image
+        class="left-[-4px] text-teal-dark"
+        src={GripVertical}
+        alt="grip grip"
+      />
+      <Image class="width-[50px]" src={SimpleLemon} alt="A simple lemon" />
+    </div>
+    <div class="w-full text-white font-zeitung">This is a title</div>
+    <div
+      class="w-[25px] shrink-0 border border-teal-dark h-[25px] bg-teal-light rounded-lg"
+    >
+    </div>
+  </div>
+  <div
+    class="border-2 border-t-0 border-teal-dark rounded-bl-lg rounded-br-lg overflow-hidden"
+  >
+    <slot />
+  </div>
+</div>

@@ -1,6 +1,7 @@
 ---
 import { readFileSync } from "node:fs";
 import Nav from "../components/Nav.astro";
+import Browser from "../components/Browser.astro";
 
 const title = "FujoCoded – Coming April 1st, 2024";
 const description = "Not a joke. (Well, ok, a tad bit of a joke.)";
@@ -65,6 +66,9 @@ const preview = "http://fujocoded.com/og-image.png";
     <div class="shiny-font">More</div>
     <div class="shiny-font">Blog</div> -->
     <div class="background"></div>
+    <Browser class="mt-[300px]">
+      <img class="w-[500px] h-auto" src="/og-image.png" />
+    </Browser>
     <main>
       According to all known laws of aviation, there is no way a bee should be
       able to fly. Its wings are too small to get its fat little body off the
@@ -213,11 +217,6 @@ const preview = "http://fujocoded.com/og-image.png";
           height: 40px;
           width: 40px;
         }
-      }
-
-      body img {
-        max-width: 50%;
-        height: auto;
       }
       * {
         box-sizing: border-box;

@@ -9,27 +9,48 @@ interface Props {
 const { class: className } = Astro.props;
 ---
 
-<div class:list={[className, "rounded-lg"]}>
-  <div
-    class="relative border-2 border-teal-dark bg-teal py-1 pr-4 pl-1 rounded-tl-lg rounded-tr-lg flex justify-between gap-2 items-center"
-  >
-    <div class="flex shrink-0">
-      <Image
-        class="left-[-4px] text-teal-dark"
-        src={GripVertical}
-        alt="grip grip"
-      />
-      <Image class="width-[50px]" src={SimpleLemon} alt="A simple lemon" />
-    </div>
-    <div class="w-full text-white font-zeitung">This is a title</div>
-    <div
-      class="w-[25px] shrink-0 border border-teal-dark h-[25px] bg-teal-light rounded-lg"
-    >
-    </div>
+<div class="relative">
+  <div class="absolute top-0 bottom-0 right-0 left-0 bg-red-500 z-0 rounded-lg">
   </div>
-  <div
-    class="border-2 border-t-0 border-teal-dark rounded-bl-lg rounded-br-lg overflow-hidden"
-  >
-    <slot />
+  <div class:list={["drag-me", className, "relative rounded-lg z-10"]}>
+    <div
+      class="relative border-2 border-teal-dark bg-teal py-1 pr-4 pl-1 rounded-tl-lg rounded-tr-lg flex justify-between gap-2 items-center"
+    >
+      <div class="flex shrink-0">
+        <Image
+          class="left-[-4px] text-teal-dark drag-handle"
+          src={GripVertical}
+          alt="grip grip"
+        />
+        <Image class="width-[50px]" src={SimpleLemon} alt="A simple lemon" />
+      </div>
+      <div class="w-full text-white font-zeitung">This is a title</div>
+      <div
+        class="w-[25px] shrink-0 border border-teal-dark h-[25px] bg-teal-light rounded-lg"
+      >
+      </div>
+    </div>
+    <div
+      class="border-2 border-t-0 border-teal-dark rounded-bl-lg rounded-br-lg overflow-hidden"
+    >
+      <slot />
+    </div>
   </div>
 </div>
+
+<script>
+  import interact from "interactjs";
+  const position = { x: 0, y: 0 };
+
+  interact(".drag-me").draggable({
+    allowFrom: ".drag-handle",
+    listeners: {
+      move(event) {
+        position.x += event.dx;
+        position.y += event.dy;
+
+        event.target.style.transform = `translate(${position.x}px, ${position.y}px)`;
+      },
+    },
+  });
+</script>

@@ -9,7 +9,7 @@ interface Props {
 const { class: className } = Astro.props;
 ---
 
-<div class="relative">
+<div class="relative touch-none">
   <div class="absolute top-0 bottom-0 right-0 left-0 bg-red-500 z-0 rounded-lg">
   </div>
   <div class:list={["drag-me", className, "relative rounded-lg z-10"]}>

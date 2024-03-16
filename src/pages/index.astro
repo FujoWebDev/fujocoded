@@ -67,8 +67,13 @@ const preview = "http://fujocoded.com/og-image.png";
     <div class="shiny-font">Blog</div> -->
     <div class="background"></div>
     <div class="mt-[300px]">
-      <Browser>
-        <img class="w-[500px] h-auto" src="/og-image.png" />
+      <Browser title="title for top window">
+        <img slot="front" class="w-[500px] h-auto" src="/og-image.png" />
+      </Browser>
+    </div>
+    <div class="mt-[30px]">
+      <Browser title="title for bottom window">
+        <img slot="front" class="w-[500px] h-auto" src="/og-image.png" />
       </Browser>
     </div>
     <main>

@@ -17,9 +17,14 @@ const { class: className, title = "This is a title" } = Astro.props;
   <div class="absolute top-0 bottom-0 right-0 left-0 bg-red-500 z-0 rounded-lg">
     <slot name="behind" />
   </div>
-  <div 
-  data-drop-id={dropId}
-  class:list={["drag-me", className, "relative rounded-lg z-10 transition-transform duration-300 motion-reduce:transition-none"]}>
+  <div
+    data-drop-id={dropId}
+    class:list={[
+      "drag-me",
+      className,
+      "relative rounded-lg z-10 transition-transform duration-300 motion-reduce:transition-none",
+    ]}
+  >
     <!-- <div class="absolute top-0 bottom-0 right-0 left-0 shadow-lg z-0 rounded-lg"> -->
     <header
       class="relative border-2 border-teal-dark bg-teal py-1 pr-4 pl-1 rounded-tl-lg rounded-tr-lg flex justify-between gap-2 items-center drag-handle"
@@ -32,7 +37,9 @@ const { class: className, title = "This is a title" } = Astro.props;
         />
         <Image class="width-[50px]" src={SimpleLemon} alt="A simple lemon" />
       </div>
-      <div class="w-full text-white font-zeitung"><span class="ignore ignore-pointer">{title}</span></div>
+      <div class="w-full text-white font-zeitung">
+        <span class="ignore ignore-pointer">{title}</span>
+      </div>
       <button
         type="button"
         title="Reset position"
@@ -40,7 +47,7 @@ const { class: className, title = "This is a title" } = Astro.props;
         tabindex="-1"
         class="w-[25px] shrink-0 border border-teal-dark text-teal-dark h-[25px] bg-teal-light rounded-lg grid place-items-center ignore"
       >
-      <Icon name="arrow-square-in"/>
+        <Icon name="arrow-square-in" />
       </button>
     </header>
     <div
@@ -54,65 +61,71 @@ const { class: className, title = "This is a title" } = Astro.props;
 <script>
   import interact from "interactjs";
   const resetPosition = (target: HTMLElement) => {
-    const x = (parseFloat(target.getAttribute('data-x') || "0")) * -1;
-    const y = (parseFloat(target.getAttribute('data-y') || "0")) * -1;
-    target.style.transform = 'translate(' + x + 'px, ' + y + 'px)';
+    const x = parseFloat(target.getAttribute("data-x") || "0") * -1;
+    const y = parseFloat(target.getAttribute("data-y") || "0") * -1;
+    target.style.transform = "translate(" + x + "px, " + y + "px)";
   };
 
   interact(".drag-me")
-  .draggable({
-    allowFrom: ".drag-handle",
-    ignoreFrom: ".ignore",
-    autoScroll: true,
-    listeners: {
-      move(event) {
-        const target = event.target;
-        const x = (parseFloat(target.getAttribute('data-x')) || 0) + event.dx;
-        const y = (parseFloat(target.getAttribute('data-y')) || 0) + event.dy;
+    .draggable({
+      allowFrom: ".drag-handle",
+      ignoreFrom: ".ignore",
+      autoScroll: true,
+      listeners: {
+        move(event) {
+          const target = event.target;
+          const x = (parseFloat(target.getAttribute("data-x")) || 0) + event.dx;
+          const y = (parseFloat(target.getAttribute("data-y")) || 0) + event.dy;
 
-        target.style.translate = `${x}px ${y}px`;
+          target.style.translate = `${x}px ${y}px`;
 
-        target.setAttribute('data-x', x);
-        target.setAttribute('data-y', y);
-        console.log("dragged");
+          target.setAttribute("data-x", x);
+          target.setAttribute("data-y", y);
+          console.log("dragged");
+        },
       },
-    },
-  })
-  .pointerEvents({
-    allowFrom: ".drag-handle",
-    ignoreFrom: ".ignore-pointer",
-  })
-  .on("doubletap", (event) => {
-    const target = event.currentTarget;
-    console.log("doubletapped, target", target);
-    resetPosition(target);
-  })
-  .on("tap", (event) => {
-    if (event.target.tagName !== "BUTTON" && event.target.parentElement.tagName !== "BUTTON") {
-      return;
-    }
-    const target = event.currentTarget;
-    resetPosition(target);
-  });
+    })
+    .pointerEvents({
+      allowFrom: ".drag-handle",
+      ignoreFrom: ".ignore-pointer",
+    })
+    .on("doubletap", (event) => {
+      const target = event.currentTarget;
+      console.log("doubletapped, target", target);
+      resetPosition(target);
+    })
+    .on("tap", (event) => {
+      if (
+        event.target.tagName !== "BUTTON" &&
+        event.target.parentElement.tagName !== "BUTTON"
+      ) {
+        return;
+      }
+      const target = event.currentTarget;
+      resetPosition(target);
+    });
 
   interact(".dropzone").dropzone({
-    overlap: 0.90,
+    overlap: 0.4,
     accept: ".drag-me",
     checker: (
-    dragEvent,         // related dragmove or dragend
-    event,             // Touch, Pointer or Mouse Event
-    dropped,           // bool default checker result
-    dropzone,          // dropzone Interactable
-    dropzoneElement,   // dropzone element
-    draggable,         // draggable Interactable
-    draggableElement   // draggable element
+      dragEvent, // related dragmove or dragend
+      event, // Touch, Pointer or Mouse Event
+      dropped, // bool default checker result
+      dropzone, // dropzone Interactable
+      dropzoneElement, // dropzone element
+      draggable, // draggable Interactable
+      draggableElement // draggable element
     ) => {
-      return dropped && dropzoneElement.dataset.dropId === draggableElement.dataset.dropId;
-    },  
-    ondrop: (event) => {
-    const target = event.relatedTarget;
-    console.log("dropped, relatedTarget", target);
-    resetPosition(target);
+      return (
+        dropped &&
+        dropzoneElement.dataset.dropId === draggableElement.dataset.dropId
+      );
     },
-  })
+    ondrop: (event) => {
+      const target = event.relatedTarget;
+      console.log("dropped, relatedTarget", target);
+      resetPosition(target);
+    },
+  });
 </script>

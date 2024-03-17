@@ -5,9 +5,11 @@ import Layout from "../layouts/Layout.astro";
 
 <Layout>
   <section>
-    <Browser title="title for bottom window" class="mt-[30px] w-[400px]">
-      <img slot="front" class="w-[500px] h-auto" src="/og-image.png" />
-    </Browser>
+    <div class="mt-[30px]">
+      <Browser title="title for bottom window">
+        <img slot="front" class="w-[500px] h-auto" src="/og-image.png" />
+      </Browser>
+    </div>
     <h2>A Better Web <em>Together</em></h2>
     <div>
       <p>
@@ -19,7 +21,7 @@ import Layout from "../layouts/Layout.astro";
     </div>
   </section>
   <section>
-    <Browser class="mt-[30px] w-[400px]" title=" title for bottom window">
+    <Browser title="title for bottom window">
       <img slot="front" class="w-[500px] h-auto" src="/og-image.png" />
     </Browser>
     <h2>Shape the <em>Next</em> Web</h2>
@@ -32,19 +34,10 @@ import Layout from "../layouts/Layout.astro";
       <a href="/about">About us and our mission</a>
     </div>
   </section>
-  <section>
-    <Browser class="mt-[30px] w-[400px]" title=" title for bottom window">
-      <img slot="front" class="w-[500px] h-auto" src="/og-image.png" />
-    </Browser>
-    <h2>What's a <em>fujoshi</em>, anyway?</h2>
-    <div>
-      <p>
-        A new web is coming! Supported by years of experience working within fan
-        communities (and some deep technical chops), our work aims to change who
-        can join the conversation about the online spaces of the future.
-      </p>
-      <a href="/about">Our target audience (and beyond)</a>
-    </div>
-  </section>
-  <style></style>
+  <style>
+    section {
+      width: 300px;
+      color: transparent;
+    }
+  </style>
 </Layout>

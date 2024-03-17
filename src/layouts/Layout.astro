@@ -1,0 +1,106 @@
+---
+interface Props {
+  title?: string;
+  description?: string;
+  preview?: string;
+}
+
+import Nav from "../components/Nav.astro";
+import Browser from "../components/Browser.astro";
+
+const {
+  title = "FujoCoded – Coming April 1st, 2024",
+  description = "Not a joke. (Well, ok, a tad bit of a joke.)",
+  preview = "http://fujocoded.com/og-image.png",
+} = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>{title}</title>
+    <meta property="og:title" content={title} />
+    <meta property="twitter:title" content={title} />
+
+    <meta name="description" content={description} />
+    <meta property="og:description" content={description} />
+    <meta property="twitter:description" content={description} />
+
+    <meta property="og:image" content={preview} />
+    <meta name="twitter:image" content={preview} />
+
+    <meta property="twitter:card" content="summary_large_image" />
+    <link rel="stylesheet" href="https://use.typekit.net/ruy6yjo.css" />
+
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="favicons/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="favicons/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="favicons/favicon-16x16.png"
+    />
+    <link rel="manifest" href="favicons/site.webmanifest" />
+    <link
+      rel="mask-icon"
+      href="favicons/safari-pinned-tab.svg"
+      color="#f6d880"
+    />
+    <link rel="shortcut icon" href="favicons/favicon.ico" />
+    <meta name="msapplication-TileColor" content="#f6d880" />
+    <meta name="msapplication-config" content="favicons/browserconfig.xml" />
+    <meta name="theme-color" content="#ffffff" />
+    <style is:global>
+      :root {
+        --color-neon-glow: #ffbf00;
+        --color-neon-fill: #f3e5bc;
+        --color-neon-inner-glow: #f7de94;
+      }
+    </style>
+  </head>
+  <body>
+    <Nav />
+    <div class="background"></div>
+    <main class="max-w-[900px] w-full pt-[250px]">
+      <slot />
+    </main>
+    <style>
+      body {
+        background-color: #f6d880;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        margin: 0;
+        position: relative;
+      }
+
+      .background {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        max-width: 800px;
+        width: 80%;
+        background-color: #ffd3f0;
+        z-index: -1;
+      }
+    </style>
+  </body>
+</html>

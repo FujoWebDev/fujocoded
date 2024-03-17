@@ -13,7 +13,10 @@ const dropId = crypto.randomUUID();
 const { class: className, title = "This is a title" } = Astro.props;
 ---
 
-<div data-drop-id={dropId} class="relative touch-none dropzone">
+<div
+  data-drop-id={dropId}
+  class:list={["relative touch-none dropzone", className]}
+>
   <div class="absolute top-0 bottom-0 right-0 left-0 bg-red-500 z-0 rounded-lg">
     <slot name="behind" />
   </div>

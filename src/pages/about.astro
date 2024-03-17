@@ -1,52 +1,73 @@
 ---
-import Browser from "../components/Browser.astro";
+import MissionTerminal from "../components/MissionTerminal.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout>
-  <div class="mt-[300px]">
-    <Browser title="title for top window">
-      <img slot="front" class="w-[500px] h-auto" src="/og-image.png" />
-    </Browser>
-  </div>
-  <div class="mt-[30px]">
-    <Browser title="title for bottom window">
-      <img slot="front" class="w-[500px] h-auto" src="/og-image.png" />
-    </Browser>
-  </div>
-  <section>
-    According to all known laws of aviation, there is no way a bee should be
-    able to fly. Its wings are too small to get its fat little body off the
-    ground. The bee, of course, flies anyway because bees don't care what humans
-    think is impossible. Yellow, black. Yellow, black. Yellow, black. Yellow,
-    black. Ooh, black and yellow! Let's shake it up a little. Barry! Breakfast
-    is ready! Ooming! Hang on a second. Hello? - Barry? - Adam? - Oan you
-    believe this is happening? - I can't. I'll pick you up. Looking sharp. Use
-    the stairs. Your father paid good money for those. Sorry. I'm excited.
-    Here's the graduate. We're very proud of you, son. A perfect report card,
-    all B's. Very proud. Ma! I got a thing going here. - You got lint on your
-    fuzz. - Ow! That's me! - Wave to us! We'll be in row 118,000. - Bye! Barry,
-    I told you, stop flying in the house! - Hey, Adam. - Hey, Barry. - Is that
-    fuzz gel? - A little. Special day, graduation. Never thought I'd make it.
-    Three days grade school, three days high school. Those were awkward. Three
-    days college. I'm glad I took a day and hitchhiked around the hive. You did
-    come back different. - Hi, Barry. - Artie, growing a mustache? Looks good. -
-    Hear about Frankie? - Yeah. - You going to the funeral? - No, I'm not going.
-    Everybody knows, sting someone, you die. Three days grade school, three days
-    high school. Those were awkward. Three days college. I'm glad I took a day
-    and hitchhiked around the hive. You did come back different. - Hi, Barry. -
-    Artie, growing a mustache? Looks good. - Hear about Frankie? - Yeah. - You
-    going to the funeral? - No, I'm not going. Everybody knows, sting someone,
-    you die. Three days grade school, three days high school. Those were
-    awkward. Three days college. I'm glad I took a day and hitchhiked around the
-    hive. You did come back different. - Hi, Barry. - Artie, growing a mustache?
-    Looks good. - Hear about Frankie? - Yeah. - You going to the funeral? - No,
-    I'm not going. Everybody knows, sting someone, you die.
-  </section>
-  <style>
-    section {
-      width: 300px;
-      color: transparent;
-    }
-  </style>
+  <article>
+    <h2>About us</h2>
+    <MissionTerminal />
+    <section>
+      <h3>The Vision</h3>
+      <p>
+        Our mission is to use all we’ve learned throughout the years and skills
+        at our disposal to build a kinder, more diverse, more collaborative–and,
+        yes, more weird!–internet. We know a goal this ambitious cannot be
+        carried forward alone. Instead, we work with members of niche
+        communities to turn them into the leaders that will shape the web of the
+        future. We do this by fostering high-quality spaces for learning and
+        collaboration, promoting the adoption of open and decentralized
+        technologies, and identifying emerging tools that lower the barrier of
+        entry into programming (as well as creating some tools ourselves [link
+        to projects page]).
+      </p>
+    </section>
+    <section>
+      <h3>Why now</h3>
+      <p>
+        A new era of the web is coming. Web development technologies grow more
+        powerful and accessible every day; decentralized social networks
+        continue to gain steam; technical institutions that a few years ago
+        seemed unstoppable are crumbling as people yearn for change.
+      </p>
+      <p>
+        As the online world struggles to be reborn, this is the time to seize
+        the occasion and make sure that the people that are part of the
+        conversation of what the next web should look like are not the same ones
+        that got to discuss this before. To do this we work with and create for
+        marginalized subcultures to help them build their technical chops and
+        learn more about web development and building software.
+      </p>
+    </section>
+    <section>
+      <h3>Why us</h3>
+      <p>
+        We have dedicated the past 3 years to building software and
+        relationships within fandom communities, and exploring the issue of
+        online spaces, indie software efforts, and decentralized technologies.
+        Thanks to this experience, we deeply understand what stands in the way
+        of aspiring web builders and better online communities.
+      </p>
+      <p>
+        Our founder, contractors, and community contributors have a vast variety
+        of experience in everything from building large-scale software
+        applications, to moderation, to community building, to managing open
+        source projects, to decentralized technologies, to technical (and
+        non-technical) writing. You can see some of what we’ve built until now
+        on our projects page [link].
+      </p>
+    </section>
+    <section>
+      <h2>Our Team</h2>
+      <section>
+        <h3>Founder</h3>
+      </section>
+      <section>
+        <h3>Contractors</h3>
+      </section>
+      <section>
+        <h3>Community Contributors</h3>
+      </section>
+    </section>
+  </article>
 </Layout>

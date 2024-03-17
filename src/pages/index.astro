@@ -1,9 +1,11 @@
 ---
 import Browser from "../components/Browser.astro";
+import MissionTerminal from "../components/MissionTerminal.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout>
+  <MissionTerminal />
   <section>
     <Browser title="title for bottom window" class="mt-[30px] w-[400px]">
       <img slot="front" class="w-[500px] h-auto" src="/og-image.png" />

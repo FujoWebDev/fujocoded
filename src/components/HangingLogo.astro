@@ -34,8 +34,8 @@ const wordLogoSvg = readFileSync("./src/images/word-logo.svg", {
     left: 50%;
     transform: translateX(calc(-50% - 5px));
     --rope-color: #c6c4c39e;
-    --lemon-final-position: -200px;
-    --logo-final-position: -300px;
+    --lemon-final-position: -300px;
+    --logo-final-position: -400px;
   }
   .lemon {
     width: 120px;
@@ -47,7 +47,7 @@ const wordLogoSvg = readFileSync("./src/images/word-logo.svg", {
     --final-position: var(--lemon-final-position);
     animation: pullup linear both;
     animation-timeline: scroll();
-    animation-range: entry exit;
+    animation-range: entry 0% exit 30%;
   }
   .lemon :global(svg) {
     width: 100%;
@@ -85,7 +85,7 @@ const wordLogoSvg = readFileSync("./src/images/word-logo.svg", {
     --final-position: var(--logo-final-position);
     animation: pullup linear both;
     animation-timeline: scroll();
-    animation-range: entry exit;
+    animation-range: entry 0% exit 30%;
   }
   .logo :global(svg) {
     width: 100%;
@@ -122,7 +122,7 @@ const wordLogoSvg = readFileSync("./src/images/word-logo.svg", {
     --final-position: var(--logo-final-position);
     animation: pullup linear both;
     animation-timeline: scroll();
-    animation-range: entry exit;
+    animation-range: entry 0% exit 30%;
   }
   .llc :global(svg) {
     width: 100%;

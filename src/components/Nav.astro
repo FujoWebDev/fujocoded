@@ -1,13 +1,49 @@
 ---
 import HangingLogo from "./HangingLogo.astro";
+import Lemon from "../icons/lemon-logo.svg";
+import { Image } from "astro:assets";
 ---
 
 <a href="/"><HangingLogo /></a>
 <nav
   class="sticky items-center mx-auto top-1 flex w-11/12 max-w-[800px] justify-evenly bg-lemon-dark-transparent border-2 border-lemon-dark rounded-full font-hatch text-white text-lg font-bold z-50"
 >
-  <a href="/projects" class="text-white">Projects</a>
+  <a class="lemon" href="/"><Image src={Lemon} alt="The FujoCoded logo" /></a>
+  <a href="/projects">Projects</a>
   <a href="/about">About</a>
   <a href="/fujoshi">Fujoshi</a>
   <a href="/updates">Updates</a>
 </nav>
+
+<style>
+  nav {
+    animation: pad linear both;
+    animation-timeline: scroll();
+    animation-range: entry 0% exit 5%;
+  }
+  .lemon {
+    position: absolute;
+    left: 20px;
+    animation: appear linear both;
+    animation-timeline: scroll();
+    animation-range: entry 0% exit 5%;
+  }
+  @keyframes pad {
+    from {
+      padding-left: 0;
+    }
+    to {
+      padding-left: 20px;
+    }
+  }
+  @keyframes appear {
+    from {
+      width: 0;
+      opacity: 0;
+    }
+    to {
+      width: 20px;
+      opacity: 1;
+    }
+  }
+</style>

@@ -2,14 +2,12 @@
 import HangingLogo from "./HangingLogo.astro";
 ---
 
+<a href="/"><HangingLogo /></a>
 <nav
-  class="fixed items-center left-1/2 top-7 flex w-11/12 max-w-[800px] -translate-x-1/2 transform justify-evenly bg-lemon-dark-transparent border-2 border-lemon-dark rounded-full font-hatch text-white text-lg font-bold z-50"
+  class="sticky items-center mx-auto top-1 flex w-11/12 max-w-[800px] justify-evenly bg-lemon-dark-transparent border-2 border-lemon-dark rounded-full font-hatch text-white text-lg font-bold z-50"
 >
   <a href="/projects" class="text-white">Projects</a>
   <a href="/about">About</a>
-  <a class="inline-block w-[200px] h-[50px] relative" href="/"
-    ><HangingLogo /></a
-  >
   <a href="/fujoshi">Fujoshi</a>
   <a href="/updates">Updates</a>
 </nav>

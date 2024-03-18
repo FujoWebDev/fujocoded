@@ -463,6 +463,13 @@
   resolved "https://registry.yarnpkg.com/@esbuild/win32-x64/-/win32-x64-0.19.12.tgz#c57c8afbb4054a3ab8317591a0b7320360b444ae"
   integrity sha512-T1QyPSDCyMXaO3pzBkF96E8xMkiRYbUEZADd29SyPGabqxMViNoii+NcK7eWJAEoU6RZyEm5lVSIjTmcdoB9HA==
 
+"@iconify-json/lucide@^1.1.175":
+  version "1.1.175"
+  resolved "https://registry.yarnpkg.com/@iconify-json/lucide/-/lucide-1.1.175.tgz#08134ed5de2f149d8621b112863c183143e03c99"
+  integrity sha512-mMTemB/xwMy43DhGDKBwB7iNz60GFlugqRYgg8pHAIG9F9YQzurlNGhZJLn5wkArzs4fiavHMYgP2qzHhJFzpg==
+  dependencies:
+    "@iconify/types" "*"
+
 "@iconify-json/simple-icons@^1.1.93":
   version "1.1.93"
   resolved "https://registry.yarnpkg.com/@iconify-json/simple-icons/-/simple-icons-1.1.93.tgz#649b4bf3cbef78eccb238f7f3e227a20de8ed90e"

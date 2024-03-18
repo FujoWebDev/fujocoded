@@ -5,6 +5,7 @@ export const socialsSchema = z.union([
   z.string().url(),
   z.object({
     icon: z.string().optional(),
+    platform: z.string().optional(),
     url: z.string().url(),
   }),
 ]);
@@ -37,13 +38,17 @@ export const transformSocial = (social: SocialsSchema) => {
   if (typeof social == "string") {
     return extractSocialData({ url: social });
   }
-  const { icon, url } = social;
+  const { icon, url, platform } = social;
   const data = extractSocialData({ url });
 
   return {
     ...data,
-    icon,
+    icon:
+      icon || platform === undefined
+        ? data.icon
+        : getSocialIcon(platform as WEBSITE_TYPES),
     url,
+    platform,
   };
 };
 
@@ -74,7 +79,7 @@ socialLinks.addProfile("inprnt", inprntMatches);
 
 const getSocialIcon = (platform: WEBSITE_TYPES) => {
   if (platform === "inprnt") {
-    return null;
+    return "lucide:shopping-bag";
   }
   return "simple-icons:" + platform.replaceAll("-", "");
 };

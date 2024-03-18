@@ -74,33 +74,35 @@ const {
     </style>
   </head>
   <body>
-    <div class="background"></div>
-    <main class="max-w-[900px] w-full pt-[250px]">
+    <div class="background isolatew-96 rounded-xl rounded-b-none bg-white/20 shadow-sm backdrop-filter backdrop-blur-lg"></div>
+    <main class="max-w-[900px] w-full">
       <Nav />
       <slot />
     </main>
     <style>
       body {
-        background-color: #f6d880;
+        background: linear-gradient(#9687FA, #FBB8FE);
         display: flex;
         align-items: center;
         justify-content: center;
         flex-direction: column;
         margin: 0;
         position: relative;
+        --content-margin: 250px;
+      }
+      main {
+        z-index: 2;
+        margin-top: var(--content-margin)
       }
 
       .background {
         position: absolute;
-        top: 0;
-        bottom: 0;
+        top: var(--content-margin);
         left: 50%;
-        transform: translateX(-50%);
+        height: calc(100% - 200px);
+        transform: translate(-50%);
         max-width: 800px;
         width: 80%;
-        background-color: #ffd3f0;
-        z-index: -1;
-        min-height: 100dvh
       }
     </style>
   </body>

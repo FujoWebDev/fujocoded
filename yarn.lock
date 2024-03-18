@@ -3641,6 +3641,11 @@ sisteransi@^1.0.5:
   resolved "https://registry.yarnpkg.com/sisteransi/-/sisteransi-1.0.5.tgz#134d681297756437cc05ca01370d3a7a571075ed"
   integrity sha512-bLGGlR1QxBcynn2d5YmDX4MGjlZvy2MRBDRNHLJ8VI6l6+9FUiyTFNJ0IveOSP0bcXgVDPRcfGqA0pjaqUpfVg==
 
+social-links@^1.14.0:
+  version "1.14.0"
+  resolved "https://registry.yarnpkg.com/social-links/-/social-links-1.14.0.tgz#5f642b6efd87129ccaf7ac542990aa4fe7011630"
+  integrity sha512-98FpRSrHilAcD/p4Aro2J5rzKnpFJ5QF5M9YEWns6gXwosgBqWKV+AtgYJFRIsvXMyd9UTD3SzPcSU8IJMW7cw==
+
 source-map-js@^1.0.1, source-map-js@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/source-map-js/-/source-map-js-1.0.2.tgz#adbc361d9c62df380125e7f161f71c826f1e490c"

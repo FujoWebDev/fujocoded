@@ -1,6 +1,6 @@
 ---
-import { getEntries } from "astro:content";
 import MissionTerminal from "../components/MissionTerminal.astro";
+import TeamCard from "../components/team/TeamCard.astro";
 import Layout from "../layouts/Layout.astro";
 import { getCollection } from "astro:content";
 
@@ -23,7 +23,9 @@ const team = await getCollection("team");
         collaboration, promoting the adoption of open and decentralized
         technologies, and identifying emerging tools that lower the barrier of
         entry into programming (as well as creating some tools ourselves [link
-        to projects page]).
+        to projects page]). Then, we hire the most promising people in our
+        communities to help us support our monetized projects, and give them
+        their first boost in a increasingly harder to access tech work.
       </p>
     </section>
     <section>
@@ -68,15 +70,19 @@ const team = await getCollection("team");
         {
           team
             .filter((member) => member.data.type == "founder")
-            .map((member) => <div>{member.data.name}</div>)
+            .map((member) => <TeamCard {...member.data} />)
         }
       </section>
       <section>
         <h3>Contractors</h3>
+        <div>
+          These are people we've hired throughout the years to help us advance
+          our mission.
+        </div>
         {
           team
             .filter((member) => member.data.type == "contractor")
-            .map((member) => <div>{member.data.name}</div>)
+            .map((member) => <TeamCard {...member.data} />)
         }
       </section>
       <section>
@@ -84,7 +90,7 @@ const team = await getCollection("team");
         {
           team
             .filter((member) => member.data.type == "community")
-            .map((member) => <div>{member.data.name}</div>)
+            .map((member) => <TeamCard {...member.data} />)
         }
       </section>
     </section>

@@ -21,6 +21,7 @@
   },
   "devDependencies": {
     "@iconify-json/simple-icons": "^1.1.93",
-    "prettier": "^3.2.5"
+    "prettier": "^3.2.5",
+    "social-links": "^1.14.0"
   }
 }

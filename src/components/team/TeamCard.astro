@@ -1,9 +1,26 @@
 ---
+import { Icon } from "astro-icon/components";
+import type { SocialsData } from "../../lib/socials-transformer";
+
 interface Props {
   name: string;
+  contacts: SocialsData[];
 }
 
-const { name } = Astro.props;
+const { name, contacts } = Astro.props;
 ---
 
-<div>{name}</div>
+<div>
+  {name}<ul>
+    {
+      contacts.map((contact) => {
+        return (
+          <li>
+            {contact.icon && <Icon name={contact.icon} />} {contact.url}:{" "}
+            {contact.platform} {contact.username}
+          </li>
+        );
+      })
+    }
+  </ul>
+</div>

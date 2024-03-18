@@ -1,6 +1,10 @@
 ---
+import { getEntries } from "astro:content";
 import MissionTerminal from "../components/MissionTerminal.astro";
 import Layout from "../layouts/Layout.astro";
+import { getCollection } from "astro:content";
+
+const team = await getCollection("team");
 ---
 
 <Layout>
@@ -61,12 +65,27 @@ import Layout from "../layouts/Layout.astro";
       <h2>Our Team</h2>
       <section>
         <h3>Founder</h3>
+        {
+          team
+            .filter((member) => member.data.type == "founder")
+            .map((member) => <div>{member.data.name}</div>)
+        }
       </section>
       <section>
         <h3>Contractors</h3>
+        {
+          team
+            .filter((member) => member.data.type == "contractor")
+            .map((member) => <div>{member.data.name}</div>)
+        }
       </section>
       <section>
         <h3>Community Contributors</h3>
+        {
+          team
+            .filter((member) => member.data.type == "community")
+            .map((member) => <div>{member.data.name}</div>)
+        }
       </section>
     </section>
   </article>

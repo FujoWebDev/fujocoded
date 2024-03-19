@@ -2,11 +2,43 @@
 
 ---
 
-<div>
-  <h2>Our mission</h2>
-  <p>
+<div
+  class="relative bg-gradient-to-b from-[#260F56] to-[#4D2E91] font-zeitung p-5 rounded-xl max-w-[600px]"
+>
+  <h2 class="text-[#FF87FA] text-xl"># Our mission</h2>
+  <p class="text-[#A7FF90]">
     Empowering fujoshi and other online subcultures to shape their web through
     software, education and community collaboration.
   </p>
-  <p>Since 2024.</p>
+  <p class="text-white">Since 2024.</p>
 </div>
+
+<style>
+  div::before {
+    /* background: linear-gradient(180deg, #ff21e9 0%, #4360f7 100%); */
+    background: radial-gradient(circle at center, #ff21e9, #4360f7);
+    background-size: 500% 500%;
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    z-index: -1;
+    /* @apply rounded-xl; */
+    border-radius: calc(0.75rem + 1px);
+    animation: gradient 15s ease infinite;
+  }
+
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+</style>

@@ -2,64 +2,86 @@
 import Browser from "../components/Browser.astro";
 import MissionTerminal from "../components/MissionTerminal.astro";
 import Layout from "../layouts/Layout.astro";
+
+const SECTION_CLASS =
+  "test relative flex gap-5 items-center before:rounded-xl before:transform before:-rotate-1 before:drop-shadow-lg shadow-black";
 ---
 
 <Layout>
   <MissionTerminal />
-  <section
-    class="test mt-14 relative flex gap-5 items-center before:rounded-xl before:transform before:-rotate-1 before:drop-shadow-lg shadow-black"
-  >
-    <div class="transform -translate-y-5 -translate-x-5">
-      <Browser title="title for bottom window" class="w-[400px]">
-        <img slot="front" class="w-[500px] h-auto" src="/og-image.png" />
-      </Browser>
-    </div>
-    <div class="flex flex-col gap-3 pr-10 py-5 items-start">
-      <h2 class="font-hatch italic text-fujo-purple text-[34px]">
-        A Better Web <em class="text-white drop-shadow-lg shadow-fujo-purple"
-          >Together</em
+  <div class="flex flex-col gap-14 mt-14">
+    <section class={SECTION_CLASS}>
+      <div class="transform -translate-y-5 -translate-x-5">
+        <Browser title="title for bottom window" class="w-[400px]">
+          <img slot="front" class="w-[500px] h-auto" src="/og-image.png" />
+        </Browser>
+      </div>
+      <div class="flex flex-col gap-3 pr-10 py-5 items-start">
+        <h2 class="font-hatch italic text-fujo-purple text-[34px]">
+          A Better Web <em class="text-white drop-shadow-lg shadow-fujo-purple"
+            >Together</em
+          >
+        </h2>
+        <p>
+          From books to communities, from open source JavaScript libraries to
+          full-fledged software projects, FujoCoded creates tools and occasions
+          for fujoshi (& friends) to take control of their online world.
+        </p>
+        <a
+          class="font-hatch text-white bg-gradient-to-b from-[#CE00FF] to-[#A700CF] px-12 py-3 rounded-xl"
+          href="/projects">About our projects</a
         >
-      </h2>
-      <p>
-        From books to communities, from open source JavaScript libraries to
-        full-fledged software projects, FujoCoded creates tools and occasions
-        for fujoshi (& friends) to take control of their online world.
-      </p>
-      <a
-        class="font-hatch text-white bg-gradient-to-b from-[#CE00FF] to-[#A700CF] px-12 py-3 rounded-xl"
-        href="/projects">About our projects</a
-      >
-    </div>
-  </section>
-  <section>
-    <Browser class="mt-[30px] w-[400px]" title=" title for bottom window">
-      <img slot="front" class="w-[500px] h-auto" src="/og-image.png" />
-    </Browser>
-    <h2>Shape the <em>Next</em> Web</h2>
-    <div>
-      <p>
-        A new web is coming! Supported by years of experience working within fan
-        communities (and some deep technical chops), our work aims to change who
-        can join the conversation about the online spaces of the future.
-      </p>
-      <a href="/about">About us and our mission</a>
-    </div>
-  </section>
-  <section>
-    <Browser class="mt-[30px] w-[400px]" title=" title for bottom window">
-      <img slot="front" class="w-[500px] h-auto" src="/og-image.png" />
-    </Browser>
-    <h2>What's a <em>fujoshi</em>, anyway?</h2>
-    <div>
-      <p>
-        A new web is coming! Supported by years of experience working within fan
-        communities (and some deep technical chops), our work aims to change who
-        can join the conversation about the online spaces of the future.
-      </p>
-      <a href="/about">Our target audience (and beyond)</a>
-    </div>
-  </section>
-  <style></style>
+      </div>
+    </section>
+    <section class:list={[SECTION_CLASS, "before:rotate-1 flex-row-reverse"]}>
+      <div class="transform -translate-y-5 -translate-x-5">
+        <Browser class="w-[400px]" title=" title for bottom window">
+          <img slot="front" class="w-[500px] h-auto" src="/og-image.png" />
+        </Browser>
+      </div>
+      <div class="flex flex-col gap-3 pl-10 py-5 items-start">
+        <h2 class="font-hatch italic text-fujo-purple text-[34px]">
+          Shape the <em class="text-white drop-shadow-lg shadow-fujo-purple"
+            >Next</em
+          > Web
+        </h2>
+        <p>
+          A new web is coming! Supported by years of experience working within
+          fan communities (and some deep technical chops), our work aims to
+          change who can join the conversation about the online spaces of the
+          future.
+        </p>
+        <a
+          class="font-hatch text-white bg-gradient-to-b from-[#CE00FF] to-[#A700CF] px-12 py-3 rounded-xl"
+          href="/about">About us and our mission</a
+        >
+      </div>
+    </section>
+    <section class={SECTION_CLASS}>
+      <div class="transform -translate-y-5 -translate-x-5">
+        <Browser class="w-[400px]" title=" title for bottom window">
+          <img slot="front" class="w-[500px] h-auto" src="/og-image.png" />
+        </Browser>
+      </div>
+      <div class="flex flex-col gap-3 pr-10 py-5 items-start">
+        <h2 class="font-hatch italic text-fujo-purple text-[34px]">
+          What's a <em class="text-white drop-shadow-lg shadow-fujo-purple"
+            >fujoshi</em
+          >, anyway?
+        </h2>
+        <p>
+          A new web is coming! Supported by years of experience working within
+          fan communities (and some deep technical chops), our work aims to
+          change who can join the conversation about the online spaces of the
+          future.
+        </p>
+        <a
+          class="font-hatch text-white bg-gradient-to-b from-[#CE00FF] to-[#A700CF] px-12 py-3 rounded-xl"
+          href="/about">Our target audience (and beyond)</a
+        >
+      </div>
+    </section>
+  </div>
 </Layout>
 
 <style>

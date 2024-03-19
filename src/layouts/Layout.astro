@@ -6,7 +6,7 @@ interface Props {
 }
 
 import Nav from "../components/Nav.astro";
-import Browser from "../components/Browser.astro";
+import Grid from "../images/grid.svg"
 
 const {
   title = "FujoCoded – Coming April 1st, 2024",
@@ -79,7 +79,7 @@ const {
       <Nav />
       <slot />
     </main>
-    <style>
+    <style define:vars={{backgroundGrid: `url(${Grid.src})`}}>
       body {
         background: linear-gradient(#9687FA, #FBB8FE);
         display: flex;
@@ -90,9 +90,22 @@ const {
         position: relative;
         --content-margin: 200px;
       }
+      body::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: var(--backgroundGrid);
+        background-size: 15%;
+        opacity: 0.08;
+        z-index: -1;
+      }
       main {
         z-index: 2;
-        margin-top: var(--content-margin)
+        margin-top: var(--content-margin);
+        padding-bottom: 100px;
       }
 
       .background {

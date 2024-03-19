@@ -1,6 +1,5 @@
 <svg viewBox="-8 -5 234 64" xmlns="http://www.w3.org/2000/svg"
-    xmlns:xlink="http://www.w3.org/1999/xlink"
-    style="--color-neon-glow: #ffbf00; --color-neon-fill: white; --color-neon-inner-glow:#f6d880;">
+    xmlns:xlink="http://www.w3.org/1999/xlink">
     <defs>
         <g id="logo">
             <path
@@ -29,18 +28,18 @@
         xlink:href="#logo"
         stroke="var(--color-neon-glow)"
         filter="url(#glow)"
-        stroke-width="2.2"
+        stroke-width="var(--glow-strength, 2.2)"
     />
     <use
         xlink:href="#logo"
         fill="none"
-        stroke-width="2.2"
+        stroke-width="var(--stroke-strength, 2.2)"
         stroke="var(--color-neon-inner-glow)"
     />
     <use
         xlink:href="#logo"
         fill="none"
         stroke="var(--color-neon-fill)"
-        stroke-width="1.6"
+        stroke-width="var(--inner-glow-strength, 1)"
     />
 </svg>

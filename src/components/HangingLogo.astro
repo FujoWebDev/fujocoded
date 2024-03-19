@@ -1,5 +1,6 @@
 ---
 import { readFileSync } from "node:fs";
+// style="--color-neon-glow: #ffbf00; --color-neon-fill: white; --color-neon-inner-glow:#f6d880;"
 
 const lemonLogoSvg = readFileSync("./src/images/lemon-logo.svg", {
   encoding: "utf8",
@@ -33,12 +34,12 @@ const wordLogoSvg = readFileSync("./src/images/word-logo.svg", {
     top: 0;
     left: 50%;
     transform: translateX(calc(-50% - 5px));
-    --rope-color: #c6c4c39e;
+    --rope-color: #d9d9d944;
     --lemon-final-position: -300px;
     --logo-final-position: -400px;
   }
   .lemon {
-    width: 120px;
+    width: 80px;
     position: absolute;
     height: auto;
     top: 20px;
@@ -48,6 +49,9 @@ const wordLogoSvg = readFileSync("./src/images/word-logo.svg", {
     animation: pullup linear both;
     animation-timeline: scroll();
     animation-range: entry 0% exit 30%;
+    --color-neon-glow: #ffbf00;
+    --color-neon-fill: white;
+    --color-neon-inner-glow: #f6d880;
   }
   .lemon :global(svg) {
     width: 100%;
@@ -57,7 +61,7 @@ const wordLogoSvg = readFileSync("./src/images/word-logo.svg", {
     content: "";
     position: absolute;
     top: -1000px;
-    bottom: 59px;
+    bottom: 67px;
     left: 15px;
     width: 2px;
     background-color: var(--rope-color);
@@ -67,7 +71,7 @@ const wordLogoSvg = readFileSync("./src/images/word-logo.svg", {
     content: "";
     position: absolute;
     top: -1000px;
-    bottom: 59px;
+    bottom: 42px;
     right: 18px;
     width: 2px;
     background-color: var(--rope-color);
@@ -75,10 +79,10 @@ const wordLogoSvg = readFileSync("./src/images/word-logo.svg", {
   }
 
   .logo {
-    width: 200px;
+    width: 190px;
     position: absolute;
     height: auto;
-    top: 126px;
+    top: 90px;
     left: 50%;
     transform: translateX(-50%);
     --translate-x: -50%;
@@ -86,6 +90,12 @@ const wordLogoSvg = readFileSync("./src/images/word-logo.svg", {
     animation: pullup linear both;
     animation-timeline: scroll();
     animation-range: entry 0% exit 30%;
+    --color-neon-glow: #d529ff;
+    --color-neon-fill: #d529ff;
+    --color-neon-inner-glow: #d529ff;
+    --stroke-strength: 1.5;
+    --glow-strength: 5.4;
+    --inner-glow-strength: 0.3;
   }
   .logo :global(svg) {
     width: 100%;
@@ -113,16 +123,22 @@ const wordLogoSvg = readFileSync("./src/images/word-logo.svg", {
     z-index: -1;
   }
   .llc {
-    width: 53px;
+    width: 45px;
     position: absolute;
     height: auto;
-    top: 169px;
+    top: 136px;
     right: 7px;
     --translate-x: 0;
     --final-position: var(--logo-final-position);
     animation: pullup linear both;
     animation-timeline: scroll();
     animation-range: entry 0% exit 30%;
+    --color-neon-glow: #4360f7;
+    --color-neon-fill: #4360f7;
+    --color-neon-inner-glow: #4360f7;
+    --stroke-strength: 1.5;
+    --glow-strength: 5.4;
+    --inner-glow-strength: 0.3;
   }
   .llc :global(svg) {
     width: 100%;
@@ -132,9 +148,9 @@ const wordLogoSvg = readFileSync("./src/images/word-logo.svg", {
   .llc::before {
     content: "";
     position: absolute;
-    top: -11px;
-    bottom: 25px;
-    left: 10px;
+    top: -13px;
+    bottom: 15px;
+    left: 6px;
     width: 2px;
     background-color: var(--rope-color);
     z-index: -1;
@@ -142,9 +158,9 @@ const wordLogoSvg = readFileSync("./src/images/word-logo.svg", {
   .llc::after {
     content: "";
     position: absolute;
-    top: -17px;
-    bottom: 22px;
-    right: 13px;
+    top: -13px;
+    bottom: 13px;
+    right: 10px;
     width: 2px;
     background-color: var(--rope-color);
     z-index: -1;

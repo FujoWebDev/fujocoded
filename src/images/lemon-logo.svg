@@ -1,6 +1,5 @@
 <svg width="300" height="300" viewBox="-5 -5 55 55" version="1.1" xmlns="http://www.w3.org/2000/svg"
-    xmlns:xlink="http://www.w3.org/1999/xlink"
-    style="--color-neon-glow: #ffbf00; --color-neon-fill: white; --color-neon-inner-glow:#f6d880;">
+    xmlns:xlink="http://www.w3.org/1999/xlink">
     <defs>
         <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
             <feGaussianBlur

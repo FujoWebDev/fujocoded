@@ -15,6 +15,8 @@ export default {
         "teal-dark": "#5a99dc",
         teal: "#5be2ef",
         "teal-light": "#c8f4f4",
+        "fujo-blue": "#4360F7",
+        "fujo-purple": "#FF38EB",
       },
     },
   },

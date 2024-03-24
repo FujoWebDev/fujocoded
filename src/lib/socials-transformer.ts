@@ -1,5 +1,6 @@
 import { z } from "astro:content";
 import { type ProfileMatch, SocialLinks } from "social-links";
+import "@total-typescript/ts-reset/array-includes";
 
 export const socialsSchema = z.union([
   z.string().url(),
@@ -18,21 +19,24 @@ export type SocialsData = {
   platform: WEBSITE_TYPES;
 };
 
-export type WEBSITE_TYPES =
-  | "github"
-  | "tumblr"
-  | "twitter"
-  | "npm"
-  | "web"
-  | "bsky"
-  | "twitch"
-  | "mastodon"
-  | "dreamwidth"
-  | "ko-fi"
-  | "patreon"
-  | "youtube"
-  | "kickstarter"
-  | "inprnt";
+export const SOCIAL_HOSTS = [
+  "github",
+  "tumblr",
+  "twitter",
+  "npm",
+  "web",
+  "bsky",
+  "twitch",
+  "mastodon",
+  "dreamwidth",
+  "ko-fi",
+  "patreon",
+  "youtube",
+  "kickstarter",
+  "inprnt",
+] as const;
+
+export type WEBSITE_TYPES = (typeof SOCIAL_HOSTS)[number];
 
 export const transformSocial = (social: SocialsSchema) => {
   if (typeof social == "string") {
@@ -44,7 +48,7 @@ export const transformSocial = (social: SocialsSchema) => {
   return {
     ...data,
     icon:
-      icon || platform === undefined
+      icon || platform === undefined || !SOCIAL_HOSTS.includes(platform)
         ? data.icon
         : getSocialIcon(platform as WEBSITE_TYPES),
     url,
@@ -81,6 +85,9 @@ const getSocialIcon = (platform: WEBSITE_TYPES) => {
   if (platform === "inprnt") {
     return "lucide:shopping-bag";
   }
+  if (platform === "bsky") {
+    return "simple-icons:bluesky";
+  }
   return "simple-icons:" + platform.replaceAll("-", "");
 };
 
@@ -92,6 +99,23 @@ export const extractSocialData = ({ url }: { url: string }): SocialsData => {
       platform: socialLinkAttempt as WEBSITE_TYPES,
       username: socialLinks.getProfileId(socialLinkAttempt, url),
       icon: getSocialIcon(socialLinkAttempt as WEBSITE_TYPES),
+    };
+  }
+  const { host } = new URL(url);
+  let hostName = host
+    .substring(host.startsWith("www.") ? 4 : 0, host.lastIndexOf("."))
+    .toLowerCase();
+
+  if (hostName == "x") {
+    hostName = "twitter";
+  }
+
+  if (SOCIAL_HOSTS.includes(hostName)) {
+    return {
+      url,
+      platform: hostName as WEBSITE_TYPES,
+      username: null,
+      icon: getSocialIcon(hostName as WEBSITE_TYPES),
     };
   }
   // If you cannot find it, return the original url

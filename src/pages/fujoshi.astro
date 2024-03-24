@@ -1,12 +1,19 @@
 ---
+import FujoshiTerminal from "../components/FujoshiTerminal.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout>
   <article>
-    <h2>About Fujoshi</h2>
-    <section>
-      <h3>The History of Fujoshi</h3>
+    <h2 class="font-hatch italic text-fujo-purple text-[34px]">
+      About <em class="text-white drop-shadow-lg shadow-fujo-purple">Fujoshi</em
+      >
+    </h2>
+    <FujoshiTerminal />
+    <!-- <section>
+      <h3 class="font-hatch italic text-fujo-purple text-large">
+        The History of Fujoshi
+      </h3>
       <p>
         Fujoshi (lit. "rotten woman") is a pejorative name given to fans of <abbr
           title="Boys Love">BL</abbr
@@ -19,7 +26,7 @@ import Layout from "../layouts/Layout.astro";
         (lit. "rotten person") gaining popularity as a way to more correctly represents
         the diversity of this community.
       </p>
-    </section>
+    </section> -->
     <section>
       <h3>Fujoshi today</h3>
       [add the image of the intersection]
@@ -29,7 +36,8 @@ import Layout from "../layouts/Layout.astro";
         backbone of media fandom. While historically (and globally) reviled,
         Fujoshi have persevered in their ways, carrying series to success and
         creating some of the best content on the web, while seeing their own
-        contributions denigrated and diminished.
+        contributions denigrated and diminished, and fielding attacks by other
+        groups.
       </p>
       <p>
         If you struggle to understand fujoshi as their own culture: you can

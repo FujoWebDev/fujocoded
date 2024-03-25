@@ -15,9 +15,9 @@ const { class: className, title = "This is a title" } = Astro.props;
 
 <div
   data-drop-id={dropId}
-  class:list={["relative touch-none dropzone", className]}
+  class:list={["dropzone relative touch-none", className]}
 >
-  <div class="absolute top-0 bottom-0 right-0 left-0 bg-red-500 z-0 rounded-lg">
+  <div class="absolute bottom-0 left-0 right-0 top-0 z-0 rounded-lg bg-red-500">
     <slot name="behind" />
   </div>
   <div
@@ -25,22 +25,22 @@ const { class: className, title = "This is a title" } = Astro.props;
     class:list={[
       "drag-me",
       className,
-      "relative rounded-lg z-10 transition-transform duration-300 motion-reduce:transition-none",
+      "relative z-10 rounded-lg transition-transform duration-300 motion-reduce:transition-none",
     ]}
   >
     <!-- <div class="absolute top-0 bottom-0 right-0 left-0 shadow-lg z-0 rounded-lg"> -->
     <header
-      class="relative border-2 border-teal-dark bg-teal py-1 pr-4 pl-1 rounded-tl-lg rounded-tr-lg flex justify-between gap-2 items-center drag-handle"
+      class="drag-handle relative flex items-center justify-between gap-2 rounded-tl-lg rounded-tr-lg border-2 border-teal-dark bg-teal py-1 pl-1 pr-4"
     >
       <div class="flex shrink-0">
         <Image
-          class="left-[-4px] text-teal-dark ignore-pointer"
+          class="ignore-pointer left-[-4px] text-teal-dark"
           src={GripVertical}
           alt="grip grip"
         />
         <Image class="width-[50px]" src={SimpleLemon} alt="A simple lemon" />
       </div>
-      <div class="w-full text-white font-zeitung">
+      <div class="w-full font-zeitung text-white">
         <span class="ignore ignore-pointer">{title}</span>
       </div>
       <button
@@ -48,13 +48,13 @@ const { class: className, title = "This is a title" } = Astro.props;
         title="Reset position"
         aria-label="Reset position"
         tabindex="-1"
-        class="w-[25px] shrink-0 border border-teal-dark text-teal-dark h-[25px] bg-teal-light rounded-lg grid place-items-center ignore"
+        class="ignore grid h-[25px] w-[25px] shrink-0 place-items-center rounded-lg border border-teal-dark bg-teal-light text-teal-dark"
       >
         <Icon name="arrow-square-in" />
       </button>
     </header>
     <div
-      class="border-2 border-t-0 border-teal-dark rounded-bl-lg rounded-br-lg overflow-hidden"
+      class="overflow-hidden rounded-bl-lg rounded-br-lg border-2 border-t-0 border-teal-dark"
     >
       <slot name="front" />
     </div>
@@ -118,7 +118,7 @@ const { class: className, title = "This is a title" } = Astro.props;
       dropzone, // dropzone Interactable
       dropzoneElement, // dropzone element
       draggable, // draggable Interactable
-      draggableElement // draggable element
+      draggableElement, // draggable element
     ) => {
       return (
         dropped &&

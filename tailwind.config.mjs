@@ -3,8 +3,9 @@ export default {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
     fontFamily: {
-      hatch: ['"Hatch"', "sans-serif"],
+      hatch: ['"Hatch"', "serif"],
       zeitung: ['"Zeitung Mono Pro"', "sans-serif"],
+      macho: ['"Macho"', "sans-serif"],
       // Add more custom font families as needed
     },
     extend: {
@@ -16,7 +17,8 @@ export default {
         teal: "#5be2ef",
         "teal-light": "#c8f4f4",
         "fujo-blue": "#4360F7",
-        "fujo-purple": "#FF38EB",
+        "fujo-pink": "#FF38EB",
+        "fujo-purple": "#4D2E91",
         "fujo-green": "#A7FF90",
       },
     },

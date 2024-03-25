@@ -10,9 +10,9 @@ const lemonLogoSvg = readFileSync("./src/icons/lemon-logo.svg", {
 
 <a href="/"><HangingLogo /></a>
 <nav
-  class="sticky items-center mx-auto top-8 flex w-11/12 max-w-[700px] justify-around
-       bg-white border-2 border-fujo-blue rounded-full font-hatch text-fujo-purple text-lg z-50
-       transform -translate-y-1/2 p-2"
+  class="sticky top-8 z-50 mx-auto flex w-11/12 max-w-[700px] -translate-y-1/2
+       transform items-center justify-around rounded-full border-2 border-fujo-blue bg-white p-2
+       font-hatch text-lg text-fujo-pink"
 >
   <a class="lemon" href="/" set:html={lemonLogoSvg} />
   <a href="/projects">Projects</a>
@@ -34,7 +34,7 @@ const lemonLogoSvg = readFileSync("./src/icons/lemon-logo.svg", {
     animation: appear linear both;
     animation-timeline: scroll();
     animation-range: entry 0% exit 5%;
-    --color: theme("colors.fujo-purple");
+    --color: theme("colors.fujo-pink");
   }
 
   .lemon :global(svg) {

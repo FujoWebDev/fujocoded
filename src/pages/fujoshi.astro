@@ -125,43 +125,5 @@ const fujin = await getCollection("fujin");
         ))
       }
     </ul>
-
-    <style>
-      h1 {
-        @apply mb-8 text-center font-hatch font-medium text-fujo-pink sm:mb-11;
-        font-size: clamp(2.25rem, 8vw, 3rem);
-        line-height: clamp(2.5rem, 8vw, 3rem);
-      }
-
-      h2 {
-        @apply mb-4 mt-11 font-hatch font-light italic text-fujo-pink;
-        font-size: clamp(1.5rem, 5vw, 1.875rem);
-        line-height: 2rem;
-      }
-
-      article {
-        @apply font-macho text-fujo-purple;
-        font-size: clamp(1rem, 3.5vw, 1.25rem);
-        line-hegiht: 1.5rem;
-        padding-top: clamp(2rem, 8vw, 4rem);
-        padding-left: clamp(2rem, 8vw, 7rem);
-        padding-right: clamp(2rem, 8vw, 7rem);
-        padding-bottom: clamp(2rem, 8vw, 7rem);
-      }
-      p + p,
-      ul + p {
-        @apply mt-7;
-      }
-      :where(h2, h3) em {
-        text-shadow:
-          1px 1px 4px #4d2e91,
-          -1px 1px 4px #4d2e91,
-          -1px -1px 4px #4d2e91,
-          1px -1px 4px #4d2e91;
-      }
-      li {
-        @apply mt-4;
-      }
-    </style>
   </article>
 </Layout>

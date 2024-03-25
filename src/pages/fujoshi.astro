@@ -9,163 +9,159 @@ const fujin = await getCollection("fujin");
 ---
 
 <Layout>
-  <article class="flex flex-col gap-10">
-    <div
-      class="flex flex-col items-start items-center gap-8 rounded-xl bg-white p-10"
-    >
-      <p>
-        Fujoshi (lit. "rotten woman") is a pejorative name given to Japanese
-        fans of <abbr title="Boys Love" class="cursor-help">BL</abbr> media for going
-        against social expectations of femininity. As anime and manga rose to international
-        popularity in the early 2000s, online BL spaces became a haven for (often
-        female, queer, and/or neurodivergent) millennials seeking to explore their
-        sexuality outside of normative constraints leading to the term being adopted
-        more widely.
-      </p>
-      <p>
-        In recent years, fujoshi has been reclaimed by fans of the genre, with
-        the fujin variant (lit. "rotten person") gaining popularity as a way to
-        more correctly represents the diversity of this community.
-      </p>
+  <article class="rounded-xl bg-white">
+    <h1>What is a fujoshi?</h1>
+    <p>
+      <span class="text-fujo-pink">Fujoshi</span> (lit. "rotten woman") is a pejorative
+      name given to Japanese fans of <abbr title="Boys Love" class="cursor-help"
+        >BL</abbr
+      > media for going against social expectations of femininity. In the early 2000s,
+      as the popularity of anime and manga soared internationally, online BL spaces
+      became a haven for (often female, queer, and/or neurodivergent) millennials
+      seeking to explore their sexuality outside of normative constraints. This has
+      lead to the term being adopted more widely.
+    </p>
+    <p>
+      In recent years, <span class="text-fujo-pink">fujoshi</span> has been reclaimed
+      by fans of the genre. The <span class="text-fujo-pink">fujin</span> variant
+      (lit. "rotten person") is being popularized alongside it to more correctly
+      represents the diversity of the community.
+    </p>
 
-      <h2>Fujoshi today</h2>
-      <p>
-        <span class="text-fujo-purple">Fujoshi</span> (or, more inclusively, <em
-          >fujin</em
-        >) have always been an integral part of online and offline fandom
-        ecosystem. Despite being historically reviled, their creativity and
-        passion for their favorite series often drive the success of <a
-          href="https://twitter.com/Rune_Sa_Riik/status/1734951399299953099"
-          >popular</a
-        >
-        <a href="https://twitter.com/headfallsoff/status/1771262665937031395"
-          >franchises</a
-        >–a fact that is only now beginning to be <a
-          href="https://twitter.com/danhengussy/status/1746988953985851475"
-        >
-          more widely recognized</a
-        >.
-      </p>
-      <p>
-        Overall, fujin are a highly diverse group of loosely-aligned folks
-        brought together by their shared love of <abbr title="Boys Love"
-          >BL</abbr
-        > relationships. Online-minded folks can think of them as the cousins of
-        the furry subculture, with whom they share similar challenges, including
-        stigmatization and censorship. Rather than creating works focused on anthropomorphized
-        animals, fujin center their own stories, art, comics, and complex fictional
-        worlds around fictional relationships from pre-existing media–often between
-        men, but with other gender expressions on the rise alongside them.
-      </p>
-      <p>
-        In our own conception, and with the evolving face of the community
-        within an increasingly sex-negative web, being a fujin has morphed into
-        a specific way of doing fandom. Fujin freely, joyfully, and
-        <em>unapologetically</em> share their socially-stigmatized hyperfixation
-        with fictional relationship with each other, no matter how "rotten" society
-        might consider them to be. They are the often queer, kinky, neurodivergent,
-        and disabled
-        <em>id</em> of the internet–frequently weird, sometimes perplexing, but overall
-        harmless and full of unbridled passion.
-      </p>
-      <h3 class="font-hatch text-[24px] italic text-fujo-purple">
-        The stigma against <em
-          class="text-white shadow-fujo-purple drop-shadow-lg">fujoshi</em
-        >
-      </h3>
-      <h2>Why fujin?</h2>
-      <p>
-        In the past, we've closely aligned our work with the "transformative
-        fandom"/shipping community. While our target overall hasn't changed,
-        we've decided to more explicitly focus on the fujin community for a few
-        reasons:
-      </p>
-      <ul class="list-disc pl-6">
-        <li>
-          As transformative fandom become more mainstream, being the type of fan
-          that writes fanfiction or draws fanarts (or any other popular shipping
-          activity) has stopped carrying the stigma it did in the past. However,
-          the stigma against Fujin remains strong.
-        </li>
-        <li>
-          Fujin, like transformative fandom, have been the canaries in the
-          coalmine for some of the issues that have recently become more
-          widespread in online communities. Since its inception, Fujin culture
-          has been denigrated and dismissed. Especially in modern times, the
-          backlash against Fujin has been driven by transphobic anti-LGBT groups
-          and subjected to attack by conservative and sex-negative groups.
-        </li>
-        <li>
-          Fujin better represents the" millenial viewpoint" of our founder and
-          other members of our community. While we have members of all ages, our
-          work is inexorably tied to the experiences of those who grew up (and
-          learned to ship) in the web of the early 2000s.
-        </li>
-      </ul>
-      <p>
-        Regardless of the term we use, our work remains broadly applicable and
-        inclusive of any type of online subculture that celebrates the freedom
-        to be yourself on the internet, even outside of the norms of society.
-        We’re using fujoshi as a stand-in term for a type of inoffensive online
-        weirdo that just wants to be weird and do their own thing in their
-        corner, whether that is intensely shipping two or more fictional
-        characters, obsessively collecting random facts about their favorite
-        series, or participating in a subculture that may be hard to experience
-        outside of the norm.
-      </p>
-      <h2>Famous fujin</h2>
-      <div>
-        As an often-denigrated, underground subculture, fujin are rarely open
-        about their involvement in the community. However, here's a small list
-        of fujin you may have heard about before.
-      </div>
-      <ul class="mt-6 justify-center gap-4 md:grid md:grid-cols-2">
-        {
-          fujin.map((fujin) => (
-            <li>
-              <FujoCard {...fujin.data} />
-            </li>
-          ))
-        }
-      </ul>
-
-      <style>
-        h1 {
-          @apply mb-8 text-center font-hatch font-medium text-fujo-pink sm:mb-11;
-          font-size: clamp(2.25rem, 8vw, 3rem);
-          line-height: clamp(2.5rem, 8vw, 3rem);
-        }
-
-        h2 {
-          @apply mb-4 mt-11 font-hatch font-light italic text-fujo-pink;
-          font-size: clamp(1.5rem, 5vw, 1.875rem);
-          line-height: 2rem;
-        }
-
-        article {
-          @apply font-macho text-fujo-purple;
-          font-size: clamp(1rem, 3.5vw, 1.25rem);
-          line-hegiht: 1.5rem;
-          padding-top: clamp(2rem, 8vw, 4rem);
-          padding-left: clamp(2rem, 8vw, 7rem);
-          padding-right: clamp(2rem, 8vw, 7rem);
-          padding-bottom: clamp(2rem, 8vw, 7rem);
-        }
-        p + p,
-        ul + p {
-          @apply mt-7;
-        }
-        :where(h2, h3) em {
-          text-shadow:
-            1px 1px 4px #4d2e91,
-            -1px 1px 4px #4d2e91,
-            -1px -1px 4px #4d2e91,
-            1px -1px 4px #4d2e91;
-        }
-        li {
-          @apply mt-4;
-        }
-      </style>
+    <h2>Fujoshi today</h2>
+    <p>
+      <span class="text-fujo-pink">Fujoshi</span> (or, more inclusively, <em
+        >fujin</em
+      >) have always been an integral part of online and offline fandom
+      ecosystem. Despite being historically reviled, their creativity and
+      passion for their favorite series often drive the success of <a
+        href="https://twitter.com/Rune_Sa_Riik/status/1734951399299953099"
+        >popular</a
+      >
+      <a href="https://twitter.com/headfallsoff/status/1771262665937031395"
+        >franchises</a
+      >–a fact that is only now beginning to be <a
+        href="https://twitter.com/danhengussy/status/1746988953985851475"
+      >
+        more widely recognized</a
+      >.
+    </p>
+    <p>
+      Overall, fujin are a highly diverse group of loosely-aligned folks brought
+      together by their shared love of <abbr title="Boys Love">BL</abbr> relationships.
+      Online-minded folks can think of them as the cousins of the furry subculture,
+      with whom they share similar challenges, including stigmatization and censorship.
+      Rather than creating works focused on anthropomorphized animals, fujin center
+      their own stories, art, comics, and complex fictional worlds around fictional
+      relationships from pre-existing media–often between men, but with other gender
+      expressions on the rise alongside them.
+    </p>
+    <p>
+      In our own conception, and with the evolving face of the community within
+      an increasingly sex-negative web, being a fujin has morphed into a
+      specific way of doing fandom. Fujin freely, joyfully, and
+      <em>unapologetically</em> share their socially-stigmatized hyperfixation with
+      fictional relationship with each other, no matter how "rotten" society might
+      consider them to be. They are the often queer, kinky, neurodivergent, and disabled
+      <em>id</em> of the internet–frequently weird, sometimes perplexing, but overall
+      harmless and full of unbridled passion.
+    </p>
+    <h3 class="font-hatch text-[24px] italic text-fujo-pink">
+      The stigma against <em
+        class="text-white shadow-fujo-purple drop-shadow-lg">fujoshi</em
+      >
+    </h3>
+    <h2>Why fujin?</h2>
+    <p>
+      In the past, we've closely aligned our work with the "transformative
+      fandom"/shipping community. While our target overall hasn't changed, we've
+      decided to more explicitly focus on the fujin community for a few reasons:
+    </p>
+    <ul class="list-disc pl-6">
+      <li>
+        As transformative fandom become more mainstream, being the type of fan
+        that writes fanfiction or draws fanarts (or any other popular shipping
+        activity) has stopped carrying the stigma it did in the past. However,
+        the stigma against Fujin remains strong.
+      </li>
+      <li>
+        Fujin, like transformative fandom, have been the canaries in the
+        coalmine for some of the issues that have recently become more
+        widespread in online communities. Since its inception, Fujin culture has
+        been denigrated and dismissed. Especially in modern times, the backlash
+        against Fujin has been driven by transphobic anti-LGBT groups and
+        subjected to attack by conservative and sex-negative groups.
+      </li>
+      <li>
+        Fujin better represents the" millenial viewpoint" of our founder and
+        other members of our community. While we have members of all ages, our
+        work is inexorably tied to the experiences of those who grew up (and
+        learned to ship) in the web of the early 2000s.
+      </li>
+    </ul>
+    <p>
+      Regardless of the term we use, our work remains broadly applicable and
+      inclusive of any type of online subculture that celebrates the freedom to
+      be yourself on the internet, even outside of the norms of society. We’re
+      using fujoshi as a stand-in term for a type of inoffensive online weirdo
+      that just wants to be weird and do their own thing in their corner,
+      whether that is intensely shipping two or more fictional characters,
+      obsessively collecting random facts about their favorite series, or
+      participating in a subculture that may be hard to experience outside of
+      the norm.
+    </p>
+    <h2>Famous fujin</h2>
+    <div>
+      As an often-denigrated, underground subculture, fujin are rarely open
+      about their involvement in the community. However, here's a small list of
+      fujin you may have heard about before.
     </div>
+    <ul class="mt-6 justify-center gap-4 md:grid md:grid-cols-2">
+      {
+        fujin.map((fujin) => (
+          <li>
+            <FujoCard {...fujin.data} />
+          </li>
+        ))
+      }
+    </ul>
+
+    <style>
+      h1 {
+        @apply mb-8 text-center font-hatch font-medium text-fujo-pink sm:mb-11;
+        font-size: clamp(2.25rem, 8vw, 3rem);
+        line-height: clamp(2.5rem, 8vw, 3rem);
+      }
+
+      h2 {
+        @apply mb-4 mt-11 font-hatch font-light italic text-fujo-pink;
+        font-size: clamp(1.5rem, 5vw, 1.875rem);
+        line-height: 2rem;
+      }
+
+      article {
+        @apply font-macho text-fujo-purple;
+        font-size: clamp(1rem, 3.5vw, 1.25rem);
+        line-hegiht: 1.5rem;
+        padding-top: clamp(2rem, 8vw, 4rem);
+        padding-left: clamp(2rem, 8vw, 7rem);
+        padding-right: clamp(2rem, 8vw, 7rem);
+        padding-bottom: clamp(2rem, 8vw, 7rem);
+      }
+      p + p,
+      ul + p {
+        @apply mt-7;
+      }
+      :where(h2, h3) em {
+        text-shadow:
+          1px 1px 4px #4d2e91,
+          -1px 1px 4px #4d2e91,
+          -1px -1px 4px #4d2e91,
+          1px -1px 4px #4d2e91;
+      }
+      li {
+        @apply mt-4;
+      }
+    </style>
   </article>
 </Layout>

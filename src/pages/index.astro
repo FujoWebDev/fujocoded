@@ -9,16 +9,16 @@ const SECTION_CLASS =
 
 <Layout>
   <MissionTerminal />
-  <div class="flex flex-col gap-14 mt-14">
+  <div class="mt-14 flex flex-col gap-14">
     <section class={SECTION_CLASS}>
-      <div class="transform -translate-y-5 -translate-x-5">
+      <div class="-translate-x-5 -translate-y-5 transform">
         <Browser title="title for bottom window" class="w-[400px]">
-          <img slot="front" class="w-[500px] h-auto" src="/og-image.png" />
+          <img slot="front" class="h-auto w-[500px]" src="/og-image.png" />
         </Browser>
       </div>
-      <div class="flex flex-col gap-3 pr-10 py-5 items-start">
-        <h2 class="font-hatch italic text-fujo-purple text-[34px]">
-          A Better Web <em class="text-white drop-shadow-lg shadow-fujo-purple"
+      <div class="flex flex-col items-start gap-3 py-5 pr-10">
+        <h2 class="font-hatch text-[34px] italic text-fujo-pink">
+          A Better Web <em class="text-white shadow-fujo-pink drop-shadow-lg"
             >Together</em
           >
         </h2>
@@ -28,20 +28,20 @@ const SECTION_CLASS =
           for fujoshi (& friends) to take control of their online world.
         </p>
         <a
-          class="font-hatch text-white bg-gradient-to-b from-[#CE00FF] to-[#A700CF] px-12 py-3 rounded-xl"
+          class="rounded-xl bg-gradient-to-b from-[#CE00FF] to-[#A700CF] px-12 py-3 font-hatch text-white"
           href="/projects">About our projects</a
         >
       </div>
     </section>
-    <section class:list={[SECTION_CLASS, "before:rotate-1 flex-row-reverse"]}>
-      <div class="transform -translate-y-5 -translate-x-5">
+    <section class:list={[SECTION_CLASS, "flex-row-reverse before:rotate-1"]}>
+      <div class="-translate-x-5 -translate-y-5 transform">
         <Browser class="w-[400px]" title=" title for bottom window">
-          <img slot="front" class="w-[500px] h-auto" src="/og-image.png" />
+          <img slot="front" class="h-auto w-[500px]" src="/og-image.png" />
         </Browser>
       </div>
-      <div class="flex flex-col gap-3 pl-10 py-5 items-start">
-        <h2 class="font-hatch italic text-fujo-purple text-[34px]">
-          Shape the <em class="text-white drop-shadow-lg shadow-fujo-purple"
+      <div class="flex flex-col items-start gap-3 py-5 pl-10">
+        <h2 class="font-hatch text-[34px] italic text-fujo-pink">
+          Shape the <em class="text-white shadow-fujo-pink drop-shadow-lg"
             >Next</em
           > Web
         </h2>
@@ -52,20 +52,20 @@ const SECTION_CLASS =
           future.
         </p>
         <a
-          class="font-hatch text-white bg-gradient-to-b from-[#CE00FF] to-[#A700CF] px-12 py-3 rounded-xl"
+          class="rounded-xl bg-gradient-to-b from-[#CE00FF] to-[#A700CF] px-12 py-3 font-hatch text-white"
           href="/about">About us and our mission</a
         >
       </div>
     </section>
     <section class={SECTION_CLASS}>
-      <div class="transform -translate-y-5 -translate-x-5">
+      <div class="-translate-x-5 -translate-y-5 transform">
         <Browser class="w-[400px]" title=" title for bottom window">
-          <img slot="front" class="w-[500px] h-auto" src="/og-image.png" />
+          <img slot="front" class="h-auto w-[500px]" src="/og-image.png" />
         </Browser>
       </div>
-      <div class="flex flex-col gap-3 pr-10 py-5 items-start">
-        <h2 class="font-hatch italic text-fujo-purple text-[34px]">
-          What's a <em class="text-white drop-shadow-lg shadow-fujo-purple"
+      <div class="flex flex-col items-start gap-3 py-5 pr-10">
+        <h2 class="font-hatch text-[34px] italic text-fujo-pink">
+          What's a <em class="text-white shadow-fujo-pink drop-shadow-lg"
             >fujoshi</em
           >, anyway?
         </h2>
@@ -76,7 +76,7 @@ const SECTION_CLASS =
           future.
         </p>
         <a
-          class="font-hatch text-white bg-gradient-to-b from-[#CE00FF] to-[#A700CF] px-12 py-3 rounded-xl"
+          class="rounded-xl bg-gradient-to-b from-[#CE00FF] to-[#A700CF] px-12 py-3 font-hatch text-white"
           href="/about">Our target audience (and beyond)</a
         >
       </div>

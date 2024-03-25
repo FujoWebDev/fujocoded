@@ -6,7 +6,7 @@ interface Props {
 }
 
 import Nav from "../components/Nav.astro";
-import Grid from "../images/grid.svg"
+import Grid from "../images/grid.svg";
 
 const {
   title = "FujoCoded – Coming April 1st, 2024",
@@ -73,15 +73,18 @@ const {
       }
     </style>
   </head>
-  <body>
-    <div class="background isolatew-96 rounded-xl rounded-b-none bg-white/20 shadow-sm backdrop-filter backdrop-blur-lg"></div>
-    <main class="max-w-[900px] w-full flex flex-col items-center">
+  <body class="antialiased">
+    <div
+      class="background isolatew-96 rounded-xl rounded-b-none bg-white/20 shadow-sm backdrop-blur-lg backdrop-filter"
+    >
+    </div>
+    <main class="flex w-full max-w-[900px] flex-col items-center">
       <Nav />
       <slot />
     </main>
-    <style define:vars={{backgroundGrid: `url(${Grid.src})`}}>
+    <style define:vars={{ backgroundGrid: `url(${Grid.src})` }}>
       body {
-        background: linear-gradient(#9687FA, #FBB8FE);
+        background: linear-gradient(#9687fa, #fbb8fe);
         display: flex;
         align-items: center;
         justify-content: center;

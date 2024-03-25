@@ -17,8 +17,9 @@ export default {
         "teal-light": "#c8f4f4",
         "fujo-blue": "#4360F7",
         "fujo-purple": "#FF38EB",
+        "fujo-green": "#A7FF90",
       },
     },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/typography")],
 };

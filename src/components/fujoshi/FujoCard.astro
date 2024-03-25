@@ -1,0 +1,18 @@
+---
+import { Image } from "astro:assets";
+import type { CollectionEntry } from "astro:content";
+
+type Props = CollectionEntry<"fujin">["data"];
+
+const { name, avatar, description } = Astro.props;
+---
+
+<div
+  class="p-4 w-[250px] rounded-lg shadow-black drop-shadow-lg bg-red-50 flex flex-col gap-3 items-center h-[250px]"
+>
+  <h3 class="font-hatch italic text-fujo-purple text-xxl">
+    {name}
+  </h3>
+  <Image class="max-w-[50px] rounded-full" src={avatar} alt={name} />
+  <p>{description}</p>
+</div>

@@ -9,7 +9,7 @@ const fujin = await getCollection("fujin");
 ---
 
 <Layout>
-  <article class="rounded-xl bg-white p-8 sm:pt-16 sm:px-20 sm:pb-20">
+  <article class="rounded-xl bg-white">
     <h1>What is a fujoshi?</h1>
 
     <p>
@@ -22,7 +22,7 @@ const fujin = await getCollection("fujin");
     </p>
     <p>
       In recent years, fujoshi has been reclaimed by fans of the genre, with the
-      fujin variant (lit. "rotten person") gaining popularity as a way to more
+      fujin variant (lit. "rotten person") gaining popularity as a way to more  
       correctly represents the diversity of this community.
     </p>
 
@@ -110,15 +110,25 @@ const fujin = await getCollection("fujin");
 
     <style>
       h1 {
-        @apply font-hatch text-4xl sm:text-5xl font-medium text-fujo-pink text-center mb-8 sm:mb-11
+        @apply font-hatch font-medium text-fujo-pink text-center mb-8 sm:mb-11;
+        font-size: clamp(2.25rem, 8vw,3rem);
+        line-height: clamp(2.5rem, 8vw, 3rem);
       }
 
       h2 {
-        @apply font-hatch text-2xl sm:text-3xl italic font-light text-fujo-pink mt-11 mb-4
+        @apply font-hatch italic font-light text-fujo-pink mt-11 mb-4;
+        font-size: clamp(1.5rem,5vw,1.875rem);
+        line-height: 2rem;
       }
 
       article {
-        @apply font-macho text-base sm:text-lg text-fujo-purple
+        @apply font-macho text-fujo-purple;
+        font-size: clamp(1rem,3.5vw,1.25rem);
+        line-hegiht: 1.5rem;
+        padding-top: clamp(2rem,8vw,4rem);
+        padding-left: clamp(2rem,8vw,7rem);
+        padding-right: clamp(2rem,8vw,7rem);
+        padding-bottom: clamp(2rem,8vw,7rem);
       }
       p + p, ul + p {
         @apply mt-7

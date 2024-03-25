@@ -1,0 +1,76 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+import { Icon } from "astro-icon/components";
+import { socialsSchema } from "../../lib/socials-transformer";
+
+export async function getStaticPaths() {
+  const updates = await getCollection("updates");
+  return Promise.all(
+    updates.map(async (update) => ({
+      params: {
+        updateId: update.slug,
+      },
+      props: {
+        Content: (await update.render()).Content,
+        data: update.data,
+      },
+    }))
+  );
+}
+
+const { Content, data } = Astro.props;
+---
+
+<Layout
+title={data.og_title ? data.og_title : `${data.title} – FujoCoded`}
+preview={data.og_image?.src}
+description={data.og_description || data.tagline}
+>
+<article class="flex flex-col gap-2 px-6 sm:px-10 pb-6 pt-7 mx-4 rounded-xl bg-white drop-shadow-lg">
+  <h1 class="font-hatch text-[34px] text-fujo-purple text-center mb-4" set:html={data.title} />
+  {data.tagline && <h2 class="tagline">{data.tagline}</h2>}
+  <div class="mb-4">
+    Published on <date
+      >{
+        data.created_at.toLocaleDateString("en-US", {
+          year: "numeric",
+          month: "long",
+          day: "numeric",
+        })
+      }</date
+    >
+  </div>
+  <div class="prose"><Content /></div>  
+</article>
+{!!data.socials.length && <aside class="flex flex-col gap-3 px-6 mt-4 sm:px-10 pb-6 pt-7 mx-4 rounded-xl bg-white drop-shadow-lg">
+  <h4>
+    Share this post on socials:
+  </h4>
+  <ul class="flex flex-col gap-3">
+    {
+      data.socials.map((contact) => {
+        return (
+          <li class="flex gap-3">
+            <a href={contact.url}>
+              <Icon size={24} 
+              aria-labelledby={contact.platform !== "web" ? "platform" : undefined} 
+              aria-label={contact.platform === "web" ? "website" : undefined }
+              name={contact.icon ?? "world-www"} />
+              </a>
+              <a href={contact.url}>
+                {contact.platform === "web" ? contact.url : <span class="sr-only sm:not-sr-only" id="platform">{contact.platform}</span>}
+                </a>
+          </li>
+        );
+      })
+    }
+  </ul>
+</aside>}
+</Layout>
+
+<style>
+  article, aside {
+    width: min(100% - 32px, 65ch);
+  }
+</style>

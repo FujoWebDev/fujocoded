@@ -110,6 +110,12 @@ const {
       li {
         @apply mt-4;
       }
+
+      .content a {
+        @apply text-fujo-purple;
+        text-decoration: underline;
+        text-underline-offset: 2px;
+      }
     </style>
   </head>
   <body class="antialiased">
@@ -121,7 +127,8 @@ const {
     </div>
     <main class="flex w-full max-w-[900px] flex-col items-center">
       <Nav />
-      <slot />
+      <div class="content">
+      <slot /></div>
     </main>
     <CornerBuddy />
     <style define:vars={{ backgroundGrid: `url(${Grid.src})` }}>

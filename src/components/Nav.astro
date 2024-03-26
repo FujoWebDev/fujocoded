@@ -1,28 +1,108 @@
 ---
 import { readFileSync } from "node:fs";
 import HangingLogo from "./HangingLogo.astro";
-import { Image } from "astro:assets";
 
 const lemonLogoSvg = readFileSync("./src/icons/lemon-logo.svg", {
   encoding: "utf8",
 });
+const { pathname } = Astro.url;
 ---
 
 <a href="/"><HangingLogo /></a>
 <nav
-  class="sticky top-8 z-50 mx-auto flex w-11/12 max-w-[700px] -translate-y-1/2
-       transform items-center justify-around rounded-full border-2 border-fujo-blue bg-white p-2
-       font-hatch text-lg text-fujo-pink"
+  class="sticky top-8 z-50 mx-auto flex w-11/12 max-w-[700px] -translate-y-1/2 transform
+       items-center justify-around rounded-full bg-white px-2 py-1 font-hatch text-xl text-fujo-pink"
 >
-  <a class="lemon" href="/" set:html={lemonLogoSvg} />
-  <a href="/projects">Projects</a>
-  <a href="/about">About</a>
-  <a href="/fujoshi">Fujoshi</a>
-  <a href="/updates">Updates</a>
-  <a href="/support">Support us</a>
+  <a
+    class:list={{
+      current: pathname == "/",
+    }}
+    class="lemon"
+    href="/"
+    set:html={lemonLogoSvg}
+  />
+  <a
+    class:list={{
+      current: pathname.startsWith("/projects"),
+    }}
+    href="/projects">Projects</a
+  >
+  <a
+    class:list={{
+      current: pathname.startsWith("/about"),
+    }}
+    href="/about">About</a
+  >
+  <a
+    class:list={{
+      current: pathname.startsWith("/fujoshi"),
+    }}
+    href="/fujoshi">Fujoshi</a
+  >
+  <a
+    class:list={{
+      current: pathname.startsWith("/updates"),
+    }}
+    href="/updates">Updates</a
+  >
+  <a
+    class:list={{
+      current: pathname.startsWith("/support"),
+    }}
+    href="/support">Support</a
+  >
 </nav>
 
 <style>
+  nav::before {
+    background: radial-gradient(circle at center, #4360f7, #70a8e4);
+    background-size: 250% 250%;
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    z-index: -2;
+    @apply rounded-full;
+    animation: gradient 10s ease infinite;
+  }
+  nav::after {
+    background: white;
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    z-index: -1;
+    @apply rounded-full;
+  }
+
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  a {
+    @apply mx-1 my-1 px-4 py-1;
+  }
+  a:first-child,
+  a:nth-child(2) {
+    @apply ml-0;
+  }
+  .current:not(.lemon) {
+    @apply rounded-full bg-fujo-blue  text-white shadow-sm shadow-fujo-purple;
+  }
+  a:hover {
+    @apply rounded-full outline-dashed outline-2 outline-fujo-blue;
+  }
   nav {
     animation: pad linear both;
     animation-timeline: scroll();
@@ -30,24 +110,29 @@ const lemonLogoSvg = readFileSync("./src/icons/lemon-logo.svg", {
   }
   .lemon {
     position: absolute;
-    left: 20px;
+    left: 5px;
     animation: appear linear both;
     animation-timeline: scroll();
     animation-range: entry 0% exit 5%;
-    --color: theme("colors.fujo-pink");
   }
 
   .lemon :global(svg) {
-    width: 20px;
-    height: 20px;
-    margin-right: 10px;
+    width: 25px;
+    height: 25px;
+    stroke: theme("colors.fujo-pink");
+    filter: drop-shadow(2px 2px 3px #ff38eb66);
+  }
+  .lemon.current :global(svg) {
+    fill: #ffc800;
+    stroke: black;
+    filter: drop-shadow(2px 2px 3px #00000066);
   }
   @keyframes pad {
     from {
       padding-left: 0;
     }
     to {
-      padding-left: 30px;
+      padding-left: 55px;
     }
   }
   @keyframes appear {

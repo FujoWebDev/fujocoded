@@ -27,6 +27,15 @@ const wordLogoSvg = readFileSync("./src/images/word-logo.svg", {
 </div>
 
 <style>
+  @supports (animation-timeline: scroll()) {
+    .lemon,
+    .logo,
+    .llc {
+      animation: pullup linear both;
+      animation-timeline: scroll();
+    }
+  }
+
   .hanging-container {
     position: fixed;
     width: 200px;
@@ -44,10 +53,9 @@ const wordLogoSvg = readFileSync("./src/images/word-logo.svg", {
     height: auto;
     top: 20px;
     left: 50%;
+    transform: translateX(-50%);
     --translate-x: -50%;
     --final-position: var(--lemon-final-position);
-    animation: pullup linear both;
-    animation-timeline: scroll();
     animation-range: entry 0% exit 30%;
     --color-neon-glow: #ffbf00;
     --color-neon-fill: white;
@@ -87,8 +95,6 @@ const wordLogoSvg = readFileSync("./src/images/word-logo.svg", {
     transform: translateX(-50%);
     --translate-x: -50%;
     --final-position: var(--logo-final-position);
-    animation: pullup linear both;
-    animation-timeline: scroll();
     animation-range: entry 0% exit 30%;
     --color-neon-glow: #d529ff;
     --color-neon-fill: #d529ff;
@@ -130,8 +136,6 @@ const wordLogoSvg = readFileSync("./src/images/word-logo.svg", {
     right: 7px;
     --translate-x: 0;
     --final-position: var(--logo-final-position);
-    animation: pullup linear both;
-    animation-timeline: scroll();
     animation-range: entry 0% exit 30%;
     --color-neon-glow: #4360f7;
     --color-neon-fill: #4360f7;

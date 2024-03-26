@@ -8,7 +8,7 @@ const lemonLogoSvg = readFileSync("./src/icons/lemon-logo.svg", {
 const { pathname } = Astro.url;
 ---
 
-<a href="/"><HangingLogo /></a>
+<a class="hanging-logo" href="/"><HangingLogo /></a>
 <nav
   class="sticky top-8 z-50 mx-auto flex w-11/12 max-w-[700px] -translate-y-1/2 transform
        items-center justify-around rounded-full bg-white px-2 py-1 font-hatch text-xl text-fujo-pink"
@@ -65,7 +65,10 @@ const { pathname } = Astro.url;
     bottom: -2px;
     z-index: -2;
     @apply rounded-full;
-    animation: gradient 10s ease infinite;
+    animation:
+      gradient 10s ease infinite,
+      shadow linear both;
+    animation-timeline: none, scroll(root);
   }
   nav::after {
     background: white;
@@ -90,18 +93,18 @@ const { pathname } = Astro.url;
       background-position: 0% 50%;
     }
   }
-  a {
+  a:not(.hanging-logo) {
     @apply mx-1 my-1 px-4 py-1;
   }
-  a:first-child,
-  a:nth-child(2) {
+  a:not(.hanging-logo):first-child,
+  a:not(.hanging-logo):nth-child(2) {
     @apply ml-0;
   }
   .current:not(.lemon) {
     @apply rounded-full bg-fujo-blue  text-white shadow-sm shadow-fujo-purple;
   }
-  a:hover {
-    @apply rounded-full outline-dashed outline-2 outline-fujo-blue;
+  a:not(.hanging-logo):not(.lemon):hover {
+    @apply rounded-full bg-fujo-blue/60  text-white shadow-sm backdrop-blur-lg backdrop-filter;
   }
   nav {
     animation: pad linear both;
@@ -133,6 +136,14 @@ const { pathname } = Astro.url;
     }
     to {
       padding-left: 55px;
+    }
+  }
+  @keyframes shadow {
+    from {
+      filter: drop-shadow(0 0 0 #4360f7);
+    }
+    to {
+      filter: drop-shadow(2px 2px 7px #4360f7);
     }
   }
   @keyframes appear {

@@ -5,6 +5,7 @@ interface Props {
   preview?: string;
 }
 
+import CornerBuddy from "../components/CornerBuddy.astro";
 import Nav from "../components/Nav.astro";
 import Grid from "../images/grid.svg";
 
@@ -118,6 +119,7 @@ const {
       <Nav />
       <slot />
     </main>
+    <CornerBuddy />
     <style define:vars={{ backgroundGrid: `url(${Grid.src})` }}>
       body {
         background: linear-gradient(#9687fa, #fbb8fe);

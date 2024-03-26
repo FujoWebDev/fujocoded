@@ -1,6 +1,17 @@
 ---
+import { getCollection } from "astro:content";
 import Browser from "../components/Browser.astro";
 import Layout from "../layouts/Layout.astro";
+import ProjectCard from "../components/projects/ProjectCard.astro";
+
+const currentProjects = await getCollection(
+  "projects",
+  (project) => !project.data.graduated
+);
+const graduatedProjects = await getCollection(
+  "projects",
+  (project) => project.data.graduated
+);
 ---
 
 <Layout>
@@ -55,6 +66,29 @@ import Layout from "../layouts/Layout.astro";
         <strong>Commerce</strong>, like RobinBoob and FujoBoard that help fund
         our work and create brand-loyalty among our supporters.
       </li>
+    </ul>
+    <h2>The <em>FujoVerse™</em> projects</h2>
+    <h3>Current Projects</h3>
+    <p>These are projects we're actively working on ourselves.</p>
+    <ul>
+      {
+        currentProjects.map((project) => (
+          <li>
+            <ProjectCard {...project.data} />
+          </li>
+        ))
+      }
+    </ul>
+    <h3>Graduated Projects</h3>
+    <p>These are projects we have released to their own community.</p>
+    <ul>
+      {
+        graduatedProjects.map((project) => (
+          <li>
+            <ProjectCard {...project.data} />
+          </li>
+        ))
+      }
     </ul>
   </article>
 </Layout>

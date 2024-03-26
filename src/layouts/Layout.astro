@@ -8,6 +8,8 @@ interface Props {
 import CornerBuddy from "../components/CornerBuddy.astro";
 import Nav from "../components/Nav.astro";
 import Grid from "../images/grid.svg";
+import HangingLogo from "../components/HangingLogo.astro";
+
 
 const {
   title = "FujoCoded – Coming April 1st, 2024",
@@ -111,6 +113,8 @@ const {
     </style>
   </head>
   <body class="antialiased">
+
+<a class="hanging-logo" href="/"><HangingLogo /></a>
     <div
       class="background isolatew-96 rounded-xl rounded-b-none bg-white/20 shadow-sm backdrop-blur-lg backdrop-filter"
     >

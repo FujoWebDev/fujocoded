@@ -1,6 +1,5 @@
 ---
 import { readFileSync } from "node:fs";
-import HangingLogo from "./HangingLogo.astro";
 
 const lemonLogoSvg = readFileSync("./src/icons/lemon-logo.svg", {
   encoding: "utf8",
@@ -8,7 +7,6 @@ const lemonLogoSvg = readFileSync("./src/icons/lemon-logo.svg", {
 const { pathname } = Astro.url;
 ---
 
-<a class="hanging-logo" href="/"><HangingLogo /></a>
 <nav
   class="sticky top-8 z-50 mx-auto flex w-11/12 max-w-[700px] -translate-y-1/2 transform
        items-center justify-around rounded-full bg-white px-2 py-1 font-hatch text-xl text-fujo-pink"
@@ -93,17 +91,17 @@ const { pathname } = Astro.url;
       background-position: 0% 50%;
     }
   }
-  a:not(.hanging-logo) {
+  a {
     @apply mx-1 my-1 px-4 py-1;
   }
-  a:not(.hanging-logo):first-child,
-  a:not(.hanging-logo):nth-child(2) {
+  a:first-child,
+  a:nth-child(2) {
     @apply ml-0;
   }
   .current:not(.lemon) {
     @apply rounded-full bg-fujo-blue  text-white shadow-sm shadow-fujo-purple;
   }
-  a:not(.hanging-logo):not(.lemon):hover {
+  a:not(.lemon):hover {
     @apply rounded-full bg-fujo-blue/60  text-white shadow-sm backdrop-blur-lg backdrop-filter;
   }
   nav {

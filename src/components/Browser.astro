@@ -10,14 +10,16 @@ interface Props {
 
 const dropId = crypto.randomUUID();
 
-const { class: className, title = "This is a title" } = Astro.props;
+const { class: className, title } = Astro.props;
 ---
 
 <div
   data-drop-id={dropId}
   class:list={["dropzone relative touch-none", className]}
 >
-  <div class="absolute bottom-0 left-0 right-0 top-0 z-0 rounded-lg bg-red-500">
+  <div
+    class="absolute bottom-0 left-0 right-0 top-0 z-0 overflow-hidden rounded-lg bg-red-500"
+  >
     <slot name="behind" />
   </div>
   <div
@@ -118,7 +120,7 @@ const { class: className, title = "This is a title" } = Astro.props;
       dropzone, // dropzone Interactable
       dropzoneElement, // dropzone element
       draggable, // draggable Interactable
-      draggableElement, // draggable element
+      draggableElement // draggable element
     ) => {
       return (
         dropped &&

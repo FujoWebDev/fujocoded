@@ -6,7 +6,7 @@ import { getCollection } from "astro:content";
 import FujoCard from "../components/fujoshi/FujoCard.astro";
 
 const fujin = (await getCollection("fujin")).toSorted(
-  (a, b) => a.data.order - b.data.order
+  (a, b) => a.data.order - b.data.order,
 );
 ---
 
@@ -45,7 +45,8 @@ const fujin = (await getCollection("fujin")).toSorted(
       <a href="https://twitter.com/headfallsoff/status/1771262665937031395"
         >franchises</a
       >–a fact that is only now beginning to be <a
-        href="https://twitter.com/danhengussy/status/1746988953985851475">
+        href="https://twitter.com/danhengussy/status/1746988953985851475"
+      >
         more widely recognized</a
       >.
     </p>

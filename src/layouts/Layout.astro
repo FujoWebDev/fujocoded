@@ -10,7 +10,6 @@ import Nav from "../components/Nav.astro";
 import Grid from "../images/grid.svg";
 import HangingLogo from "../components/HangingLogo.astro";
 
-
 const {
   title = "FujoCoded – Coming April 1st, 2024",
   description = "Not a joke. (Well, ok, a tad bit of a joke.)",
@@ -119,8 +118,7 @@ const {
     </style>
   </head>
   <body class="antialiased">
-
-<a class="hanging-logo" href="/"><HangingLogo /></a>
+    <a class="hanging-logo" href="/"><HangingLogo /></a>
     <div
       class="background isolatew-96 rounded-xl rounded-b-none bg-white/20 shadow-sm backdrop-blur-lg backdrop-filter"
     >
@@ -128,7 +126,8 @@ const {
     <main class="flex w-full max-w-[900px] flex-col items-center">
       <Nav />
       <div class="content">
-      <slot /></div>
+        <slot />
+      </div>
     </main>
     <CornerBuddy />
     <style define:vars={{ backgroundGrid: `url(${Grid.src})` }}>

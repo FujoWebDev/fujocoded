@@ -18,7 +18,7 @@ const { class: className, title } = Astro.props;
   class:list={["dropzone relative touch-none", className]}
 >
   <div
-    class="absolute bottom-0 left-0 right-0 top-0 z-0 overflow-hidden rounded-lg bg-red-500"
+    class="window absolute bottom-0 left-0 right-0 top-0 z-0 overflow-hidden rounded-lg"
   >
     <slot name="behind" />
   </div>
@@ -134,3 +134,14 @@ const { class: className, title } = Astro.props;
     },
   });
 </script>
+<style>
+  .window {
+    box-shadow:
+      inset -1px -1px #818181,
+      inset 1px 1px #dfdfdf,
+      inset -2px -2px #acacac,
+      inset 2px 2px #fff;
+    background: #e0e0e0;
+    padding: 3px;
+  }
+</style>

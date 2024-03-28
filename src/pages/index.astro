@@ -18,7 +18,7 @@ const BUTTON_LINKS =
   <MissionTerminal />
   <div class="mt-14 flex flex-col gap-14">
     <section class={SECTION_CLASS}>
-      <div class="browser-shadow -translate-x-5 -translate-y-5 transform">
+      <div class="browser-shadow -translate-x-6 -translate-y-10 transform">
         <Browser class="w-[400px]">
           <Image
             slot="front"
@@ -28,13 +28,13 @@ const BUTTON_LINKS =
           />
           <Image
             slot="behind"
-            class="h-full w-full max-w-none object-cover object-center"
+            class="browser-behind m-auto mt-1 h-[calc(100%-8px)] w-[calc(100%-8px)] max-w-none border-2 border-zinc-200 object-cover object-center"
             src={HtmlTrioSketch}
             alt="TODO"
           />
         </Browser>
       </div>
-      <div class="flex flex-col items-start gap-4 py-8 pr-10 pt-2">
+      <div class="flex flex-col items-start gap-4 pb-6 pr-4 pt-1">
         <h2
           class="mb-0 font-hatch text-[34px] font-medium italic text-fujo-pink"
         >
@@ -56,7 +56,7 @@ const BUTTON_LINKS =
       </div>
     </section>
     <section class:list={[SECTION_CLASS, "flex-row-reverse before:rotate-1"]}>
-      <div class="browser-shadow -translate-x-5 -translate-y-5 transform">
+      <div class="browser-shadow -translate-x--5 -translate-y-5 transform">
         <Browser class="w-[400px]" title=" title for bottom window">
           <img slot="front" class="h-auto w-[500px]" src="/og-image.png" />
         </Browser>
@@ -89,7 +89,7 @@ const BUTTON_LINKS =
           <img slot="front" class="h-auto w-[500px]" src="/og-image.png" />
         </Browser>
       </div>
-      <div class="flex flex-col items-start gap-4 py-8 pr-10 pt-2">
+      <div class="flex flex-col items-start gap-4 pb-6 pr-4 pt-1">
         <h2
           class="mb-0 font-hatch text-[34px] font-medium italic text-fujo-pink"
         >
@@ -142,5 +142,12 @@ const BUTTON_LINKS =
   }
   .browser-shadow {
     filter: drop-shadow(0px 16px 8px #00000040);
+  }
+  .browser-behind {
+    border-style: inset;
+    border-width: 2px;
+    outline-offset: 1rem;
+    outline-offset: 12px;
+    outline: 2px outset #ddd;
   }
 </style>

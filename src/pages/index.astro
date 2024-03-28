@@ -5,6 +5,9 @@ import Layout from "../layouts/Layout.astro";
 import { Icon } from "astro-icon/components";
 import HtmlTrio from "../images/main/html-trio.png";
 import HtmlTrioSketch from "../images/main/html-trio-sketch.png";
+import BobatanWork from "../images/main/bobatan-work.png";
+import BobatanWorkSketch from "../images/main/bobatan-work-sketch.png";
+import Fujoshi from "../images/main/fujoshi.png";
 import { Image } from "astro:assets";
 
 const SECTION_CLASS =
@@ -22,7 +25,7 @@ const BUTTON_LINKS =
         <Browser class="w-[400px]">
           <Image
             slot="front"
-            class="h-auto w-[500px]"
+            class="z-10 h-auto w-[500px]"
             src={HtmlTrio}
             alt="TODO"
           />
@@ -31,6 +34,7 @@ const BUTTON_LINKS =
             class="browser-behind m-auto mt-1 h-[calc(100%-8px)] w-[calc(100%-8px)] max-w-none border-2 border-zinc-200 object-cover object-center"
             src={HtmlTrioSketch}
             alt="TODO"
+            title={"Their masterpiece, once again"}
           />
         </Browser>
       </div>
@@ -38,9 +42,7 @@ const BUTTON_LINKS =
         <h2
           class="mb-0 font-hatch text-[34px] font-medium italic text-fujo-pink"
         >
-          A Better Web <em class="text-white shadow-fujo-pink drop-shadow-lg"
-            >Together</em
-          >
+          A Better Web <em class="text-white shadow-fujo-pink">Together</em>
         </h2>
         <p class="text-lg text-fujo-purple">
           From books to communities, from open source JavaScript libraries to
@@ -57,17 +59,27 @@ const BUTTON_LINKS =
     </section>
     <section class:list={[SECTION_CLASS, "flex-row-reverse before:rotate-1"]}>
       <div class="browser-shadow -translate-x--5 -translate-y-5 transform">
-        <Browser class="w-[400px]" title=" title for bottom window">
-          <img slot="front" class="h-auto w-[500px]" src="/og-image.png" />
+        <Browser class="w-[400px]">
+          <Image
+            slot="front"
+            class="z-10 h-auto w-[500px]"
+            src={BobatanWork}
+            alt="TODO"
+          />
+          <Image
+            slot="behind"
+            class="browser-behind m-auto mt-1 h-[calc(100%-8px)] w-[calc(100%-8px)] max-w-none border-2 border-zinc-200 object-cover object-center"
+            src={BobatanWorkSketch}
+            alt="TODO"
+            title="after that, he got a sit down and a lesson about boundaries"
+          />
         </Browser>
       </div>
       <div class="flex flex-col items-start gap-4 py-8 pl-10 pt-2">
         <h2
           class="mb-0 font-hatch text-[34px] font-medium italic text-fujo-pink"
         >
-          Shape the <em class="text-white shadow-fujo-pink drop-shadow-lg"
-            >Next</em
-          > Web
+          Shape the <em class="text-white shadow-fujo-pink">Next</em> Web
         </h2>
         <p class="text-lg text-fujo-purple">
           A new web is coming! Supported by years of experience working within
@@ -85,17 +97,27 @@ const BUTTON_LINKS =
     </section>
     <section class={SECTION_CLASS}>
       <div class="browser-shadow -translate-x-5 -translate-y-5 transform">
-        <Browser class="w-[400px]" title=" title for bottom window">
-          <img slot="front" class="h-auto w-[500px]" src="/og-image.png" />
+        <Browser class="w-[400px]">
+          <Image
+            slot="front"
+            class="z-40 h-auto w-[500px]"
+            src={Fujoshi}
+            alt="TODO"
+          />
+          <Image
+            slot="behind"
+            class="browser-behind m-auto mt-1 h-[calc(100%-8px)] w-[calc(100%-8px)] max-w-none border-2 border-zinc-200 object-cover object-center"
+            src={BobatanWorkSketch}
+            alt="TODO"
+            title="after that, he got a sit down and a lesson about boundaries"
+          />
         </Browser>
       </div>
       <div class="flex flex-col items-start gap-4 pb-6 pr-4 pt-1">
         <h2
           class="mb-0 font-hatch text-[34px] font-medium italic text-fujo-pink"
         >
-          What's a <em class="text-white shadow-fujo-pink drop-shadow-lg"
-            >fujoshi</em
-          >, anyway?
+          What's a <em class="text-white shadow-fujo-pink">fujoshi</em>, anyway?
         </h2>
         <p class="text-lg text-fujo-purple">
           A new web is coming! Supported by years of experience working within
@@ -112,42 +134,42 @@ const BUTTON_LINKS =
       </div>
     </section>
   </div>
+
+  <style>
+    .test::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      background-color: white;
+      z-index: -1;
+    }
+
+    em {
+      text-shadow:
+        1px 1px 4px #4d2e91,
+        -1px 1px 4px #4d2e91,
+        -1px -1px 4px #4d2e91,
+        1px -1px 4px #4d2e91;
+    }
+    .drop-shadow {
+      filter: drop-shadow(0px 1px 1.5px #5514e0e5);
+    }
+    .button-links {
+      color: white;
+      text-decoration: none;
+    }
+    .browser-shadow {
+      filter: drop-shadow(0px 16px 8px #00000040);
+    }
+    .browser-behind {
+      border-style: inset;
+      border-width: 2px;
+      outline-offset: 1rem;
+      outline-offset: 12px;
+      outline: 2px outset #ddd;
+    }
+  </style>
 </Layout>
-
-<style>
-  .test::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    background-color: white;
-    z-index: -1;
-  }
-
-  em {
-    text-shadow:
-      1px 1px 4px #4d2e91,
-      -1px 1px 4px #4d2e91,
-      -1px -1px 4px #4d2e91,
-      1px -1px 4px #4d2e91;
-  }
-  .drop-shadow {
-    filter: drop-shadow(0px 1px 1.5px #5514e0e5);
-  }
-  .button-links {
-    color: white;
-    text-decoration: none;
-  }
-  .browser-shadow {
-    filter: drop-shadow(0px 16px 8px #00000040);
-  }
-  .browser-behind {
-    border-style: inset;
-    border-width: 2px;
-    outline-offset: 1rem;
-    outline-offset: 12px;
-    outline: 2px outset #ddd;
-  }
-</style>

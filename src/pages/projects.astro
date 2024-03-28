@@ -6,11 +6,11 @@ import ProjectCard from "../components/projects/ProjectCard.astro";
 
 const currentProjects = await getCollection(
   "projects",
-  (project) => !project.data.graduated
+  (project) => !project.data.graduated,
 );
 const graduatedProjects = await getCollection(
   "projects",
-  (project) => project.data.graduated
+  (project) => project.data.graduated,
 );
 ---
 

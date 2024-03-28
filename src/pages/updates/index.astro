@@ -12,54 +12,55 @@ const updates = (
 ---
 
 <Layout>
-  <h1 class="mb-4 text-center font-hatch text-[34px] text-fujo-blue">
-    Updates
-  </h1>
-  <ol class="flex flex-col gap-4">
-    {
-      updates.map((update) => {
-        return (
-          <li class="flex flex-col items-center">
-            <article class="mx-4 flex flex-col gap-2 rounded-xl bg-white px-6 pb-6 pt-7 drop-shadow-lg sm:px-10">
-              <h2 class="font-hatch text-fujo-pink ">
-                <a
-                  href={`/updates/${update.slug}`}
-                  set:html={update.data.title}
-                />
-              </h2>
-              <p>
-                {update.data.created_at.toLocaleString("en", {
-                  weekday: "long",
-                  year: "numeric",
-                  month: "long",
-                  day: "numeric",
-                })}
-              </p>
-              {!!update.data.tags.length && (
-                <ul class="flex flex-wrap gap-2">
-                  {update.data.tags.map((tag) => (
-                    <li
-                      class="rounded-md border border-black px-2"
-                      data-tag={tag}
-                    >
-                      {tag}
-                    </li>
-                  ))}
-                </ul>
-              )}
-              {update.data.tagline && (
-                <p class="tagline">{update.data.tagline}</p>
-              )}
-            </article>
-          </li>
-        );
-      })
-    }
-  </ol>
+  <section class="rounded-xl bg-white">
+    <h1>Updates</h1>
+    <ol class="flex flex-col gap-4">
+      {
+        updates.map((update) => {
+          return (
+            <li class="flex flex-col items-center">
+              <article class="mx-4 flex flex-col gap-2 rounded-xl bg-white px-6 pb-6 pt-7 drop-shadow-lg sm:px-10">
+                <h2 class="font-hatch text-fujo-pink ">
+                  <a
+                    href={`/updates/${update.slug}`}
+                    set:html={update.data.title}
+                  />
+                </h2>
+                <p>
+                  {update.data.created_at.toLocaleString("en", {
+                    weekday: "long",
+                    year: "numeric",
+                    month: "long",
+                    day: "numeric",
+                  })}
+                </p>
+                {!!update.data.tags.length && (
+                  <ul class="flex flex-wrap gap-2">
+                    {update.data.tags.map((tag) => (
+                      <li
+                        class="rounded-md border border-black px-2"
+                        data-tag={tag}
+                      >
+                        {tag}
+                      </li>
+                    ))}
+                  </ul>
+                )}
+                {update.data.tagline && (
+                  <p class="tagline">{update.data.tagline}</p>
+                )}
+              </article>
+            </li>
+          );
+        })
+      }
+    </ol>
+  </section>
 </Layout>
 
 <style>
   article {
-    width: min(100% - 32px, 65ch);
+    /* width: min(100% - 32px, 65ch); */
+    min-width: 120%;
   }
 </style>

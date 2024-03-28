@@ -6,7 +6,7 @@ import { getCollection } from "astro:content";
 import FujoCard from "../components/fujoshi/FujoCard.astro";
 
 const fujin = (await getCollection("fujin")).toSorted(
-  (a, b) => a.data.order - b.data.order,
+  (a, b) => a.data.order - b.data.order
 );
 ---
 
@@ -52,7 +52,7 @@ const fujin = (await getCollection("fujin")).toSorted(
     </p>
     <p>
       Overall, fujin are a highly diverse group of loosely-aligned folks brought
-      together by their shared love of queer, ficational relationships.
+      together by their shared love of queer, fictional relationships.
       Online-minded folks can think of them as the cousins of the furry
       subculture, with whom they share similar challenges, including
       stigmatization and censorship. Rather than creating works focused on

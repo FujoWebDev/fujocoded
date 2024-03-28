@@ -83,6 +83,7 @@ const {
         @apply mb-4 mt-11 font-hatch font-light italic text-fujo-pink;
         font-size: clamp(1.5rem, 5vw, 1.875rem);
         line-height: 2rem;
+        font-weight: 500;
       }
 
       article {
@@ -117,7 +118,7 @@ const {
       }
     </style>
   </head>
-  <body class="antialiased">
+  <body class="antialiased min-h-dvh">
     <a class="hanging-logo" href="/"><HangingLogo /></a>
     <div
       class="background isolatew-96 rounded-xl rounded-b-none bg-white/20 shadow-sm backdrop-blur-lg backdrop-filter"
@@ -135,7 +136,6 @@ const {
         background: linear-gradient(#9687fa, #fbb8fe);
         display: flex;
         align-items: center;
-        justify-content: center;
         flex-direction: column;
         margin: 0;
         position: relative;

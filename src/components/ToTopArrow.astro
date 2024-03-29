@@ -1,0 +1,20 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
+<button type="button" aria-label="scroll to top" class="to-top fixed bottom-48 right-10 z-10 rounded-full border-2 border-black p-1 bg-white" >
+  <Icon name="arrow-bar-up" size={24}>
+</button>
+<style>
+  .to-top {
+    box-shadow: 1px 1px 4px #00000077;
+  }
+</style>
+
+<script>
+  const toTopButton = document.querySelector(".to-top");
+
+  toTopButton?.addEventListener("click", () => {
+    window.scrollTo(0, 0);
+  });
+</script>

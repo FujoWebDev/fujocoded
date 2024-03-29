@@ -27,6 +27,7 @@ const wordLogoSvg = readFileSync("./src/images/word-logo.svg", {
 </div>
 
 <style>
+  /* Leaving this here, just commented out for now because it performs more smoothly than my js crimes, so we might want to use it for those who do have support for it
   @supports (animation-timeline: scroll()) {
     .lemon,
     .logo,
@@ -34,7 +35,7 @@ const wordLogoSvg = readFileSync("./src/images/word-logo.svg", {
       animation: pullup linear both;
       animation-timeline: scroll();
     }
-  }
+  } */
 
   .hanging-container {
     position: fixed;
@@ -178,3 +179,38 @@ const wordLogoSvg = readFileSync("./src/images/word-logo.svg", {
     }
   }
 </style>
+
+<script>
+  const prefersReducedMotion = window.matchMedia(`(prefers-reduced-motion: reduce)`).matches;
+  const lemon = document.querySelector(".lemon");
+  const lemonFinalPosition = -300;
+  const lemonRate = lemonFinalPosition / 200;
+  const logo = document.querySelector(".logo");
+  const llc = document.querySelector(".llc");
+  const logoFinalPosition = -400;
+  const logoRate = logoFinalPosition / 200;
+
+  let lastScrollPosition = 0;
+
+  document.addEventListener("scroll", () => {
+    if (prefersReducedMotion) {
+      return;
+    }
+    if (window.scrollY > 200 && lastScrollPosition > 200) {
+      return;
+    }
+    if(!lemon || !logo || !llc) {
+      return;
+    }
+    lastScrollPosition = window.scrollY;
+    if (window.scrollY > 200) {
+      (lemon as HTMLElement).style.translate = `0px ${lemonFinalPosition}px`;
+      (logo as HTMLElement).style.translate = `0px ${logoFinalPosition}px`;
+      (llc as HTMLElement).style.translate = `0px ${logoFinalPosition}px`;
+      return;
+    } 
+    (lemon as HTMLElement).style.translate = `0px ${lemonRate * lastScrollPosition}px`;
+    (logo as HTMLElement).style.translate = `0px ${logoRate * lastScrollPosition}px`;
+    (llc as HTMLElement).style.translate = `0px ${logoRate * lastScrollPosition}px`;
+  });
+</script>

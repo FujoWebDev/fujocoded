@@ -9,6 +9,7 @@ import CornerBuddy from "../components/CornerBuddy.astro";
 import Nav from "../components/Nav.astro";
 import Grid from "../images/grid.svg";
 import HangingLogo from "../components/HangingLogo.astro";
+import ToTopArrow from "../components/ToTopArrow.astro";
 
 const {
   title = "FujoCoded – Coming April 1st, 2024",
@@ -73,6 +74,13 @@ const {
         --color-neon-fill: #f3e5bc;
         --color-neon-inner-glow: #f7de94;
       }
+
+      @media (prefers-reduced-motion: no-preference) {
+        :root {
+          scroll-behavior: smooth;
+        }
+      }
+
       h1 {
         @apply mb-8 text-center font-hatch font-medium text-fujo-pink sm:mb-11;
         font-size: clamp(2.25rem, 8vw, 3rem);
@@ -138,6 +146,7 @@ const {
         <slot />
       </div>
     </main>
+    <ToTopArrow></ToTopArrow>
     <CornerBuddy />
     <style define:vars={{ backgroundGrid: `url(${Grid.src})` }}>
       body {

@@ -3,14 +3,16 @@
 ---
 
 <div
-  class="relative max-w-[600px] rounded-xl bg-gradient-to-b from-[#260F56] to-[#4D2E91] p-5 font-zeitung"
+  class="relative mx-auto mb-16 mt-4 flex max-w-[600px] flex-col gap-1 rounded-xl bg-gradient-to-b from-[#260F56] to-[#4D2E91] p-5 font-zeitung"
 >
-  <h2 class="text-xl text-fujo-pink"># Our mission</h2>
+  <h2 class="text-shadow-pink m-0 font-zeitung text-xl not-italic">
+    # Our mission
+  </h2>
   <p class="text-fujo-green">
     > Empowering fujoshi and other online subcultures to shape their web through
     software, education and community collaboration.
   </p>
-  <p class="text-white">Since 2024.</p>
+  <p class="m-0 text-white">Since 2024.</p>
 </div>
 
 <style>
@@ -40,5 +42,26 @@
     100% {
       background-position: 0% 50%;
     }
+  }
+  h2 {
+    text-shadow:
+      1px 1px 2px #ff21e933,
+      -1px 1px 2px #ff21e933,
+      -1px -1px 2px #ff21e933,
+      1px -1px 2px #ff21e933;
+  }
+  p:first-of-type {
+    text-shadow:
+      1px 1px 3px #a7ff9033,
+      -1px 1px 3px #a7ff9033,
+      -1px -1px 3px #a7ff9033,
+      1px -1px 3px #a7ff9033;
+  }
+  p:nth-of-type(2) {
+    text-shadow:
+      1px 1px 3px #ffffff33,
+      -1px 1px 3px #ffffff33,
+      -1px -1px 3px #ffffff33,
+      1px -1px 3px #ffffff33;
   }
 </style>

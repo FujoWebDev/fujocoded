@@ -12,24 +12,45 @@ const team = await getCollection("team");
     <h1>About <em>FujoCoded, LLC</em></h1>
     <section>
       <p>
-        FujoCoded, LLC's mission is to use all we’ve learned throughout the
-        years and skills at our disposal to build a kinder, more diverse, more
-        collaborative–and, yes, more weird!–internet. We know a goal this
-        ambitious cannot be carried forward alone. Instead, we work with members
-        of niche communities to turn them into the leaders that will shape the
-        web of the future. We do this by fostering high-quality spaces for
-        learning and collaboration, promoting the adoption of open and
-        decentralized technologies, and identifying emerging tools that lower
-        the barrier of entry into programming (as well as creating some tools
-        ourselves [link to projects page]). Then, we hire the most promising
-        people in our communities to help us support our monetized projects, and
-        give them their first boost in a increasingly harder to access tech
-        work.
+        FujoCoded, LLC's mission is to build a kinder, more diverse, more
+        collaborative–and, yes, <em>more weird</em>!–internet. To this end, we
+        leverage our experience living the web from within fandom communities
+        (and the many skills at our disposal) to devise engaging ways to help
+        people take charge of their online world.
+      </p>
+      <p>
+        Our work focuses on:
+        <ul class="list-disc pl-6">
+          <li>
+            <strong>Education</strong>, which gives people the skills they need
+            to lead the change they want to see.
+          </li>
+          <li>
+            <strong>Software,</strong> which gives people the tools and opportunities
+            to make these changes.
+          </li>
+          <li>
+            <strong>Community</strong>, which gives people the strength and
+            support they need to see those changes through.
+          </li>
+        </ul>
+      </p>
+      <p>
+        Among the many things we do, we foster high-quality spaces for learning
+        and collaboration, promote the adoption of open and decentralized
+        technologies, and identify emerging tools that are a good fit for the
+        needs of fannish programmers (as well as <a href="/projects"
+          >creating some of these ourselves</a
+        >).
       </p>
     </section>
-    <section>
-      <h2>Why now?</h2>
-      <p>
+    <details
+      class="relative z-10 mt-7 w-full rounded-xl bg-gradient-to-b from-[#260F56] to-[#4D2E91] p-5 text-white"
+    >
+      <summary class="cursor-pointer text-[20px] font-bold text-fujo-pink"
+        >Why do this now?</summary
+      >
+      <p class="mt-4">
         A new era of the web is coming. Web development technologies grow more
         powerful and accessible every day; decentralized social networks
         continue to gain steam; technical institutions that a few years ago
@@ -43,7 +64,7 @@ const team = await getCollection("team");
         marginalized subcultures to help them build their technical chops and
         learn more about web development and building software.
       </p>
-    </section>
+    </details>
     <section>
       <h2>Our Team</h2>
       <p>
@@ -95,3 +116,47 @@ const team = await getCollection("team");
     </section>
   </article>
 </Layout>
+
+<style>
+  details::before {
+    /* background: linear-gradient(180deg, #ff21e9 0%, #4360f7 100%); */
+    background: radial-gradient(circle at center, #ff21e9, #4360f7);
+    background-size: 500% 500%;
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    z-index: -2;
+    /* @apply rounded-xl; */
+    border-radius: calc(0.75rem + 1px);
+    animation: gradient 15s ease infinite;
+  }
+  details::after {
+    @apply bg-gradient-to-b from-[#260F56] to-[#4D2E91];
+    background-size: 500% 500%;
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    /* @apply rounded-xl; */
+    border-radius: calc(0.75rem + 1px);
+    animation: gradient 15s ease infinite;
+  }
+
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+</style>

@@ -6,11 +6,11 @@ import ProjectCard from "../components/projects/ProjectCard.astro";
 
 const currentProjects = await getCollection(
   "projects",
-  (project) => !project.data.graduated,
+  (project) => !project.data.graduated
 );
 const graduatedProjects = await getCollection(
   "projects",
-  (project) => project.data.graduated,
+  (project) => project.data.graduated
 );
 ---
 
@@ -38,6 +38,13 @@ const graduatedProjects = await getCollection(
           support they need to see those changes through.
         </li>
       </ul>
+    </p>
+    <p>
+      We have dedicated the past 3 years to building software and relationships
+      within fandom communities, and exploring the issue of online spaces, indie
+      software efforts, and decentralized technologies. Thanks to this
+      experience, we deeply understand what stands in the way of aspiring web
+      builders and better online communities.
     </p>
     <h2>The <em>FujoVerse™</em> ecosystem</h2>
     <p>

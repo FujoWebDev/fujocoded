@@ -12,14 +12,15 @@ const team = await getCollection("team");
     <h1>About <em>FujoCoded, LLC</em></h1>
     <section>
       <p>
-        FujoCoded, LLC's mission is to build a kinder, more diverse, more
-        collaborative–and, yes, <em>more weird</em>!–internet. To this end, we
-        leverage our experience living the web from within fandom communities
-        (and the many skills at our disposal) to devise engaging ways to help
-        people take charge of their online world.
+        <strong>
+          FujoCoded, LLC's mission is to build a kinder, more diverse, more
+          collaborative–and, yes, <em>more weird</em>!–internet.
+        </strong> To this end, we leverage our experience living the web from within
+        fandom communities (and the many skills at our disposal) to devise engaging
+        ways to help people take charge of their online world.
       </p>
       <p>
-        Our work focuses on:
+        Our main focuses are:
         <ul class="list-disc pl-6">
           <li>
             <strong>Education</strong>, which gives people the skills they need
@@ -36,59 +37,55 @@ const team = await getCollection("team");
         </ul>
       </p>
       <p>
-        Among the many things we do, we foster high-quality spaces for learning
-        and collaboration, promote the adoption of open and decentralized
-        technologies, and identify emerging tools that are a good fit for the
-        needs of fannish programmers (as well as <a href="/projects"
-          >creating some of these ourselves</a
+        Our emphasis is on working with niche online subcultures (starting with <a
+          href="/fujoshi">fujoshi</a
+        > and fandom) to help them build their technical and collaboration skills.
+        As part of this, we foster communities for learning and connection, promote
+        the adoption of open and decentralized software, and identify and popularize
+        tools that are a good fit for the needs of fannish coders (as well as <a
+          href="/projects">creating some of these ourselves</a
         >).
       </p>
       <p>
-        In addition to all this, we identify individuals in our larger community
-        with the potential to become leaders in their own right, and provide
-        them with the resources and mentorship they need to succeed.
+        In addition to all this, we identify individuals in our community with
+        the potential to become leaders in their own right, and provide them
+        with the resources and mentorship they need to succeed. You can meet
+        some of them in our <a href="/about#contractors">contractors section</a
+        >.
       </p>
     </section>
     <details
-      class="relative z-10 mt-7 w-full rounded-xl bg-gradient-to-b from-[#260F56] to-[#4D2E91] p-5 text-white"
+      class="relative z-10 mb-16 mt-10 w-full rounded-xl bg-gradient-to-b from-[#260F56] to-[#4D2E91] p-5 text-white"
     >
       <summary class="cursor-pointer text-[20px] font-bold text-fujo-pink"
         >Why do this now?</summary
       >
       <p class="mt-4">
         A new era of the web is approaching: web development technologies grow
-        more powerful and accessible every day; decentralized social networks
-        continue to gain steam; technical institutions that a few years ago
-        seemed unstoppable are crumbling as people yearn for change.
+        more powerful and accessible; decentralized social networks continue to
+        gain steam; users grow increasingly disillusioned with online
+        institutions that used to seem inescapable.
       </p>
       <p>
-        As the online world struggles to be reborn, this is the time to seize
-        the occasion and make sure that the people that are part of the
-        conversation of what the next web should look like are not the same ones
-        that got to discuss this before. To do this we work with and create for
-        marginalized subcultures to help them build their technical chops and
-        learn more about web development and building software.
+        However, even as many wish for change, most feel powerless to help
+        bringing it about. As turmoil and instability grows, there is no better
+        time to rethink who gets to join the conversation on the next era of the
+        web.
       </p>
     </details>
     <section>
       <h2>Our Team</h2>
       <p>
-        We have dedicated the past 3 years to building software and
-        relationships within fandom communities, and exploring the issue of
-        online spaces, indie software efforts, and decentralized technologies.
-        Thanks to this experience, we deeply understand what stands in the way
-        of aspiring web builders and better online communities.
-      </p>
-      <p>
-        Our founder, contractors, and community contributors have a vast variety
-        of experience in everything from building large-scale software
+        Our founder, contractors, and community contributors have experience in
+        a large variety of endeavors–from building large-scale software
         applications, to moderation, to community building, to managing open
         source projects, to decentralized technologies, to technical (and
         non-technical) writing. You can see some of what we’ve built until now
         <a href="/projects">on our projects page</a>.
       </p>
       <section>
-        <h3>Founder</h3>
+        <h3 class="text-fujo-purple">Our founder</h3>
+        <p>...and only employee.</p>
         {
           team
             .filter((member) => member.data.type == "founder")
@@ -97,10 +94,19 @@ const team = await getCollection("team");
         }
       </section>
       <section>
-        <h3>Contractors</h3>
+        <h3 class="text-fujo-purple">Our contractors</h3>
         <div>
-          These are people we've hired throughout the years to help us advance
-          our mission.
+          <p>
+            Throughtout the years, we've hired folks from our community to help
+            us with everything from art, to writing, to software development.
+            While some of those we worked with were established professionals,
+            we're proud to have been the first paid gig of others and to have
+            helped them get experience in the tech industry.
+          </p>
+          <p>
+            If you're interested in hiring from a diverse set of amazing and
+            hardworking individuals, check out their own websites!
+          </p>
         </div>
         {
           team
@@ -110,7 +116,7 @@ const team = await getCollection("team");
         }
       </section>
       <section>
-        <h3>Community Contributors</h3>
+        <h3 class="text-fujo-purple">Our community contributors</h3>
         {
           team
             .filter((member) => member.data.type == "community")

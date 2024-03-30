@@ -1,0 +1,9 @@
+name: RobinBoob
+preview: ./previews/robinboob.png
+categories:
+  - commerce
+websites:
+  - name: Store
+    type: store
+    url: https://www.robinboob.com
+description: A super-serious <u>parody</u> of NFTs. Buy a certificate and become the exclusive owner of your favorite ship!

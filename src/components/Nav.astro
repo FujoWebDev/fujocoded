@@ -15,7 +15,7 @@ const { pathname } = Astro.url;
   </label>
   </div>
 <nav
-  class="small-screen absolute top-0 left-0 right-0 h-svh z-10 bg-white font-hatch text-3xl text-center text-fujo-white flex flex-col gap-8 justify-center"
+  class="small-screen md:hidden absolute top-0 left-0 right-0 h-svh z-20 bg-white font-hatch text-3xl text-center text-fujo-white flex flex-col gap-8 justify-center"
 >
   <a
     class:list={{
@@ -145,8 +145,8 @@ const { pathname } = Astro.url;
   .current:not(.lemon) {
     @apply rounded-full bg-fujo-blue  text-white;
   }
-  a:not(.lemon):hover {
-    @apply rounded-full bg-fujo-blue/60  text-white shadow-sm backdrop-blur-lg backdrop-filter;
+  a:not(.lemon):hover, a.current:hover {
+    @apply rounded-full bg-fujo-blue/20  text-fujo-blue backdrop-blur-lg backdrop-filter;
   }
   nav.big-screen {
     animation: pad linear both;

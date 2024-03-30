@@ -10,6 +10,7 @@ import Nav from "../components/Nav.astro";
 import Grid from "../images/grid.svg";
 import HangingLogo from "../components/HangingLogo.astro";
 import ToTopArrow from "../components/ToTopArrow.astro";
+import Footer from "../components/Footer.astro";
 
 const {
   title = "FujoCoded – Coming April 1st, 2024",
@@ -134,7 +135,7 @@ const {
       }
     </style>
   </head>
-  <body class="antialiased min-h-dvh">
+  <body class="min-h-dvh antialiased">
     <a class="hanging-logo" href="/"><HangingLogo /></a>
     <div
       class="background isolatew-96 rounded-xl rounded-b-none bg-white/20 shadow-sm backdrop-blur-lg backdrop-filter"
@@ -146,7 +147,8 @@ const {
         <slot />
       </div>
     </main>
-    <ToTopArrow></ToTopArrow>
+    <Footer />
+    <ToTopArrow />
     <CornerBuddy />
     <style define:vars={{ backgroundGrid: `url(${Grid.src})` }}>
       body {

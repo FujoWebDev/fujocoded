@@ -45,9 +45,9 @@ const BUTTON_LINKS =
           A Better Web <em class="text-white shadow-fujo-pink">Together</em>
         </h2>
         <p class="text-lg text-fujo-purple">
-          From books to communities, from open source JavaScript libraries to
-          full-fledged software projects, FujoCoded creates tools and occasions
-          for fujoshi (& friends) to take control of their online world.
+          From books to communities, from open source libraries to full-fledged
+          software projects, FujoCoded creates tools and occasions for fujoshi
+          (& friends) to take control of their online world.
         </p>
         <a class={BUTTON_LINKS} href="/projects"
           >About our projects <Icon
@@ -117,13 +117,13 @@ const BUTTON_LINKS =
         <h2
           class="mb-0 font-hatch text-[34px] font-medium italic text-fujo-pink"
         >
-          What's a <em class="text-white shadow-fujo-pink">fujoshi</em>, anyway?
+          Why <em class="text-white shadow-fujo-pink">fujoshi</em>, anyway?
         </h2>
         <p class="text-lg text-fujo-purple">
-          A new web is coming! Supported by years of experience working within
-          fan communities (and some deep technical chops), our work aims to
-          change who can join the conversation about the online spaces of the
-          future.
+          While we work to make the web a better place for everyone, we chose
+          the <span class="text-fujo-pink">fujin</span>
+          community (the often queer, kinky, neurodivergent, and disabled
+          <em>id</em> of the internet) as our main focus and titular ambassadors.
         </p>
         <a class={BUTTON_LINKS} href="/about"
           >Learn more <Icon
@@ -147,7 +147,7 @@ const BUTTON_LINKS =
       z-index: -1;
     }
 
-    em {
+    :where(h1, h2, h3) em {
       text-shadow:
         1px 1px 4px #4d2e91,
         -1px 1px 4px #4d2e91,

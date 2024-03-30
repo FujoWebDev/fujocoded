@@ -97,13 +97,10 @@ const team = await getCollection("team");
         <h3 class="text-fujo-purple">Our contractors</h3>
         <div>
           <p>
-            Throughtout the years, we've hired folks from our community to help
-            us with everything from art, to writing, to software development.
-            While some of those we worked with were established professionals,
-            we're proud to have been the first paid gig of others and to have
-            helped them get experience in the tech industry.
-          </p>
-          <p>
+            Throughtout the years, we've hired folks from the fandom community
+            to help with everything from art, to writing, to software
+            development and more. While some were established professionals,
+            we're proud to have been others' first dive into the tech industry.
             If you're interested in hiring from a diverse set of amazing and
             hardworking individuals, check out their own websites!
           </p>
@@ -117,6 +114,13 @@ const team = await getCollection("team");
       </section>
       <section>
         <h3 class="text-fujo-purple">Our community contributors</h3>
+        <p>
+          Nothing we do would be possible without the help of our community
+          contributors who have generously donated their time to the cause.
+          Their help has been invaluable with everything from writing, to
+          community moderation, to moral support, to expertise, to software
+          development and way more.
+        </p>
         {
           team
             .filter((member) => member.data.type == "community")

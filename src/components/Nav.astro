@@ -1,15 +1,55 @@
 ---
 import { readFileSync } from "node:fs";
+import { Icon } from "astro-icon/components";
+
 
 const lemonLogoSvg = readFileSync("./src/icons/lemon-logo.svg", {
   encoding: "utf8",
 });
 const { pathname } = Astro.url;
 ---
-
+<div class="sticky top-4 z-50 mx-auto max-w-[700px] -translate-y-1/2">
+  <label class="hidden md:hidden items-center gap-2 rounded-full bg-white px-6 py-3 font-hatch text-xl text-fujo-pink">
+    <input type="checkbox" class="hidden" />
+    <Icon name="lucide:menu" class="inline stroke-2 text-2xl font-bold" />Menu
+  </label>
+  </div>
 <nav
-  class="sticky top-8 z-50 mx-auto flex w-11/12 max-w-[700px] -translate-y-1/2 transform
-       items-center justify-around rounded-full bg-white px-2 py-1 font-hatch text-xl text-fujo-pink"
+  class="small-screen absolute top-0 left-0 right-0 h-svh z-10 bg-white font-hatch text-3xl text-center text-fujo-white flex flex-col gap-8 justify-center"
+>
+  <a
+    class:list={{
+      current: pathname.startsWith("/projects"),
+    }}
+    href="/projects">Projects</a
+  >
+  <a
+    class:list={{
+      current: pathname.startsWith("/about"),
+    }}
+    href="/about">About</a
+  >
+  <a
+    class:list={{
+      current: pathname.startsWith("/fujoshi"),
+    }}
+    href="/fujoshi">Fujoshi</a
+  >
+  <a
+    class:list={{
+      current: pathname.startsWith("/updates"),
+    }}
+    href="/updates">Updates</a
+  >
+  <a
+    class:list={{
+      current: pathname.startsWith("/support"),
+    }}
+    href="/support">Support</a
+  >
+</nav>
+<nav
+  class="big-screen hidden md:flex w-11/12 md:transform md:items-center md:justify-around md:rounded-full md:px-2 md:py-1 font-hatch text-xl text-fujo-pink"
 >
   <a
     class:list={{
@@ -51,8 +91,9 @@ const { pathname } = Astro.url;
   >
 </nav>
 
+
 <style>
-  nav::before {
+  nav.big-screen::before {
     background: radial-gradient(circle at center, #4360f7, #70a8e4);
     background-size: 250% 250%;
     content: "";
@@ -68,7 +109,7 @@ const { pathname } = Astro.url;
       shadow linear both;
     animation-timeline: none, scroll(root);
   }
-  nav::after {
+  nav.big-screen::after {
     background: white;
     content: "";
     position: absolute;
@@ -94,17 +135,20 @@ const { pathname } = Astro.url;
   a {
     @apply mx-1 my-1 px-4 py-1;
   }
+  nav.small-screen a {
+    @apply mx-auto my-0 px-8 py-4;
+  }
   a:first-child,
   a:nth-child(2) {
     @apply ml-0;
   }
   .current:not(.lemon) {
-    @apply rounded-full bg-fujo-blue  text-white shadow-sm shadow-fujo-purple;
+    @apply rounded-full bg-fujo-blue  text-white;
   }
   a:not(.lemon):hover {
     @apply rounded-full bg-fujo-blue/60  text-white shadow-sm backdrop-blur-lg backdrop-filter;
   }
-  nav {
+  nav.big-screen {
     animation: pad linear both;
     animation-timeline: scroll();
     animation-range: entry 0% exit 5%;

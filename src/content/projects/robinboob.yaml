@@ -2,6 +2,10 @@ name: RobinBoob
 preview: ./previews/robinboob.png
 categories:
   - commerce
+tags:
+  - april 1st
+  - paid
+graduated: false
 websites:
   - name: Store
     type: store

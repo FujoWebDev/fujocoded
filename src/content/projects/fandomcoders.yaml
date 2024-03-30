@@ -2,6 +2,10 @@ name: Fandom Coders
 preview: ./previews/fandom-coders.png
 categories:
   - community
+tags:
+  - accepting new members
+  - beginner friendly
+  - free
 graduated: false
 websites:
   - https://www.fancoders.com/

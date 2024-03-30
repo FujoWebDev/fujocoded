@@ -1,5 +1,6 @@
-import { z, defineCollection } from "astro:content";
+import { defineCollection, z } from "astro:content";
 import { socialsSchema, transformSocial } from "../../lib/socials-transformer";
+
 import { parseInline } from "marked";
 
 const ProjectCategoriesSchema = z.enum([
@@ -10,6 +11,16 @@ const ProjectCategoriesSchema = z.enum([
   "commerce",
 ]);
 
+const ProjectTagsSchema = z.enum([
+  "open source",
+	"beginner friendly",
+	"april 1st",
+	"free",
+	"paid",
+	"contributors welcome",
+	"accepting new members"
+]);
+
 export const collection = defineCollection({
   type: "data",
   schema: (tools) =>
@@ -17,6 +28,7 @@ export const collection = defineCollection({
       name: z.string(),
       preview: tools.image(),
       categories: ProjectCategoriesSchema.array(),
+			tags: ProjectTagsSchema.array().default([]),
       graduated: z.boolean().default(false),
       websites: socialsSchema
         .array()

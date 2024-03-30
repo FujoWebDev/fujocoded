@@ -2,6 +2,10 @@ name: FujoBoard
 preview: ./previews/omegaverse-fujos.webp
 categories:
   - commerce
+tags:
+  - april 1st
+  - paid
+graduated: false
 websites:
   - url: https://www.fujoboard.com/
     type: store

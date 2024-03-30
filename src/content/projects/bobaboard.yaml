@@ -2,6 +2,10 @@ name: BobaBoard
 preview: ./previews/bobaboard.png
 categories:
   - software
+tags: 
+  - free
+  - open source
+  - contributors welcome
 graduated: true
 websites:
   - https://github.com/bobaboard

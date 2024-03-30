@@ -1,0 +1,10 @@
+name: Fandom Coders
+preview: ./previews/fandom-coders.png
+categories:
+  - community
+graduated: false
+websites:
+  - https://www.fancoders.com/
+  - https://github.com/Fandom-Coders
+description: A community dedicated to connecting coders in fandom with each other. Unlike other indie learning spaces, Fandom Coders encourages the mingling
+  of both hobbyists and professionals.

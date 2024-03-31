@@ -2,10 +2,11 @@
 import { Image } from "astro:assets";
 import type { CollectionEntry } from "astro:content";
 import TagList from "../TagList.astro";
+import { Icon } from "astro-icon/components";
 
 type Props = CollectionEntry<"projects">["data"];
 
-const { name, preview, description, tags, categories } = Astro.props;
+const { name, preview, description, tags, categories, websites } = Astro.props;
 ---
 
 <div
@@ -16,16 +17,40 @@ const { name, preview, description, tags, categories } = Astro.props;
     src={preview}
     alt={name}
   />
-  <div class="flex flex-col gap-2 pb-4 justify-center">
+  <div class="flex flex-col justify-center gap-2 pb-4">
     <h3 class="font-hatch text-xl text-fujo-pink">
       {name}
     </h3>
-    <p set:html={description} />
-    {!!categories.length && (
-      <TagList tags={categories} title="Categories" />
-    )}
-    {!!tags.length && (
-      <TagList tags={tags} title="Tags" />
-      )}
+    <ul class="flex gap-2">
+      {
+        websites.map((website) => {
+          return (
+            <li class="m-0">
+              <a
+                href={website.url}
+                class="group m-0 flex items-center gap-3 py-1.5 !no-underline"
+              >
+                <div class="flex rounded-lg bg-fujo-purple/10 p-2 group-hover:bg-fujo-purple/20">
+                  <Icon
+                    size={24}
+                    aria-labelledby={
+                      website.platform !== "web" ? "platform" : undefined
+                    }
+                    aria-label={
+                      website.platform === "web" ? "website" : undefined
+                    }
+                    name={website.icon ?? "world-www"}
+                    class="flex-shrink-0"
+                  />
+                </div>
+              </a>
+            </li>
+          );
+        })
+      }
+    </ul>
+    <p class="mt-0" set:html={description} />
+    {!!categories.length && <TagList tags={categories} title="Categories" />}
+    {!!tags.length && <TagList tags={tags} title="Tags" />}
   </div>
 </div>

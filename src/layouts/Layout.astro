@@ -139,14 +139,15 @@ const {
     <a class="hanging-logo" href="/"><HangingLogo /></a>
     <div
       class="background isolatew-96 rounded-xl rounded-b-none bg-white/20 shadow-sm backdrop-blur-lg backdrop-filter"
-    >
+    />
+    <div class="relative flex w-full max-w-[900px] flex-col items-center z-10 pb-[100px] mt-[var(--content-margin)]">
+      <Nav />
+      <main>
+        <div class="content">
+          <slot />
+        </div>
+      </main>
     </div>
-    <Nav />
-    <main class="flex w-full max-w-[900px] flex-col items-center">
-      <div class="content">
-        <slot />
-      </div>
-    </main>
     <Footer />
     <ToTopArrow />
     <CornerBuddy />
@@ -171,11 +172,6 @@ const {
         background-size: 15%;
         opacity: 0.08;
         z-index: -1;
-      }
-      main {
-        z-index: 2;
-        margin-top: var(--content-margin);
-        padding-bottom: 100px;
       }
 
       .background {

@@ -2,20 +2,22 @@
 import { readFileSync } from "node:fs";
 import { Icon } from "astro-icon/components";
 
-
 const lemonLogoSvg = readFileSync("./src/icons/lemon-logo.svg", {
   encoding: "utf8",
 });
 const { pathname } = Astro.url;
 ---
+
 <div class="sticky top-4 z-50 mx-auto max-w-[700px] -translate-y-1/2">
-  <label class="hidden md:hidden items-center gap-2 rounded-full bg-white px-6 py-3 font-hatch text-xl text-fujo-pink">
+  <label
+    class="hidden items-center gap-2 rounded-full bg-white px-6 py-3 font-hatch text-xl text-fujo-pink md:hidden"
+  >
     <input type="checkbox" class="hidden" />
     <Icon name="lucide:menu" class="inline stroke-2 text-2xl font-bold" />Menu
   </label>
-  </div>
+</div>
 <nav
-  class="small-screen md:hidden absolute top-0 left-0 right-0 h-svh z-20 bg-white font-hatch text-3xl text-center text-fujo-white flex flex-col gap-8 justify-center"
+  class="small-screen text-fujo-white absolute left-0 right-0 top-0 z-20 flex h-svh flex-col justify-center gap-8 bg-white text-center font-hatch text-3xl md:hidden"
 >
   <a
     class:list={{
@@ -47,10 +49,14 @@ const { pathname } = Astro.url;
     }}
     href="/support">Support</a
   >
-  <div class="absolute top-0 right-0 flex items-center gap-2 py-4 px-6 text-2xl"><Icon name="lucide:x" class="inline stroke-2 text-2xl font-bold" />CLOSE</div>
+  <div
+    class="absolute right-0 top-0 flex items-center gap-2 px-6 py-4 text-2xl"
+  >
+    <Icon name="lucide:x" class="inline stroke-2 text-2xl font-bold" />CLOSE
+  </div>
 </nav>
 <nav
-  class="big-screen hidden md:flex w-11/12 md:transform md:items-center md:justify-around md:rounded-full md:px-2 md:py-1 font-hatch text-xl text-fujo-pink"
+  class="big-screen sticky top-4 z-30 hidden w-11/12 font-hatch text-xl text-fujo-pink md:flex md:transform md:items-center md:justify-around md:rounded-full md:px-2 md:py-1"
 >
   <a
     class:list={{
@@ -91,7 +97,6 @@ const { pathname } = Astro.url;
     href="/support">Support</a
   >
 </nav>
-
 
 <style>
   nav.big-screen::before {
@@ -146,7 +151,8 @@ const { pathname } = Astro.url;
   .current:not(.lemon) {
     @apply rounded-full bg-fujo-blue  text-white;
   }
-  a:not(.lemon):hover, a.current:hover {
+  a:not(.lemon):hover,
+  a.current:hover {
     @apply rounded-full bg-fujo-blue/20  text-fujo-blue backdrop-blur-lg backdrop-filter;
   }
   nav.big-screen {

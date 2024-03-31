@@ -14,7 +14,7 @@ const wordLogoSvg = readFileSync("./src/images/word-logo.svg", {
 });
 ---
 
-<div class="hanging-container">
+<a class="hanging-container z-50 hover:cursor-pointer" href="/">
   <div class="lemon">
     <Fragment set:html={lemonLogoSvg} />
   </div>
@@ -24,7 +24,7 @@ const wordLogoSvg = readFileSync("./src/images/word-logo.svg", {
   <div class="llc">
     <Fragment set:html={llcSvg} />
   </div>
-</div>
+</a>
 
 <style>
   /* Leaving this here, just commented out for now because it performs more smoothly than my js crimes, so we might want to use it for those who do have support for it
@@ -181,14 +181,20 @@ const wordLogoSvg = readFileSync("./src/images/word-logo.svg", {
 </style>
 
 <script>
-  const prefersReducedMotion = window.matchMedia(`(prefers-reduced-motion: reduce)`).matches;
+  const prefersReducedMotion = window.matchMedia(
+    `(prefers-reduced-motion: reduce)`
+  ).matches;
+  const RATE_DIVISOR = 600;
   const lemon = document.querySelector(".lemon");
   const lemonFinalPosition = -300;
-  const lemonRate = lemonFinalPosition / 200;
+  const lemonRate = lemonFinalPosition / RATE_DIVISOR;
   const logo = document.querySelector(".logo");
   const llc = document.querySelector(".llc");
   const logoFinalPosition = -400;
-  const logoRate = logoFinalPosition / 200;
+  const logoRate = logoFinalPosition / RATE_DIVISOR;
+  const container = document.querySelector(".hanging-container");
+  const containerFinalPosition = -200;
+  const containerRate = containerFinalPosition / RATE_DIVISOR;
 
   let lastScrollPosition = 0;
 
@@ -199,7 +205,7 @@ const wordLogoSvg = readFileSync("./src/images/word-logo.svg", {
     if (window.scrollY > 200 && lastScrollPosition > 200) {
       return;
     }
-    if(!lemon || !logo || !llc) {
+    if (!lemon || !logo || !llc || !container) {
       return;
     }
     lastScrollPosition = window.scrollY;
@@ -207,10 +213,17 @@ const wordLogoSvg = readFileSync("./src/images/word-logo.svg", {
       (lemon as HTMLElement).style.translate = `0px ${lemonFinalPosition}px`;
       (logo as HTMLElement).style.translate = `0px ${logoFinalPosition}px`;
       (llc as HTMLElement).style.translate = `0px ${logoFinalPosition}px`;
+      (container as HTMLElement).style.translate =
+        `0px ${containerFinalPosition}px`;
       return;
-    } 
-    (lemon as HTMLElement).style.translate = `0px ${lemonRate * lastScrollPosition}px`;
-    (logo as HTMLElement).style.translate = `0px ${logoRate * lastScrollPosition}px`;
-    (llc as HTMLElement).style.translate = `0px ${logoRate * lastScrollPosition}px`;
+    }
+    (lemon as HTMLElement).style.translate =
+      `0px ${lemonRate * lastScrollPosition}px`;
+    (logo as HTMLElement).style.translate =
+      `0px ${logoRate * lastScrollPosition}px`;
+    (llc as HTMLElement).style.translate =
+      `0px ${logoRate * lastScrollPosition}px`;
+    (container as HTMLElement).style.translate =
+      `0px ${containerRate * lastScrollPosition}px`;
   });
 </script>

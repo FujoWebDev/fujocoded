@@ -9,58 +9,58 @@ const { pathname } = Astro.url;
 ---
 
 <div
-  class="menu sticky top-8 z-50 mx-auto mt-[var(--content-margin)] max-w-[700px] min-w-[150px] min-h-[52px] -translate-y-1/2 px-2 py-3 md:hidden"
+  class="menu sticky top-8 z-50 mx-auto mt-[var(--content-margin)] min-h-[52px] min-w-[150px] max-w-[700px] -translate-y-1/2 px-2 py-3 md:hidden"
 >
   <button
-  type="button"
-    class="menu-open items-center flex script-hidden gap-2 rounded-full px-6 font-hatch text-xl text-fujo-pink md:hidden"
+    type="button"
+    class="menu-open script-hidden flex items-center gap-2 rounded-full px-6 font-hatch text-xl text-fujo-pink md:hidden"
   >
     <Icon name="lucide:menu" class="inline stroke-2 text-2xl font-bold" />Menu
   </button>
   <noscript>
     <nav
-  class="text-fujo-pink flex flex-wrap rounded-full px-4 bg-white font-hatch text-xl"
->
-  <a
-    aria-current={pathname.startsWith("/projects") ? "page" : "false"}
-    class:list={{
-      current: pathname.startsWith("/projects"),
-    }}
-    href="/projects">Projects</a
-  >
-  <a
-    aria-current={pathname.startsWith("/about") ? "page" : "false"}
-    class:list={{
-      current: pathname.startsWith("/about"),
-    }}
-    href="/about">About</a
-  >
-  <a
-  aria-current={pathname.startsWith("/fujoshi") ? "page" : "false"}
-  class:list={{
-      current: pathname.startsWith("/fujoshi"),
-    }}
-    href="/fujoshi">Fujoshi</a
-  >
-  <a
-  aria-current={pathname.startsWith("/updates") ? "page" : "false"}
-  class:list={{
-      current: pathname.startsWith("/updates"),
-    }}
-    href="/updates">Updates</a
-  >
-  <a
-  aria-current={pathname.startsWith("/support") ? "page" : "false"}
-  class:list={{
-      current: pathname.startsWith("/support"),
-    }}
-    href="/support">Support</a
-  >
-</nav>
+      class="flex flex-wrap rounded-full bg-white px-4 font-hatch text-xl text-fujo-pink"
+    >
+      <a
+        aria-current={pathname.startsWith("/projects") ? "page" : "false"}
+        class:list={{
+          current: pathname.startsWith("/projects"),
+        }}
+        href="/projects">Projects</a
+      >
+      <a
+        aria-current={pathname.startsWith("/about") ? "page" : "false"}
+        class:list={{
+          current: pathname.startsWith("/about"),
+        }}
+        href="/about">About</a
+      >
+      <a
+        aria-current={pathname.startsWith("/fujoshi") ? "page" : "false"}
+        class:list={{
+          current: pathname.startsWith("/fujoshi"),
+        }}
+        href="/fujoshi">Fujoshi</a
+      >
+      <a
+        aria-current={pathname.startsWith("/updates") ? "page" : "false"}
+        class:list={{
+          current: pathname.startsWith("/updates"),
+        }}
+        href="/updates">Updates</a
+      >
+      <a
+        aria-current={pathname.startsWith("/support") ? "page" : "false"}
+        class:list={{
+          current: pathname.startsWith("/support"),
+        }}
+        href="/support">Support</a
+      >
+    </nav>
   </noscript>
 </div>
 <nav
-  class="small-screen text-fujo-pink absolute left-0 right-0 top-0 z-20 flex script-hidden h-svh flex-col justify-center gap-8 bg-white text-center font-hatch text-3xl md:hidden"
+  class="small-screen script-hidden absolute left-0 right-0 top-0 z-20 flex h-svh flex-col justify-center gap-8 bg-white text-center font-hatch text-3xl text-fujo-pink md:hidden"
 >
   <a
     aria-current={pathname.startsWith("/projects") ? "page" : "false"}
@@ -77,22 +77,22 @@ const { pathname } = Astro.url;
     href="/about">About</a
   >
   <a
-  aria-current={pathname.startsWith("/fujoshi") ? "page" : "false"}
-  class:list={{
+    aria-current={pathname.startsWith("/fujoshi") ? "page" : "false"}
+    class:list={{
       current: pathname.startsWith("/fujoshi"),
     }}
     href="/fujoshi">Fujoshi</a
   >
   <a
-  aria-current={pathname.startsWith("/updates") ? "page" : "false"}
-  class:list={{
+    aria-current={pathname.startsWith("/updates") ? "page" : "false"}
+    class:list={{
       current: pathname.startsWith("/updates"),
     }}
     href="/updates">Updates</a
   >
   <a
-  aria-current={pathname.startsWith("/support") ? "page" : "false"}
-  class:list={{
+    aria-current={pathname.startsWith("/support") ? "page" : "false"}
+    class:list={{
       current: pathname.startsWith("/support"),
     }}
     href="/support">Support</a
@@ -100,16 +100,20 @@ const { pathname } = Astro.url;
   <button
     class="menu-close absolute right-0 top-0 flex items-center gap-2 px-6 py-4 text-2xl"
   >
-    <Icon name="lucide:x" class="inline stroke-2 text-2xl font-bold" aria-label={"close menu"} /><span class="hidden min-[450px]:inline">CLOSE</span>
+    <Icon
+      name="lucide:x"
+      class="inline stroke-2 text-2xl font-bold"
+      aria-label={"close menu"}
+    /><span class="hidden min-[450px]:inline">CLOSE</span>
   </button>
 </nav>
 <nav
   class="big-screen sticky top-8 z-30 mt-[var(--content-margin)] hidden w-11/12 -translate-y-1/2 font-hatch text-xl text-fujo-pink md:flex md:transform md:items-center md:justify-around md:rounded-full md:px-2 md:py-1"
 >
   <a
-  aria-current={pathname == "/" ? "page" : "false"}
-  aria-label="Home"
-  class:list={{
+    aria-current={pathname == "/" ? "page" : "false"}
+    aria-label="Home"
+    class:list={{
       current: pathname == "/",
     }}
     class="lemon"
@@ -131,22 +135,22 @@ const { pathname } = Astro.url;
     href="/about">About</a
   >
   <a
-  aria-current={pathname.startsWith("/fujoshi") ? "page" : "false"}
-  class:list={{
+    aria-current={pathname.startsWith("/fujoshi") ? "page" : "false"}
+    class:list={{
       current: pathname.startsWith("/fujoshi"),
     }}
     href="/fujoshi">Fujoshi</a
   >
   <a
-  aria-current={pathname.startsWith("/updates") ? "page" : "false"}
-  class:list={{
+    aria-current={pathname.startsWith("/updates") ? "page" : "false"}
+    class:list={{
       current: pathname.startsWith("/updates"),
     }}
     href="/updates">Updates</a
   >
   <a
-  aria-current={pathname.startsWith("/support") ? "page" : "false"}
-  class:list={{
+    aria-current={pathname.startsWith("/support") ? "page" : "false"}
+    class:list={{
       current: pathname.startsWith("/support"),
     }}
     href="/support">Support</a
@@ -184,7 +188,7 @@ const { pathname } = Astro.url;
     @apply mx-1 my-1 px-4 py-1;
   }
   nav.small-screen a {
-    @apply mx-auto my-0 py-4 px-8;
+    @apply mx-auto my-0 px-8 py-4;
   }
   a:first-child,
   a:nth-child(2) {
@@ -228,27 +232,27 @@ const { pathname } = Astro.url;
     }
 
     @keyframes gradient {
-    0% {
-      background-position: 0% 50%;
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
     }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
-  }
 
     nav.big-screen {
-    animation: pad linear both;
-    animation-timeline: scroll();
-    animation-range: entry 0% exit 5%;
-  }
-  .lemon {
-    animation: appear linear both;
-    animation-timeline: scroll();
-    animation-range: entry 0% exit 5%;
-  }
+      animation: pad linear both;
+      animation-timeline: scroll();
+      animation-range: entry 0% exit 5%;
+    }
+    .lemon {
+      animation: appear linear both;
+      animation-timeline: scroll();
+      animation-range: entry 0% exit 5%;
+    }
 
     @keyframes pad {
       from {
@@ -275,7 +279,7 @@ const { pathname } = Astro.url;
         width: 20px;
         opacity: 1;
       }
-  }
+    }
   }
 </style>
 <script>
@@ -288,9 +292,9 @@ const { pathname } = Astro.url;
   openMenu?.addEventListener("click", () => {
     menu?.classList.add("script-hidden");
     mobileNav?.classList.remove("script-hidden");
-  })
+  });
   closeMenu?.addEventListener("click", () => {
     mobileNav?.classList.add("script-hidden");
     menu?.classList.remove("script-hidden");
-  })
+  });
 </script>

@@ -18,7 +18,7 @@ const { class: className, title } = Astro.props;
   class:list={["dropzone relative touch-none", className]}
 >
   <div
-    class="window absolute bottom-0 left-0 right-0 top-0 z-0 overflow-hidden rounded-lg"
+    class="window absolute bottom-1 left-1 right-1 top-1 z-0 overflow-hidden rounded-lg"
   >
     <slot name="behind" />
   </div>
@@ -32,11 +32,11 @@ const { class: className, title } = Astro.props;
   >
     <!-- <div class="absolute top-0 bottom-0 right-0 left-0 shadow-lg z-0 rounded-lg"> -->
     <header
-      class="drag-handle relative flex items-center justify-between gap-2 rounded-tl-lg rounded-tr-lg border-2 border-teal-dark bg-teal py-1 pl-1 pr-4"
+      class="drag-handle relative flex items-center justify-between gap-2 rounded-tl-lg rounded-tr-lg border-2 border-b-0 border-[#2a1a4c] bg-fujo-purple py-1 pl-1 pr-4"
     >
       <div class="flex shrink-0">
         <Image
-          class="ignore-pointer left-[-4px] text-teal-dark"
+          class="gripper ignore-pointer left-[-4px]"
           src={GripVertical}
           alt="grip grip"
         />
@@ -50,13 +50,14 @@ const { class: className, title } = Astro.props;
         title="Reset position"
         aria-label="Reset position"
         tabindex="-1"
-        class="ignore grid h-[25px] w-[25px] shrink-0 place-items-center rounded-lg border border-teal-dark bg-teal-light text-teal-dark"
+        class="ignore grid h-[25px] w-[25px] shrink-0 place-items-center rounded-lg border border-[#2a1a4c] bg-[#a786ed] text-[#2a1a4c]"
       >
-        <Icon name="arrow-square-in" />
+        <Icon class="back" name="arrow-square-in" />
+        <Icon class="heart" name="lucide:heart" />
       </button>
     </header>
     <div
-      class="overflow-hidden rounded-bl-lg rounded-br-lg border-2 border-t-0 border-teal-dark"
+      class="front-container overflow-hidden rounded-bl-lg rounded-br-lg border-2 border-t-0 border-fujo-purple"
     >
       <slot name="front" />
     </div>
@@ -69,6 +70,7 @@ const { class: className, title } = Astro.props;
     const x = parseFloat(target.getAttribute("data-x") || "0") * -1;
     const y = parseFloat(target.getAttribute("data-y") || "0") * -1;
     target.style.transform = "translate(" + x + "px, " + y + "px)";
+    target.classList.toggle("dragging", false);
   };
 
   interact(".drag-me")
@@ -86,7 +88,7 @@ const { class: className, title } = Astro.props;
 
           target.setAttribute("data-x", x);
           target.setAttribute("data-y", y);
-          console.log("dragged");
+          target.classList.toggle("dragging", true);
         },
       },
     })
@@ -129,7 +131,6 @@ const { class: className, title } = Astro.props;
     },
     ondrop: (event) => {
       const target = event.relatedTarget;
-      console.log("dropped, relatedTarget", target);
       resetPosition(target);
     },
   });
@@ -143,5 +144,25 @@ const { class: className, title } = Astro.props;
       inset 2px 2px #fff;
     background: #e0e0e0;
     padding: 3px;
+  }
+  .front-container {
+    box-shadow:
+      inset -1px -1px #2a1a4c,
+      inset 1px 1px #2a1a4c,
+      inset -2px -2px #2a1a4c,
+      inset 2px 2px #2a1a4c;
+    padding: 1px;
+  }
+  .drag-handle .gripper {
+    filter: drop-shadow(0px 0px 1px #2a1a4c);
+  }
+  .drag-me.dragging .heart {
+    display: none;
+  }
+  .drag-me:not(.dragging) .back {
+    display: none;
+  }
+  .drag-me:not(.dragging) button {
+    display: none;
   }
 </style>

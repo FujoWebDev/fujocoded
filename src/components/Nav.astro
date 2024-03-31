@@ -9,10 +9,10 @@ const { pathname } = Astro.url;
 ---
 
 <div
-  class="sticky top-4 z-50 mx-auto mt-[var(--content-margin)] max-w-[700px] -translate-y-1/2 md:hidden"
+  class="menu sticky top-8 z-50 mx-auto mt-[var(--content-margin)] max-w-[700px] -translate-y-1/2 px-2 py-3 md:hidden"
 >
   <label
-    class="items-center gap-2 rounded-full bg-white px-6 py-3 font-hatch text-xl text-fujo-pink md:hidden"
+    class="items-center gap-2 rounded-full px-6 py-3 font-hatch text-xl text-fujo-pink md:hidden"
   >
     <input type="checkbox" class="hidden" />
     <Icon name="lucide:menu" class="inline stroke-2 text-2xl font-bold" />Menu
@@ -101,7 +101,8 @@ const { pathname } = Astro.url;
 </nav>
 
 <style>
-  nav.big-screen::before {
+  nav.big-screen::before,
+  .menu::before {
     background: radial-gradient(circle at center, #4360f7, #70a8e4);
     background-size: 250% 250%;
     content: "";
@@ -117,7 +118,8 @@ const { pathname } = Astro.url;
       shadow linear both;
     animation-timeline: none, scroll(root);
   }
-  nav.big-screen::after {
+  nav.big-screen::after,
+  .menu::after {
     background: white;
     content: "";
     position: absolute;

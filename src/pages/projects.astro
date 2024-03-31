@@ -73,7 +73,7 @@ const graduatedProjects = await getCollection(
       <ul>
         {
           graduatedProjects.map((project) => (
-            <li>
+            <li class="relative">
               <ProjectCard {...project.data} />
             </li>
           ))

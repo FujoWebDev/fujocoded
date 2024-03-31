@@ -3,6 +3,7 @@ import { Image } from "astro:assets";
 import type { CollectionEntry } from "astro:content";
 import TagList from "../TagList.astro";
 import { Icon } from "astro-icon/components";
+import CategoryList from "../CategoryList.astro";
 
 type Props = CollectionEntry<"projects">["data"];
 
@@ -10,99 +11,63 @@ const { name, preview, description, tags, categories, websites } = Astro.props;
 ---
 
 <div
-  class="project relative z-10 rounded-xl text-lg text-fujo-purple"
+  class="project relative z-10 rounded-2xl text-lg text-fujo-purple p-4 border border-slate-300"
 >
-  <div class="p-1 rounded-xl overflow-hidden max-w-full max-h-72">
-    <Image
-      class="block max-h-72 max-w-full w-auto h-auto"
-      src={preview}
-      alt={name}
-    />
-    </div>
-  <div class="p-4">
-    <h3 class="font-macho font-bold not-italic text-2xl text-fujo-pink mt-0">
-      {name}
-    </h3>
-    <ul class="flex gap-2">
-      {
-        websites.map((website) => {
-          return (
-            <li class="m-0">
-              <a
-                href={website.url}
-                class="group m-0 flex items-center gap-3 py-1.5 !no-underline"
-              >
-                <div class="flex rounded-lg bg-fujo-purple/10 p-2 group-hover:bg-fujo-purple/20">
-                  <Icon
-                    size={24}
-                    aria-labelledby={
-                      website.platform !== "web" ? "platform" : undefined
-                    }
-                    aria-label={
-                      website.platform === "web" ? "website" : undefined
-                    }
-                    name={website.icon ?? "world-www"}
-                    class="flex-shrink-0"
-                  />
-                </div>
-              </a>
-            </li>
-          );
-        })
-      }
-    </ul>
-    <p set:html={description} />
-    <div class="space-y-4 mt-4">
+  <div class="flex flex-col md:flex-row gap-4">
+    <div class="w-1/3">
+      <a href={websites[0].url}>
+        <Image
+          class="block rounded-lg "
+          src={preview}
+          alt={name}
+        />
+      </a>
+      </div>
+    <div class="flex-1">
+      <h3 class="font-macho font-bold not-italic text-3xl text-fujo-pink mt-0">
+        <a href={websites[0].url} class="!no-underline !text-fujo-pink">{name}</a>
+      </h3>
+      <ul class="flex gap-2 mb-2">
+        {
+          websites.map((website) => {
+            return (
+              <li class="m-0">
+                <a
+                  href={website.url}
+                  class="group m-0 flex items-center gap-3 py-1.5 !no-underline"
+                >
+                  <div class="flex rounded-lg bg-fujo-purple/10 p-2 group-hover:bg-fujo-purple/20">
+                    <Icon
+                      size={24}
+                      aria-labelledby={
+                        website.platform !== "web" ? "platform" : undefined
+                      }
+                      aria-label={
+                        website.platform === "web" ? "website" : undefined
+                      }
+                      name={website.icon ?? "world-www"}
+                      class="flex-shrink-0"
+                    />
+                  </div>
+                </a>
+              </li>
+            );
+          })
+        }
+      </ul>
       {!!categories.length && (
-        <TagList tags={categories} title="Categories" />
+        <CategoryList categories={categories} />
       )}
-      {!!tags.length && (
-        <TagList tags={tags} title="Tags" />
-      )}
+      <p set:html={description} class="mt-4" />
     </div>
   </div>
+  <div class="space-y-4 mt-4">
+    {!!tags.length && (
+      <TagList tags={tags} />
+    )}
+</div>
 </div>
 
 <style>
-    .project::before {
-    /* background: linear-gradient(180deg, #ff21e9 0%, #4360f7 100%); */
-    background: radial-gradient(circle at center, #ff21e9, #4360f7);
-    background-size: 500% 500%;
-    content: "";
-    position: absolute;
-    top: -2px;
-    left: -2px;
-    right: -2px;
-    bottom: -2px;
-    z-index: -2;
-    /* @apply rounded-xl; */
-    border-radius: calc(0.75rem + 2px);
-    animation: gradient 15s ease infinite;
-  }
-  .project::after {
-    background-color: white;
-    background-size: 500% 500%;
-    content: "";
-    position: absolute;
-    top: 0px;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: -1;
-    /* @apply rounded-xl; */
-    border-radius: calc(0.75rem);
-    animation: gradient 15s ease infinite;
-  }
-
-  @keyframes gradient {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
-  }
+    
 </style>

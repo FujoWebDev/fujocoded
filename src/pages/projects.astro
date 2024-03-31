@@ -55,10 +55,10 @@ const graduatedProjects = await getCollection(
       <p>
         The projects below are maintained or led by FujoCoded. Your support helps with their continued development and growth.
       </p>
-      <ul>
+      <ul class="flex flex-col gap-8 mt-8">
         {
           currentProjects.map((project) => (
-            <li>
+            <li class="m-0">
               <ProjectCard {...project.data} />
             </li>
           ))
@@ -70,10 +70,10 @@ const graduatedProjects = await getCollection(
         grow on their own. The governance and day-by-day operations are left up to
         the contributors of each project.
       </p>
-      <ul>
+      <ul class="flex flex-col gap-8 mt-8">
         {
           graduatedProjects.map((project) => (
-            <li class="relative">
+            <li class="m-0">
               <ProjectCard {...project.data} />
             </li>
           ))

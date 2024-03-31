@@ -57,7 +57,7 @@ const team = await getCollection("team");
     <details
       class="relative z-10 mb-16 mt-10 w-full rounded-xl bg-gradient-to-b from-[#260F56] to-[#4D2E91] text-white"
     >
-      <summary class="cursor-pointer text-[20px] font-bold text-fujo-pink p-5"
+      <summary class="cursor-pointer text-[20px] font-bold text-white p-5"
         >Why do this now?</summary
       >
       <p class="px-5 pb-3 m-0">
@@ -151,7 +151,7 @@ const team = await getCollection("team");
     bottom: -2px;
     z-index: -2;
     /* @apply rounded-xl; */
-    border-radius: calc(0.75rem + 1px);
+    border-radius: calc(0.75rem + 2px);
     animation: gradient 15s ease infinite;
   }
   details::after {
@@ -165,7 +165,7 @@ const team = await getCollection("team");
     bottom: 0;
     z-index: -1;
     /* @apply rounded-xl; */
-    border-radius: calc(0.75rem + 1px);
+    border-radius: calc(0.75rem);
     animation: gradient 15s ease infinite;
   }
 

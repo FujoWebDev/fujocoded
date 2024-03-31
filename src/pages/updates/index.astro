@@ -1,6 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
+import TagList from "../../components/TagList.astro";
 
 const updates = (
   await getCollection("updates", (update) => !update.data.unlisted)
@@ -36,16 +37,7 @@ const updates = (
                   })}
                 </p>
                 {!!update.data.tags.length && (
-                  <ul class="flex flex-wrap gap-2">
-                    {update.data.tags.map((tag) => (
-                      <li
-                        class="rounded-md border border-black px-2"
-                        data-tag={tag}
-                      >
-                        {tag}
-                      </li>
-                    ))}
-                  </ul>
+                  <TagList tags={update.data.tags} />
                 )}
                 {update.data.tagline && (
                   <p class="tagline">{update.data.tagline}</p>

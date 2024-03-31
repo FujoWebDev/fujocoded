@@ -1,10 +1,11 @@
 ---
 import { Image } from "astro:assets";
 import type { CollectionEntry } from "astro:content";
+import TagList from "../TagList.astro";
 
 type Props = CollectionEntry<"projects">["data"];
 
-const { name, preview, description } = Astro.props;
+const { name, preview, description, tags, categories } = Astro.props;
 ---
 
 <div
@@ -15,10 +16,16 @@ const { name, preview, description } = Astro.props;
     src={preview}
     alt={name}
   />
-  <div class="flex flex-col justify-center">
+  <div class="flex flex-col gap-2 pb-4 justify-center">
     <h3 class="font-hatch text-xl text-fujo-pink">
       {name}
     </h3>
     <p set:html={description} />
+    {!!categories.length && (
+      <TagList tags={categories} title="Categories" />
+    )}
+    {!!tags.length && (
+      <TagList tags={tags} title="Tags" />
+      )}
   </div>
 </div>

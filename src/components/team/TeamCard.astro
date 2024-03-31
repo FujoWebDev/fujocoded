@@ -30,8 +30,8 @@ const { name, contacts, avatar } = Astro.props;
     {
       contacts.map((contact) => {
         return (
-          <li class="flex gap-3">
-            <a href={contact.url}>
+          <li>
+            <a href={contact.url} class="flex gap-3">
               <Icon
                 size={24}
                 aria-labelledby={
@@ -39,15 +39,14 @@ const { name, contacts, avatar } = Astro.props;
                 }
                 aria-label={contact.platform === "web" ? "website" : undefined}
                 name={contact.icon ?? "world-www"}
+                class="flex-shrink-0"
               />
-            </a>
-            <a href={contact.url}>
               {contact.platform !== "web" && (
                 <span class="sr-only sm:not-sr-only" id="platform">
                   {contact.platform}:{" "}
                 </span>
               )}
-              {contact.username ? `@${contact.username}` : contact.url}
+              <span class="truncate">{contact.username ? `@${contact.username}` : contact.url}</span>
             </a>
           </li>
         );

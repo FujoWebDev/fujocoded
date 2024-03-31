@@ -1,5 +1,4 @@
 ---
-import MissionTerminal from "../components/MissionTerminal.astro";
 import TeamCard from "../components/team/TeamCard.astro";
 import Layout from "../layouts/Layout.astro";
 import { getCollection } from "astro:content";
@@ -9,15 +8,15 @@ const team = await getCollection("team");
 
 <Layout>
   <article class="rounded-xl bg-white">
-    <h1>About <em>FujoCoded, LLC</em></h1>
+    <h1>About <em>FujoCoded LLC</em></h1>
     <section>
       <p>
         <strong>
-          FujoCoded, LLC's mission is to build a kinder, more diverse, more
+          FujoCoded LLC's mission is to build a kinder, more diverse, more
           collaborative–and, yes, <em>more weird</em>!–internet.
         </strong> To this end, we leverage our experience living the web from within
-        fandom communities (and the many skills at our disposal) to devise engaging
-        ways to help people take charge of their online world.
+        fandom communities, along with the many skills at our disposal, to devise
+        engaging ways to help people take charge of their online world.
       </p>
       <p>
         Our main focuses are:
@@ -43,7 +42,7 @@ const team = await getCollection("team");
         As part of this, we foster communities for learning and connection, promote
         the adoption of open and decentralized software, and identify and popularize
         tools that are a good fit for the needs of fannish coders (as well as <a
-          href="/projects">creating some of these ourselves</a
+          href="/projects">creating some ourselves</a
         >).
       </p>
       <p>
@@ -57,16 +56,16 @@ const team = await getCollection("team");
     <details
       class="relative z-10 mb-16 mt-10 w-full rounded-xl bg-gradient-to-b from-[#260F56] to-[#4D2E91] text-white"
     >
-      <summary class="cursor-pointer text-[20px] font-bold text-white p-5"
+      <summary class="cursor-pointer p-5 text-[20px] font-bold text-white"
         >Why do this now?</summary
       >
-      <p class="px-5 pb-3 m-0">
+      <p class="m-0 px-5 pb-3">
         A new era of the web is approaching: web development technologies grow
         more powerful and accessible; decentralized social networks continue to
         gain steam; users grow increasingly disillusioned with online
         institutions that used to seem inescapable.
       </p>
-      <p class="px-5 pb-5 m-0">
+      <p class="m-0 px-5 pb-5">
         However, even as many wish for change, most feel powerless to help
         bringing it about. As turmoil and instability grows, there is no better
         time to rethink who gets to join the conversation on the next era of the
@@ -77,43 +76,43 @@ const team = await getCollection("team");
       <h2>Our Team</h2>
       <p>
         Our founder, contractors, and community contributors have experience in
-        a large variety of endeavors–from building large-scale software
-        applications, to moderation, to community building, to managing open
-        source projects, to decentralized technologies, to technical (and
-        non-technical) writing. You can see some of what we’ve built until now
+        a large variety of endeavors: building large-scale software
+        applications, moderation and community building, managing open source
+        projects, decentralized technologies, and technical (and non-technical)
+        writing. You can see some of what we’ve built until now
         <a href="/projects">on our projects page</a>.
       </p>
       <section>
         <h3 class="text-fujo-purple">Our founder</h3>
         <p>...and only employee.</p>
-        <div class="w-full md:max-w-lg mt-6 mb-12 gap-4">
-        {
-          team
-            .filter((member) => member.data.type == "founder")
-            // @ts-ignore
-            .map((member) => <TeamCard {...member.data} />)
-        }
+        <div class="mb-12 mt-6 w-full gap-4 md:max-w-lg">
+          {
+            team
+              .filter((member) => member.data.type == "founder")
+              // @ts-ignore
+              .map((member) => <TeamCard {...member.data} />)
+          }
         </div>
       </section>
       <section>
         <h3 class="text-fujo-purple">Our contractors</h3>
         <div>
           <p>
-            Throughtout the years, we've hired folks from the fandom community
-            to help with everything from art, to writing, to software
-            development and more. While some were established professionals,
-            we're proud to have been others' first dive into the tech industry.
-            If you're interested in hiring from a diverse set of amazing and
-            hardworking individuals, check out their own websites!
+            Throughout the years, we've hired folks from the fandom community to
+            help with art, writing, software development and more. While some
+            were established professionals, we're proud to have been others'
+            first dive into the tech industry. If you're interested in hiring
+            from a diverse set of amazing and hardworking individuals, check out
+            their websites!
           </p>
         </div>
-        <div class="flex flex-col md:grid md:grid-cols-2 mt-6 mb-12 gap-6">
-        {
-          team
-            .filter((member) => member.data.type == "contractor")
-            // @ts-ignore
-            .map((member) => <TeamCard {...member.data} />)
-        }
+        <div class="mb-12 mt-6 flex flex-col gap-6 md:grid md:grid-cols-2">
+          {
+            team
+              .filter((member) => member.data.type == "contractor")
+              // @ts-ignore
+              .map((member) => <TeamCard {...member.data} />)
+          }
         </div>
       </section>
       <section>
@@ -121,17 +120,17 @@ const team = await getCollection("team");
         <p>
           Nothing we do would be possible without the help of our community
           contributors who have generously donated their time to the cause.
-          Their help has been invaluable with everything from writing, to
-          community moderation, to moral support, to expertise, to software
-          development and way more.
+          Their help has been invaluable. Their contributions include writing,
+          community moderation, moral support, specialized expertise, software
+          development, and so much more.
         </p>
-        <div class="flex flex-col md:grid md:grid-cols-2 mt-6 gap-6">
-        {
-          team
-            .filter((member) => member.data.type == "community")
-            // @ts-ignore
-            .map((member) => <TeamCard {...member.data} />)
-        }
+        <div class="mt-6 flex flex-col gap-6 md:grid md:grid-cols-2">
+          {
+            team
+              .filter((member) => member.data.type == "community")
+              // @ts-ignore
+              .map((member) => <TeamCard {...member.data} />)
+          }
         </div>
       </section>
     </section>

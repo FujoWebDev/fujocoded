@@ -95,7 +95,7 @@ const { pathname } = Astro.url;
     class:list={{
       current: pathname.startsWith("/support"),
     }}
-    href="/support">Support</a
+    href="/support">Support us</a
   >
   <button
     class="menu-close absolute right-0 top-0 flex items-center gap-2 px-6 py-4 text-2xl"
@@ -108,7 +108,7 @@ const { pathname } = Astro.url;
   </button>
 </nav>
 <nav
-  class="big-screen sticky top-8 z-30 mt-[var(--content-margin)] hidden w-11/12 -translate-y-1/2 font-hatch text-xl text-fujo-pink md:flex md:transform md:items-center md:justify-around md:rounded-full md:px-2 md:py-1"
+  class="big-screen sticky top-8 z-30 mt-[var(--content-margin)] hidden -translate-y-1/2 font-hatch text-xl text-fujo-pink md:flex transform items-center justify-around rounded-full"
 >
   <a
     aria-current={pathname == "/" ? "page" : "false"}
@@ -118,42 +118,42 @@ const { pathname } = Astro.url;
     }}
     class="lemon"
     href="/"
-    set:html={lemonLogoSvg}
-  />
+  ><span set:html={lemonLogoSvg}></span></a>
+  
   <a
     aria-current={pathname.startsWith("/projects") ? "page" : "false"}
     class:list={{
       current: pathname.startsWith("/projects"),
     }}
-    href="/projects">Projects</a
+    href="/projects"><span>Projects</span></a
   >
   <a
     aria-current={pathname.startsWith("/about") ? "page" : "false"}
     class:list={{
       current: pathname.startsWith("/about"),
     }}
-    href="/about">About</a
+    href="/about"><span>About</span></a
   >
   <a
     aria-current={pathname.startsWith("/fujoshi") ? "page" : "false"}
     class:list={{
       current: pathname.startsWith("/fujoshi"),
     }}
-    href="/fujoshi">Fujoshi</a
+    href="/fujoshi"><span>Fujoshi</span></a
   >
   <a
     aria-current={pathname.startsWith("/updates") ? "page" : "false"}
     class:list={{
       current: pathname.startsWith("/updates"),
     }}
-    href="/updates">Updates</a
+    href="/updates"><span>Updates</span></a
   >
   <a
     aria-current={pathname.startsWith("/support") ? "page" : "false"}
     class:list={{
       current: pathname.startsWith("/support"),
     }}
-    href="/support">Support</a
+    href="/support"><span>Support us</span></a
   >
 </nav>
 
@@ -184,8 +184,9 @@ const { pathname } = Astro.url;
     @apply rounded-full;
   }
 
-  a {
-    @apply mx-1 my-1 px-4 py-1;
+  .small-screen a,
+  .big-screen a span {
+    @apply px-4 py-1 block;
   }
   nav.small-screen a {
     @apply mx-auto my-0 px-8 py-4;
@@ -194,21 +195,30 @@ const { pathname } = Astro.url;
   a:nth-child(2) {
     @apply ml-0;
   }
-  .current:not(.lemon) {
+  .small-screen a.current:not(.lemon),
+  .big-screen a.current:not(.lemon) span {
     @apply rounded-full bg-fujo-blue  text-white;
   }
-  a:not(.lemon):hover,
-  a.current:hover {
+  .small-screen a:not(.current):hover,
+  .big-screen a:not(.current):hover span {
     @apply rounded-full bg-fujo-blue/20  text-fujo-blue backdrop-blur-lg backdrop-filter;
   }
+
+  .big-screen .lemon span {
+    @apply p-1.5 block;
+  }
+  
+  .big-screen a {
+    @apply p-1.5;
+  }
   .lemon {
-    position: absolute;
-    left: 5px;
+    @apply absolute left-0;
   }
 
-  .lemon :global(svg) {
-    width: 25px;
-    height: 25px;
+  
+  .lemon span :global(svg) {
+    width: 24px;
+    height: 24px;
     stroke: theme("colors.fujo-pink");
     filter: drop-shadow(2px 2px 3px #ff38eb66);
   }
@@ -259,7 +269,7 @@ const { pathname } = Astro.url;
         padding-left: 0;
       }
       to {
-        padding-left: 55px;
+        padding-left: calc(52px);
       }
     }
     @keyframes shadow {
@@ -276,7 +286,7 @@ const { pathname } = Astro.url;
         opacity: 0;
       }
       to {
-        width: 20px;
+        width: calc(52px);
         opacity: 1;
       }
     }

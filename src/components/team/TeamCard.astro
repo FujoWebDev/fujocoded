@@ -25,7 +25,7 @@ const { name, contacts, avatar } = Astro.props;
       src={avatar}
       alt=""
     />
-    <span class="truncate">{name}</span>
+    <span class="truncate -mt-1">{name}</span>
   </h3>
   <ul class="flex flex-col">
     {
@@ -49,7 +49,7 @@ const { name, contacts, avatar } = Astro.props;
                   {contact.platform}:{" "}
                 </span>
               )}
-              <span class="truncate">{contact.username ? `@${contact.username}` : contact.url}</span>
+              <span class="truncate -mt-1">{contact.username ? `@${contact.username}` : contact.url}</span>
             </a>
           </li>
         );

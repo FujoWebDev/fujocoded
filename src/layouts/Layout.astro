@@ -118,11 +118,9 @@ const {
       }
       :where(h1, h2, h3) em {
         color: white;
-        text-shadow:
-          1px 1px 4px #4d2e91,
-          -1px 1px 4px #4d2e91,
-          -1px -1px 4px #4d2e91,
-          1px -1px 4px #4d2e91;
+        background: linear-gradient(#FF38EB, #4360F7);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
       }
       li {
         @apply mt-4;
@@ -169,7 +167,7 @@ const {
         right: 0;
         bottom: 0;
         background: var(--backgroundGrid);
-        background-size: 15%;
+        background-size: 350px;
         opacity: 0.08;
         z-index: -1;
       }

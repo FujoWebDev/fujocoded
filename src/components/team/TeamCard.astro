@@ -13,36 +13,39 @@ const { name, contacts, avatar } = Astro.props;
 ---
 
 <div
-  class="m-4 mx-auto flex max-w-lg flex-col gap-4 rounded-xl bg-white p-6 drop-shadow-lg"
+  class="flex flex-col gap-2 rounded-xl bg-white p-4 pb-2.5 md:p-6 md:pb-[1.125rem] drop-shadow-lg"
 >
-  <h4
-    class="flex flex-wrap items-end gap-x-3 gap-y-1 font-hatch text-2xl text-fujo-pink"
+  <h3
+    class="font-hatch m-0 text-fujo-pink flex gap-3 items-center not-italic font-light"
   >
     <Image
       class="rounded-xl object-cover"
-      width={50}
-      height={50}
+      width={40}
+      height={40}
       src={avatar}
       alt=""
-    />{name}
-  </h4>
-  <ul class="flex flex-col gap-3">
+    />
+    <span class="truncate">{name}</span>
+  </h3>
+  <ul class="flex flex-col">
     {
       contacts.map((contact) => {
         return (
-          <li>
-            <a href={contact.url} class="flex gap-3">
-              <Icon
-                size={24}
-                aria-labelledby={
-                  contact.platform !== "web" ? "platform" : undefined
-                }
-                aria-label={contact.platform === "web" ? "website" : undefined}
-                name={contact.icon ?? "world-www"}
-                class="flex-shrink-0"
-              />
+          <li class="mt-0">
+            <a href={contact.url} class="group flex gap-3 items-center !no-underline py-1.5">
+              <div class="bg-fujo-purple/10 flex rounded-lg p-2 group-hover:bg-fujo-purple/20">
+                <Icon
+                  size={24}
+                  aria-labelledby={
+                    contact.platform !== "web" ? "platform" : undefined
+                  }
+                  aria-label={contact.platform === "web" ? "website" : undefined}
+                  name={contact.icon ?? "world-www"}
+                  class="flex-shrink-0"
+                />
+              </div>
               {contact.platform !== "web" && (
-                <span class="sr-only sm:not-sr-only" id="platform">
+                <span class="sr-only" id="platform">
                   {contact.platform}:{" "}
                 </span>
               )}

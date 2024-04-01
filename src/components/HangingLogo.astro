@@ -182,7 +182,7 @@ const wordLogoSvg = readFileSync("./src/images/word-logo.svg", {
 
 <script>
   const prefersReducedMotion = window.matchMedia(
-    `(prefers-reduced-motion: reduce)`
+    `(prefers-reduced-motion: reduce)`,
   ).matches;
   const RATE_DIVISOR = 600;
   const lemon = document.querySelector(".lemon");
@@ -199,13 +199,28 @@ const wordLogoSvg = readFileSync("./src/images/word-logo.svg", {
   let lastScrollPosition = 0;
 
   document.addEventListener("scroll", () => {
-    if (prefersReducedMotion) {
-      return;
-    }
     if (window.scrollY > 200 && lastScrollPosition > 200) {
       return;
     }
     if (!lemon || !logo || !llc || !container) {
+      return;
+    }
+    if (prefersReducedMotion) {
+      const scrollDifference = lastScrollPosition - window.scrollY;
+       if (scrollDifference > 0 && window.scrollY < 200) {
+        (lemon as HTMLElement).style.translate = `0px 0px`;
+        (logo as HTMLElement).style.translate = `0px 0px`;
+        (llc as HTMLElement).style.translate = `0px 0px`;
+        (container as HTMLElement).style.translate = `0px 0px`;
+      }
+      if (scrollDifference < 0) {
+        (lemon as HTMLElement).style.translate = `0px ${lemonFinalPosition}px`;
+        (logo as HTMLElement).style.translate = `0px ${logoFinalPosition}px`;
+        (llc as HTMLElement).style.translate = `0px ${logoFinalPosition}px`;
+        (container as HTMLElement).style.translate =
+          `0px ${containerFinalPosition}px`;
+      }
+      lastScrollPosition = window.scrollY;
       return;
     }
     lastScrollPosition = window.scrollY;

@@ -1,6 +1,5 @@
 ---
 import { getCollection } from "astro:content";
-import Browser from "../components/Browser.astro";
 import Layout from "../layouts/Layout.astro";
 import ProjectCard from "../components/projects/ProjectCard.astro";
 
@@ -12,9 +11,11 @@ const graduatedProjects = await getCollection(
   "projects",
   (project) => project.data.graduated
 );
+
+const description = "The FujoVerse™ collects everything we’ve launched under a single banner. Our projects rest on three pillars: software, education, and community.";
 ---
 
-<Layout>
+<Layout description={description}>
   <article class="rounded-xl bg-white">
     <h1>
       Enter the <em>FujoVerse™</em>

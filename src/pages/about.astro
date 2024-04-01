@@ -151,7 +151,6 @@ const team = await getCollection("team");
     z-index: -2;
     /* @apply rounded-xl; */
     border-radius: calc(0.75rem + 2px);
-    animation: gradient 15s ease infinite;
   }
   details::after {
     @apply bg-gradient-to-b from-[#260F56] to-[#4D2E91];
@@ -165,18 +164,26 @@ const team = await getCollection("team");
     z-index: -1;
     /* @apply rounded-xl; */
     border-radius: calc(0.75rem);
-    animation: gradient 15s ease infinite;
   }
 
-  @keyframes gradient {
-    0% {
-      background-position: 0% 50%;
+  @media (prefers-reduced-motion: no-preference) {
+    details::before {
+      animation: gradient 15s ease infinite;
     }
-    50% {
-      background-position: 100% 50%;
+    details::after {
+      animation: gradient 15s ease infinite;
     }
-    100% {
-      background-position: 0% 50%;
+
+    @keyframes gradient {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
     }
   }
 </style>

@@ -13,11 +13,9 @@ const { name, contacts, avatar } = Astro.props;
 ---
 
 <div
-  class="relative z-10 flex flex-col gap-2 rounded-xl bg-white p-4 pb-2.5 md:p-6 md:pb-[1.125rem]"
+  class="outer-box relative z-10 flex flex-col gap-2 rounded-xl bg-white p-4 pb-2.5 md:p-6 md:pb-[1.125rem]"
 >
-  <h3
-    class="m-0 text-fujo-pink font-macho flex gap-3 items-center not-italic"
-  >
+  <h3 class="m-0 flex items-center gap-3 font-macho not-italic text-fujo-pink">
     <Image
       class="rounded-xl object-cover"
       width={40}
@@ -32,14 +30,19 @@ const { name, contacts, avatar } = Astro.props;
       contacts.map((contact) => {
         return (
           <li class="mt-0">
-            <a href={contact.url} class="group flex gap-3 items-center !no-underline py-1.5">
-              <div class="bg-fujo-purple/10 flex rounded-lg p-2 group-hover:bg-fujo-purple/20">
+            <a
+              href={contact.url}
+              class="group flex items-center gap-3 py-1.5 !no-underline"
+            >
+              <div class="flex rounded-lg bg-fujo-purple/10 p-2 group-hover:bg-fujo-purple/20">
                 <Icon
                   size={24}
                   aria-labelledby={
                     contact.platform !== "web" ? "platform" : undefined
                   }
-                  aria-label={contact.platform === "web" ? "website" : undefined}
+                  aria-label={
+                    contact.platform === "web" ? "website" : undefined
+                  }
                   name={contact.icon ?? "world-www"}
                   class="flex-shrink-0"
                 />
@@ -49,7 +52,9 @@ const { name, contacts, avatar } = Astro.props;
                   {contact.platform}:{" "}
                 </span>
               )}
-              <span class="truncate -mt-1">{contact.username ? `@${contact.username}` : contact.url}</span>
+              <span class="-mt-1 truncate">
+                {contact.username ? `@${contact.username}` : contact.url}
+              </span>
             </a>
           </li>
         );
@@ -58,7 +63,7 @@ const { name, contacts, avatar } = Astro.props;
   </ul>
 </div>
 <style>
-  div::before {
+  .outer-box::before {
     /* background: linear-gradient(180deg, #ff21e9 0%, #4360f7 100%); */
     background: radial-gradient(circle at center, #ff21e9, #4360f7);
     background-size: 500% 500%;
@@ -71,9 +76,8 @@ const { name, contacts, avatar } = Astro.props;
     z-index: -2;
     /* @apply rounded-xl; */
     border-radius: calc(0.75rem + 2px);
-    animation: gradient 15s ease infinite;
   }
-  div::after {
+  .outer-box::after {
     background-color: white;
     background-size: 500% 500%;
     content: "";
@@ -85,18 +89,30 @@ const { name, contacts, avatar } = Astro.props;
     z-index: -1;
     /* @apply rounded-xl; */
     border-radius: calc(0.75rem);
-    animation: gradient 15s ease infinite;
   }
 
-  @keyframes gradient {
-    0% {
-      background-position: 0% 50%;
+  @media (prefers-reduced-motion: no-preference) {
+    .outer-box::before {
+      animation: gradient 15s ease infinite;
+      transform: translate3d(0px, 0px, 0.1px);
+      overflow-clip-margin: unset;
     }
-    50% {
-      background-position: 100% 50%;
+    .outer-box::after {
+      animation: gradient 15s ease infinite;
+      transform: translate3d(0px, 0px, 0.1px);
+      overflow-clip-margin: unset;
     }
-    100% {
-      background-position: 0% 50%;
+
+    @keyframes gradient {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
     }
   }
 </style>

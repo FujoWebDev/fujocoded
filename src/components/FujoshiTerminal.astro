@@ -34,18 +34,22 @@
       z-index: -1;
       /* @apply rounded-xl; */
       border-radius: calc(0.75rem + 1px);
-      animation: gradient 15s ease infinite;
     }
 
-    @keyframes gradient {
-      0% {
-        background-position: 0% 50%;
+    @media (prefers-reduce-motion: no-preference) {
+      div::before {
+        animation: gradient 15s ease infinite;
       }
-      50% {
-        background-position: 100% 50%;
-      }
-      100% {
-        background-position: 0% 50%;
+      @keyframes gradient {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
       }
     }
   </style>

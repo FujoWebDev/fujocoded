@@ -2,9 +2,9 @@ name: enigmalea
 avatar: ./avatars/enigmaleaCropSquare.png
 type: community
 contacts:
-  - https://www.enigmalea.quest/
-  - url: https://indiepocalypse.social/@enigmalea
-    platform: mastodon
+  - https://enigmalea.quest
+  - url: https://easymode.im/@enigmalea
+    platform: firefish
   - https://ko-fi.com/enigmalea
-  - https://enigmalea.tumblr.com/
-  - https://www.pillowfort.social/enigmalea
+  - https://enigmalea.tumblr.com
+  - https://enigmalea.bsky.social

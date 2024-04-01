@@ -29,12 +29,12 @@ const graduatedProjects = await getCollection(
       <ul class="list-disc pl-6">
         <li>
           <strong>Libraries</strong>, like AO3.js, that provide an opportunity
-          for contributors to strengthen their coding skills, and tools fannish
+          for contributors to strengthen their coding skills and tools fannish
           folks can use for their own projects.
         </li>
         <li>
           <strong>Software,</strong> like BobaBoard, that fills fannish needs not
-          satisfied by the current web, and provides another chance for collaboration.
+          satisfied by the current web and provides another chance for collaboration.
         </li>
         <li>
           <strong>Communities</strong>, like Fandom Coders, where people can
@@ -53,9 +53,10 @@ const graduatedProjects = await getCollection(
       </ul>
       <h2><em>Current</em> Projects</h2>
       <p>
-        The projects below are maintained or led by FujoCoded. Your support helps with their continued development and growth.
+        The projects below are maintained or led by FujoCoded. Your support
+        helps with their continued development and growth.
       </p>
-      <ul class="flex flex-col gap-8 mt-8">
+      <ul class="mt-8 flex flex-col gap-8">
         {
           currentProjects.map((project) => (
             <li class="m-0">
@@ -67,10 +68,10 @@ const graduatedProjects = await getCollection(
       <h2><em>Graduated</em> Projects</h2>
       <p>
         These projects have been released to their communities to nurture and
-        grow on their own. The governance and day-by-day operations are left up to
-        the contributors of each project.
+        grow on their own. The governance and day-by-day operations are left up
+        to the contributors of each project.
       </p>
-      <ul class="flex flex-col gap-8 mt-8">
+      <ul class="mt-8 flex flex-col gap-8">
         {
           graduatedProjects.map((project) => (
             <li class="m-0">

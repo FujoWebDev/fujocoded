@@ -14,7 +14,7 @@ const wordLogoSvg = readFileSync("./src/images/word-logo.svg", {
 });
 ---
 
-<a class="hanging-container z-50 hover:cursor-pointer" href="/">
+<a class="hanging-container z-10 hover:cursor-pointer" href="/">
   <div class="lemon">
     <Fragment set:html={lemonLogoSvg} />
   </div>
@@ -182,18 +182,18 @@ const wordLogoSvg = readFileSync("./src/images/word-logo.svg", {
 
 <script>
   const prefersReducedMotion = window.matchMedia(
-    `(prefers-reduced-motion: reduce)`,
+    `(prefers-reduced-motion: reduce)`
   ).matches;
   const RATE_DIVISOR = 600;
   const lemon = document.querySelector(".lemon");
-  const lemonFinalPosition = -300;
+  const lemonFinalPosition = -400;
   const lemonRate = lemonFinalPosition / RATE_DIVISOR;
   const logo = document.querySelector(".logo");
   const llc = document.querySelector(".llc");
-  const logoFinalPosition = -400;
+  const logoFinalPosition = -600;
   const logoRate = logoFinalPosition / RATE_DIVISOR;
   const container = document.querySelector(".hanging-container");
-  const containerFinalPosition = -200;
+  const containerFinalPosition = -40;
   const containerRate = containerFinalPosition / RATE_DIVISOR;
 
   let lastScrollPosition = 0;
@@ -207,7 +207,7 @@ const wordLogoSvg = readFileSync("./src/images/word-logo.svg", {
     }
     if (prefersReducedMotion) {
       const scrollDifference = lastScrollPosition - window.scrollY;
-       if (scrollDifference > 0 && window.scrollY < 200) {
+      if (scrollDifference > 0 && window.scrollY < 200) {
         (lemon as HTMLElement).style.translate = `0px 0px`;
         (logo as HTMLElement).style.translate = `0px 0px`;
         (llc as HTMLElement).style.translate = `0px 0px`;

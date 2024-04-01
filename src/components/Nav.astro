@@ -63,6 +63,13 @@ const { pathname } = Astro.url;
   class="small-screen script-hidden absolute left-0 right-0 top-0 z-20 flex h-svh flex-col justify-center gap-8 bg-white text-center font-hatch text-3xl text-fujo-pink md:hidden"
 >
   <a
+    aria-current={pathname == "/" ? "page" : "false"}
+    class:list={{
+      current: pathname == "/",
+    }}
+    href="/">Home</a
+  >
+  <a
     aria-current={pathname.startsWith("/projects") ? "page" : "false"}
     class:list={{
       current: pathname.startsWith("/projects"),
@@ -305,10 +312,12 @@ const { pathname } = Astro.url;
   const closeMenu = document.querySelector(".menu-close");
 
   openMenu?.addEventListener("click", () => {
+    document.body.classList.add("menu-open");
     menu?.classList.add("script-hidden");
     mobileNav?.classList.remove("script-hidden");
   });
   closeMenu?.addEventListener("click", () => {
+    document.body.classList.remove("menu-open");
     mobileNav?.classList.add("script-hidden");
     menu?.classList.remove("script-hidden");
   });

@@ -18,6 +18,9 @@ import { Icon } from "astro-icon/components";
     const toTopButton = document.querySelector<HTMLElement>(".to-top");
 
     document.addEventListener("scroll", () => {
+      if (!toTopButton) {
+        return;
+      }
       if (window.scrollY > 250) {
         toTopButton.style.opacity = "1";
       } else {

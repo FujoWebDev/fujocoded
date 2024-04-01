@@ -31,5 +31,15 @@ import { Icon } from "astro-icon/components";
     toTopButton?.addEventListener("click", () => {
       window.scrollTo(0, 0);
     });
+
+    console.log(window.scrollY);
+
+    if (toTopButton) {
+      if (window.scrollY > 250) {
+        toTopButton.style.opacity = "1";
+      } else {
+        toTopButton.style.opacity = "0";
+      }
+    }
   </script></button
 >

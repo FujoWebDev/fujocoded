@@ -8,15 +8,15 @@ const { name, avatar, description } = Astro.props;
 ---
 
 <div
-  class="flex items-center gap-4 rounded-xl p-4 text-lg text-fujo-purple shadow-md"
+  class="text-lg text-fujo-purple flex gap-4 items-center md:flex-col md:items-start"
 >
   <Image
-    class="block h-auto max-w-[100px] rounded-full"
+    class="block h-auto max-w-[100px] rounded-xl"
     src={avatar}
     alt={name}
   />
   <div class="flex flex-col justify-center">
-    <h3 class="font-hatch text-xl text-fujo-pink">
+    <h3 class="font-macho font-bold not-italic text-xl text-fujo-purple mt-0">
       {name}
     </h3>
     <p set:html={description} />

@@ -29,20 +29,8 @@
     z-index: -1;
     /* @apply rounded-xl; */
     border-radius: calc(0.75rem + 1px);
-    animation: gradient 15s ease infinite;
   }
 
-  @keyframes gradient {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
-  }
   h2 {
     text-shadow:
       1px 1px 2px #ff21e933,
@@ -63,5 +51,23 @@
       -1px 1px 3px #ffffff33,
       -1px -1px 3px #ffffff33,
       1px -1px 3px #ffffff33;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    div::before {
+      animation: gradient 15s ease infinite;
+    }
+
+    @keyframes gradient {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
   }
 </style>

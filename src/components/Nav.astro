@@ -231,6 +231,12 @@ const { pathname } = Astro.url;
     display: none;
   }
 
+  @media (prefers-reduced-motion: reduce) {
+    nav.big-screen {
+      padding-left: calc(52px);
+    }
+  }
+
   @media (prefers-reduced-motion: no-preference) {
     nav.big-screen::before,
     .menu::before {

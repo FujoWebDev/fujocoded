@@ -109,9 +109,11 @@ const { pathname } = Astro.url;
     href="/support"><span>Support us</span></a
   >
 </nav>
-<dialog class="menu-dialog relative m-0 h-dvh max-h-dvh w-full max-w-full">
+<dialog
+  class="menu-dialog relative m-0 h-dvh max-h-dvh w-full max-w-full items-center justify-center"
+>
   <nav
-    class="small-screen z-20 flex h-full flex-col items-center justify-between gap-1 bg-white px-2 pb-[200px] pt-8 text-center font-hatch text-2xl text-fujo-pink"
+    class="small-screen z-20 flex h-full flex-col items-center justify-around gap-1 bg-white px-2 pb-[200px] pt-8 text-center font-hatch text-2xl text-fujo-pink"
   >
     <a
       autofocus
@@ -197,6 +199,16 @@ const { pathname } = Astro.url;
     @apply rounded-full;
   }
 
+  dialog {
+    display: none;
+  }
+  dialog[open] {
+    display: flex;
+  }
+
+  .small-screen {
+    max-height: min(600px, 50dvh);
+  }
   .small-screen a,
   .big-screen a span {
     @apply block px-4 py-1;

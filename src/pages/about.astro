@@ -114,6 +114,7 @@ const team = await getCollection("team");
               .map((member) => <TeamCard {...member.data} />)
           }
         </div>
+				<div class="text-center text-2xl font-[400] font-hatch text-fujo-pink italic">... and more.</div>
       </section>
       <section>
         <h3 class="text-fujo-purple">Our community contributors</h3>
@@ -124,7 +125,7 @@ const team = await getCollection("team");
           community moderation, moral support, specialized expertise, software
           development, and so much more.
         </p>
-        <div class="mt-6 flex flex-col gap-6 md:grid md:grid-cols-2">
+        <div class="mb-12 mt-6 flex flex-col gap-6 md:grid md:grid-cols-2">
           {
             team
               .filter((member) => member.data.type == "community")
@@ -132,6 +133,7 @@ const team = await getCollection("team");
               .map((member) => <TeamCard {...member.data} />)
           }
         </div>
+				<div class="text-center text-2xl font-[400] font-hatch text-fujo-pink italic">... and more.</div>
       </section>
     </section>
   </article>

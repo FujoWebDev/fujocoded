@@ -7,7 +7,6 @@ tags:
   - paid
 graduated: false
 websites:
-  - name: Store
-    type: store
+  - icon: "lucide:store"
     url: https://www.robinboob.com
 description: A super-serious <em>parody</em> of NFTs. Buy a certificate and become the exclusive owner of your favorite ship!

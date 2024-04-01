@@ -13,18 +13,20 @@ import { Image } from "astro:assets";
 import Socials from "../components/Socials.astro";
 
 const SECTION_CLASS =
-  "test relative flex gap-5 items-center before:rounded-3xl before:transform before:-rotate-1 drop-shadow";
+  "test relative flex flex-col md:flex-row py-5 items-center before:rounded-3xl before:transform before:-rotate-1 drop-shadow";
 
 const BUTTON_LINKS =
-  "button-links rounded-xl bg-gradient-to-b from-[#CE00FF] to-[#A700CF] px-12 py-3 font-hatch text-lg font-medium text-white";
+  "button-links w-full sm:w-auto text-center rounded-xl bg-gradient-to-b from-[#CE00FF] to-[#A700CF] px-12 py-3 font-hatch text-lg font-medium text-white";
+
+const TITLE_CLASS = "mb-0 mt-0 font-hatch text-[34px] font-medium italic text-fujo-pink"
 ---
 
 <Layout>
   <MissionTerminal />
   <div class="mt-14 flex flex-col gap-14">
     <section class={SECTION_CLASS}>
-      <div class="browser-shadow -translate-x-6 -translate-y-10 transform">
-        <Browser class="w-[400px]">
+      <div class="browser-shadow -translate-y-10 transform md:-translate-x-4">
+        <Browser class="w-[300px] md:w-[400px]">
           <Image
             slot="front"
             class="browser-front z-10 h-auto w-[500px]"
@@ -40,9 +42,9 @@ const BUTTON_LINKS =
           />
         </Browser>
       </div>
-      <div class="flex flex-col items-start gap-4 pb-6 pr-4 pt-1">
+      <div class="flex flex-col items-start gap-4 pb-6 px-6 md:pb-2 md:pr-6 md:pl-3">
         <h2
-          class="mb-0 font-hatch text-[34px] font-medium italic text-fujo-pink"
+          class={TITLE_CLASS}
         >
           A Better Web <em class="text-white shadow-fujo-pink">Together</em>
         </h2>
@@ -60,8 +62,8 @@ const BUTTON_LINKS =
       </div>
     </section>
     <section class:list={[SECTION_CLASS, "flex-row-reverse before:rotate-1"]}>
-      <div class="browser-shadow -translate-x--5 -translate-y-5 transform">
-        <Browser class="w-[400px]">
+      <div class="browser-shadow -translate-x--5 -translate-y-10 md:-translate-y-0 transform md:-translate-x-4">
+        <Browser class="w-[300px] md:w-[400px]">
           <Image
             slot="front"
             class="z-10 h-auto w-[500px]"
@@ -77,9 +79,9 @@ const BUTTON_LINKS =
           />
         </Browser>
       </div>
-      <div class="flex flex-col items-start gap-4 py-8 pl-10 pt-2">
+      <div class="flex flex-col items-start gap-4 pb-6 px-6 md:pb-2 md:pr-6 md:pl-3">
         <h2
-          class="mb-0 font-hatch text-[34px] font-medium italic text-fujo-pink"
+          class={TITLE_CLASS}
         >
           Shape the <em class="text-white shadow-fujo-pink">Next</em> Web
         </h2>
@@ -98,8 +100,8 @@ const BUTTON_LINKS =
       </div>
     </section>
     <section class={SECTION_CLASS}>
-      <div class="browser-shadow -translate-x-5 -translate-y-5 transform">
-        <Browser class="w-[400px]">
+      <div class="browser-shadow -translate-x-0 -translate-y-10 md:-translate-y-0 transform md:-translate-x-4">
+        <Browser class="w-[300px] md:w-[400px]">
           <Image
             slot="front"
             class="z-40 h-auto w-[500px]"
@@ -115,9 +117,9 @@ const BUTTON_LINKS =
           />
         </Browser>
       </div>
-      <div class="flex flex-col items-start gap-4 pb-6 pr-4 pt-1">
+      <div class="flex flex-col items-start gap-4 pb-6 px-6 md:pb-2 md:pr-6 md:pl-3">
         <h2
-          class="mb-0 font-hatch text-[34px] font-medium italic text-fujo-pink"
+          class={TITLE_CLASS}
         >
           Why <em class="text-white shadow-fujo-pink">fujoshi</em>, anyway?
         </h2>
@@ -136,11 +138,11 @@ const BUTTON_LINKS =
       </div>
     </section>
     <section
-      class="test relative flex flex-col content-center drop-shadow before:-rotate-1 before:transform before:rounded-3xl"
+      class="test relative flex flex-col content-center drop-shadow before:-rotate-1 before:transform before:rounded-3xl pt-8 pb-6 px-8"
     >
       <div>
         <h2
-          class="mb-2 text-center font-hatch text-[34px] font-medium italic text-fujo-pink"
+          class:list={[TITLE_CLASS, "text-center"]}
         >
           Get <em class="text-white shadow-fujo-pink">Updates</em>
         </h2>
@@ -150,7 +152,7 @@ const BUTTON_LINKS =
         method="post"
         target="popupwindow"
         onsubmit="window.open('https://buttondown.email/fujocoded', 'popupwindow')"
-        class="text-center"
+        class="text-center flex flex-col sm:flex-row items-center justify-center gap-4 mt-4"
       >
         <input
           type="email"
@@ -159,11 +161,11 @@ const BUTTON_LINKS =
           aria-label="email"
           placeholder="boba-tan@fujocoded.com"
           required="true"
-          class="my-4 h-12 w-2/5 self-center rounded-full border-2 border-fujo-blue placeholder:italic placeholder-shown:p-3"
+          class="h-12 w-full sm:max-w-[50%] self-center rounded-full border-2 border-fujo-blue placeholder:italic placeholder-shown:p-3"
         />
         <input type="submit" value="Subscribe" class={BUTTON_LINKS} />
       </form>
-      <div class="py-4 text-3xl">
+      <div class="mt-8 text-3xl">
         <Socials />
       </div>
     </section>

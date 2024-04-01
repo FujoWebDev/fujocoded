@@ -1,6 +1,7 @@
 ---
 import { readFileSync } from "node:fs";
 import { Icon } from "astro-icon/components";
+import CornerBuddy from "./CornerBuddy.astro";
 
 const lemonLogoSvg = readFileSync("./src/icons/lemon-logo.svg", {
   encoding: "utf8",
@@ -60,61 +61,6 @@ const { pathname } = Astro.url;
   </noscript>
 </div>
 <nav
-  class="small-screen script-hidden absolute left-0 right-0 top-0 z-20 flex h-svh flex-col justify-center gap-8 bg-white text-center font-hatch text-3xl text-fujo-pink md:hidden"
->
-  <a
-    aria-current={pathname == "/" ? "page" : "false"}
-    class:list={{
-      current: pathname == "/",
-    }}
-    href="/">Home</a
-  >
-  <a
-    aria-current={pathname.startsWith("/projects") ? "page" : "false"}
-    class:list={{
-      current: pathname.startsWith("/projects"),
-    }}
-    href="/projects">Projects</a
-  >
-  <a
-    aria-current={pathname.startsWith("/about") ? "page" : "false"}
-    class:list={{
-      current: pathname.startsWith("/about"),
-    }}
-    href="/about">About</a
-  >
-  <a
-    aria-current={pathname.startsWith("/fujoshi") ? "page" : "false"}
-    class:list={{
-      current: pathname.startsWith("/fujoshi"),
-    }}
-    href="/fujoshi">Fujoshi</a
-  >
-  <!-- <a
-    aria-current={pathname.startsWith("/updates") ? "page" : "false"}
-    class:list={{
-      current: pathname.startsWith("/updates"),
-    }}
-    href="/updates">Updates</a
-  > -->
-  <a
-    aria-current={pathname.startsWith("/support") ? "page" : "false"}
-    class:list={{
-      current: pathname.startsWith("/support"),
-    }}
-    href="/support">Support us</a
-  >
-  <button
-    class="menu-close absolute right-0 top-0 flex items-center gap-2 px-6 py-4 text-2xl"
-  >
-    <Icon
-      name="lucide:x"
-      class="inline stroke-2 text-2xl font-bold"
-      aria-label={"close menu"}
-    /><span class="hidden min-[450px]:inline">CLOSE</span>
-  </button>
-</nav>
-<nav
   class="big-screen sticky top-8 z-30 mt-[var(--content-margin)] hidden -translate-y-1/2 transform items-center justify-around rounded-full font-hatch text-xl text-fujo-pink md:flex"
 >
   <a
@@ -163,6 +109,68 @@ const { pathname } = Astro.url;
     href="/support"><span>Support us</span></a
   >
 </nav>
+<dialog
+  class="menu-dialog relative m-0 h-dvh max-h-dvh w-full max-w-full overflow-x-hidden"
+>
+  <nav
+    class="small-screen z-20 flex h-full flex-col items-center justify-between gap-1 bg-white px-2 pb-[200px] pt-8 text-center font-hatch text-2xl text-fujo-pink"
+  >
+    <a
+      autofocus
+      aria-current={pathname == "/" ? "page" : "false"}
+      class:list={{
+        current: pathname == "/",
+      }}
+      href="/">Home</a
+    >
+    <a
+      aria-current={pathname.startsWith("/projects") ? "page" : "false"}
+      class:list={{
+        current: pathname.startsWith("/projects"),
+      }}
+      href="/projects">Projects</a
+    >
+    <a
+      aria-current={pathname.startsWith("/about") ? "page" : "false"}
+      class:list={{
+        current: pathname.startsWith("/about"),
+      }}
+      href="/about">About</a
+    >
+    <a
+      aria-current={pathname.startsWith("/fujoshi") ? "page" : "false"}
+      class:list={{
+        current: pathname.startsWith("/fujoshi"),
+      }}
+      href="/fujoshi">Fujoshi</a
+    >
+    <a
+      aria-current={pathname.startsWith("/updates") ? "page" : "false"}
+      class:list={{
+        current: pathname.startsWith("/updates"),
+      }}
+      href="/updates">Updates</a
+    >
+    <a
+      aria-current={pathname.startsWith("/support") ? "page" : "false"}
+      class:list={{
+        current: pathname.startsWith("/support"),
+      }}
+      href="/support">Support us</a
+    >
+    <button
+      type="button"
+      class="menu-close absolute right-1 top-1 flex items-center gap-2 rounded-full px-4 py-4 text-2xl"
+    >
+      <Icon
+        name="lucide:x"
+        class="inline stroke-2 text-2xl font-bold"
+        aria-label={"close menu"}
+      /><span class="hidden min-[450px]:inline">CLOSE</span>
+    </button>
+  </nav>
+  <CornerBuddy showOnMobile />
+</dialog>
 
 <style>
   nav.big-screen::before,
@@ -196,7 +204,7 @@ const { pathname } = Astro.url;
     @apply block px-4 py-1;
   }
   nav.small-screen a {
-    @apply mx-auto my-0 px-8 py-4;
+    @apply px-6 py-2;
   }
   a:first-child,
   a:nth-child(2) {
@@ -206,7 +214,10 @@ const { pathname } = Astro.url;
   .big-screen a.current:not(.lemon) span {
     @apply rounded-full bg-fujo-blue  text-white;
   }
+  .menu-close:focus-visible,
+  .menu-close:hover,
   .small-screen a:not(.current):hover,
+  .small-screen a:not(.current):focus-visible,
   .big-screen a:not(.current):hover span {
     @apply rounded-full bg-fujo-blue/20  text-fujo-blue backdrop-blur-lg backdrop-filter;
   }
@@ -308,17 +319,40 @@ const { pathname } = Astro.url;
   const openMenu = document.querySelector(".menu-open");
   openMenu?.classList.remove("script-hidden");
   const menu = document.querySelector(".menu");
-  const mobileNav = document.querySelector(".small-screen");
+  const menuDialog = document.querySelector(
+    ".menu-dialog",
+  ) as HTMLDialogElement;
   const closeMenu = document.querySelector(".menu-close");
 
+  let scrollLocation = 0;
+
   openMenu?.addEventListener("click", () => {
-    document.body.classList.add("menu-open");
     menu?.classList.add("script-hidden");
-    mobileNav?.classList.remove("script-hidden");
+    scrollLocation = window.scrollY;
+    menuDialog.showModal();
+    document.documentElement.style.overflowY = "hidden";
   });
   closeMenu?.addEventListener("click", () => {
-    document.body.classList.remove("menu-open");
-    mobileNav?.classList.add("script-hidden");
+    menuDialog.close();
+  });
+  menuDialog.addEventListener("close", () => {
+    document.documentElement.style.overflowY = "";
+    scrollTo({ top: scrollLocation, behavior: "instant" });
     menu?.classList.remove("script-hidden");
   });
+
+  const resizeObserver = new ResizeObserver((entries) => {
+    for (const entry of entries) {
+      if (
+        entry.borderBoxSize[0]?.inlineSize >= 768 ||
+        entry.contentRect.width >= 768
+      ) {
+        menuDialog.close();
+      }
+    }
+  });
+  const body = document.querySelector("body");
+  if (body) {
+    resizeObserver.observe(body);
+  }
 </script>

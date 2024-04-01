@@ -2,9 +2,20 @@
 import { Image } from "astro:assets";
 import Git from "../images/tiny-git.png";
 import { Icon } from "astro-icon/components";
+
+interface Props {
+  showOnMobile?: boolean;
+}
+
+const { showOnMobile = false } = Astro.props;
 ---
 
-<div class="git fixed bottom-1 right-1 z-10">
+<div
+  class:list={[
+    "git fixed bottom-1 right-1 z-10 md:block",
+    { hidden: !showOnMobile },
+  ]}
+>
   <a href="/TODO" title="Support us!"
     ><div
       class="bubble absolute right-[135px] flex flex-col items-center rounded-md border-2 border-black bg-white px-4 py-2 font-macho"

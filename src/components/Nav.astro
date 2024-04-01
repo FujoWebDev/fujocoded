@@ -90,13 +90,13 @@ const { pathname } = Astro.url;
     }}
     href="/fujoshi">Fujoshi</a
   >
-  <a
+  <!-- <a
     aria-current={pathname.startsWith("/updates") ? "page" : "false"}
     class:list={{
       current: pathname.startsWith("/updates"),
     }}
     href="/updates">Updates</a
-  >
+  > -->
   <a
     aria-current={pathname.startsWith("/support") ? "page" : "false"}
     class:list={{
@@ -148,13 +148,13 @@ const { pathname } = Astro.url;
     }}
     href="/fujoshi"><span>Fujoshi</span></a
   >
-  <a
+  <!-- <a
     aria-current={pathname.startsWith("/updates") ? "page" : "false"}
     class:list={{
       current: pathname.startsWith("/updates"),
     }}
     href="/updates"><span>Updates</span></a
-  >
+  > -->
   <a
     aria-current={pathname.startsWith("/support") ? "page" : "false"}
     class:list={{

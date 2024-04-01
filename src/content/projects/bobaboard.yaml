@@ -2,7 +2,7 @@ name: BobaBoard
 preview: ./previews/bobaboard.png
 categories:
   - software
-tags: 
+tags:
   - free
   - open source
   - contributors welcome
@@ -14,7 +14,7 @@ websites:
   - https://bobaboard.tumblr.com
   - https://tech.lgbt/@bobaboard
   - url: https://store.bobaboard.com
-    icon: store
+    icon: "lucide:store"
 description: BobaBoard is a web-based forum software that is
-  designed to be a modern, accessible, and inclusive 
+  designed to be a modern, accessible, and inclusive
   platform for online communities.

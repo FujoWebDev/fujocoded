@@ -1,0 +1,77 @@
+---
+import { Image } from "astro:assets";
+import Git from "../images/tiny-git.png";
+import { Icon } from "astro-icon/components";
+
+interface Props {
+  showOnMobile?: boolean;
+}
+
+const { showOnMobile = false } = Astro.props;
+---
+
+<div
+  class:list={[
+    "git fixed bottom-1 right-1 z-10 md:block",
+    { hidden: !showOnMobile },
+  ]}
+>
+  <a href="/TODO" title="Support us!"
+    ><div
+      class="bubble absolute right-[135px] flex flex-col items-center rounded-md border-2 border-black bg-white px-4 py-2 font-macho"
+    >
+      <a
+        class="flex flex-col items-center gap-1"
+        href="https://www.backerkit.com/c/projects/fujocoded-llc/fujocoded-software-and-education-for-a-better-web?preview_token=pRP66u0ywMO&ref=website"
+        ><Icon class="text-xl text-white" name="logos:backerkit" /><div
+          class="w-20 text-center text-sm font-bold"
+        >
+          Fund us on BackerKit
+        </div>
+      </a>
+    </div>
+  </a>
+
+  <Image src={Git} alt="Corner buddy" />
+
+  <style>
+    .git {
+      filter: drop-shadow(2px 2px 2px #00000077);
+    }
+    div img {
+      width: 130px;
+    }
+
+    .bubble:after {
+      left: 100%;
+      top: 50%;
+      border: solid transparent;
+      content: "";
+      height: 0;
+      width: 0;
+      position: absolute;
+      pointer-events: none;
+      border-color: rgba(136, 183, 213, 0);
+      border-left-color: white;
+      border-width: 4px;
+      margin-top: -4px;
+    }
+    .bubble:before {
+      left: 100%;
+      top: 50%;
+      border: solid transparent;
+      content: "";
+      height: 0;
+      width: 0;
+      position: absolute;
+      pointer-events: none;
+      border-color: rgba(194, 225, 245, 0);
+      border-left-color: black;
+      border-width: 6px;
+      margin-top: -6px;
+    }
+    /* a :global(svg) {
+    color: white;
+  } */
+  </style>
+</div>

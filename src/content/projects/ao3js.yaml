@@ -1,0 +1,16 @@
+name: AO3.js
+preview: ./previews/ao3js-logo.png
+categories:
+  - library
+tags:
+  - beginner friendly
+  - contributors welcome
+  - free
+  - open source
+graduated: false
+websites:
+  - https://github.com/essential-randomness/AO3.JS
+  - https://www.npmjs.com/package/@bobaboard/ao3.js
+description:
+  Data-fetching library for [Archive of Our Own](http://archiveofourown.org/), written in TypeScript.
+  A great project for aspiring open source contributors to take their first steps in!

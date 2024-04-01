@@ -1,0 +1,63 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+import TagList from "../../components/TagList.astro";
+
+const updates = (
+  await getCollection("updates", (update) => !update.data.unlisted)
+).toSorted((elementA, elementB) => {
+  return (
+    elementB.data.created_at.valueOf() - elementA.data.created_at.valueOf()
+  );
+});
+---
+
+<Layout>
+  <section>
+    <h1 class="text-white">Updates</h1>
+    <ol class="flex flex-col gap-4">
+      {
+        updates.map((update) => {
+          return (
+            <li class="flex flex-col items-center">
+              <article class="mx-4 flex flex-col gap-2 rounded-xl bg-white px-6 pb-6 pt-7 drop-shadow-lg sm:px-10">
+                <h2 class="font-hatch text-fujo-pink ">
+                  <a
+                    href={`/updates/${update.slug}`}
+                    set:html={update.data.title}
+                    class="!text-fujo-pink !no-underline !not-italic"
+                  />
+                </h2>
+                <p>
+                  {update.data.created_at.toLocaleString("en", {
+                    weekday: "long",
+                    year: "numeric",
+                    month: "long",
+                    day: "numeric",
+                  })}
+                </p>
+                {!!update.data.tags.length && (
+                  <TagList tags={update.data.tags} />
+                )}
+                {update.data.tagline && (
+                  <p class="tagline">{update.data.tagline}</p>
+                )}
+              </article>
+            </li>
+          );
+        })
+      }
+    </ol>
+  </section>
+</Layout>
+
+<style>
+  article {
+    /* width: min(100% - 32px, 65ch); */
+    min-width: 120%;
+  }
+
+  h1 {
+    text-shadow: 0 2px 6px rgba(255, 56, 235, .7), 0 3px 12px rgba(77, 46, 145, .4);
+  }
+</style>

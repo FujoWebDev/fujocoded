@@ -1,0 +1,45 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import bobawip_color from "../images/bobawip_color.png";
+import backerkit_just_launched from "../images/campaign/backerkit-just-launched.png";
+
+const description =
+  "FujoCoded LLC is building a new online storefront to support our projects. Help us build something exciting by backing us on Backerkit!";
+---
+
+<Layout description={description}>
+  <article class="rounded-xl bg-white">
+    <h1>Support Us</h1>
+    <a
+      href="https://www.backerkit.com/c/projects/fujocoded-llc/fujocoded-software-and-education-for-a-better-web?preview_token=pRP66u0ywMO&ref=website"
+      title="Back us on Bakerkit!"
+      class="no-underline"
+    >
+      <Image
+        src={backerkit_just_launched}
+        alt="A gold diamond-shaped rhombus with black text that says 'Just Launched BackerKit'"
+        class="mx-auto mb-4 w-full max-w-56 pt-10"
+      />
+      <p class="text-center text-3xl font-bold">
+        Help us build our new storefront<br /> by backing us on Backerkit!
+      </p>
+      <!-- TODO: Add link and update name of platform. -->
+    </a>
+    <p class="mt-16">
+      Until the store opens, you can also help support us by supporting our
+      founder on <a href="https://www.patreon.com/essentialrandomness"
+        >Patreon</a
+      >, <a href="https://ko-fi.com/essentialrandomness">Ko-fi</a>, or <a
+        href="https://www.essentialrandomness.com/support-me"
+        >directly on her website</a
+      >.
+    </p>
+
+    <Image
+      src={bobawip_color}
+      alt="Boba-tan wearing a construction helmet and digging a hole."
+      class="mx-auto w-full max-w-36 pt-10"
+    />
+  </article>
+</Layout>

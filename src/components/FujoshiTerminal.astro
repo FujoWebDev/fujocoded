@@ -1,0 +1,56 @@
+---
+
+---
+
+<div
+  class="relative flex max-w-[600px] flex-col gap-4 rounded-xl bg-gradient-to-b from-[#260F56] to-[#4D2E91] p-5 font-zeitung text-sm text-white"
+>
+  <p>
+    <span class="text-fujo-pink">Fujoshi</span> (lit. "rotten woman") is a pejorative
+    name given to Japanese fans of <abbr title="Boys Love">BL</abbr> media for going
+    against social expectations of femininity. As anime and manga rose to international
+    popularity in the early 2000s, online BL spaces became a haven for (often female,
+    queer, and/or neurodivergent) millennials seeking to explore their sexuality
+    outside of normative constraints leading to the term being adopted more widely.
+  </p>
+  <p>
+    In recent years, <span class="text-fujo-pink">fujoshi</span> has been reclaimed
+    by fans of the genre, with the <span class="text-fujo-green">fujin</span> variant
+    (lit. "rotten person") gaining popularity as a way to more correctly represents
+    the diversity of this community.
+  </p>
+
+  <style>
+    div::before {
+      /* background: linear-gradient(180deg, #ff21e9 0%, #4360f7 100%); */
+      background: radial-gradient(circle at center, #ff21e9, #4360f7);
+      background-size: 500% 500%;
+      content: "";
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      right: -2px;
+      bottom: -2px;
+      z-index: -1;
+      /* @apply rounded-xl; */
+      border-radius: calc(0.75rem + 1px);
+    }
+
+    @media (prefers-reduce-motion: no-preference) {
+      div::before {
+        animation: gradient 15s ease infinite;
+      }
+      @keyframes gradient {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+    }
+  </style>
+</div>

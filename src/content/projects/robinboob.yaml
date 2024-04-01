@@ -1,0 +1,12 @@
+name: RobinBoob
+preview: ./previews/robinboob.png
+categories:
+  - commerce
+tags:
+  - april 1st
+  - paid
+graduated: false
+websites:
+  - icon: "lucide:store"
+    url: https://www.robinboob.com
+description: A super-serious <em>parody</em> of NFTs. Buy a certificate and become the exclusive owner of your favorite ship!

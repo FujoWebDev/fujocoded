@@ -1,0 +1,18 @@
+name: The Fujoshi Guide to Web Development
+preview: ./previews/fujoguide.png
+categories:
+  - education
+  - commerce
+tags:
+  - april 1st
+  - beginner friendly
+  - open source
+graduated: false
+websites:
+  - https://www.kickstarter.com/projects/essential-randomness/the-fujoshi-guide-to-web-development
+  - https://fujoweb.dev
+  - https://github.com/orgs/FujoWebDev/
+description:
+  The product of a (successfully funded) Kickstarter, The Fujoshi Guide to Web Development follows the adventures of BobaBoard's
+  mascot Boba-tan as she learns about modern web development concepts straight from the (very hot) embodiments of the relevant
+  programming languages and tools.

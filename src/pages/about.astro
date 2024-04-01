@@ -1,0 +1,192 @@
+---
+import TeamCard from "../components/team/TeamCard.astro";
+import Layout from "../layouts/Layout.astro";
+import { getCollection } from "astro:content";
+
+const team = await getCollection("team");
+const description = "Meet the people behind the projects designed to build a kinder, more diverse, more collaborative–and, yes, more weird!–internet. ";
+---
+
+<Layout description={description}>
+  <article class="rounded-xl bg-white">
+    <h1>About <em>FujoCoded LLC</em></h1>
+    <section>
+      <p>
+        <strong>
+          FujoCoded LLC's mission is to build a kinder, more diverse, more
+          collaborative–and, yes, <em>more weird</em>!–internet.
+        </strong> To this end, we leverage our extensive experience within online
+        fandom communities, along with the many skills at our disposal, to devise
+        engaging ways to help people take charge of their online world.
+      </p>
+      <p>
+        Our main focuses are:
+        <ul class="list-disc pl-6">
+          <li>
+            <strong>Education</strong>, which gives people the skills to be the
+            change they want to see on the web.
+          </li>
+          <li>
+            <strong>Software</strong>, which gives people the tools to make such
+            changes.
+          </li>
+          <li>
+            <strong>Community</strong>, which gives people the strength,
+            structure, and support to see those changes through.
+          </li>
+        </ul>
+      </p>
+      <p>
+        Our emphasis is on working with niche online subcultures (starting with <a
+          href="/fujoshi">fujoshi</a
+        > and fandom) to help them build their technical and collaboration skills.
+        As part of this, we foster communities for learning and connection, promote
+        the adoption of open and decentralized software, and identify and popularize
+        tools that are a good fit for the needs of fannish coders (as well as <a
+          href="/projects">creating some ourselves</a
+        >).
+      </p>
+      <p>
+        In addition to all this, we identify individuals in our community with
+        the potential to become leaders in their own right, and provide them
+        with the resources and mentorship they need to succeed. You can meet
+        some of them in our <a href="/about#contractors">contractors section</a
+        >.
+      </p>
+    </section>
+    <details
+      class="relative z-10 mb-16 mt-10 w-full rounded-xl bg-gradient-to-b from-[#260F56] to-[#4D2E91] text-white"
+    >
+      <summary class="cursor-pointer p-5 text-[20px] font-bold text-white"
+        >Why do this now?</summary
+      >
+      <p class="m-0 px-5 pb-3">
+        A new era of the web is approaching: web development technologies grow
+        more powerful and accessible; decentralized social networks continue to
+        gain steam; users grow increasingly disillusioned with online
+        institutions that used to seem inescapable.
+      </p>
+      <p class="m-0 px-5 pb-5">
+        However, even as many wish for change, most feel powerless to help
+        bring it about. As turmoil and instability grows, there is no better
+        time to rethink who gets to join the conversation on the next era of the
+        web.
+      </p>
+    </details>
+    <section>
+      <h2>Our Team</h2>
+      <p>
+        Our founder, contractors, and community contributors have experience in
+        a large variety of endeavors: building large-scale software
+        applications, moderation and community building, managing open source
+        projects, decentralized technologies, and technical (and non-technical)
+        writing. You can see some of what we’ve built so far
+        <a href="/projects">on our projects page</a>.
+      </p>
+      <section>
+        <h3 class="text-fujo-purple">Our founder</h3>
+        <p>...and only employee.</p>
+        <div class="mb-12 mt-6 w-full gap-4 md:max-w-lg">
+          {
+            team
+              .filter((member) => member.data.type == "founder")
+              // @ts-ignore
+              .map((member) => <TeamCard {...member.data} />)
+          }
+        </div>
+      </section>
+      <section>
+        <h3 class="text-fujo-purple">Our contractors</h3>
+        <div>
+          <p>
+            Throughout the years, we've hired folks from the fandom community to
+            help with art, writing, software development and more. While some
+            were established professionals, we're proud to have been others'
+            first dive into the tech industry. If you're interested in hiring
+            from a diverse set of amazing and hardworking individuals, check out
+            their websites!
+          </p>
+        </div>
+        <div class="mb-12 mt-6 flex flex-col gap-6 md:grid md:grid-cols-2">
+          {
+            team
+              .filter((member) => member.data.type == "contractor")
+              // @ts-ignore
+              .map((member) => <TeamCard {...member.data} />)
+          }
+        </div>
+				<div class="text-center text-2xl font-[400] font-hatch text-fujo-pink italic">... and more.</div>
+      </section>
+      <section>
+        <h3 class="text-fujo-purple">Our community contributors</h3>
+        <p>
+          Nothing we do would be possible without the help of our community
+          contributors who have generously donated their time to the cause.
+          Their help has been invaluable. Their contributions include writing,
+          community moderation, moral support, specialized expertise, software
+          development, and so much more.
+        </p>
+        <div class="mb-12 mt-6 flex flex-col gap-6 md:grid md:grid-cols-2">
+          {
+            team
+              .filter((member) => member.data.type == "community")
+              // @ts-ignore
+              .map((member) => <TeamCard {...member.data} />)
+          }
+        </div>
+				<div class="text-center text-2xl font-[400] font-hatch text-fujo-pink italic">... and more.</div>
+      </section>
+    </section>
+  </article>
+</Layout>
+
+<style>
+  details::before {
+    /* background: linear-gradient(180deg, #ff21e9 0%, #4360f7 100%); */
+    background: radial-gradient(circle at center, #ff21e9, #4360f7);
+    background-size: 500% 500%;
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    z-index: -2;
+    /* @apply rounded-xl; */
+    border-radius: calc(0.75rem + 2px);
+  }
+  details::after {
+    @apply bg-gradient-to-b from-[#260F56] to-[#4D2E91];
+    background-size: 500% 500%;
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    /* @apply rounded-xl; */
+    border-radius: calc(0.75rem);
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    details::before {
+      animation: gradient 15s ease infinite;
+    }
+    details::after {
+      animation: gradient 15s ease infinite;
+    }
+
+    @keyframes gradient {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+  }
+</style>

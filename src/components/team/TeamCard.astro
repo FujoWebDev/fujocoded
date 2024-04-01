@@ -1,0 +1,118 @@
+---
+import { Icon } from "astro-icon/components";
+import type { SocialsData } from "../../lib/socials-transformer";
+import { Image } from "astro:assets";
+
+interface Props {
+  name: string;
+  avatar: string;
+  contacts: SocialsData[];
+}
+
+const { name, contacts, avatar } = Astro.props;
+---
+
+<div
+  class="outer-box relative z-10 flex flex-col gap-2 rounded-xl bg-white p-4 pb-2.5 md:p-6 md:pb-[1.125rem]"
+>
+  <h3 class="m-0 flex items-center gap-3 font-macho not-italic text-fujo-pink">
+    <Image
+      class="rounded-xl object-cover"
+      width={40}
+      height={40}
+      src={avatar}
+      alt=""
+    />
+    <span class="-mt-1">{name}</span>
+  </h3>
+  <ul class="flex flex-col">
+    {
+      contacts.map((contact) => {
+        return (
+          <li class="mt-0">
+            <a
+              href={contact.url}
+              class="group flex items-center gap-3 py-1.5 !no-underline"
+            >
+              <div class="flex rounded-lg bg-fujo-purple/10 p-2 group-hover:bg-fujo-purple/20">
+                <Icon
+                  size={24}
+                  aria-labelledby={
+                    contact.platform !== "web" ? "platform" : undefined
+                  }
+                  aria-label={
+                    contact.platform === "web" ? "website" : undefined
+                  }
+                  name={contact.icon ?? "world-www"}
+                  class="flex-shrink-0"
+                />
+              </div>
+              {contact.platform !== "web" && (
+                <span class="sr-only" id="platform">
+                  {contact.platform}:{" "}
+                </span>
+              )}
+              <span class="-mt-1 truncate">
+                {contact.username ? `@${contact.username}` : contact.url}
+              </span>
+            </a>
+          </li>
+        );
+      })
+    }
+  </ul>
+</div>
+<style>
+  .outer-box::before {
+    /* background: linear-gradient(180deg, #ff21e9 0%, #4360f7 100%); */
+    background: radial-gradient(circle at center, #ff21e9, #4360f7);
+    background-size: 500% 500%;
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    z-index: -2;
+    /* @apply rounded-xl; */
+    border-radius: calc(0.75rem + 2px);
+  }
+  .outer-box::after {
+    background-color: white;
+    background-size: 500% 500%;
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    /* @apply rounded-xl; */
+    border-radius: calc(0.75rem);
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .outer-box::before {
+      animation: gradient 15s ease infinite;
+      transform: translate3d(0px, 0px, 0.1px);
+      overflow-clip-margin: unset;
+    }
+    .outer-box::after {
+      animation: gradient 15s ease infinite;
+      transform: translate3d(0px, 0px, 0.1px);
+      overflow-clip-margin: unset;
+    }
+
+    @keyframes gradient {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+  }
+</style>

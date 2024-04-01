@@ -1,0 +1,245 @@
+---
+import { readFileSync } from "node:fs";
+// style="--color-neon-glow: #ffbf00; --color-neon-fill: white; --color-neon-inner-glow:#f6d880;"
+
+const lemonLogoSvg = readFileSync("./src/images/lemon-logo.svg", {
+  encoding: "utf8",
+});
+const llcSvg = readFileSync("./src/images/LLC.svg", {
+  encoding: "utf8",
+});
+
+const wordLogoSvg = readFileSync("./src/images/word-logo.svg", {
+  encoding: "utf8",
+});
+---
+
+<a class="hanging-container z-50 hover:cursor-pointer" href="/">
+  <div class="lemon">
+    <Fragment set:html={lemonLogoSvg} />
+  </div>
+  <div class="logo">
+    <Fragment set:html={wordLogoSvg} />
+  </div>
+  <div class="llc">
+    <Fragment set:html={llcSvg} />
+  </div>
+</a>
+
+<style>
+  /* Leaving this here, just commented out for now because it performs more smoothly than my js crimes, so we might want to use it for those who do have support for it
+  @supports (animation-timeline: scroll()) {
+    .lemon,
+    .logo,
+    .llc {
+      animation: pullup linear both;
+      animation-timeline: scroll();
+    }
+  } */
+
+  .hanging-container {
+    position: fixed;
+    width: 200px;
+    height: 200px;
+    top: 0;
+    left: 50%;
+    transform: translateX(calc(-50% - 5px));
+    --rope-color: #d9d9d944;
+    --lemon-final-position: -300px;
+    --logo-final-position: -400px;
+  }
+  .lemon {
+    width: 80px;
+    position: absolute;
+    height: auto;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    --translate-x: -50%;
+    --final-position: var(--lemon-final-position);
+    animation-range: entry 0% exit 30%;
+    --color-neon-glow: #ffbf00;
+    --color-neon-fill: white;
+    --color-neon-inner-glow: #f6d880;
+  }
+  .lemon :global(svg) {
+    width: 100%;
+    height: auto;
+  }
+  .lemon::before {
+    content: "";
+    position: absolute;
+    top: -1000px;
+    bottom: 67px;
+    left: 15px;
+    width: 2px;
+    background-color: var(--rope-color);
+    z-index: -1;
+  }
+  .lemon::after {
+    content: "";
+    position: absolute;
+    top: -1000px;
+    bottom: 42px;
+    right: 18px;
+    width: 2px;
+    background-color: var(--rope-color);
+    z-index: -1;
+  }
+
+  .logo {
+    width: 190px;
+    position: absolute;
+    height: auto;
+    top: 90px;
+    left: 50%;
+    transform: translateX(-50%);
+    --translate-x: -50%;
+    --final-position: var(--logo-final-position);
+    animation-range: entry 0% exit 30%;
+    --color-neon-glow: #d529ff;
+    --color-neon-fill: #d529ff;
+    --color-neon-inner-glow: #d529ff;
+    --stroke-strength: 1.5;
+    --glow-strength: 5.4;
+    --inner-glow-strength: 0.3;
+  }
+  .logo :global(svg) {
+    width: 100%;
+    height: auto;
+    transform: rotate(356deg);
+  }
+  .logo::before {
+    content: "";
+    position: absolute;
+    top: -1000px;
+    bottom: 25px;
+    left: 21px;
+    width: 2px;
+    background-color: var(--rope-color);
+    z-index: -1;
+  }
+  .logo::after {
+    content: "";
+    position: absolute;
+    top: -1000px;
+    bottom: 47px;
+    right: 13px;
+    width: 2px;
+    background-color: var(--rope-color);
+    z-index: -1;
+  }
+  .llc {
+    width: 45px;
+    position: absolute;
+    height: auto;
+    top: 136px;
+    right: 7px;
+    --translate-x: 0;
+    --final-position: var(--logo-final-position);
+    animation-range: entry 0% exit 30%;
+    --color-neon-glow: #4360f7;
+    --color-neon-fill: #4360f7;
+    --color-neon-inner-glow: #4360f7;
+    --stroke-strength: 1.5;
+    --glow-strength: 5.4;
+    --inner-glow-strength: 0.3;
+  }
+  .llc :global(svg) {
+    width: 100%;
+    height: auto;
+    transform: rotate(2deg);
+  }
+  .llc::before {
+    content: "";
+    position: absolute;
+    top: -13px;
+    bottom: 15px;
+    left: 6px;
+    width: 2px;
+    background-color: var(--rope-color);
+    z-index: -1;
+  }
+  .llc::after {
+    content: "";
+    position: absolute;
+    top: -13px;
+    bottom: 13px;
+    right: 10px;
+    width: 2px;
+    background-color: var(--rope-color);
+    z-index: -1;
+  }
+  @keyframes pullup {
+    from {
+      transform: translate(var(--translate-x, 0), 0px);
+    }
+    to {
+      transform: translate(var(--translate-x, 0), var(--final-position));
+    }
+  }
+</style>
+
+<script>
+  const prefersReducedMotion = window.matchMedia(
+    `(prefers-reduced-motion: reduce)`,
+  ).matches;
+  const RATE_DIVISOR = 600;
+  const lemon = document.querySelector(".lemon");
+  const lemonFinalPosition = -400;
+  const lemonRate = lemonFinalPosition / RATE_DIVISOR;
+  const logo = document.querySelector(".logo");
+  const llc = document.querySelector(".llc");
+  const logoFinalPosition = -600;
+  const logoRate = logoFinalPosition / RATE_DIVISOR;
+  const container = document.querySelector(".hanging-container");
+  // I don't know what you were trying to do here, but it was leaving the link stuck in the middle of the screen
+  const containerFinalPosition = -600;
+  const containerRate = containerFinalPosition / RATE_DIVISOR;
+
+  let lastScrollPosition = 0;
+
+  document.addEventListener("scroll", () => {
+    if (window.scrollY > 200 && lastScrollPosition > 200) {
+      return;
+    }
+    if (!lemon || !logo || !llc || !container) {
+      return;
+    }
+    if (prefersReducedMotion) {
+      const scrollDifference = lastScrollPosition - window.scrollY;
+      if (scrollDifference > 0 && window.scrollY < 200) {
+        (lemon as HTMLElement).style.translate = `0px 0px`;
+        (logo as HTMLElement).style.translate = `0px 0px`;
+        (llc as HTMLElement).style.translate = `0px 0px`;
+        (container as HTMLElement).style.translate = `0px 0px`;
+      }
+      if (scrollDifference < 0) {
+        (lemon as HTMLElement).style.translate = `0px ${lemonFinalPosition}px`;
+        (logo as HTMLElement).style.translate = `0px ${logoFinalPosition}px`;
+        (llc as HTMLElement).style.translate = `0px ${logoFinalPosition}px`;
+        (container as HTMLElement).style.translate =
+          `0px ${containerFinalPosition}px`;
+      }
+      lastScrollPosition = window.scrollY;
+      return;
+    }
+    lastScrollPosition = window.scrollY;
+    if (window.scrollY > 200) {
+      (lemon as HTMLElement).style.translate = `0px ${lemonFinalPosition}px`;
+      (logo as HTMLElement).style.translate = `0px ${logoFinalPosition}px`;
+      (llc as HTMLElement).style.translate = `0px ${logoFinalPosition}px`;
+      (container as HTMLElement).style.translate =
+        `0px ${containerFinalPosition}px`;
+      return;
+    }
+    (lemon as HTMLElement).style.translate =
+      `0px ${lemonRate * lastScrollPosition}px`;
+    (logo as HTMLElement).style.translate =
+      `0px ${logoRate * lastScrollPosition}px`;
+    (llc as HTMLElement).style.translate =
+      `0px ${logoRate * lastScrollPosition}px`;
+    (container as HTMLElement).style.translate =
+      `0px ${containerRate * lastScrollPosition}px`;
+  });
+</script>

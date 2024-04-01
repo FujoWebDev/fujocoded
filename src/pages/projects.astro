@@ -1,0 +1,91 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "../layouts/Layout.astro";
+import ProjectCard from "../components/projects/ProjectCard.astro";
+
+const currentProjects = await getCollection(
+  "projects",
+  (project) => !project.data.graduated
+);
+const graduatedProjects = await getCollection(
+  "projects",
+  (project) => project.data.graduated
+);
+
+const description = "The FujoVerse™ collects everything we’ve launched under a single banner. Our projects rest on three pillars: software, education, and community.";
+---
+
+<Layout description={description}>
+  <article class="rounded-xl bg-white">
+    <h1>
+      Enter the <em>FujoVerse™</em>
+    </h1>
+    <p>
+      <strong
+        >The FujoVerse™ collects everything we’ve launched under a single
+        banner.</strong
+      > Taken together, these projects form an ecosystem that rests on the same pillars
+      as FujoCoded itself: software, education, and community.
+      <p>They fall within these categories:</p>
+      <ul class="list-disc pl-6">
+        <li>
+          <strong>Libraries</strong>, like <a href="#ao3-js">AO3.js</a>, that
+          provide an opportunity for contributors to strengthen their coding
+          skills and tools fannish folks can use for their own projects.
+        </li>
+        <li>
+          <strong>Software,</strong> like <a href="#bobaboard">BobaBoard</a>,
+          that fills fannish needs not satisfied by the current web and provides
+          another chance for collaboration.
+        </li>
+        <li>
+          <strong>Communities</strong>, like <a href="#fandom-coders"
+            >Fandom Coders</a
+          >, where people can form new friendships or find support during their
+          coding journey.
+        </li>
+        <li>
+          <strong>Educational books and articles</strong>, like <a
+            href="#the-fujoshi-guide-to-web-development"
+            >the Fujoshi Guide to Web Development</a
+          >, to give people the skills to collaborate on our projects or create
+          their own.
+        </li>
+        <li>
+          <strong>Commerce</strong>, like <a href="#robinboob">RobinBoob</a> and
+          <a href="#fujoboard">Fujoboard</a>, to help fund our work and maintain
+          awareness of our goals among our followers and beyond.
+        </li>
+      </ul>
+      <h2><em>Current</em> Projects</h2>
+      <p>
+        The projects below are maintained or led by FujoCoded. Your support
+        helps with their continued development and growth.
+      </p>
+      <ul class="mt-8 flex flex-col gap-8">
+        {
+          currentProjects.map((project) => (
+            <li class="m-0">
+              <ProjectCard {...project.data} />
+            </li>
+          ))
+        }
+      </ul>
+      <h2><em>Graduated</em> Projects</h2>
+      <p>
+        These projects have been released to their communities to nurture and
+        grow on their own. The governance and day-by-day operations are left up
+        to the contributors of each project.
+      </p>
+      <ul class="mt-8 flex flex-col gap-8">
+        {
+          graduatedProjects.map((project) => (
+            <li class="m-0">
+              <ProjectCard {...project.data} />
+            </li>
+          ))
+        }
+      </ul>
+    </p>
+  </article>
+</Layout>

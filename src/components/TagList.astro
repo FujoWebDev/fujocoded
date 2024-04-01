@@ -1,0 +1,30 @@
+---
+import { Icon } from "astro-icon/components";
+
+type Props = {
+  tags: string[];
+  title?: string;
+};
+
+const { tags, title } = Astro.props;
+---
+
+<div class="flex flex-wrap gap-1">
+  {title && <h4 class="font-semibold">{title}:</h4>}
+  <ul class="flex flex-wrap gap-4">
+    {
+      tags.map((tag) => (
+        <li class="m-0 opacity-50" data-tag={tag}>
+          <a class="!no-underline">
+            <Icon
+              name="lucide:hash"
+              class="inline w-4 text-2xl  font-bold"
+              aria-label={"close menu"}
+            />
+            {tag}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</div>

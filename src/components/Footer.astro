@@ -1,0 +1,16 @@
+---
+import { Image } from "astro:assets";
+import Socials from "./Socials.astro";
+import ShieldWhite from "../images/shield-white.png";
+
+---
+
+<footer class="z-10 pb-8 font-macho text-lg text-fujo-purple flex flex-col items-center">
+  <Image
+    class="h-auto w-[80px] drop-shadow-sm"
+    src={ShieldWhite}
+    alt="Shield"
+  />
+  <div class="pb-4">Copyright © {new Date().getFullYear()} FujoCoded LLC</div>
+  <div class="opacity-75"><Socials /></div>
+</footer>

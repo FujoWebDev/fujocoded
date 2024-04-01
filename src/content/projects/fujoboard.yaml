@@ -1,0 +1,14 @@
+name: FujoBoard
+preview: ./previews/omegaverse-fujos.webp
+categories:
+  - commerce
+tags:
+  - april 1st
+  - paid
+graduated: false
+websites:
+  - url: https://www.fujoboard.com/
+    icon: "lucide:store"
+  - https://twitter.com/fujoboard
+  - https://fujoboard.tumblr.com
+description: Feeling nostalgic for the good ol' yaoi-paddle times? Come [buy the new, improved version](https://www.fujoboard.com/)!

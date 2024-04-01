@@ -1,0 +1,24 @@
+---
+import { Image } from "astro:assets";
+import type { CollectionEntry } from "astro:content";
+
+type Props = CollectionEntry<"fujin">["data"];
+
+const { name, avatar, description } = Astro.props;
+---
+
+<div
+  class="text-lg text-fujo-purple flex gap-4 items-center md:flex-col md:items-start"
+>
+  <Image
+    class="block h-auto max-w-[100px] rounded-xl"
+    src={avatar}
+    alt={name}
+  />
+  <div class="flex flex-col justify-center">
+    <h3 class="font-macho font-bold not-italic text-xl text-fujo-purple mt-0">
+      {name}
+    </h3>
+    <p set:html={description} />
+  </div>
+</div>

@@ -1,0 +1,190 @@
+---
+interface Props {
+  title?: string;
+  description?: string;
+  preview?: string;
+}
+
+import CornerBuddy from "../components/CornerBuddy.astro";
+import Nav from "../components/Nav.astro";
+import Grid from "../images/grid.svg";
+import HangingLogo from "../components/HangingLogo.astro";
+import ToTopArrow from "../components/ToTopArrow.astro";
+import Footer from "../components/Footer.astro";
+
+const {
+  title = "FujoCoded LLC – Currently raising on BackerKit!",
+  description,
+  preview = "http://fujocoded.com/og-image.png",
+} = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>{title}</title>
+    <meta property="og:title" content={title} />
+    <meta property="twitter:title" content={title} />
+
+    <meta name="description" content={description} />
+    <meta property="og:description" content={description} />
+    <meta property="twitter:description" content={description} />
+
+    <meta property="og:image" content={preview} />
+    <meta name="twitter:image" content={preview} />
+
+    <meta property="twitter:card" content="summary_large_image" />
+    <link rel="stylesheet" href="https://use.typekit.net/ruy6yjo.css" />
+
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="favicons/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="favicons/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="favicons/favicon-16x16.png"
+    />
+    <link rel="manifest" href="favicons/site.webmanifest" />
+    <link
+      rel="mask-icon"
+      href="favicons/safari-pinned-tab.svg"
+      color="#f6d880"
+    />
+    <link rel="shortcut icon" href="favicons/favicon.ico" />
+    <meta name="msapplication-TileColor" content="#f6d880" />
+    <meta name="msapplication-config" content="favicons/browserconfig.xml" />
+    <meta name="theme-color" content="#ffffff" />
+    <style is:global>
+      :root {
+        --color-neon-glow: #ffbf00;
+        --color-neon-fill: #f3e5bc;
+        --color-neon-inner-glow: #f7de94;
+      }
+
+      @media (prefers-reduced-motion: no-preference) {
+        :root {
+          scroll-behavior: smooth;
+        }
+      }
+
+      h1 {
+        @apply mb-8 text-center font-hatch font-medium text-fujo-pink sm:mb-11;
+        font-size: clamp(2.25rem, 8vw, 3rem);
+        line-height: clamp(2.5rem, 8vw, 3rem);
+      }
+
+      h2 {
+        @apply mb-4 mt-11 font-hatch font-light italic text-fujo-pink;
+        font-size: clamp(1.5rem, 5vw, 1.875rem);
+        line-height: 2rem;
+        font-weight: 400;
+      }
+
+      h3 {
+        @apply mb-2 mt-6 font-hatch font-light italic text-fujo-pink;
+        font-size: clamp(1.3rem, 5vw, 1.6rem);
+        line-height: 2rem;
+        font-weight: 400;
+      }
+
+      .content > section,
+      article {
+        @apply font-macho text-fujo-purple;
+        font-size: clamp(1rem, 3.5vw, 1.25rem);
+        line-hegiht: 1.5rem;
+        padding-top: clamp(2rem, 8vw, 4rem);
+        padding-left: clamp(2rem, 8vw, 7rem);
+        padding-right: clamp(2rem, 8vw, 7rem);
+        padding-bottom: clamp(2rem, 8vw, 7rem);
+      }
+      p + p,
+      ul + p {
+        @apply mt-7;
+      }
+      :where(h1, h2, h3) em {
+        color: white;
+        background: linear-gradient(#FF38EB, #4360F7);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      li {
+        @apply mt-4;
+      }
+
+      .content a {
+        @apply text-fujo-purple;
+        text-decoration: underline;
+        text-underline-offset: 2px;
+      }
+    </style>
+  </head>
+  <body class="min-h-dvh antialiased">
+    <a class="hanging-logo z-50" href="/"><HangingLogo /></a>
+    <div
+      class="background isolate w-96 rounded-xl rounded-b-none bg-white/20 shadow-sm backdrop-blur-lg backdrop-filter"
+    />
+    <div class="flex w-full flex-col items-center relative max-w-[900px] z-10 pb-[100px] ">
+      <Nav />
+      <main>
+        <div class="content">
+          <slot />
+        </div>
+      </main>
+    </div>
+    <Footer />
+    <ToTopArrow />
+    <CornerBuddy />
+    <style define:vars={{ backgroundGrid: `url(${Grid.src})` }}>
+      body {
+        background: linear-gradient(#9687fa, #fbb8fe);
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        margin: 0;
+        position: relative;
+        --content-margin: 230px;
+      }
+      body::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: var(--backgroundGrid);
+        background-size: 350px;
+        opacity: 0.08;
+        z-index: -1;
+      }
+
+      .background {
+        position: absolute;
+        top: var(--content-margin);
+        left: 50%;
+        height: calc(100% - var(--content-margin));
+        transform: translate(-50%);
+        max-width: 800px;
+        width: 80%;
+      }
+
+      main {
+        max-width: calc(100% - 10px);
+      }
+    </style>
+  </body>
+</html>

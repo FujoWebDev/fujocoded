@@ -1,9 +1,10 @@
 name: enigmalea
-avatar: ./avatars/brokemycrown.jpg
+avatar: ./avatars/enigmaleaCropSquare.png
 type: community
 contacts:
-  - https://linktr.ee/brokemycrown
-  - https://www.patreon.com/thegentlemanscollection
-  - https://ko-fi.com/brokemycrown
-  - https://brokemycrown.tumblr.com
-  - https://www.inprnt.com/gallery/brokemycrown/
+  - https://www.enigmalea.quest/
+  - url: https://indiepocalypse.social/@enigmalea
+    platform: mastodon
+  - https://ko-fi.com/enigmalea
+  - https://enigmalea.tumblr.com/
+  - https://www.pillowfort.social/enigmalea

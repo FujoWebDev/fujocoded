@@ -2,19 +2,34 @@
 import { Icon } from "astro-icon/components";
 ---
 
-<button type="button" aria-label="scroll to top" class="to-top fixed bottom-48 right-10 z-10 rounded-full border-2 border-black p-1 bg-white" >
-  <Icon name="arrow-bar-up" size={24}>
-</button>
-<style>
-  .to-top {
-    box-shadow: 1px 1px 4px #00000077;
-  }
-</style>
+<button
+  type="button"
+  aria-label="scroll to top"
+  class="to-top fixed bottom-48 right-10 z-10 rounded-full border-2 border-black bg-white p-1 transition-all duration-200"
+>
+  <Icon name="arrow-bar-up" size={24} />
+  <style>
+    .to-top {
+      box-shadow: 1px 1px 4px #00000077;
+    }
+  </style>
 
-<script>
-  const toTopButton = document.querySelector(".to-top");
+  <script>
+    const toTopButton = document.querySelector<HTMLElement>(".to-top");
 
-  toTopButton?.addEventListener("click", () => {
-    window.scrollTo(0, 0);
-  });
-</script>
+    document.addEventListener("scroll", () => {
+      if (!toTopButton) {
+        return;
+      }
+      if (window.scrollY > 250) {
+        toTopButton.style.opacity = "1";
+      } else {
+        toTopButton.style.opacity = "0";
+      }
+    });
+
+    toTopButton?.addEventListener("click", () => {
+      window.scrollTo(0, 0);
+    });
+  </script></button
+>

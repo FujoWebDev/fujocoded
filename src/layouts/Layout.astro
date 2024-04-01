@@ -13,8 +13,8 @@ import ToTopArrow from "../components/ToTopArrow.astro";
 import Footer from "../components/Footer.astro";
 
 const {
-  title = "FujoCoded – Coming April 1st, 2024",
-  description = "Not a joke. (Well, ok, a tad bit of a joke.)",
+  title = "FujoCoded LLC – Currently raising on BackerKit!",
+  description = "Empowering fujoshi and other online subcultures to shape their web through software, education, and community collaboration.",
   preview = "http://fujocoded.com/og-image.png",
 } = Astro.props;
 ---
@@ -140,7 +140,7 @@ const {
     />
     <div class="flex w-full flex-col items-center relative max-w-[900px] z-10 pb-[100px] ">
       <Nav />
-      <main class="max-w-full">
+      <main>
         <div class="content">
           <slot />
         </div>
@@ -180,6 +180,10 @@ const {
         transform: translate(-50%);
         max-width: 800px;
         width: 80%;
+      }
+
+      main {
+        max-width: calc(100% - 10px);
       }
     </style>
   </body>

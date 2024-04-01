@@ -18,7 +18,8 @@ const SECTION_CLASS =
 const BUTTON_LINKS =
   "button-links w-full sm:w-auto text-center rounded-xl bg-gradient-to-b from-[#CE00FF] to-[#A700CF] px-12 py-3 font-hatch text-lg font-medium text-white";
 
-const TITLE_CLASS = "mb-0 mt-0 font-hatch text-[34px] font-medium italic text-fujo-pink"
+const TITLE_CLASS =
+  "mb-0 mt-0 font-hatch text-[34px] font-medium italic text-fujo-pink";
 ---
 
 <Layout>
@@ -42,10 +43,10 @@ const TITLE_CLASS = "mb-0 mt-0 font-hatch text-[34px] font-medium italic text-fu
           />
         </Browser>
       </div>
-      <div class="flex flex-col items-center md:items-start gap-4 pb-6 px-6 md:pb-2 md:pr-6 md:pl-3">
-        <h2
-          class={TITLE_CLASS}
-        >
+      <div
+        class="flex flex-col items-center gap-4 px-6 pb-6 md:items-start md:pb-2 md:pl-3 md:pr-6"
+      >
+        <h2 class={TITLE_CLASS}>
           A Better Web <em class="text-white shadow-fujo-pink">Together</em>
         </h2>
         <p class="text-lg text-fujo-purple">
@@ -61,8 +62,12 @@ const TITLE_CLASS = "mb-0 mt-0 font-hatch text-[34px] font-medium italic text-fu
         >
       </div>
     </section>
-    <section class:list={[SECTION_CLASS, "md:!flex-row-reverse before:rotate-1"]}>
-      <div class="browser-shadow -translate-y-10 md:-translate-y-0 transform md:translate-x-4">
+    <section
+      class:list={[SECTION_CLASS, "before:rotate-1 md:!flex-row-reverse"]}
+    >
+      <div
+        class="browser-shadow -translate-y-10 transform md:-translate-y-0 md:translate-x-4"
+      >
         <Browser class="w-[300px] md:w-[400px]">
           <Image
             slot="front"
@@ -79,10 +84,10 @@ const TITLE_CLASS = "mb-0 mt-0 font-hatch text-[34px] font-medium italic text-fu
           />
         </Browser>
       </div>
-      <div class="flex flex-col items-center md:items-start gap-4 pb-6 px-6 md:pb-2 md:pl-6 md:pr-3">
-        <h2
-          class={TITLE_CLASS}
-        >
+      <div
+        class="flex flex-col items-center gap-4 px-6 pb-6 md:items-start md:pb-2 md:pl-6 md:pr-3"
+      >
+        <h2 class={TITLE_CLASS}>
           Shape the <em class="text-white shadow-fujo-pink">Next</em> Web
         </h2>
         <p class="text-lg text-fujo-purple">
@@ -100,7 +105,9 @@ const TITLE_CLASS = "mb-0 mt-0 font-hatch text-[34px] font-medium italic text-fu
       </div>
     </section>
     <section class={SECTION_CLASS}>
-      <div class="browser-shadow -translate-x-0 -translate-y-10 md:-translate-y-0 transform md:-translate-x-4">
+      <div
+        class="browser-shadow -translate-x-0 -translate-y-10 transform md:-translate-x-4 md:-translate-y-0"
+      >
         <Browser class="w-[300px] md:w-[400px]">
           <Image
             slot="front"
@@ -117,10 +124,10 @@ const TITLE_CLASS = "mb-0 mt-0 font-hatch text-[34px] font-medium italic text-fu
           />
         </Browser>
       </div>
-      <div class="flex flex-col items-center md:items-start gap-4 pb-6 px-6 md:pb-2 md:pr-6 md:pl-3">
-        <h2
-          class={TITLE_CLASS}
-        >
+      <div
+        class="flex flex-col items-center gap-4 px-6 pb-6 md:items-start md:pb-2 md:pl-3 md:pr-6"
+      >
+        <h2 class={TITLE_CLASS}>
           Why <em class="text-white shadow-fujo-pink">fujoshi</em>, anyway?
         </h2>
         <p class="text-lg text-fujo-purple">
@@ -138,12 +145,10 @@ const TITLE_CLASS = "mb-0 mt-0 font-hatch text-[34px] font-medium italic text-fu
       </div>
     </section>
     <section
-      class="test relative flex flex-col content-center drop-shadow before:-rotate-1 before:transform before:rounded-3xl pt-8 pb-6 px-8"
+      class="test relative flex flex-col content-center px-8 pb-6 pt-8 drop-shadow before:transform before:rounded-3xl"
     >
       <div>
-        <h2
-          class:list={[TITLE_CLASS, "text-center"]}
-        >
+        <h2 class:list={[TITLE_CLASS, "text-center"]}>
           Get <em class="text-white shadow-fujo-pink">Updates</em>
         </h2>
       </div>
@@ -152,7 +157,7 @@ const TITLE_CLASS = "mb-0 mt-0 font-hatch text-[34px] font-medium italic text-fu
         method="post"
         target="popupwindow"
         onsubmit="window.open('https://buttondown.email/fujocoded', 'popupwindow')"
-        class="text-center flex flex-col sm:flex-row items-center justify-center gap-4 mt-4"
+        class="mt-4 flex flex-col items-center justify-center gap-4 text-center sm:flex-row"
       >
         <input
           type="email"
@@ -161,7 +166,7 @@ const TITLE_CLASS = "mb-0 mt-0 font-hatch text-[34px] font-medium italic text-fu
           aria-label="email"
           placeholder="boba-tan@fujocoded.com"
           required="true"
-          class="h-12 w-full sm:max-w-[50%] self-center rounded-full border-2 border-fujo-blue placeholder:italic placeholder-shown:p-3"
+          class="h-12 w-full self-center rounded-full border-2 border-fujo-blue placeholder:italic placeholder-shown:p-3 sm:max-w-[50%]"
         />
         <input type="submit" value="Subscribe" class={BUTTON_LINKS} />
       </form>

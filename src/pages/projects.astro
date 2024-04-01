@@ -6,11 +6,11 @@ import ProjectCard from "../components/projects/ProjectCard.astro";
 
 const currentProjects = await getCollection(
   "projects",
-  (project) => !project.data.graduated,
+  (project) => !project.data.graduated
 );
 const graduatedProjects = await getCollection(
   "projects",
-  (project) => project.data.graduated,
+  (project) => project.data.graduated
 );
 ---
 
@@ -38,7 +38,7 @@ const graduatedProjects = await getCollection(
           another chance for collaboration.
         </li>
         <li>
-          <strong>Communities</strong>, like ,<a href="#fandom-coders"
+          <strong>Communities</strong>, like <a href="#fandom-coders"
             >Fandom Coders</a
           >, where people can form new friendships or find support during their
           coding journey.

@@ -8,9 +8,11 @@ import FujoCard from "../components/fujoshi/FujoCard.astro";
 const fujin = (await getCollection("fujin")).toSorted(
   (a, b) => a.data.order - b.data.order
 );
+
+const description = "FujoCoded LLC closely aligns their work with fujoshi and fujin. Why did we chose to align ourselves with them and other marginalized online subcultures?";
 ---
 
-<Layout>
+<Layout description={description}>
   <article class="rounded-xl bg-white">
     <h1>What is a fujoshi?</h1>
     <p>

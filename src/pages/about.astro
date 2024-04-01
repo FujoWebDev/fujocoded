@@ -4,9 +4,10 @@ import Layout from "../layouts/Layout.astro";
 import { getCollection } from "astro:content";
 
 const team = await getCollection("team");
+const description = "Meet the people behind the projects designed to build a kinder, more diverse, more collaborative–and, yes, more weird!–internet. ";
 ---
 
-<Layout>
+<Layout description={description}>
   <article class="rounded-xl bg-white">
     <h1>About <em>FujoCoded LLC</em></h1>
     <section>

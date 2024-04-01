@@ -3,9 +3,12 @@ import Layout from "../layouts/Layout.astro";
 import { Image } from "astro:assets";
 import bobawip_color from "../images/bobawip_color.png";
 import backerkit_just_launched from "../images/campaign/backerkit-just-launched.png";
+
+
+const description = "FujoCoded LLC is building a new online storefront to support our projects. Help us build something exciting by backing us on Backerkit!";
 ---
 
-<Layout>
+<Layout description={description}>
   <article class="rounded-xl bg-white">
     <h1>Support Us</h1>
     <a
@@ -15,7 +18,7 @@ import backerkit_just_launched from "../images/campaign/backerkit-just-launched.
     >
       <Image
         src={backerkit_just_launched}
-        alt="Boba-tan wearing a construction helmet and digging a hole."
+        alt="A gold diamond-shaped rhombus with black text that says 'Just Launched BackerKit'"
         class="mx-auto mb-4 w-full max-w-56 pt-10"
       />
       <p class="text-center text-3xl font-bold">

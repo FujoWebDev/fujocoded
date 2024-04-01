@@ -109,9 +109,7 @@ const { pathname } = Astro.url;
     href="/support"><span>Support us</span></a
   >
 </nav>
-<dialog
-  class="menu-dialog relative m-0 h-dvh max-h-dvh w-full max-w-full overflow-x-hidden"
->
+<dialog class="menu-dialog relative m-0 h-dvh max-h-dvh w-full max-w-full">
   <nav
     class="small-screen z-20 flex h-full flex-col items-center justify-between gap-1 bg-white px-2 pb-[200px] pt-8 text-center font-hatch text-2xl text-fujo-pink"
   >
@@ -144,13 +142,13 @@ const { pathname } = Astro.url;
       }}
       href="/fujoshi">Fujoshi</a
     >
-    <a
+    <!-- <a
       aria-current={pathname.startsWith("/updates") ? "page" : "false"}
       class:list={{
         current: pathname.startsWith("/updates"),
       }}
       href="/updates">Updates</a
-    >
+    > -->
     <a
       aria-current={pathname.startsWith("/support") ? "page" : "false"}
       class:list={{
@@ -319,9 +317,7 @@ const { pathname } = Astro.url;
   const openMenu = document.querySelector(".menu-open");
   openMenu?.classList.remove("script-hidden");
   const menu = document.querySelector(".menu");
-  const menuDialog = document.querySelector(
-    ".menu-dialog",
-  ) as HTMLDialogElement;
+  const menuDialog = document.querySelector<HTMLDialogElement>(".menu-dialog");
   const closeMenu = document.querySelector(".menu-close");
 
   let scrollLocation = 0;
@@ -329,13 +325,13 @@ const { pathname } = Astro.url;
   openMenu?.addEventListener("click", () => {
     menu?.classList.add("script-hidden");
     scrollLocation = window.scrollY;
-    menuDialog.showModal();
+    menuDialog?.showModal();
     document.documentElement.style.overflowY = "hidden";
   });
   closeMenu?.addEventListener("click", () => {
-    menuDialog.close();
+    menuDialog?.close();
   });
-  menuDialog.addEventListener("close", () => {
+  menuDialog?.addEventListener("close", () => {
     document.documentElement.style.overflowY = "";
     scrollTo({ top: scrollLocation, behavior: "instant" });
     menu?.classList.remove("script-hidden");
@@ -347,7 +343,7 @@ const { pathname } = Astro.url;
         entry.borderBoxSize[0]?.inlineSize >= 768 ||
         entry.contentRect.width >= 768
       ) {
-        menuDialog.close();
+        menuDialog?.close();
       }
     }
   });

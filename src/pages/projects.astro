@@ -6,11 +6,11 @@ import ProjectCard from "../components/projects/ProjectCard.astro";
 
 const currentProjects = await getCollection(
   "projects",
-  (project) => !project.data.graduated
+  (project) => !project.data.graduated,
 );
 const graduatedProjects = await getCollection(
   "projects",
-  (project) => project.data.graduated
+  (project) => project.data.graduated,
 );
 ---
 
@@ -28,27 +28,32 @@ const graduatedProjects = await getCollection(
       <p>They fall within these categories:</p>
       <ul class="list-disc pl-6">
         <li>
-          <strong>Libraries</strong>, like AO3.js, that provide an opportunity
-          for contributors to strengthen their coding skills and tools fannish
-          folks can use for their own projects.
+          <strong>Libraries</strong>, like <a href="#ao3-js">AO3.js</a>, that
+          provide an opportunity for contributors to strengthen their coding
+          skills and tools fannish folks can use for their own projects.
         </li>
         <li>
-          <strong>Software,</strong> like BobaBoard, that fills fannish needs not
-          satisfied by the current web and provides another chance for collaboration.
+          <strong>Software,</strong> like <a href="#bobaboard">BobaBoard</a>,
+          that fills fannish needs not satisfied by the current web and provides
+          another chance for collaboration.
         </li>
         <li>
-          <strong>Communities</strong>, like Fandom Coders, where people can
-          form new friendships or find support during their coding journey.
+          <strong>Communities</strong>, like ,<a href="#fandom-coders"
+            >Fandom Coders</a
+          >, where people can form new friendships or find support during their
+          coding journey.
         </li>
         <li>
-          <strong>Educational books and articles</strong>, like the Fujoshi
-          Guide to Web Development, to give people the skills to collaborate on
-          our projects or create their own.
+          <strong>Educational books and articles</strong>, like <a
+            href="#the-fujoshi-guide-to-web-development"
+            >the Fujoshi Guide to Web Development</a
+          >, to give people the skills to collaborate on our projects or create
+          their own.
         </li>
         <li>
-          <strong>Commerce</strong>, like RobinBoob and Fujoboard, to help fund
-          our work and maintain awareness of our goals among our followers and
-          beyond.
+          <strong>Commerce</strong>, like <a href="#robinboob">RobinBoob</a> and
+          <a href="#fujoboard">Fujoboard</a>, to help fund our work and maintain
+          awareness of our goals among our followers and beyond.
         </li>
       </ul>
       <h2><em>Current</em> Projects</h2>

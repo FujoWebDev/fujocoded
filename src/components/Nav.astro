@@ -108,7 +108,7 @@ const { pathname } = Astro.url;
   </button>
 </nav>
 <nav
-  class="big-screen sticky top-8 z-30 mt-[var(--content-margin)] hidden -translate-y-1/2 font-hatch text-xl text-fujo-pink md:flex transform items-center justify-around rounded-full"
+  class="big-screen sticky top-8 z-30 mt-[var(--content-margin)] hidden -translate-y-1/2 transform items-center justify-around rounded-full font-hatch text-xl text-fujo-pink md:flex"
 >
   <a
     aria-current={pathname == "/" ? "page" : "false"}
@@ -117,9 +117,9 @@ const { pathname } = Astro.url;
       current: pathname == "/",
     }}
     class="lemon"
-    href="/"
-  ><span set:html={lemonLogoSvg}></span></a>
-  
+    href="/"><span set:html={lemonLogoSvg} /></a
+  >
+
   <a
     aria-current={pathname.startsWith("/projects") ? "page" : "false"}
     class:list={{
@@ -186,7 +186,7 @@ const { pathname } = Astro.url;
 
   .small-screen a,
   .big-screen a span {
-    @apply px-4 py-1 block;
+    @apply block px-4 py-1;
   }
   nav.small-screen a {
     @apply mx-auto my-0 px-8 py-4;
@@ -205,9 +205,9 @@ const { pathname } = Astro.url;
   }
 
   .big-screen .lemon span {
-    @apply p-1.5 block;
+    @apply block p-1.5;
   }
-  
+
   .big-screen a {
     @apply p-1.5;
   }
@@ -215,14 +215,13 @@ const { pathname } = Astro.url;
     @apply absolute left-0;
   }
 
-  
   .lemon span :global(svg) {
     width: 24px;
     height: 24px;
     stroke: theme("colors.fujo-pink");
     filter: drop-shadow(2px 2px 3px #ff38eb66);
   }
-  .lemon.current :global(svg) {
+  .lemon.current[aria-current] :global(svg) {
     fill: #ffc800;
     stroke: black;
     filter: drop-shadow(2px 2px 3px #00000066);

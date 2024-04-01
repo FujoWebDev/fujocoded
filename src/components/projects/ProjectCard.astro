@@ -11,30 +11,29 @@ const { name, preview, description, tags, categories, websites } = Astro.props;
 ---
 
 <div
-  class="project relative z-10 rounded-2xl text-lg text-fujo-purple p-4 border border-slate-300"
+  id={name.toLowerCase().replaceAll(/[\s.]+/g, "-")}
+  class="project relative z-10 rounded-2xl border border-slate-300 p-4 text-lg text-fujo-purple"
 >
-  <div class="flex flex-col md:flex-row gap-4">
-    <div class="w-1/3">
+  <div class="flex flex-col gap-4 md:flex-row">
+    <div class="w-1/3 min-w-[200px]">
       <a href={websites[0].url}>
-        <Image
-          class="block rounded-lg "
-          src={preview}
-          alt={name}
-        />
+        <Image class="block rounded-lg" src={preview} alt={name} />
       </a>
-      </div>
+    </div>
     <div class="flex-1">
-      <h3 class="font-macho font-bold not-italic text-3xl text-fujo-pink mt-0">
-        <a href={websites[0].url} class="!no-underline !text-fujo-pink">{name}</a>
+      <h3 class="mt-0 font-macho text-3xl font-bold not-italic text-fujo-pink">
+        <a href={websites[0].url} class="!text-fujo-pink !no-underline"
+          >{name}</a
+        >
       </h3>
-      <ul class="flex gap-2 mb-2">
+      <ul class="mb-2 flex flex-wrap gap-2">
         {
           websites.map((website) => {
             return (
               <li class="m-0">
                 <a
                   href={website.url}
-                  class="group m-0 flex items-center gap-3 py-1.5 !no-underline"
+                  class="group m-0 flex  items-center gap-3 py-1.5 !no-underline"
                 >
                   <div class="flex rounded-lg bg-fujo-purple/10 p-2 group-hover:bg-fujo-purple/20">
                     <Icon
@@ -55,19 +54,13 @@ const { name, preview, description, tags, categories, websites } = Astro.props;
           })
         }
       </ul>
-      {!!categories.length && (
-        <CategoryList categories={categories} />
-      )}
+      {!!categories.length && <CategoryList categories={categories} />}
       <p set:html={description} class="mt-4" />
     </div>
   </div>
-  <div class="space-y-4 mt-4">
-    {!!tags.length && (
-      <TagList tags={tags} />
-    )}
-</div>
-</div>
+  <div class="mt-4 space-y-4">
+    {!!tags.length && <TagList tags={tags} />}
+  </div>
 
-<style>
-    
-</style>
+  <style></style>
+</div>

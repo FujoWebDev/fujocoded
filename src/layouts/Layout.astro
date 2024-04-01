@@ -118,15 +118,9 @@ const {
       }
       :where(h1, h2, h3) em {
         color: white;
-        font-style: inherit;
-        /* background: linear-gradient(#FF38EB, #4360F7);
-         */
-background-image: linear-gradient(135deg, #9687fa 50%, #4360F7 100%);
-
+        background: linear-gradient(#FF38EB, #4360F7);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
-        /* @apply text-white;
-        text-shadow: 0 0 2px rgba(77, 46, 145, 1), 0 2px 6px rgba(77, 46, 145, .4), 0 3px 16px rgba(67, 96, 247, .2); */
       }
       li {
         @apply mt-4;
@@ -140,7 +134,7 @@ background-image: linear-gradient(135deg, #9687fa 50%, #4360F7 100%);
     </style>
   </head>
   <body class="min-h-dvh antialiased">
-   <HangingLogo />
+    <a class="hanging-logo z-50" href="/"><HangingLogo /></a>
     <div
       class="background isolate w-96 rounded-xl rounded-b-none bg-white/20 shadow-sm backdrop-blur-lg backdrop-filter"
     />

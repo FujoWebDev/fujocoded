@@ -11,6 +11,8 @@ import Fujoshi from "../images/main/fujoshi.png";
 import FujoshiTerminal from "../images/main/boba-tan-terminal.png";
 import { Image } from "astro:assets";
 import Socials from "../components/Socials.astro";
+import { getCollection } from "astro:content";
+import { getEntry } from "astro:content";
 
 const SECTION_CLASS =
   "test relative flex flex-col md:flex-row items-center py-5 before:rounded-3xl before:transform before:-rotate-1 drop-shadow";
@@ -21,7 +23,10 @@ const BUTTON_LINKS =
 const TITLE_CLASS =
   "mb-0 mt-0 font-hatch text-[34px] font-medium italic text-fujo-pink";
 
-const description = "Empowering fujoshi and other online subcultures to shape their web through software, education, and community collaboration.";
+const description =
+  "Empowering fujoshi and other online subcultures to shape their web through software, education, and community collaboration.";
+
+const cssHtmlExplainer = await getEntry("images", "css-html-explainer");
 ---
 
 <Layout description={description}>
@@ -33,8 +38,9 @@ const description = "Empowering fujoshi and other online subcultures to shape th
           <Image
             slot="front"
             class="browser-front z-10 h-auto w-[500px]"
-            src={HtmlTrio}
-            alt="TODO"
+            src={cssHtmlExplainer.data.image}
+            alt={cssHtmlExplainer.data.alt}
+            data-author={cssHtmlExplainer.data.author}
           />
           <Image
             slot="behind"

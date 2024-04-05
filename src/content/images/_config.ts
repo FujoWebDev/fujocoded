@@ -5,7 +5,9 @@ export const collection = defineCollection({
   schema: (tools) =>
     z.object({
       image: tools.image(),
-      alt: z.string(),
+      alt: z.string().transform((s) => {
+        return s.replaceAll("\n", " ");
+      }),
       author: z.string(),
     }),
 });

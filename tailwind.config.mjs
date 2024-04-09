@@ -21,6 +21,7 @@ export default {
         "fujo-purple": "#4D2E91",
         "fujo-green": "#A7FF90",
         "kickstarter-green": "#05ce78",
+        "nyancat-blue": "#013466",
       },
     },
   },

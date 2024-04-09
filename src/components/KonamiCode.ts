@@ -1,4 +1,6 @@
-export class KonamiCode extends HTMLElement {
+export const KonamiTriggeredEventCode = "konami-code-triggered";
+
+class KonamiCode extends HTMLElement {
   static KONAMI_SEQUENCE = [
     "ArrowUp",
     "ArrowUp",
@@ -27,6 +29,7 @@ export class KonamiCode extends HTMLElement {
         if (this.nextIndex == KonamiCode.KONAMI_SEQUENCE.length) {
           console.log("Congratulations");
           this.nextIndex = 0;
+          document.dispatchEvent(new Event(KonamiTriggeredEventCode));
         }
       } else {
         console.log("try again");

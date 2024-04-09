@@ -1,5 +1,7 @@
 ---
+import { getCollection } from "astro:content";
 
+const sponsors = await getCollection("sponsors");
 ---
 
 <dialog
@@ -13,6 +15,9 @@
     >
       <div>FujoCoded LLC</div>
       <div>Hall of Sponsors</div>
+      <div>
+        {sponsors.map((sponsor) => <div>{sponsor.data.name}</div>)}
+      </div>
     </div>
   </div>
 

@@ -1,0 +1,43 @@
+---
+
+---
+
+<dialog
+  class="sponsors-hall fixed bottom-0 left-0 right-0 top-0 z-50 flex h-dvh w-full justify-center bg-transparent"
+>
+  <div
+    class="background isolate z-50 mt-28 flex w-4/5 justify-center rounded-xl rounded-b-none border border-white bg-white/50 px-2 py-4 shadow-sm backdrop-blur-lg backdrop-filter"
+  >
+    <div
+      class="text-nyancat-blue text-center font-zeitung shadow-white drop-shadow-sm"
+    >
+      <div>FujoCoded LLC</div>
+      <div>Hall of Sponsors</div>
+    </div>
+  </div>
+
+  <style>
+    dialog:not([open]) {
+      display: none;
+    }
+    .sponsors-hall::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      @apply bg-fujo-blue opacity-50;
+      z-index: -1;
+    }
+  </style>
+
+  <script>
+    import { KonamiTriggeredEventCode } from "../components/KonamiCode";
+
+    document.addEventListener(KonamiTriggeredEventCode, () => {
+      console.log("The event was triggered");
+      document.querySelector(".sponsors-hall")?.setAttribute("open", "true");
+    });
+  </script>
+</dialog>

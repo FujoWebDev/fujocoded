@@ -1,5 +1,8 @@
 ---
+import { Icon } from "astro-icon/components";
 import { getCollection } from "astro:content";
+import ComingSoon from "../images/coming-soon.png";
+import { Image } from "astro:assets";
 
 const sponsors = await getCollection("sponsors");
 ---
@@ -9,20 +12,82 @@ const sponsors = await getCollection("sponsors");
 >
   <button class="close absolute right-0 top-0">Close me</button>
   <div
-    class="background isolate z-50 mb-2 mt-28 flex w-4/5 justify-center rounded-xl border border-white bg-white/50 px-2 py-4 shadow-sm backdrop-blur-lg backdrop-filter"
+    class="background isolate z-50 mb-3 mt-[7.5rem] flex w-[90%] justify-center rounded-xl border border-white bg-white/50 px-2 py-4 shadow-sm backdrop-blur-lg backdrop-filter"
   >
     <div
-      class="text-nyancat-blue flex w-full flex-col text-center font-zeitung shadow-white drop-shadow-sm"
+      class="flex w-full flex-col pt-20 text-center font-zeitung text-nyancat-blue shadow-white drop-shadow-sm"
     >
-      <div>FujoCoded LLC</div>
-      <div>Hall of Sponsors</div>
-      <div class="mb-2 max-h-full w-full overflow-y-scroll">
-        {Array.apply(null, Array(1000)).map((sponsor) => <div>{"hello"}</div>)}
+
+      <div
+        class="block absolute w-[360px] h-[212px] top-[-150px] left-0 right-0 mx-auto my-0 bg-contain bg-center rounded-3xl bg-slate-500"
+        style={`background-image: url(${ComingSoon.src})`}
+      >
+      </div>
+      <div class="dialogue-title">Fujocoded LLC</div>
+      <div class="dialogue-subtitle mb-4">HALL OF SUPPORTERS</div>
+      <div class="wall max-h-full w-full gap-2 overflow-y-scroll">
+        {
+          Array.apply(null, Array(1000)).map((sponsor) => {
+            return (
+              <div class="flex min-w-min justify-between gap-4 rounded-md border border-white border-opacity-60 bg-white/30 px-5 py-4">
+                <Image
+                  height="72"
+                  width="72"
+                  class="supporter-icon h-[72px] w-[72px] rounded-full"
+                  src={ComingSoon}
+                  alt="TODO"
+                />
+                <div class="flex flex-grow flex-col gap-2">
+                  <span class="supporter-title w-max font-macho text-2xl font-bold text-[#A700CF]">
+                    {"Train goes choo choo"}
+                  </span>
+                  <div class="badges flex flex-wrap gap-1">
+                    <span class="w-max rounded-md border border-black border-opacity-20 bg-[linear-gradient(0deg,_#ffc700_0%,_#e4b200_100%)] px-2 pb-1 pt-0.5 font-macho text-sm font-medium leading-none text-amber-800 shadow-sm">
+                      {"Fujoguide: Gold"}
+                    </span>
+                    <span class="w-max rounded-md border border-black border-opacity-20 bg-[linear-gradient(0deg,_#ffc700_0%,_#e4b200_100%)] px-2 pb-1 pt-0.5 font-macho text-sm font-medium leading-none text-amber-800 shadow-sm">
+                      {"Fujoguide: Gold"}
+                    </span>
+                  </div>
+                  <ul class="flex gap-2">
+                    <li class="mt-0">
+                      <a
+                        href="#"
+                        class="block h-full w-full rounded-md bg-[#8A71E5] bg-opacity-20 p-2 hover:bg-opacity-25"
+                      >
+                        <Icon class="text-2xl" name="lucide:github" />
+                      </a>
+                    </li>
+                    <li class="mt-0">
+                      <a
+                        href="#"
+                        class="block h-full w-full rounded-md bg-[#8A71E5] bg-opacity-20 p-2 hover:bg-opacity-25"
+                      >
+                        <Icon class="text-2xl" name="lucide:twitter" />
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            );
+          })
+        }
       </div>
     </div>
   </div>
 
   <style>
+    @font-face {
+      font-family: "Handjet";
+      src:
+        url("/fonts/handjet-variablefont_elgrelshwght-webfont.woff2")
+          format("woff2"),
+        url("/fonts/handjet-variablefont_elgrelshwght-webfont.woff")
+          format("woff");
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
     dialog:not([open]) {
       display: none;
     }
@@ -35,6 +100,29 @@ const sponsors = await getCollection("sponsors");
       right: 0;
       @apply bg-fujo-blue opacity-50;
       z-index: -1;
+    }
+    .wall {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      scrollbar-width: none;
+    }
+    .wall::-webkit-scrollbar {
+      display: none;
+    }
+    .supporter-icon {
+      width: 72px;
+      height: 72px;
+      border: 1px solid #ffffff26;
+      box-shadow: 0px 2px 10px 0px #00000026;
+    }
+    .dialogue-title,
+    .dialogue-subtitle {
+      font-family: Handjet, sans-serif;
+      color: #013368;
+      font-weight: 700;
+      font-size: 46px;
+      line-height: 46px;
+      text-shadow: #ffffff73 0px 3px;
     }
   </style>
 

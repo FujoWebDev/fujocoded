@@ -8,7 +8,7 @@ const sponsors = await getCollection("sponsors");
 ---
 
 <dialog
-  class="sponsors-hall fixed bottom-0 left-0 right-0 top-0 z-50 flex h-dvh w-full justify-center bg-transparent"
+  class="sponsors-hall fixed bottom-0 left-0 right-0 top-0 z-40 flex h-dvh w-full justify-center bg-transparent"
 >
   <button class="close absolute right-0 top-0">Close me</button>
   <div
@@ -17,9 +17,8 @@ const sponsors = await getCollection("sponsors");
     <div
       class="flex w-full flex-col pt-20 text-center font-zeitung text-nyancat-blue shadow-white drop-shadow-sm"
     >
-
       <div
-        class="block absolute w-[360px] h-[212px] top-[-150px] left-0 right-0 mx-auto my-0 bg-contain bg-center rounded-3xl bg-slate-500"
+        class="absolute left-0 right-0 top-[-150px] mx-auto my-0 block h-[212px] w-[360px] rounded-3xl bg-slate-500 bg-contain bg-center"
         style={`background-image: url(${ComingSoon.src})`}
       >
       </div>

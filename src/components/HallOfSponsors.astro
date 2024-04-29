@@ -26,7 +26,55 @@ const sponsors = await getCollection("sponsors");
       <div class="dialogue-subtitle mb-4">HALL OF SUPPORTERS</div>
       <div class="wall max-h-full w-full gap-2 overflow-y-scroll">
         {
-          Array.apply(null, Array(1000)).map((sponsor) => {
+          sponsors.map((sponsor) => {
+            return (
+              <div class="flex min-w-min justify-between gap-4 rounded-md border border-white border-opacity-60 bg-white/30 px-5 py-4">
+                <Image
+                  height={sponsor.data.avatar.height}
+                  width={sponsor.data.avatar.width}
+                  class="supporter-icon h-[72px] w-[72px] rounded-full"
+                  src={sponsor.data.avatar}
+                  alt="TODO"
+                />
+                <div class="flex flex-grow flex-col gap-2">
+                  <span class="supporter-title w-max font-macho text-2xl font-bold text-[#A700CF]">
+                    {sponsor.data.name}
+                  </span>
+                  <div class="badges flex flex-wrap gap-1">
+                    {sponsor.data.pledges.map((pledge) => {
+                      return (
+                        <span
+                          class={`w-max rounded-md border border-black border-opacity-20 px-2 pb-1 pt-0.5 font-macho text-sm font-medium leading-none  shadow-sm ${pledge.tier.toLowerCase()}-pledge`}
+                        >
+                          {pledge.campaign}: {pledge.tier}
+                        </span>
+                      );
+                    })}
+                  </div>
+                  <ul class="flex gap-2">
+                    {sponsor.data.contacts.map((contact) => {
+                      return (
+                        <li class="mt-0">
+                          <a
+                            href={contact.url}
+                            class="block h-full w-full rounded-md bg-[#8A71E5] bg-opacity-20 p-2 hover:bg-opacity-25"
+                          >
+                            <Icon
+                              class="text-2xl"
+                              name={contact.icon || "lucide:link"}
+                            />
+                          </a>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </div>
+              </div>
+            );
+          })
+        }
+        {
+          Array.apply(null, Array(100)).map((sponsor) => {
             return (
               <div class="flex min-w-min justify-between gap-4 rounded-md border border-white border-opacity-60 bg-white/30 px-5 py-4">
                 <Image
@@ -41,11 +89,14 @@ const sponsors = await getCollection("sponsors");
                     {"Train goes choo choo"}
                   </span>
                   <div class="badges flex flex-wrap gap-1">
-                    <span class="w-max rounded-md border border-black border-opacity-20 bg-[linear-gradient(0deg,_#ffc700_0%,_#e4b200_100%)] px-2 pb-1 pt-0.5 font-macho text-sm font-medium leading-none text-amber-800 shadow-sm">
+                    <span class="gold-pledge w-max rounded-md border border-black  border-opacity-20 px-2 pb-1 pt-0.5 font-macho text-sm font-medium  leading-none shadow-sm">
                       {"Fujoguide: Gold"}
                     </span>
-                    <span class="w-max rounded-md border border-black border-opacity-20 bg-[linear-gradient(0deg,_#ffc700_0%,_#e4b200_100%)] px-2 pb-1 pt-0.5 font-macho text-sm font-medium leading-none text-amber-800 shadow-sm">
-                      {"Fujoguide: Gold"}
+                    <span class="silver-pledge w-max rounded-md border border-black  border-opacity-20 px-2 pb-1 pt-0.5 font-macho text-sm font-medium  leading-none shadow-sm">
+                      {"Fujoguide: Silver"}
+                    </span>
+                    <span class="bronze-pledge w-max rounded-md border border-black  border-opacity-20 px-2 pb-1 pt-0.5 font-macho text-sm font-medium  leading-none shadow-sm">
+                      {"Fujoguide: Bronze"}
                     </span>
                   </div>
                   <ul class="flex gap-2">
@@ -122,6 +173,18 @@ const sponsors = await getCollection("sponsors");
       font-size: 46px;
       line-height: 46px;
       text-shadow: #ffffff73 0px 3px;
+    }
+    .gold-pledge {
+      background: linear-gradient(0deg, #ffc700 0%, #e4b200 100%);
+      color: hsl(47, 100%, 20%);
+    }
+    .silver-pledge {
+      background: linear-gradient(0deg, #e2dbd1 0%, #c1b6a4 100%);
+      color: hsl(37, 19%, 20%);
+    }
+    .bronze-pledge {
+      background: linear-gradient(0deg, #e49618 0%, #c68711 100%);
+      color: hsl(39, 84%, 20%);
     }
   </style>
 

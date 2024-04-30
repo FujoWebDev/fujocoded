@@ -10,9 +10,11 @@ const sponsors = await getCollection("sponsors");
 <dialog
   class="sponsors-hall fixed bottom-0 left-0 right-0 top-0 z-40 flex h-dvh w-full justify-center bg-transparent"
 >
-  <button class="close absolute right-0 top-0">Close me</button>
+  <button class="close absolute right-1 top-1" aria-label="close modal">
+    <Icon name="lucide:x" size={32} alt="" /></button
+  >
   <div
-    class="background isolate z-50 mb-3 mt-[7.5rem] flex w-[90%] justify-center rounded-xl border border-white bg-white/50 px-2 py-4 shadow-sm backdrop-blur-lg backdrop-filter"
+    class="background isolate z-40 mb-3 mt-[7.5rem] flex w-full justify-center rounded-xl bg-white/50 px-2 py-4 shadow-sm backdrop-blur-lg backdrop-filter"
   >
     <div
       class="flex w-full flex-col pt-20 text-center font-zeitung text-nyancat-blue shadow-white drop-shadow-sm"
@@ -141,16 +143,6 @@ const sponsors = await getCollection("sponsors");
     dialog:not([open]) {
       display: none;
     }
-    .sponsors-hall::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      @apply bg-fujo-blue opacity-50;
-      z-index: -1;
-    }
     .wall {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -186,24 +178,38 @@ const sponsors = await getCollection("sponsors");
       background: linear-gradient(0deg, #e49618 0%, #c68711 100%);
       color: hsl(39, 84%, 20%);
     }
+    dialog::backdrop {
+      backdrop-filter: blur(16px);
+      background-color: rgb(67 96 247 / 0.5);
+    }
   </style>
 
   <script>
     import { KonamiTriggeredEventCode } from "../components/KonamiCode";
 
-    let savedOverlow = "";
+    let dialog = document.querySelector("dialog.sponsors-hall");
+
     document.addEventListener(KonamiTriggeredEventCode, () => {
       console.log("The event was triggered");
-      document.querySelector(".sponsors-hall")?.setAttribute("open", "true");
-      savedOverlow = document.body.style.overflow;
-      document.body.style.overflow = "hidden";
+      dialog?.showModal();
     });
 
-    document
-      .querySelector(".sponsors-hall button")
-      ?.addEventListener("click", () => {
-        document.querySelector(".sponsors-hall")?.removeAttribute("open");
-        document.body.style.overflow = savedOverlow;
-      });
+    document.addEventListener("click", function (event) {
+      let rect = dialog!.querySelector("div")!.getBoundingClientRect();
+
+      let isInDialog =
+        rect.top <= event.clientY &&
+        event.clientY <= rect.top + rect.height &&
+        rect.left <= event.clientX &&
+        event.clientX <= rect.left + rect.width;
+
+      if (!isInDialog) {
+        dialog!.close();
+      }
+    });
+
+    dialog.querySelector("button")?.addEventListener("click", () => {
+      dialog!.close();
+    });
   </script>
 </dialog>

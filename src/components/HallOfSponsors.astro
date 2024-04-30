@@ -46,7 +46,7 @@ const sponsors = await getCollection("sponsors");
                     {sponsor.data.pledges.map((pledge) => {
                       return (
                         <span
-                          class={`w-max rounded-md border border-black border-opacity-20 px-2 pb-1 pt-0.5 font-macho text-sm font-medium leading-none  shadow-sm ${pledge.tier.toLowerCase()}-pledge`}
+                          class={`w-max rounded-md border border-black border-opacity-20 px-2 pb-1 pt-0.5 font-macho text-sm font-medium leading-none  shadow-sm ${pledge.tier.toLowerCase()}-pledge badge`}
                         >
                           {pledge.campaign}: {pledge.tier}
                         </span>
@@ -91,13 +91,13 @@ const sponsors = await getCollection("sponsors");
                     {"Train goes choo choo"}
                   </span>
                   <div class="badges flex flex-wrap gap-1">
-                    <span class="gold-pledge w-max rounded-md border border-black  border-opacity-20 px-2 pb-1 pt-0.5 font-macho text-sm font-medium  leading-none shadow-sm">
+                    <span class="gold-pledge badge w-max rounded-md border  border-black border-opacity-20 px-2 pb-1 pt-0.5 font-macho text-sm  font-medium leading-none shadow-sm">
                       {"Fujoguide: Gold"}
                     </span>
-                    <span class="silver-pledge w-max rounded-md border border-black  border-opacity-20 px-2 pb-1 pt-0.5 font-macho text-sm font-medium  leading-none shadow-sm">
+                    <span class="silver-pledge badge w-max rounded-md border  border-black border-opacity-20 px-2 pb-1 pt-0.5 font-macho text-sm  font-medium leading-none shadow-sm">
                       {"Fujoguide: Silver"}
                     </span>
-                    <span class="bronze-pledge w-max rounded-md border border-black  border-opacity-20 px-2 pb-1 pt-0.5 font-macho text-sm font-medium  leading-none shadow-sm">
+                    <span class="bronze-pledge badge w-max rounded-md border  border-black border-opacity-20 px-2 pb-1 pt-0.5 font-macho text-sm  font-medium leading-none shadow-sm">
                       {"Fujoguide: Bronze"}
                     </span>
                   </div>
@@ -166,18 +166,59 @@ const sponsors = await getCollection("sponsors");
       line-height: 46px;
       text-shadow: #ffffff73 0px 3px;
     }
-    .gold-pledge {
-      background: linear-gradient(0deg, #ffc700 0%, #e4b200 100%);
-      color: hsl(47, 100%, 20%);
+    .badge.gold-pledge {
+      --h: 47;
+      --s: 100%;
+      --l: 50%;
+      --a: 1;
     }
-    .silver-pledge {
-      background: linear-gradient(0deg, #e2dbd1 0%, #c1b6a4 100%);
-      color: hsl(37, 19%, 20%);
+    .badge.silver-pledge {
+      --h: 0;
+      --s: 0%;
+      --l: 75%;
+      --a: 1;
     }
-    .bronze-pledge {
-      background: linear-gradient(0deg, #e49618 0%, #c68711 100%);
-      color: hsl(39, 84%, 20%);
+    .badge.bronze-pledge {
+      --h: 37;
+      --s: 81%;
+      --l: 50%;
+      --a: 1;
     }
+
+    .badge {
+      --badge-color: hsla(var(--h), var(--s), var(--l), var(--a));
+      --badge-color-darker: hsla(var(--h), var(--s), 20%, var(--a));
+      --badge-color-lighter: hsla(var(--h), var(--s), 90%, 0.8);
+
+      color: var(--badge-color-darker);
+
+      background-image: linear-gradient(
+        120deg,
+        var(--badge-color) 0%,
+        var(--badge-color) 5%,
+        var(--badge-color-lighter) 15%,
+        var(--badge-color) 20%,
+        var(--badge-color) 100%
+      );
+      background-size: 200% 200%;
+      position: relative;
+      overflow: hidden;
+      background-position-x: 80%;
+      animation: TransitioningBackground 8s ease-out normal infinite;
+    }
+
+    @keyframes TransitioningBackground {
+      0% {
+        background-position-x: 250%;
+      }
+      12% {
+        background-position-x: 80%;
+      }
+      100% {
+        background-position-x: 80%;
+      }
+    }
+
     dialog::backdrop {
       backdrop-filter: blur(16px);
       background-color: rgb(67 96 247 / 0.5);

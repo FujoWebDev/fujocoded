@@ -1,7 +1,7 @@
 ---
 import { Icon } from "astro-icon/components";
 import { getCollection } from "astro:content";
-import ComingSoon from "../images/coming-soon.png";
+import Git from "./git.png";
 import { Image } from "astro:assets";
 
 const sponsors = await getCollection("sponsors");
@@ -14,23 +14,25 @@ const sponsors = await getCollection("sponsors");
     <Icon name="lucide:x" size={32} /></button
   >
   <div
-    class="background isolate z-40 mb-3 mt-[7.5rem] flex w-full justify-center rounded-xl bg-white/50 px-2 py-4 shadow-sm backdrop-blur-lg backdrop-filter"
+    class="background isolate z-40 mb-3 mt-[7.5rem] flex w-full justify-center rounded-xl bg-white/50 px-8 py-4 shadow-sm backdrop-blur-lg backdrop-filter"
   >
     <div
-      class="text-nyancat-blue flex w-full flex-col pt-20 text-center font-zeitung shadow-white drop-shadow-sm"
+      class="text-nyancat-blue flex w-full -translate-y-[6rem] flex-col text-center font-zeitung shadow-white drop-shadow-sm"
     >
       <div
-        class="absolute left-0 right-0 top-[-150px] mx-auto my-0 block h-[212px] w-[360px] rounded-3xl bg-slate-500 bg-contain bg-center"
-        style={`background-image: url(${ComingSoon.src})`}
+        class="left-0 right-0 top-0 mx-auto my-0 block aspect-[360/212] h-auto w-full max-w-[360px] rounded-3xl bg-slate-500 bg-contain bg-center"
+        style={`background-image: url(${Git.src})`}
       >
       </div>
       <div class="dialogue-title">Fujocoded LLC</div>
       <div class="dialogue-subtitle mb-4">HALL OF SUPPORTERS</div>
-      <div class="wall max-h-full w-full gap-2 overflow-y-scroll">
+      <div
+        class="wall grid max-h-full w-full grid-cols-1 gap-2 overflow-y-scroll md:grid-cols-2 lg:grid-cols-3"
+      >
         {
           sponsors.map((sponsor) => {
             return (
-              <div class="flex min-w-min justify-between gap-4 rounded-md border border-white border-opacity-60 bg-white/30 px-5 py-4">
+              <div class="flex min-w-min justify-between gap-4 rounded-xl border border-white border-opacity-60 bg-white/30 px-5 py-4">
                 <Image
                   height={sponsor.data.avatar.height}
                   width={sponsor.data.avatar.width}
@@ -144,8 +146,6 @@ const sponsors = await getCollection("sponsors");
       display: none;
     }
     .wall {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
       scrollbar-width: none;
     }
     .wall::-webkit-scrollbar {
@@ -226,12 +226,15 @@ const sponsors = await getCollection("sponsors");
   </style>
 
   <script>
-    import { KonamiTriggeredEventCode } from "../components/KonamiCode";
+    import { KonamiTriggeredEventCode } from "../KonamiCode";
 
-    let dialog = document.querySelector("dialog.sponsors-hall");
+    let dialog = document.querySelector<HTMLDialogElement>(
+      "dialog.sponsors-hall"
+    );
+
+    dialog?.showModal();
 
     document.addEventListener(KonamiTriggeredEventCode, () => {
-      console.log("The event was triggered");
       dialog?.showModal();
     });
 
@@ -249,7 +252,7 @@ const sponsors = await getCollection("sponsors");
       }
     });
 
-    dialog.querySelector("button")?.addEventListener("click", () => {
+    dialog?.querySelector("button")?.addEventListener("click", () => {
       dialog!.close();
     });
   </script>

@@ -6,6 +6,7 @@ export default {
       hatch: ['"Hatch"', "serif"],
       zeitung: ['"Zeitung Mono Pro"', "sans-serif"],
       macho: ['"Macho"', "sans-serif"],
+      hydrophilia: ["hydrophilia-iced", "sans-serif"],
       // Add more custom font families as needed
     },
     extend: {

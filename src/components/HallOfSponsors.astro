@@ -11,13 +11,13 @@ const sponsors = await getCollection("sponsors");
   class="sponsors-hall fixed bottom-0 left-0 right-0 top-0 z-40 flex h-dvh w-full justify-center bg-transparent"
 >
   <button class="close absolute right-1 top-1" aria-label="close modal">
-    <Icon name="lucide:x" size={32} alt="" /></button
+    <Icon name="lucide:x" size={32} /></button
   >
   <div
     class="background isolate z-40 mb-3 mt-[7.5rem] flex w-full justify-center rounded-xl bg-white/50 px-2 py-4 shadow-sm backdrop-blur-lg backdrop-filter"
   >
     <div
-      class="flex w-full flex-col pt-20 text-center font-zeitung text-nyancat-blue shadow-white drop-shadow-sm"
+      class="text-nyancat-blue flex w-full flex-col pt-20 text-center font-zeitung shadow-white drop-shadow-sm"
     >
       <div
         class="absolute left-0 right-0 top-[-150px] mx-auto my-0 block h-[212px] w-[360px] rounded-3xl bg-slate-500 bg-contain bg-center"
@@ -75,7 +75,7 @@ const sponsors = await getCollection("sponsors");
             );
           })
         }
-        {
+        <!-- {
           Array.apply(null, Array(100)).map((sponsor) => {
             return (
               <div class="flex min-w-min justify-between gap-4 rounded-md border border-white border-opacity-60 bg-white/30 px-5 py-4">
@@ -123,7 +123,7 @@ const sponsors = await getCollection("sponsors");
               </div>
             );
           })
-        }
+        } -->
       </div>
     </div>
   </div>

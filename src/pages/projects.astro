@@ -12,7 +12,8 @@ const graduatedProjects = await getCollection(
   (project) => project.data.graduated
 );
 
-const description = "The FujoVerse™ collects everything we’ve launched under a single banner. Our projects rest on three pillars: software, education, and community.";
+const description =
+  "The FujoVerse™ collects everything we’ve launched under a single banner. Our projects rest on three pillars: software, education, and community.";
 ---
 
 <Layout description={description}>
@@ -57,18 +58,34 @@ const description = "The FujoVerse™ collects everything we’ve launched under
           awareness of our goals among our followers and beyond.
         </li>
       </ul>
-      <h2><em>Current</em> Projects</h2>
+      <h2><em>Current</em> Focus</h2>
+      <p>What we're primarily focusing our resources on at this stage.</p>
+      <ul class="mt-8 flex flex-col gap-8">
+        {
+          currentProjects
+            .filter((project) => project.data.focus)
+            .map((project) => (
+              <li class="m-0">
+                <ProjectCard {...project.data} />
+              </li>
+            ))
+        }
+      </ul>
+      <h2><em>FujoVerse™</em> Projects</h2>
       <p>
-        The projects below are maintained or led by FujoCoded. Your support
-        helps with their continued development and growth.
+        Projects maintained or led by FujoCoded. While generally done on a
+        "best-effort" basis, they're a key part of our overarching plan. Your
+        support helps with their continued development and growth.
       </p>
       <ul class="mt-8 flex flex-col gap-8">
         {
-          currentProjects.map((project) => (
-            <li class="m-0">
-              <ProjectCard {...project.data} />
-            </li>
-          ))
+          currentProjects
+            .filter((project) => !project.data.focus)
+            .map((project) => (
+              <li class="m-0">
+                <ProjectCard {...project.data} />
+              </li>
+            ))
         }
       </ul>
       <h2><em>Graduated</em> Projects</h2>

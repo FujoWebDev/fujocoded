@@ -4,7 +4,7 @@ import { socialsSchema, transformSocial } from "../../lib/socials-transformer";
 const Pledge = z.union([
   z.object({
     campaign: z.enum(["FujoGuide Volume 0"]),
-    tier: z.enum(["GIT Art", "Sponsor"]),
+    tier: z.enum(["GIT Art", "GIT Help", "GIT Fic", "Sponsor"]),
   }),
   z.object({
     campaign: z.enum(["FujoCoded LLC"]),

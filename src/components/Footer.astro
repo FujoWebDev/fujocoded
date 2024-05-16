@@ -14,7 +14,48 @@ import ShieldWhite from "../images/shield-white.png";
   />
   <div class="pb-4">Copyright © {new Date().getFullYear()} FujoCoded LLC</div>
   <div class="opacity-75"><Socials /></div>
-  <konami-code></konami-code>
+  <konami-code>
+    <template class="button-template">
+      <button></button>
+    </template>
+
+    <style>
+      konami-code button {
+        width: 50px;
+        height: 50px;
+        background-color: red;
+      }
+      konami-code button.hit {
+        background-color: green;
+      }
+
+      konami-code.triggered button {
+        display: none;
+      }
+      konami-code.triggered::after {
+        content: "congratulations!";
+      }
+
+      konami-code button.arrowup::after {
+        content: "↑";
+      }
+      konami-code button.arrowdown::after {
+        content: "↓";
+      }
+      konami-code button.arrowleft::after {
+        content: "←";
+      }
+      konami-code button.arrowright::after {
+        content: "→";
+      }
+      konami-code button.keya::after {
+        content: "A";
+      }
+      konami-code button.keyb::after {
+        content: "B";
+      }
+    </style>
+  </konami-code>
 </footer>
 
 <script>

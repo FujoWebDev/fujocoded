@@ -14,21 +14,18 @@ import ShieldWhite from "../images/shield-white.png";
   />
   <div class="pb-4">Copyright © {new Date().getFullYear()} FujoCoded LLC</div>
   <div class="opacity-75"><Socials /></div>
-  <konami-code>
+  <konami-code class="mt-1 flex gap-1">
     <template class="button-template">
-      <button></button>
+      <button
+        class="aspect-square w-8 rounded-md border border-fujo-purple bg-white shadow-sm shadow-fujo-purple"
+      ></button>
     </template>
     <div class="congratulations">
       Thank you for showing support to our supporters
     </div>
     <style>
-      konami-code button {
-        width: 50px;
-        height: 50px;
-        background-color: red;
-      }
       konami-code button.hit {
-        background-color: green;
+        @apply bg-fujo-purple text-white;
       }
 
       konami-code.triggered button {

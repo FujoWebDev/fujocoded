@@ -106,7 +106,6 @@ const {
       article {
         @apply font-macho text-fujo-purple;
         font-size: clamp(1rem, 3.5vw, 1.25rem);
-        line-hegiht: 1.5rem;
         padding-top: clamp(2rem, 8vw, 4rem);
         padding-left: clamp(2rem, 8vw, 7rem);
         padding-right: clamp(2rem, 8vw, 7rem);
@@ -118,7 +117,7 @@ const {
       }
       :where(h1, h2, h3) em {
         color: white;
-        background: linear-gradient(#FF38EB, #4360F7);
+        background: linear-gradient(#ff38eb, #4360f7);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
       }
@@ -137,8 +136,11 @@ const {
     <a class="hanging-logo z-50" href="/"><HangingLogo /></a>
     <div
       class="background isolate w-96 rounded-xl rounded-b-none bg-white/20 shadow-sm backdrop-blur-lg backdrop-filter"
-    />
-    <div class="flex w-full flex-col items-center relative max-w-[900px] z-10 pb-[100px] ">
+    >
+    </div>
+    <div
+      class="relative z-10 flex w-full max-w-[900px] flex-col items-center pb-[100px]"
+    >
       <Nav />
       <main>
         <div class="content">

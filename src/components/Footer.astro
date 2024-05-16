@@ -18,7 +18,9 @@ import ShieldWhite from "../images/shield-white.png";
     <template class="button-template">
       <button></button>
     </template>
-
+    <div class="congratulations">
+      Thank you for showing support to our supporters
+    </div>
     <style>
       konami-code button {
         width: 50px;
@@ -32,8 +34,8 @@ import ShieldWhite from "../images/shield-white.png";
       konami-code.triggered button {
         display: none;
       }
-      konami-code.triggered::after {
-        content: "congratulations!";
+      konami-code:not(.triggered) .congratulations {
+        display: none;
       }
 
       konami-code button.arrowup::after {

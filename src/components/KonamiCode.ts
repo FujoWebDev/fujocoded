@@ -20,6 +20,24 @@ class KonamiCode extends HTMLElement {
     super();
   }
 
+  onPotentialTrigger(keyCode: string) {
+    if (KonamiCode.KONAMI_SEQUENCE[this.nextIndex] == keyCode) {
+      this.nextIndex = this.nextIndex + 1;
+
+      if (this.nextIndex == KonamiCode.KONAMI_SEQUENCE.length) {
+        this.nextIndex = 0;
+        this.classList.add("triggered");
+        document.dispatchEvent(new Event(KonamiTriggeredEventCode));
+      }
+    } else {
+      this.nextIndex = 0;
+    }
+
+    this.buttonElements.forEach((element, index) => {
+      element.classList.toggle("hit", index < this.nextIndex);
+    });
+  }
+
   connectedCallback() {
     const buttonTemplate =
       this.querySelector<HTMLTemplateElement>(".button-template");
@@ -32,25 +50,14 @@ class KonamiCode extends HTMLElement {
       const newButton = (buttonTemplate.content.cloneNode(true) as Element)
         .firstElementChild!;
       newButton.classList.add(key.toLowerCase());
+      newButton.addEventListener("click", () => {
+        this.onPotentialTrigger(key);
+      });
       this.buttonElements.push(this.appendChild(newButton));
     });
 
     document.addEventListener("keydown", (event) => {
-      if (KonamiCode.KONAMI_SEQUENCE[this.nextIndex] == event.code) {
-        this.nextIndex = this.nextIndex + 1;
-
-        if (this.nextIndex == KonamiCode.KONAMI_SEQUENCE.length) {
-          this.nextIndex = 0;
-          this.classList.add("triggered");
-          document.dispatchEvent(new Event(KonamiTriggeredEventCode));
-        }
-      } else {
-        this.nextIndex = 0;
-      }
-
-      this.buttonElements.forEach((element, index) => {
-        element.classList.toggle("hit", index < this.nextIndex);
-      });
+      this.onPotentialTrigger(event.code);
     });
   }
 }

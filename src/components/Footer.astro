@@ -14,21 +14,26 @@ import ShieldWhite from "../images/shield-white.png";
   />
   <div class="pb-4">Copyright © {new Date().getFullYear()} FujoCoded LLC</div>
   <div class="opacity-75"><Socials /></div>
-  <konami-code class="mt-1 flex gap-1">
+  <konami-code
+    class="mx-auto mt-2 flex max-w-96 flex-wrap justify-center gap-1"
+  >
     <template class="button-template">
       <button
-        class="aspect-square w-8 rounded-md border border-fujo-purple bg-white shadow-sm shadow-fujo-purple hover:-translate-x-[1px] hover:-translate-y-[1px]"
+        class="aspect-square w-8 rounded-md border border-fujo-purple bg-white shadow-sm shadow-fujo-purple hover:-translate-x-[1px] hover:-translate-y-[1px] hover:cursor-pointer"
       ></button>
     </template>
     <div class="congratulations">
-      Thank you for showing support to our supporters
+      <button
+        class="rounded-md border border-fujo-purple bg-white px-3 py-2 font-zeitung text-sm shadow-sm shadow-fujo-purple hover:-translate-x-[1px] hover:-translate-y-[1px] hover:cursor-pointer"
+        >Visit Hall of $upporters</button
+      >
     </div>
     <style>
       konami-code button.hit {
         @apply bg-fujo-purple text-white;
       }
 
-      konami-code.triggered button {
+      konami-code.triggered > button {
         display: none;
       }
       konami-code:not(.triggered) .congratulations {
@@ -61,4 +66,13 @@ import ShieldWhite from "../images/shield-white.png";
   import { registerKonamiCode } from "../components/KonamiCode";
 
   registerKonamiCode();
+
+  document
+    .querySelector(".congratulations button")
+    ?.addEventListener("click", () => {
+      const dialog = document.querySelector<HTMLDialogElement>(
+        "dialog.sponsors-hall"
+      );
+      dialog?.showModal();
+    });
 </script>

@@ -11,7 +11,10 @@ const sponsors = await getCollection("sponsors");
 <dialog
   class="sponsors-hall fixed bottom-0 left-0 right-0 top-0 z-40 flex h-dvh w-full justify-center bg-transparent"
 >
-  <button class="close absolute right-1 top-1" aria-label="close modal">
+  <button
+    class="close absolute right-1 top-1 rounded-full border-nyancat-blue text-nyancat-blue"
+    aria-label="close modal"
+  >
     <Icon name="lucide:x" size={32} /></button
   >
   <div
@@ -37,7 +40,7 @@ const sponsors = await getCollection("sponsors");
         {
           sponsors.map((sponsor) => {
             return (
-              <div class="flex min-w-min justify-between gap-4 rounded-xl border border-white border-opacity-60 bg-white/30 px-5 py-4">
+              <div class="flex max-w-full justify-between gap-4 rounded-xl border border-white border-opacity-60 bg-white/30 px-5 py-4">
                 <Image
                   height={sponsor.data.avatar.height}
                   width={sponsor.data.avatar.width}
@@ -45,11 +48,11 @@ const sponsors = await getCollection("sponsors");
                   src={sponsor.data.avatar}
                   alt="TODO"
                 />
-                <div class="flex flex-grow flex-col gap-2">
-                  <span class="supporter-title w-max font-macho text-2xl font-bold text-[#A700CF]">
+                <div class="flex max-w-full flex-grow flex-col gap-2 overflow-hidden">
+                  <span class="supporter-title max-w-full overflow-hidden overflow-ellipsis text-left font-macho text-2xl font-bold text-[#A700CF]">
                     {sponsor.data.name}
                   </span>
-                  <div class="badges flex flex-wrap gap-1">
+                  <div class="badges flex max-w-full flex-wrap gap-1 overflow-hidden">
                     {sponsor.data.pledges.map((pledge) => {
                       return (
                         <span
@@ -85,43 +88,45 @@ const sponsors = await getCollection("sponsors");
       </div>
     </div>
   </div>
-  <CornerBuddy>
-    <div
-      class="relative flex h-[80px] w-[80px] flex-col items-center gap-1 overflow-y-hidden"
-    >
-      <!-- <Icon class="text-xl text-white" name="logos:backerkit" /> -->
-      <div class="marquee w-20 text-center text-sm font-bold">
-        <div>Nyan, nyan, nyan, nyan, nyan, nyan, nyan, nyan, nyan, nyan~</div>
-        <div>
-          Nyan, nyan, nyan, nyan, nyan, nyan, nyan, nyan, nyan, nyan, nyan,
-          nyan, nyan, nyan, nyan~
+  <div class="corner-buddy">
+    <CornerBuddy showOnMobile={true}>
+      <div
+        class="relative flex h-[80px] w-[80px] flex-col items-center gap-1 overflow-y-hidden"
+      >
+        <!-- <Icon class="text-xl text-white" name="logos:backerkit" /> -->
+        <div class="marquee w-20 text-center text-sm font-bold">
+          <div>Nyan, nyan, nyan, nyan, nyan, nyan, nyan, nyan, nyan, nyan~</div>
+          <div>
+            Nyan, nyan, nyan, nyan, nyan, nyan, nyan, nyan, nyan, nyan, nyan,
+            nyan, nyan, nyan, nyan~
+          </div>
+          <div>
+            Nyan, nyan, nyan, nyan, nyan, nyan, nyan, nyan, nyan, nyan, nyan,
+            nyan, nyan, nyan~
+          </div>
+          <div>
+            Nyan, nyan, nyan, nyan, nyan, nyan, nyan, nyan, nyan, nyan, nyan,
+            nyan~
+          </div>
         </div>
-        <div>
-          Nyan, nyan, nyan, nyan, nyan, nyan, nyan, nyan, nyan, nyan, nyan,
-          nyan, nyan, nyan~
-        </div>
-        <div>
-          Nyan, nyan, nyan, nyan, nyan, nyan, nyan, nyan, nyan, nyan, nyan,
-          nyan~
+        <div class="marquee w-20 text-center text-sm font-bold">
+          <div>Nyan, nyan, nyan, nyan, nyan, nyan, nyan, nyan, nyan, nyan~</div>
+          <div>
+            Nyan, nyan, nyan, nyan, nyan, nyan, nyan, nyan, nyan, nyan, nyan,
+            nyan, nyan, nyan, nyan~
+          </div>
+          <div>
+            Nyan, nyan, nyan, nyan, nyan, nyan, nyan, nyan, nyan, nyan, nyan,
+            nyan, nyan, nyan~
+          </div>
+          <div>
+            Nyan, nyan, nyan, nyan, nyan, nyan, nyan, nyan, nyan, nyan, nyan,
+            nyan~
+          </div>
         </div>
       </div>
-      <div class="marquee w-20 text-center text-sm font-bold">
-        <div>Nyan, nyan, nyan, nyan, nyan, nyan, nyan, nyan, nyan, nyan~</div>
-        <div>
-          Nyan, nyan, nyan, nyan, nyan, nyan, nyan, nyan, nyan, nyan, nyan,
-          nyan, nyan, nyan, nyan~
-        </div>
-        <div>
-          Nyan, nyan, nyan, nyan, nyan, nyan, nyan, nyan, nyan, nyan, nyan,
-          nyan, nyan, nyan~
-        </div>
-        <div>
-          Nyan, nyan, nyan, nyan, nyan, nyan, nyan, nyan, nyan, nyan, nyan,
-          nyan~
-        </div>
-      </div>
-    </div>
-  </CornerBuddy>
+    </CornerBuddy>
+  </div>
 </dialog>
 <style>
   dialog:not([open]) {
@@ -218,6 +223,12 @@ const sponsors = await getCollection("sponsors");
     backdrop-filter: blur(16px);
     background-color: rgb(67 96 247 / 0.5);
   }
+
+  @media (max-width: 600px) {
+    .corner-buddy {
+      display: none;
+    }
+  }
 </style>
 
 <script>
@@ -226,8 +237,6 @@ const sponsors = await getCollection("sponsors");
   let dialog = document.querySelector<HTMLDialogElement>(
     "dialog.sponsors-hall"
   );
-
-  // dialog?.showModal();
 
   document.addEventListener(KonamiTriggeredEventCode, () => {
     dialog?.showModal();

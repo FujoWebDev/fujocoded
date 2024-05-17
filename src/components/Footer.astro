@@ -2,10 +2,11 @@
 import { Image } from "astro:assets";
 import Socials from "./Socials.astro";
 import ShieldWhite from "../images/shield-white.png";
-
 ---
 
-<footer class="z-10 pb-8 font-macho text-lg text-fujo-purple flex flex-col items-center">
+<footer
+  class="z-10 flex flex-col items-center pb-8 font-macho text-lg text-fujo-purple"
+>
   <Image
     class="h-auto w-[80px] drop-shadow-sm"
     src={ShieldWhite}
@@ -13,4 +14,65 @@ import ShieldWhite from "../images/shield-white.png";
   />
   <div class="pb-4">Copyright © {new Date().getFullYear()} FujoCoded LLC</div>
   <div class="opacity-75"><Socials /></div>
+  <konami-code
+    class="mx-auto mt-2 flex max-w-96 flex-wrap justify-center gap-1"
+  >
+    <template class="button-template">
+      <button
+        class="aspect-square w-8 rounded-md border border-fujo-purple bg-white shadow-sm shadow-fujo-purple hover:-translate-x-[1px] hover:-translate-y-[1px] hover:cursor-pointer"
+      ></button>
+    </template>
+    <div class="congratulations">
+      <button
+        class="rounded-md border border-fujo-purple bg-white px-3 py-2 font-zeitung text-sm shadow-sm shadow-fujo-purple hover:-translate-x-[1px] hover:-translate-y-[1px] hover:cursor-pointer"
+        >Visit Hall of $upporters</button
+      >
+    </div>
+    <style>
+      konami-code button.hit {
+        @apply bg-fujo-purple text-white;
+      }
+
+      konami-code.triggered > button {
+        display: none;
+      }
+      konami-code:not(.triggered) .congratulations {
+        display: none;
+      }
+
+      konami-code button.arrowup::after {
+        content: "↑";
+      }
+      konami-code button.arrowdown::after {
+        content: "↓";
+      }
+      konami-code button.arrowleft::after {
+        content: "←";
+      }
+      konami-code button.arrowright::after {
+        content: "→";
+      }
+      konami-code button.keya::after {
+        content: "A";
+      }
+      konami-code button.keyb::after {
+        content: "B";
+      }
+    </style>
+  </konami-code>
 </footer>
+
+<script>
+  import { registerKonamiCode } from "../components/KonamiCode";
+
+  registerKonamiCode();
+
+  document
+    .querySelector(".congratulations button")
+    ?.addEventListener("click", () => {
+      const dialog = document.querySelector<HTMLDialogElement>(
+        "dialog.sponsors-hall"
+      );
+      dialog?.showModal();
+    });
+</script>

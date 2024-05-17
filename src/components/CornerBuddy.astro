@@ -12,22 +12,22 @@ const { showOnMobile = false } = Astro.props;
 
 <div
   class:list={[
-    "git fixed bottom-1 right-1 z-10 md:block",
+    "git fixed bottom-1 right-1 z-50 md:block",
     { hidden: !showOnMobile },
   ]}
 >
-  <a href="/TODO" title="Support us!"
-    ><div
-      class="bubble absolute right-[135px] flex flex-col items-center rounded-md border-2 border-black bg-white px-4 py-2 font-macho"
-    >
+  <div
+    class="bubble absolute right-[135px] flex flex-col items-center rounded-md border-2 border-black bg-white px-4 py-2 font-macho"
+  >
+    <slot>
       <a class="flex flex-col items-center gap-1" href="/support">
         <!-- <Icon class="text-xl text-white" name="logos:backerkit" /> -->
         <div class="w-20 text-center text-sm font-bold">
           Thank you for the support!
         </div>
       </a>
-    </div>
-  </a>
+    </slot>
+  </div>
 
   <Image src={Git} alt="Corner buddy" />
 

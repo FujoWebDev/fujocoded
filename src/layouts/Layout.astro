@@ -11,6 +11,7 @@ import Grid from "../images/grid.svg";
 import HangingLogo from "../components/HangingLogo.astro";
 import ToTopArrow from "../components/ToTopArrow.astro";
 import Footer from "../components/Footer.astro";
+import HallOfSponsors from "../components/sponsors-hall/HallOfSponsors.astro";
 
 const {
   title = "FujoCoded LLC – Currently raising on BackerKit!",
@@ -151,6 +152,7 @@ const {
     <Footer />
     <ToTopArrow />
     <CornerBuddy />
+    <HallOfSponsors />
     <style define:vars={{ backgroundGrid: `url(${Grid.src})` }}>
       body {
         background: linear-gradient(#9687fa, #fbb8fe);

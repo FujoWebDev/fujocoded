@@ -6,6 +6,7 @@ export default {
       hatch: ['"Hatch"', "serif"],
       zeitung: ['"Zeitung Mono Pro"', "sans-serif"],
       macho: ['"Macho"', "sans-serif"],
+      hydrophilia: ["hydrophilia-iced", "sans-serif"],
       // Add more custom font families as needed
     },
     extend: {
@@ -21,6 +22,7 @@ export default {
         "fujo-purple": "#4D2E91",
         "fujo-green": "#A7FF90",
         "kickstarter-green": "#05ce78",
+        "nyancat-blue": "#013466",
       },
     },
   },

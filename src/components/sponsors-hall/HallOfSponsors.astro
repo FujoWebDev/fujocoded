@@ -234,15 +234,9 @@ const sponsors = await getCollection("sponsors");
   });
 
   document.addEventListener("click", function (event) {
-    let rect = dialog!.querySelector("div")!.getBoundingClientRect();
+    const target = event.target as HTMLElement;
 
-    let isInDialog =
-      rect.top <= event.clientY &&
-      event.clientY <= rect.top + rect.height &&
-      rect.left <= event.clientX &&
-      event.clientX <= rect.left + rect.width;
-
-    if (!isInDialog) {
+    if (target.tagName == "DIALOG") {
       dialog!.close();
     }
   });

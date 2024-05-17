@@ -227,7 +227,7 @@ const sponsors = await getCollection("sponsors");
     "dialog.sponsors-hall"
   );
 
-  dialog?.showModal();
+  // dialog?.showModal();
 
   document.addEventListener(KonamiTriggeredEventCode, () => {
     dialog?.showModal();
@@ -244,4 +244,21 @@ const sponsors = await getCollection("sponsors");
   dialog?.querySelector("button")?.addEventListener("click", () => {
     dialog!.close();
   });
+
+  let scrollLocation: number | null = null;
+  let observer = new MutationObserver(function (event) {
+    if (event[0].attributeName == "open") {
+      // React to open/close changes
+      const dialog = event[0].target as HTMLDialogElement;
+      console.log(dialog.getAttribute("open"));
+      if (dialog.getAttribute("open") !== null) {
+        scrollLocation = window.scrollY;
+        document.documentElement.style.overflowY = "hidden";
+      } else {
+        document.documentElement.style.overflowY = "";
+        scrollTo({ top: scrollLocation!, behavior: "instant" });
+      }
+    }
+  });
+  observer.observe(dialog!, { attributes: true });
 </script>

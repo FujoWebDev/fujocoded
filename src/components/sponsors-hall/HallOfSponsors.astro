@@ -3,6 +3,7 @@ import { Icon } from "astro-icon/components";
 import { getCollection } from "astro:content";
 import Git from "./git.png";
 import { Image } from "astro:assets";
+import CornerBuddy from "../CornerBuddy.astro";
 
 const sponsors = await getCollection("sponsors");
 ---
@@ -22,12 +23,12 @@ const sponsors = await getCollection("sponsors");
     >
     </div>
     <div
-      class="text-nyancat-blue flex w-full flex-col text-center font-zeitung shadow-white drop-shadow-sm"
+      class="flex w-full flex-col text-center font-zeitung text-nyancat-blue shadow-white drop-shadow-sm"
     >
-      <div class="dialogue-title font-hydrophilia mt-[100px] text-2xl">
+      <div class="dialogue-title mt-[100px] font-hydrophilia text-2xl">
         Fujocoded LLC
       </div>
-      <div class="dialogue-subtitle font-hydrophilia mb-4 text-4xl font-bold">
+      <div class="dialogue-subtitle mb-4 font-hydrophilia text-4xl font-bold">
         HALL OF SUPPORTERS
       </div>
       <div
@@ -81,173 +82,172 @@ const sponsors = await getCollection("sponsors");
             );
           })
         }
-        <!-- {
-          Array.apply(null, Array(100)).map((sponsor) => {
-            return (
-              <div class="flex min-w-min justify-between gap-4 rounded-md border border-white border-opacity-60 bg-white/30 px-5 py-4">
-                <Image
-                  height="72"
-                  width="72"
-                  class="supporter-icon h-[72px] w-[72px] rounded-full"
-                  src={ComingSoon}
-                  alt="TODO"
-                />
-                <div class="flex flex-grow flex-col gap-2">
-                  <span class="supporter-title w-max font-macho text-2xl font-bold text-[#A700CF]">
-                    {"Train goes choo choo"}
-                  </span>
-                  <div class="badges flex flex-wrap gap-1">
-                    <span class="gold-pledge badge w-max rounded-md border  border-black border-opacity-20 px-2 pb-1 pt-0.5 font-macho text-sm  font-medium leading-none shadow-sm">
-                      {"Fujoguide: Gold"}
-                    </span>
-                    <span class="silver-pledge badge w-max rounded-md border  border-black border-opacity-20 px-2 pb-1 pt-0.5 font-macho text-sm  font-medium leading-none shadow-sm">
-                      {"Fujoguide: Silver"}
-                    </span>
-                    <span class="bronze-pledge badge w-max rounded-md border  border-black border-opacity-20 px-2 pb-1 pt-0.5 font-macho text-sm  font-medium leading-none shadow-sm">
-                      {"Fujoguide: Bronze"}
-                    </span>
-                  </div>
-                  <ul class="flex gap-2">
-                    <li class="mt-0">
-                      <a
-                        href="#"
-                        class="block h-full w-full rounded-md bg-[#8A71E5] bg-opacity-20 p-2 hover:bg-opacity-25"
-                      >
-                        <Icon class="text-2xl" name="lucide:github" />
-                      </a>
-                    </li>
-                    <li class="mt-0">
-                      <a
-                        href="#"
-                        class="block h-full w-full rounded-md bg-[#8A71E5] bg-opacity-20 p-2 hover:bg-opacity-25"
-                      >
-                        <Icon class="text-2xl" name="lucide:twitter" />
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            );
-          })
-        } -->
       </div>
     </div>
   </div>
-
-  <style>
-    dialog:not([open]) {
-      display: none;
-    }
-    .wall {
-      scrollbar-width: none;
-    }
-    .wall::-webkit-scrollbar {
-      display: none;
-    }
-    .supporter-icon {
-      width: 72px;
-      height: 72px;
-      border: 1px solid #ffffff26;
-      box-shadow: 0px 2px 10px 0px #00000026;
-      overflow-clip-margin: unset;
-    }
-    .dialogue-title,
-    .dialogue-subtitle {
-      color: #013368;
-      text-shadow: #ffffff73 0px 3px;
-    }
-    .badge.gold-pledge,
-    .badge.sponsor-pledge {
-      --h: 47;
-      --s: 100%;
-      --l: 50%;
-      --a: 1;
-    }
-    .badge.silver-pledge {
-      --h: 0;
-      --s: 0%;
-      --l: 75%;
-      --a: 1;
-    }
-    .badge.git-art-pledge,
-    .badge.git-fic-pledge,
-    .badge.git-help-pledge,
-    .badge.bronze-pledge {
-      --h: 37;
-      --s: 81%;
-      --l: 50%;
-      --a: 1;
-    }
-
-    .badge {
-      --badge-color: hsla(var(--h), var(--s), var(--l), var(--a));
-      --badge-color-darker: hsla(var(--h), var(--s), 20%, var(--a));
-      --badge-color-lighter: hsla(var(--h), var(--s), 90%, 0.8);
-
-      color: var(--badge-color-darker);
-
-      background-image: linear-gradient(
-        120deg,
-        var(--badge-color) 0%,
-        var(--badge-color) 5%,
-        var(--badge-color-lighter) 15%,
-        var(--badge-color) 20%,
-        var(--badge-color) 100%
-      );
-      background-size: 200% 200%;
-      position: relative;
-      overflow: hidden;
-      background-position-x: 80%;
-      animation: TransitioningBackground 8s ease-out normal infinite;
-    }
-
-    @keyframes TransitioningBackground {
-      0% {
-        background-position-x: 250%;
-      }
-      12% {
-        background-position-x: 80%;
-      }
-      100% {
-        background-position-x: 80%;
-      }
-    }
-
-    dialog::backdrop {
-      backdrop-filter: blur(16px);
-      background-color: rgb(67 96 247 / 0.5);
-    }
-  </style>
-
-  <script>
-    import { KonamiTriggeredEventCode } from "../KonamiCode";
-
-    let dialog = document.querySelector<HTMLDialogElement>(
-      "dialog.sponsors-hall"
-    );
-
-    dialog?.showModal();
-
-    document.addEventListener(KonamiTriggeredEventCode, () => {
-      dialog?.showModal();
-    });
-
-    document.addEventListener("click", function (event) {
-      let rect = dialog!.querySelector("div")!.getBoundingClientRect();
-
-      let isInDialog =
-        rect.top <= event.clientY &&
-        event.clientY <= rect.top + rect.height &&
-        rect.left <= event.clientX &&
-        event.clientX <= rect.left + rect.width;
-
-      if (!isInDialog) {
-        dialog!.close();
-      }
-    });
-
-    dialog?.querySelector("button")?.addEventListener("click", () => {
-      dialog!.close();
-    });
-  </script>
+  <CornerBuddy>
+    <div
+      class="relative flex h-[80px] w-[80px] flex-col items-center gap-1 overflow-y-hidden"
+    >
+      <!-- <Icon class="text-xl text-white" name="logos:backerkit" /> -->
+      <div class="marquee w-20 text-center text-sm font-bold">
+        <div>Nyan, nyan, nyan, nyan, nyan, nyan, nyan, nyan, nyan, nyan~</div>
+        <div>
+          Nyan, nyan, nyan, nyan, nyan, nyan, nyan, nyan, nyan, nyan, nyan,
+          nyan, nyan, nyan, nyan~
+        </div>
+        <div>
+          Nyan, nyan, nyan, nyan, nyan, nyan, nyan, nyan, nyan, nyan, nyan,
+          nyan, nyan, nyan~
+        </div>
+        <div>
+          Nyan, nyan, nyan, nyan, nyan, nyan, nyan, nyan, nyan, nyan, nyan,
+          nyan~
+        </div>
+      </div>
+      <div class="marquee w-20 text-center text-sm font-bold">
+        <div>Nyan, nyan, nyan, nyan, nyan, nyan, nyan, nyan, nyan, nyan~</div>
+        <div>
+          Nyan, nyan, nyan, nyan, nyan, nyan, nyan, nyan, nyan, nyan, nyan,
+          nyan, nyan, nyan, nyan~
+        </div>
+        <div>
+          Nyan, nyan, nyan, nyan, nyan, nyan, nyan, nyan, nyan, nyan, nyan,
+          nyan, nyan, nyan~
+        </div>
+        <div>
+          Nyan, nyan, nyan, nyan, nyan, nyan, nyan, nyan, nyan, nyan, nyan,
+          nyan~
+        </div>
+      </div>
+    </div>
+  </CornerBuddy>
 </dialog>
+<style>
+  dialog:not([open]) {
+    display: none;
+  }
+  .wall {
+    scrollbar-width: none;
+  }
+  .wall::-webkit-scrollbar {
+    display: none;
+  }
+  .supporter-icon {
+    width: 72px;
+    height: 72px;
+    border: 1px solid #ffffff26;
+    box-shadow: 0px 2px 10px 0px #00000026;
+    overflow-clip-margin: unset;
+  }
+  .dialogue-title,
+  .dialogue-subtitle {
+    color: #013368;
+    text-shadow: #ffffff73 0px 3px;
+  }
+  .badge.gold-pledge,
+  .badge.sponsor-pledge {
+    --h: 47;
+    --s: 100%;
+    --l: 50%;
+    --a: 1;
+  }
+  .badge.silver-pledge {
+    --h: 0;
+    --s: 0%;
+    --l: 75%;
+    --a: 1;
+  }
+  .badge.git-art-pledge,
+  .badge.git-fic-pledge,
+  .badge.git-help-pledge,
+  .badge.bronze-pledge {
+    --h: 37;
+    --s: 81%;
+    --l: 50%;
+    --a: 1;
+  }
+
+  .badge {
+    --badge-color: hsla(var(--h), var(--s), var(--l), var(--a));
+    --badge-color-darker: hsla(var(--h), var(--s), 20%, var(--a));
+    --badge-color-lighter: hsla(var(--h), var(--s), 90%, 0.8);
+
+    color: var(--badge-color-darker);
+
+    background-image: linear-gradient(
+      120deg,
+      var(--badge-color) 0%,
+      var(--badge-color) 5%,
+      var(--badge-color-lighter) 15%,
+      var(--badge-color) 20%,
+      var(--badge-color) 100%
+    );
+    background-size: 200% 200%;
+    position: relative;
+    overflow: hidden;
+    background-position-x: 80%;
+    animation: TransitioningBackground 8s ease-out normal infinite;
+  }
+
+  @keyframes TransitioningBackground {
+    0% {
+      background-position-x: 250%;
+    }
+    12% {
+      background-position-x: 80%;
+    }
+    100% {
+      background-position-x: 80%;
+    }
+  }
+
+  .marquee {
+    animation: VerticalMarquee 20s linear infinite;
+  }
+  @keyframes VerticalMarquee {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-100%);
+    }
+  }
+
+  dialog::backdrop {
+    backdrop-filter: blur(16px);
+    background-color: rgb(67 96 247 / 0.5);
+  }
+</style>
+
+<script>
+  import { KonamiTriggeredEventCode } from "../KonamiCode";
+
+  let dialog = document.querySelector<HTMLDialogElement>(
+    "dialog.sponsors-hall"
+  );
+
+  dialog?.showModal();
+
+  document.addEventListener(KonamiTriggeredEventCode, () => {
+    dialog?.showModal();
+  });
+
+  document.addEventListener("click", function (event) {
+    let rect = dialog!.querySelector("div")!.getBoundingClientRect();
+
+    let isInDialog =
+      rect.top <= event.clientY &&
+      event.clientY <= rect.top + rect.height &&
+      rect.left <= event.clientX &&
+      event.clientX <= rect.left + rect.width;
+
+    if (!isInDialog) {
+      dialog!.close();
+    }
+  });
+
+  dialog?.querySelector("button")?.addEventListener("click", () => {
+    dialog!.close();
+  });
+</script>

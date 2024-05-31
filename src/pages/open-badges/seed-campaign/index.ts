@@ -2,7 +2,7 @@ const encodedData = {
   "@context": "https://w3id.org/openbadges/v2",
   //   id: "https://fujocoded.com/open-badges/seed-campaign",
   //   id: "https://api.badgr.io/public/assertions/2sfG9ftoTbu8l6rgHyey0g",
-  id: "https://fujocoded.com/open-badges/seed-campaign",
+  id: "https://fujocoded-git-open-badge-fujowebdev.vercel.app/open-badges/seed-campaign",
   type: "Assertion",
   recipient: {
     type: "email",
@@ -17,10 +17,11 @@ const encodedData = {
   },
   badge: {
     type: "BadgeClass",
-    id: "https://fujocoded.com/open-badges/badges/seed-campaign.json",
+    id: "https://fujocoded-git-open-badge-fujowebdev.vercel.app/open-badges/badges/seed-campaign.json",
     name: "FujoCoded LLC Seed Campaign",
     description: "This person donated to the FujoCoded LLC Seed Campaign",
-    image: "https://fujocoded.com/open-badges/badges/seed-campaign/image",
+    image:
+      "https://fujocoded-git-open-badge-fujowebdev.vercel.app/open-badges/badges/seed-campaign/image",
     criteria: {
       narrative: "this person gave us money",
     },

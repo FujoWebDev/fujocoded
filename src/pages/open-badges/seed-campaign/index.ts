@@ -17,11 +17,11 @@ const encodedData = {
   },
   badge: {
     type: "BadgeClass",
-    id: "https://fujocoded-git-open-badge-fujowebdev.vercel.app/open-badges/badges/seed-campaign.json",
+    id: "https://fujocoded-git-open-badge-fujowebdev.vercel.app/open-badges/badges/seed-campaign/badge.json",
     name: "FujoCoded LLC Seed Campaign",
     description: "This person donated to the FujoCoded LLC Seed Campaign",
     image:
-      "https://fujocoded-git-open-badge-fujowebdev.vercel.app/open-badges/badges/seed-campaign/image",
+      "https://fujocoded-git-open-badge-fujowebdev.vercel.app/open-badges/badges/seed-campaign/badge.png",
     criteria: {
       narrative: "this person gave us money",
     },

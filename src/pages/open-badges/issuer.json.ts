@@ -4,6 +4,8 @@ const encodedData = {
   name: "FujoCoded LLC",
   url: "https://fujocoded.com/",
   email: "contacts@fujocoded.com",
+  publicKey:
+    "https://fujocoded-git-open-badge-fujowebdev.vercel.app/open-badges/publicKey.json",
   verification: {
     allowedOrigins: "fujocoded-git-open-badge-fujowebdev.vercel.app",
   },

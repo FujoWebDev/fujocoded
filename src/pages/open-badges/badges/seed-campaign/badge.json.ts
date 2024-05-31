@@ -9,7 +9,7 @@ const encodedData = {
     narrative: "this person gave us money",
   },
   issuer: {
-    id: "https://fujocoded.com/",
+    id: "https://fujocoded-git-open-badge-fujowebdev.vercel.app/open-badges/issuer.json",
     type: "Profile",
     name: "FujoCoded LLC",
     url: "https://fujocoded.com/",

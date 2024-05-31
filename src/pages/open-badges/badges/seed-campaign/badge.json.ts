@@ -1,6 +1,6 @@
 const encodedData = {
   type: "BadgeClass",
-  id: "https://fujocoded.com/open-badges/badges/seed-campaign.json",
+  id: "https://fujocoded.com/open-badges/badges/seed-campaign/badge.json",
   name: "FujoCoded LLC Seed Campaign",
   description: "This person donated to the FujoCoded LLC Seed Campaign",
   image:

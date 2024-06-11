@@ -11,6 +11,7 @@ import Fujoshi from "../images/main/fujoshi.png";
 import FujoshiTerminal from "../images/main/boba-tan-terminal.png";
 import { Image } from "astro:assets";
 import Socials from "../components/Socials.astro";
+import SubscriptionForm from "../components/SubscriptionForm.astro";
 import { getCollection } from "astro:content";
 import { getEntry } from "astro:content";
 
@@ -155,29 +156,12 @@ const cssHtmlExplainer = await getEntry("images", "css-html-explainer");
     <section
       class="test relative flex flex-col content-center px-8 pb-6 pt-8 drop-shadow before:transform before:rounded-3xl"
     >
-      <div>
-        <h2 class:list={[TITLE_CLASS, "text-center"]}>
-          Get <em class="text-white shadow-fujo-pink">Updates</em>
+    <div>
+      <h2 class:list={[TITLE_CLASS, "text-center"]}>
+        Get <em class="text-white shadow-fujo-pink">Updates</em>
         </h2>
-        <form
-          action="https://buttondown.email/api/emails/embed-subscribe/fujocoded"
-          method="post"
-          target="popupwindow"
-          onsubmit="window.open('https://buttondown.email/fujocoded', 'popupwindow')"
-          class="mt-4 flex flex-col items-center justify-center gap-4 text-center sm:flex-row"
-        >
-          <input
-            type="email"
-            name="email"
-            id="bd-email"
-            aria-label="email"
-            placeholder="boba-tan@fujocoded.com"
-            required="true"
-            class="h-12 w-full self-center rounded-full border-2 border-fujo-blue placeholder:italic placeholder-shown:p-3 sm:max-w-[50%]"
-          />
-          <input type="submit" value="Subscribe" class={BUTTON_LINKS} />
-        </form>
-      </div>
+      <SubscriptionForm />
+        </div>
       <div class="mt-8 text-3xl">
         <Socials />
       </div>

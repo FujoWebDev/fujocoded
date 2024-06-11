@@ -1,0 +1,23 @@
+---
+const BUTTON_LINKS =
+  "button-links w-full sm:w-auto text-center rounded-xl bg-gradient-to-b from-[#CE00FF] to-[#A700CF] px-12 py-3 font-hatch text-lg font-medium text-white";
+---
+
+<form
+  action="https://buttondown.email/api/emails/embed-subscribe/fujocoded"
+  method="post"
+  target="popupwindow"
+  onsubmit="window.open('https://buttondown.email/fujocoded', 'popupwindow')"
+  class="mt-4 flex flex-col items-center justify-center gap-4 text-center sm:flex-row"
+>
+  <input
+    type="email"
+    name="email"
+    id="bd-email"
+    aria-label="email"
+    placeholder="boba-tan@fujocoded.com"
+    required="true"
+    class="h-12 w-full self-center rounded-full border-2 border-fujo-blue placeholder:italic placeholder-shown:p-3 sm:max-w-[50%]"
+  />
+  <input type="submit" value="Subscribe" class={BUTTON_LINKS} />
+</form>

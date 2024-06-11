@@ -2,6 +2,7 @@
 import { getCollection } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
 import { Icon } from "astro-icon/components";
+import SubscriptionForm from "../../components/SubscriptionForm.astro";
 
 export async function getStaticPaths() {
   const updates = await getCollection("updates");
@@ -17,6 +18,9 @@ export async function getStaticPaths() {
     }))
   );
 }
+
+const TITLE_CLASS =
+  "mb-0 mt-0 font-hatch text-[34px] font-medium italic text-fujo-pink";
 
 const { Content, data } = Astro.props;
 ---
@@ -49,14 +53,13 @@ const { Content, data } = Astro.props;
         )
       }
     </div>
-    <div class="m-auto mt-4 w-[65ch] prose">
+    <div class="prose m-auto mt-4 w-[65ch]">
       <Content />
     </div>
   </article>
   {
     !!data.socials.length && (
       <aside class="mx-auto mt-4 flex flex-col gap-3 rounded-xl bg-white px-6 pb-6 pt-7 drop-shadow-lg sm:px-10">
-        <h4>Share this post on socials:</h4>
         <ul class="flex flex-col gap-3">
           {data.socials.map((contact) => {
             return (
@@ -78,7 +81,7 @@ const { Content, data } = Astro.props;
                     contact.url
                   ) : (
                     <span class="sr-only sm:not-sr-only" id="platform">
-                      {contact.platform}
+                      Share on {contact.platform}
                     </span>
                   )}
                 </a>
@@ -89,5 +92,17 @@ const { Content, data } = Astro.props;
       </aside>
     )
   }
+  <aside
+    class="mx-auto mt-4 flex flex-col gap-3 rounded-xl bg-white px-8 py-10 drop-shadow-lg sm:px-10"
+  >
+    <!--   <aside
+    class="test relative content-center before:transform before:rounded-3xl"
+  > -->
+    <div>
+      <h2 class:list={[TITLE_CLASS, "text-center"]}>
+        Get <em class="text-white shadow-fujo-pink">Updates</em>
+      </h2>
+      <SubscriptionForm />
+    </div>
+  </aside>
 </Layout>
-

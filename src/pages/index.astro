@@ -16,7 +16,7 @@ import { getCollection } from "astro:content";
 import { getEntry } from "astro:content";
 
 const SECTION_CLASS =
-  "test relative flex flex-col md:flex-row items-center py-5 before:rounded-3xl before:transform before:-rotate-1 drop-shadow";
+  "test relative flex flex-col md:flex-row items-center py-5 before:rounded-3xl before:transform before:-rotate-1 drop-shadow-purple";
 
 const BUTTON_LINKS =
   "button-links w-full sm:w-auto text-center rounded-xl bg-gradient-to-b from-[#CE00FF] to-[#A700CF] px-12 py-3 font-hatch text-lg font-medium text-white";
@@ -156,12 +156,12 @@ const cssHtmlExplainer = await getEntry("images", "css-html-explainer");
     <section
       class="test relative flex flex-col content-center px-8 pb-6 pt-8 drop-shadow before:transform before:rounded-3xl"
     >
-    <div>
-      <h2 class:list={[TITLE_CLASS, "text-center"]}>
-        Get <em class="text-white shadow-fujo-pink">Updates</em>
+      <div>
+        <h2 class:list={[TITLE_CLASS, "text-center"]}>
+          Get <em class="text-white shadow-fujo-pink">Updates</em>
         </h2>
-      <SubscriptionForm />
-        </div>
+        <SubscriptionForm />
+      </div>
       <div class="mt-8 text-3xl">
         <Socials />
       </div>
@@ -181,9 +181,6 @@ const cssHtmlExplainer = await getEntry("images", "css-html-explainer");
     }
 
     :where(h1, h2, h3) em {
-    }
-    .drop-shadow {
-      filter: drop-shadow(0px 1px 1.5px #5514e0e5);
     }
     .button-links {
       color: white;

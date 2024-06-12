@@ -30,8 +30,8 @@ const { Content, data } = Astro.props;
   preview={data.og_image?.src}
   description={data.og_description || data.tagline}
 >
-  <article class="m-auto rounded-xl bg-white drop-shadow">
-    <div class="m-auto mb-8 max-w-[65ch] border-b-2 border-dotted pb-8">
+  <article class="drop-shadow-purple m-auto rounded-xl bg-white">
+    <div class="m-auto mb-8 border-b-2 border-dotted pb-8">
       <date class="mb-2" style="font-variant: small-caps;"
         >{
           data.created_at.toLocaleDateString("en-US", {
@@ -53,13 +53,13 @@ const { Content, data } = Astro.props;
         )
       }
     </div>
-    <div class="prose m-auto mt-4 max-w-[65ch]">
+    <div class="m-auto mt-4">
       <Content />
     </div>
   </article>
   {
     !!data.socials.length && (
-      <aside class="mx-auto mt-4 flex flex-col gap-3 rounded-xl bg-white px-6 pb-6 pt-7 drop-shadow-lg sm:px-10">
+      <aside class="drop-shadow-purple mx-auto mt-4 flex flex-col gap-3 rounded-xl bg-white px-6 pb-6 pt-7 sm:px-10">
         <h4>Share this post on socials:</h4>
         <ul class="flex gap-3">
           {data.socials.map((contact) => {
@@ -94,11 +94,8 @@ const { Content, data } = Astro.props;
     )
   }
   <aside
-    class="mx-auto mt-4 flex flex-col gap-3 rounded-xl bg-white px-8 py-10 drop-shadow-lg sm:px-10"
+    class="drop-shadow-purple mx-auto mt-4 flex flex-col gap-3 rounded-xl bg-white px-8 py-10 sm:px-10"
   >
-    <!--   <aside
-    class="test relative content-center before:transform before:rounded-3xl"
-  > -->
     <div>
       <h2 class:list={[TITLE_CLASS, "text-center"]}>
         Get <em class="text-white shadow-fujo-pink">Updates</em>

@@ -60,7 +60,8 @@ const { Content, data } = Astro.props;
   {
     !!data.socials.length && (
       <aside class="mx-auto mt-4 flex flex-col gap-3 rounded-xl bg-white px-6 pb-6 pt-7 drop-shadow-lg sm:px-10">
-        <ul class="flex flex-col gap-3">
+        <h4>Share this post on socials:</h4>
+        <ul class="flex gap-3">
           {data.socials.map((contact) => {
             return (
               <li class="flex gap-3">
@@ -81,7 +82,7 @@ const { Content, data } = Astro.props;
                     contact.url
                   ) : (
                     <span class="sr-only sm:not-sr-only" id="platform">
-                      Share on {contact.platform}
+                      {contact.platform}
                     </span>
                   )}
                 </a>

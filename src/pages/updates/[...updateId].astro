@@ -31,7 +31,7 @@ const { Content, data } = Astro.props;
   description={data.og_description || data.tagline}
 >
   <article class="m-auto rounded-xl bg-white drop-shadow">
-    <div class="m-auto mb-8 w-[65ch] border-b-2 border-dotted pb-8">
+    <div class="m-auto mb-8 max-w-[65ch] border-b-2 border-dotted pb-8">
       <date class="mb-2" style="font-variant: small-caps;"
         >{
           data.created_at.toLocaleDateString("en-US", {
@@ -53,7 +53,7 @@ const { Content, data } = Astro.props;
         )
       }
     </div>
-    <div class="prose m-auto mt-4 w-[65ch]">
+    <div class="prose m-auto mt-4 max-w-[65ch]">
       <Content />
     </div>
   </article>

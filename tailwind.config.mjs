@@ -24,6 +24,9 @@ export default {
         "kickstarter-green": "#05ce78",
         "nyancat-blue": "#013466",
       },
+      dropShadow: {
+        purple: "0px 1px 1.5px #5514e0e5",
+      },
     },
   },
   plugins: [require("@tailwindcss/typography")],

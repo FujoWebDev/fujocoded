@@ -13,6 +13,7 @@
     "@astrojs/check": "^0.7.0",
     "@astrojs/mdx": "^3.0.0",
     "@astrojs/tailwind": "^5.1.0",
+    "@fujocoded/remark-capitalize-titles": "^0.0.7",
     "@iconify-json/logos": "^1.1.42",
     "@tailwindcss/typography": "^0.5.10",
     "astro": "^4.8.5",

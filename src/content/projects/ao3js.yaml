@@ -9,7 +9,7 @@ tags:
   - open source
 graduated: false
 websites:
-  - https://github.com/essential-randomness/AO3.JS
+  - https://github.com/FujoWebDev/AO3.js
   - https://www.npmjs.com/package/@bobaboard/ao3.js
 description:
   Data-fetching library for [Archive of Our Own](http://archiveofourown.org/), written in TypeScript.

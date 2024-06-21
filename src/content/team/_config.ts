@@ -1,6 +1,6 @@
+import { SocialLinks } from "@fujocoded/zod-transform-socials";
 import { defineCollection, z } from "astro:content";
 import { parseInline } from "marked";
-import { socialsSchema, transformSocial } from "../../lib/socials-transformer";
 
 const contributorType = z.enum(["founder", "contractor", "community"]);
 
@@ -11,9 +11,7 @@ export const collection = defineCollection({
       name: z.string(),
       avatar: tools.image(),
       type: contributorType,
-      contacts: socialsSchema
-        .array()
-        .transform((contacts) => contacts.map(transformSocial)),
+      contacts: SocialLinks,
       bio: z
         .string()
         .optional()

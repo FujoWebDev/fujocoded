@@ -1,5 +1,5 @@
 import { defineCollection, z } from "astro:content";
-import { socialsSchema, transformSocial } from "../../lib/socials-transformer";
+import { SocialLinks } from "@fujocoded/zod-transform-socials";
 
 import { parseInline } from "marked";
 
@@ -22,9 +22,6 @@ export const updates = defineCollection({
         .transform((text) => text?.replaceAll("\n", " ").trim()),
       og_title: z.string().optional(),
       status: z.enum(["rough-draft", "pre-beta"]).optional(),
-      socials: z
-        .array(socialsSchema)
-        .default([])
-        .transform((contacts) => contacts.map(transformSocial)),
+      socials: SocialLinks,
     }),
 });

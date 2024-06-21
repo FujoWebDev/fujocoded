@@ -2,7 +2,6 @@
 import { getCollection } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
 import { Icon } from "astro-icon/components";
-import { socialsSchema } from "../../lib/socials-transformer";
 
 export async function getStaticPaths() {
   const updates = await getCollection("updates");
@@ -15,7 +14,7 @@ export async function getStaticPaths() {
         Content: (await update.render()).Content,
         data: update.data,
       },
-    })),
+    }))
   );
 }
 

@@ -1,12 +1,12 @@
 ---
 import { Icon } from "astro-icon/components";
-import type { SocialsData } from "../../lib/socials-transformer";
 import { Image } from "astro:assets";
+import type { SocialLinksData } from "@fujocoded/zod-transform-socials";
 
 interface Props {
   name: string;
   avatar: string;
-  contacts: SocialsData[];
+  contacts: SocialLinksData;
 }
 
 const { name, contacts, avatar } = Astro.props;

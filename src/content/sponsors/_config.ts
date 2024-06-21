@@ -1,5 +1,5 @@
+import { SocialLinks } from "@fujocoded/zod-transform-socials";
 import { defineCollection, z } from "astro:content";
-import { socialsSchema, transformSocial } from "../../lib/socials-transformer";
 
 const Pledge = z.union([
   z.object({
@@ -19,8 +19,6 @@ export const collection = defineCollection({
       name: z.string(),
       avatar: tools.image(),
       pledges: Pledge.array(),
-      contacts: socialsSchema
-        .array()
-        .transform((contacts) => contacts.map(transformSocial)),
+      contacts: SocialLinks,
     }),
 });

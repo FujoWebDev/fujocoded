@@ -10,6 +10,24 @@ export default {
       // Add more custom font families as needed
     },
     extend: {
+      typography: {
+        lg: {
+          css: [
+            {
+              color: "inherit",
+              "h1, h2": {
+                color: "#FF38EB",
+              },
+              "h3, h4, h5, h6": {
+                color: "inherit",
+              },
+              strong: {
+                color: "inherit",
+              },
+            },
+          ],
+        },
+      },
       colors: {
         "lemon-dark": "#ffbf00",
         "lemon-dark-transparent": "#ffbf0080",

@@ -20,6 +20,7 @@ export async function getStaticPaths() {
 }
 
 const { Content, data } = Astro.props;
+console.log(data.socials);
 ---
 
 <Layout
@@ -55,11 +56,14 @@ const { Content, data } = Astro.props;
     </div>
   </article>
   <aside
-    class="mx-auto mt-4 flex flex-col gap-3 rounded-xl bg-white px-6 pb-6 pt-7 drop-shadow-purple sm:px-10"
+    class="mx-auto mt-4 flex flex-col gap-3 rounded-xl bg-white px-6 pb-6 pt-7 text-center drop-shadow-purple sm:px-10"
   >
     {
       !!data.socials.length && (
         <>
+          <h3 class="mb-0 font-hatch text-[24px] font-medium italic text-fujo-pink">
+            Share us on <em class="text-white shadow-fujo-pink">socials</em> ❤︎
+          </h3>
           <ul class="flex flex-col gap-2">
             {data.socials.map((contact) => {
               return (
@@ -93,6 +97,9 @@ const { Content, data } = Astro.props;
         </>
       )
     }
+    <h3 class="mb-0 font-hatch text-[24px] font-medium italic text-fujo-pink">
+      Want this in your <em class="text-white shadow-fujo-pink">inbox</em>?
+    </h3>
     <SubscriptionForm />
   </aside>
 </Layout>

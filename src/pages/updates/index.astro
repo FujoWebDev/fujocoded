@@ -13,52 +13,47 @@ const updates = (
 ---
 
 <Layout>
-  <section>
-    <h1 class="text-white">Updates</h1>
-    <ol class="flex flex-col gap-4">
-      {
-        updates.map((update) => {
-          return (
-            <li class="flex flex-col items-center">
-              <article class="drop-shadow-purple mx-4 flex flex-col gap-2 rounded-xl bg-white px-6 pb-6 pt-7 sm:px-10">
-                <date
-                  class="text-[16px] text-slate-500"
-                  style="font-variant: small-caps;"
-                >
-                  {update.data.created_at.toLocaleString("en", {
-                    weekday: "long",
-                    year: "numeric",
-                    month: "long",
-                    day: "numeric",
-                  })}
-                </date>
-                <h2 class="mb-1 mt-1 font-hatch text-fujo-pink">
-                  <a
-                    href={`/updates/${update.slug}`}
-                    set:html={update.data.title}
-                    class="!not-italic !text-fujo-pink !no-underline"
-                  />
-                </h2>
+  <h1 class="text-white">Updates</h1>
+  <ol class="flex flex-col gap-4">
+    {
+      updates.map((update) => {
+        return (
+          <li class="flex flex-col items-center rounded-xl bg-white drop-shadow-purple">
+            <article class="flex flex-col gap-2 px-6 pb-6 pt-7 sm:px-10">
+              <date
+                class="text-[16px] text-slate-500"
+                style="font-variant: small-caps;"
+              >
+                {update.data.created_at.toLocaleString("en", {
+                  weekday: "long",
+                  year: "numeric",
+                  month: "long",
+                  day: "numeric",
+                })}
+              </date>
+              <h2 class="mb-1 mt-1 font-hatch text-fujo-pink">
+                <a
+                  href={`/updates/${update.slug}`}
+                  set:html={update.data.title}
+                  class="!not-italic !text-fujo-pink !no-underline"
+                />
+              </h2>
 
-                {!!update.data.tags.length && (
-                  <TagList tags={update.data.tags} />
-                )}
-                {update.data.tagline && (
-                  <p class="tagline">{update.data.tagline}</p>
-                )}
-              </article>
-            </li>
-          );
-        })
-      }
-    </ol>
-  </section>
+              {!!update.data.tags.length && <TagList tags={update.data.tags} />}
+              {update.data.tagline && (
+                <p class="tagline">{update.data.tagline}</p>
+              )}
+            </article>
+          </li>
+        );
+      })
+    }
+  </ol>
 </Layout>
 
 <style>
   article {
-    width: min(100% - 32px, 65ch);
-    min-width: 120%;
+    width: min(100% - 32px, 75ch);
   }
 
   h1 {

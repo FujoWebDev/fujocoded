@@ -83,7 +83,7 @@ const { Content, data } = Astro.props;
                     {contact.platform === "web" ? (
                       contact.url
                     ) : (
-                      <span class="" id="platform">
+                      <span class="capitalize" id="platform">
                         {`${contact.platform?.charAt(0)}${contact.platform?.slice(1)}`}
                       </span>
                     )}

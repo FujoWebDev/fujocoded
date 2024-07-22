@@ -2,6 +2,7 @@
 import { getCollection } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
 import { Icon } from "astro-icon/components";
+import SubscriptionForm from "../../components/SubscriptionForm.astro";
 
 export async function getStaticPaths() {
   const updates = await getCollection("updates");
@@ -26,16 +27,9 @@ const { Content, data } = Astro.props;
   preview={data.og_image?.src}
   description={data.og_description || data.tagline}
 >
-  <article
-    class="mx-4 flex flex-col gap-2 rounded-xl bg-white px-6 pb-6 pt-7 drop-shadow-lg sm:px-10"
-  >
-    <h1
-      class="mb-4 text-center font-hatch text-[34px] text-fujo-pink"
-      set:html={data.title}
-    />
-    {data.tagline && <h2 class="tagline">{data.tagline}</h2>}
-    <div class="mb-4">
-      Published on <date
+  <article class="m-auto rounded-xl bg-white drop-shadow-purple">
+    <div class="m-auto mb-8 border-b-2 border-dotted pb-8">
+      <date class="mb-2" style="font-variant: small-caps;"
         >{
           data.created_at.toLocaleDateString("en-US", {
             year: "numeric",
@@ -44,50 +38,70 @@ const { Content, data } = Astro.props;
           })
         }</date
       >
+      <h1
+        class="m-0 mb-1 text-left font-hatch text-[34px] text-fujo-pink"
+        set:html={data.title}
+      />
+      {
+        data.tagline && (
+          <h2 class="tagline m-0 mb-2 text-left text-[24px] text-slate-500">
+            {data.tagline}
+          </h2>
+        )
+      }
     </div>
-    <div class="prose"><Content /></div>
+    <div class="prose prose-lg m-auto mt-4">
+      <Content />
+    </div>
   </article>
-  {
-    !!data.socials.length && (
-      <aside class="mx-4 mt-4 flex flex-col gap-3 rounded-xl bg-white px-6 pb-6 pt-7 drop-shadow-lg sm:px-10">
-        <h4>Share this post on socials:</h4>
-        <ul class="flex flex-col gap-3">
-          {data.socials.map((contact) => {
-            return (
-              <li class="flex gap-3">
-                <a href={contact.url}>
-                  <Icon
-                    size={24}
-                    aria-labelledby={
-                      contact.platform !== "web" ? "platform" : undefined
-                    }
-                    aria-label={
-                      contact.platform === "web" ? "website" : undefined
-                    }
-                    name={contact.icon ?? "world-www"}
-                  />
-                </a>
-                <a href={contact.url}>
-                  {contact.platform === "web" ? (
-                    contact.url
-                  ) : (
-                    <span class="sr-only sm:not-sr-only" id="platform">
-                      {contact.platform}
-                    </span>
-                  )}
-                </a>
-              </li>
-            );
-          })}
-        </ul>
-      </aside>
-    )
-  }
+  <aside
+    class="mx-auto mt-4 flex flex-col items-center gap-3 rounded-xl bg-white px-6 pb-6 pt-7 text-center drop-shadow-purple sm:px-10"
+  >
+    {
+      !!data.socials.length && (
+        <>
+          <h3 class="mb-0 mt-1 font-hatch text-[24px] font-medium italic text-fujo-pink">
+            Share us on <em class="text-white shadow-fujo-pink">socials</em> ❤︎
+          </h3>
+          <ul class="mb-1 flex w-full max-w-md justify-around gap-2">
+            {data.socials.map((contact) => {
+              return (
+                <li class="flex flex-col items-center gap-2">
+                  <a href={contact.url}>
+                    <Icon
+                      size={24}
+                      aria-labelledby={
+                        contact.platform !== "web" ? "platform" : undefined
+                      }
+                      aria-label={
+                        contact.platform === "web" ? "website" : undefined
+                      }
+                      name={contact.icon ?? "world-www"}
+                    />
+                  </a>
+                  <a href={contact.url}>
+                    {contact.platform === "web" ? (
+                      contact.url
+                    ) : (
+                      <span class="" id="platform">
+                        {`${contact.platform?.charAt(0)}${contact.platform?.slice(1)}`}
+                      </span>
+                    )}
+                  </a>
+                </li>
+              );
+            })}
+          </ul>
+        </>
+      )
+    }
+    <h3
+      class="mb-0 mt-1 font-hatch text-[24px] font-medium italic text-fujo-pink"
+    >
+      Want this in your <em class="text-white shadow-fujo-pink">inbox</em>?
+    </h3>
+    <div class="mb-1 w-full">
+      <SubscriptionForm />
+    </div>
+  </aside>
 </Layout>
-
-<style>
-  article,
-  aside {
-    width: min(100% - 32px, 65ch);
-  }
-</style>

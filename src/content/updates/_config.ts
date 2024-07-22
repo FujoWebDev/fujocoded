@@ -11,10 +11,7 @@ export const updates = defineCollection({
       tagline: z.string().optional(),
       created_at: z.date(),
       unlisted: z.boolean().optional().default(false),
-      tags: z
-        .array(z.string().transform((tag) => tag.substring(1)))
-        .optional()
-        .default([]),
+      tags: z.array(z.string()).optional().default([]),
       og_image: image().optional(),
       og_description: z
         .string()

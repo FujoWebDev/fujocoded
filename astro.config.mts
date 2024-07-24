@@ -5,6 +5,8 @@ import tailwind from "@astrojs/tailwind";
 import remarkCapitalizeTitles, {
   DEFAULT_CAPITALIZATIONS,
 } from "@fujocoded/remark-capitalize-titles";
+import rehypeSlug from "rehype-slug";
+import rehypeAutolinkHeadings from "rehype-autolink-headings";
 
 import metaTags from "astro-meta-tags";
 
@@ -14,6 +16,15 @@ export default defineConfig({
   markdown: {
     remarkPlugins: [
       [remarkCapitalizeTitles, { special: DEFAULT_CAPITALIZATIONS }],
+    ],
+    rehypePlugins: [
+      rehypeSlug,
+      [
+        rehypeAutolinkHeadings,
+        {
+          behavior: "wrap",
+        },
+      ],
     ],
   },
 });

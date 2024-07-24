@@ -105,3 +105,14 @@ const { Content, data } = Astro.props;
     </div>
   </aside>
 </Layout>
+
+<style>
+  .prose :global(h2) :global(a) {
+    @apply text-fujo-pink;
+    text-decoration: none;
+  }
+  .prose :global(h2) :global(a:hover) {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+</style>

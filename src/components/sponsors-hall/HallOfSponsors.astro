@@ -2,6 +2,7 @@
 import { Icon } from "astro-icon/components";
 import { getCollection } from "astro:content";
 import Git from "./git.png";
+import GitAnimated from "./git-slower.gif";
 import { Image } from "astro:assets";
 import CornerBuddy from "../CornerBuddy.astro";
 
@@ -21,7 +22,12 @@ const sponsors = await getCollection("sponsors");
     class="background isolate z-40 mb-3 mt-[7.5rem] flex w-full justify-center rounded-xl bg-white/50 px-8 py-4 shadow-sm backdrop-blur-lg backdrop-filter"
   >
     <div
-      class="absolute left-1/2 top-0 my-0 block aspect-[360/212] h-auto w-11/12 max-w-[360px] -translate-x-1/2 -translate-y-1/2 rounded-3xl bg-slate-500 bg-contain bg-center"
+      class="git-animated absolute left-1/2 top-0 my-0 block aspect-[360/212] h-auto w-11/12 max-w-[360px] -translate-x-1/2 -translate-y-1/2 rounded-3xl bg-slate-500 bg-contain bg-center"
+      style={`background-image: url(${GitAnimated.src})`}
+    >
+    </div>
+    <div
+      class="git absolute left-1/2 top-0 my-0 block aspect-[360/212] h-auto w-11/12 max-w-[360px] -translate-x-1/2 -translate-y-1/2 rounded-3xl bg-slate-500 bg-contain bg-center"
       style={`background-image: url(${Git.src})`}
     >
     </div>
@@ -32,7 +38,11 @@ const sponsors = await getCollection("sponsors");
         Fujocoded LLC
       </div>
       <div class="dialogue-subtitle mb-4 font-hydrophilia text-4xl font-bold">
-        HALL OF SUPPORTERS
+        HALL OF SPONSORS
+      </div>
+      <div class="mx-auto mb-5 max-w-[600px]">
+        Celebrating the fujin & allies whose donations to our cause went above
+        and beyond.
       </div>
       <div
         class="wall grid max-h-full w-full grid-cols-1 gap-2 overflow-y-scroll md:grid-cols-2 lg:grid-cols-3"
@@ -46,7 +56,7 @@ const sponsors = await getCollection("sponsors");
                   width={sponsor.data.avatar.width}
                   class="supporter-icon h-[72px] w-[72px] rounded-full object-cover"
                   src={sponsor.data.avatar}
-                  alt="TODO"
+                  alt={`Avatar for ${sponsor.data.name}`}
                 />
                 <div class="flex max-w-full flex-grow flex-col gap-2 overflow-hidden">
                   <span class="supporter-title max-w-full overflow-hidden overflow-ellipsis text-left font-macho text-2xl font-bold text-[#A700CF]">
@@ -150,14 +160,14 @@ const sponsors = await getCollection("sponsors");
     color: #013368;
     text-shadow: #ffffff73 0px 3px;
   }
-  .badge.gold-pledge,
+  .badge.gold-fujin-pledge,
   .badge.sponsor-pledge {
     --h: 47;
     --s: 100%;
     --l: 50%;
     --a: 1;
   }
-  .badge.silver-pledge {
+  .badge.silver-fujin-pledge {
     --h: 0;
     --s: 0%;
     --l: 75%;
@@ -166,11 +176,12 @@ const sponsors = await getCollection("sponsors");
   .badge.git-art-pledge,
   .badge.git-fic-pledge,
   .badge.git-help-pledge,
-  .badge.bronze-pledge {
+  .badge.bronze-fujin-pledge {
     --h: 37;
-    --s: 81%;
-    --l: 50%;
+    --s: 76%;
+    --l: 49%;
     --a: 1;
+    --badge-color-darker: hsl(37deg 89.03% 13.63%);
   }
 
   .badge {
@@ -219,6 +230,24 @@ const sponsors = await getCollection("sponsors");
     }
   }
 
+  .git {
+    display: none;
+  }
+  @media (prefers-reduced-motion) {
+    .git {
+      display: block;
+    }
+    .git-animated {
+      display: none;
+    }
+    .marquee {
+      animation: none;
+    }
+    .badge {
+      animation: none;
+    }
+  }
+
   dialog::backdrop {
     backdrop-filter: blur(16px);
     background-color: rgb(67 96 247 / 0.5);
@@ -227,6 +256,20 @@ const sponsors = await getCollection("sponsors");
   @media (max-width: 600px) {
     .corner-buddy {
       display: none;
+    }
+  }
+  @media (max-width: 450px) {
+    .git {
+      max-width: 250px;
+    }
+    .git-animated {
+      max-width: 250px;
+    }
+    .dialogue-title {
+      margin-top: 70px;
+    }
+    .background {
+      margin-top: 80px;
     }
   }
 </style>

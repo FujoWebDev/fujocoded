@@ -3,12 +3,12 @@ import { defineCollection, z } from "astro:content";
 
 const Pledge = z.union([
   z.object({
-    campaign: z.enum(["FujoGuide Volume 0"]),
+    campaign: z.literal("FujoGuide Volume 0"),
     tier: z.enum(["GIT Art", "GIT Help", "GIT Fic", "Sponsor"]),
   }),
   z.object({
-    campaign: z.enum(["FujoCoded LLC"]),
-    tier: z.enum(["Bronze", "Silver", "Gold"]),
+    campaign: z.literal("FujoCoded LLC"),
+    tier: z.enum(["Bronze Fujin", "Silver Fujin", "Gold Fujin"]),
   }),
 ]);
 

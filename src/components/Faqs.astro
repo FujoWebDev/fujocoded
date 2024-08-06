@@ -1,0 +1,109 @@
+---
+import { Icon } from "astro-icon/components";
+import { getCollection } from "astro:content";
+const faqs = await getCollection("faqs", (faq) => faq.data.draft !== true);
+
+const faqEntries = await Promise.all(
+  faqs
+    .sort((f1, f2) => f1.data.order - f2.data.order)
+    .map(async (faq) => ({
+      title: faq.data.title,
+      slug: faq.slug,
+      success: faq.data.success,
+      Content: (await faq.render()).Content,
+    })),
+);
+
+interface Props {
+  successOnly?: boolean;
+}
+
+const { successOnly } = Astro.props;
+---
+
+<div
+  class:list={[
+    "faqs",
+    {
+      "success-only": successOnly,
+    },
+  ]}
+>
+  {
+    faqEntries.map((faq) => (
+      <details id={faq.slug} data-success={faq.success}>
+        <summary>
+          <span set:html={faq.title} />
+          <a href={`#${faq.slug}`}>
+            <Icon name="lucide:link" />
+          </a>
+        </summary>
+        {<faq.Content />}
+      </details>
+    ))
+  }
+</div>
+
+<style>
+  summary > a {
+    color: black;
+  }
+  summary > a:hover {
+    text-decoration: underline;
+    cursor: pointer;
+    color: red;
+  }
+  summary {
+    display: flex;
+    align-items: center;
+    list-style: none;
+  }
+  details > summary::before {
+    content: "▹ ";
+    margin-right: 5px;
+  }
+  details[open] > summary::before {
+    content: "▿ ";
+    margin-right: 5px;
+  }
+
+  .faqs {
+    border-radius: 16px;
+    padding: 20px 15px;
+  }
+  .faqs details {
+    width: 100%;
+  }
+  .faqs details summary {
+    padding-block: 10px;
+    font-size: var(--font-size-title-smaller);
+  }
+  .faqs details summary:hover {
+    cursor: pointer;
+  }
+
+  .faqs details[open] {
+    margin-bottom: 20px;
+  }
+
+  .faqs details[open] summary {
+    margin-bottom: 10px;
+  }
+  .success-only details:not([data-success]) {
+    display: none;
+  }
+</style>
+
+<script is:inline>
+  document.addEventListener("DOMContentLoaded", () => {
+    const fragment = window.location.hash;
+    if (!fragment) {
+      return;
+    }
+    const element = document.querySelector(`${fragment} details`);
+    if (!element) {
+      return;
+    }
+    element.open = true;
+  });
+</script>

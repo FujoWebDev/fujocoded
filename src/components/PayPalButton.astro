@@ -1,0 +1,70 @@
+---
+export interface Props {
+  /*   planId: string;
+  clientId: string; */
+  quantity: number;
+}
+const { quantity } = Astro.props;
+---
+
+<script>
+  const DEV_PAYPAL_PLAN_ID = "P-1T805503J47278516MUYD2NA";
+  const DEV_PAYPAL_CLIENT_ID =
+    "AcTlVdT0tmCUP45F7DbEg1y4_neQnI8EEruw6DKCZgl6nYFVF4TmFQmeijreym9V-KYZSKs4qnOIoCR4";
+
+  import { type PayPalNamespace, loadScript } from "@paypal/paypal-js";
+
+  let paypal: PayPalNamespace;
+
+  const button = document.querySelector(
+    "div.paypal-button-container",
+  ) as HTMLElement;
+
+  let payPalPromise: Promise<PayPalNamespace | null> | null = null;
+
+  if (!window.paypal && !payPalPromise) {
+    payPalPromise = loadScript({
+      clientId: DEV_PAYPAL_CLIENT_ID,
+      vault: true,
+      intent: "subscription",
+    });
+  }
+
+  await payPalPromise;
+
+  paypal = window.paypal!;
+
+  paypal
+    .Buttons?.({
+      style: {
+        shape: "pill",
+        color: "gold",
+        layout: "vertical",
+        label: "subscribe",
+      },
+      fundingSource: "paypal",
+      createSubscription: (_, actions) => {
+        console.log("creating subscription for", button);
+        return actions.subscription.create({
+          plan_id: DEV_PAYPAL_PLAN_ID,
+          quantity: button!.dataset.quantity,
+          application_context: {
+            shipping_preference: "NO_SHIPPING",
+            return_url: "/support-us",
+            cancel_url: "/support-us",
+          },
+        });
+      },
+      onApprove: async (data) => {
+        window.location.href = "/support-us/success";
+      },
+    })
+    .render(button);
+</script>
+
+<div
+  class="paypal-button-container"
+  data-quantity={quantity}
+  style={{ colorScheme: "none" }}
+>
+</div>

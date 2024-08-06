@@ -2,18 +2,34 @@
 import { SlClose } from "react-icons/sl";
 import type { TierType } from "./TiersDisplay.astro";
 import StripeButton from "./StripeButton.astro";
+import { Image } from "astro:assets";
+import type { ImageMetadata } from "astro";
 
 type Props = TierType;
 
 const { dollarsPerMonth, imageUrl, tagline, perks, name } = Astro.props;
 const id = name.replaceAll(" ", "-");
+
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  "/src/images/support-us/*.{jpeg,jpg,png,gif}",
+);
+if (!images[imageUrl])
+  throw new Error(
+    `"${imageUrl}" does not exist in glob: "/src/images/support-us/*.{jpeg,jpg,png,gif}"`,
+  );
 ---
 
 <label class="support-tier card" for={id} id={id + "-label"}>
   <input type="radio" name="support-tiers" id={id} value={dollarsPerMonth} />
   <span class="title">{name}</span>
   <span class="price">${dollarsPerMonth}/month</span>
-  <img src={imageUrl} alt={name} width={460} height={200} />
+  <Image
+    src={images[imageUrl]()}
+    alt={name}
+    width={460}
+    height={200}
+    loading="eager"
+  />
   <span class="tagline">{tagline}</span>
   <ul class="perks">
     {perks.map((perk) => <li>{perk.description}</li>)}

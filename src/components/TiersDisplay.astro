@@ -14,7 +14,7 @@ const TIERS: TierType[] = [
     name: "a nice egg",
     dollarsPerMonth: 3,
     tagline: "Can you offer me a nice egg in this high-inflation time?",
-    imageUrl: "/support-us/egg.png",
+    imageUrl: "/src/images/support-us/egg.png",
     perks: [
       {
         description:
@@ -40,7 +40,7 @@ const TIERS: TierType[] = [
   {
     name: "specialty coffee & boba",
     dollarsPerMonth: 8,
-    imageUrl: "/support-us/coffee-and-boba.png",
+    imageUrl: "/src/images/support-us/coffee-and-boba.png",
     tagline: "I mean, it's a latte, Michael. What could it cost?",
     perks: [
       {
@@ -60,7 +60,7 @@ const TIERS: TierType[] = [
   {
     name: "almond butter toast",
     dollarsPerMonth: 15,
-    imageUrl: "/support-us/almond-toast.png",
+    imageUrl: "/src/images/support-us/almond-toast.png",
     tagline: "Frankly, my dear, I don't like avocado.",
     perks: [
       {
@@ -81,7 +81,7 @@ const TIERS: TierType[] = [
   {
     name: "subsidized massage",
     dollarsPerMonth: 25,
-    imageUrl: "/support-us/massage.png",
+    imageUrl: "/src/images/support-us/massage.png",
     tagline: `"It's like one of my Silicon Valley start ups!"`,
     perks: [
       {
@@ -102,7 +102,6 @@ const TIERS: TierType[] = [
   },
 ];
 ---
-
 
 <form class="tiers">
   {TIERS.map((tier) => <SupportTierCard {...tier} />)}

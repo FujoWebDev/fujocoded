@@ -106,6 +106,66 @@ import { SiKofi } from "react-icons/si";
     <Faqs />
   </article>
 </Layout>
+
+<script
+  src="https://www.sandbox.paypal.com/sdk/js?client-id=AcTlVdT0tmCUP45F7DbEg1y4_neQnI8EEruw6DKCZgl6nYFVF4TmFQmeijreym9V-KYZSKs4qnOIoCR4"
+  is:inline></script>
+<script>
+  const DEV_PAYPAL_PLAN_ID = "P-1T805503J47278516MUYD2NA";
+  const PROD_PAYPAL_PLAN_ID = "P-2T800313EX3963603MMBL4MI";
+  const PROD_PAYPAL_CLIENT_ID =
+    "AbYamsrG5_XYxgwQm3wrH4rsCeveTZZFmDrjbxD4QjsWbitArq9DZNpJs19I3bGWyrESPWfdqYKP-6Lu";
+  const DEV_PAYPAL_CLIENT_ID =
+    "AcTlVdT0tmCUP45F7DbEg1y4_neQnI8EEruw6DKCZgl6nYFVF4TmFQmeijreym9V-KYZSKs4qnOIoCR4";
+
+  let planId =
+    process.env.NODE_ENV === "production"
+      ? PROD_PAYPAL_PLAN_ID
+      : DEV_PAYPAL_PLAN_ID;
+
+  let clientId =
+    process.env.NODE_ENV === "production"
+      ? PROD_PAYPAL_CLIENT_ID
+      : DEV_PAYPAL_CLIENT_ID;
+
+  let paypal = window.paypal!;
+
+  if (paypal && paypal.Buttons) {
+    const buttons = document.querySelectorAll(".paypal-btn");
+
+    buttons.forEach(function (button) {
+      if (button instanceof HTMLElement) {
+        paypal
+          .Buttons({
+            style: {
+              shape: "pill",
+              color: "gold",
+              layout: "vertical",
+              label: "subscribe",
+            },
+            fundingSource: "paypal",
+            createSubscription: (_, actions) => {
+              console.log("creating subscription for #test");
+              return actions.subscription.create({
+                plan_id: planId,
+                quantity: button!.dataset.quantity,
+                application_context: {
+                  shipping_preference: "NO_SHIPPING",
+                  return_url: "/support-us",
+                  cancel_url: "/support-us",
+                },
+              });
+            },
+            onApprove: async () => {
+              window.location.href = "/support-us/success";
+            },
+          })
+          .render(button);
+      }
+    });
+  }
+</script>
+
 <style>
   .social-links {
     display: grid;

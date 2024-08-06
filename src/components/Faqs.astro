@@ -34,7 +34,7 @@ const { successOnly } = Astro.props;
       <details id={faq.slug} data-success={faq.success}>
         <summary>
           <span set:html={faq.title} />
-          <a href={`#${faq.slug}`}>
+          <a href={`#${faq.slug}`} aria-label={`permalink for ${faq.title}`}>
             <Icon name="lucide:link" />
           </a>
         </summary>

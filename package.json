@@ -16,7 +16,6 @@
     "@fujocoded/remark-capitalize-titles": "^0.0.7",
     "@fujocoded/zod-transform-socials": "^0.0.11",
     "@iconify-json/logos": "^1.1.42",
-    "@paypal/paypal-js": "^8.1.0",
     "@tailwindcss/typography": "^0.5.10",
     "astro": "^4.8.5",
     "astro-icon": "^1.1.0",

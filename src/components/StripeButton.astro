@@ -1,0 +1,52 @@
+---
+import { SiApplepay, SiGooglepay } from "react-icons/si";
+
+import { SlCreditCard } from "react-icons/sl";
+
+const getLinkForQuantity = (quantity: number) => {
+  switch (quantity) {
+    case 3:
+      return "https://buy.stripe.com/aEUdU57TyfI872oaEK";
+    case 8:
+      return "https://buy.stripe.com/bIY9DP5Lq53ucmIaEN";
+    case 25:
+      return "https://buy.stripe.com/28obLX0r69jKcmI6oy";
+    case 15:
+      return "https://buy.stripe.com/8wM5nz0r653u2M814c";
+    default:
+      throw new Error("Invalid payment amount");
+  }
+};
+interface Props {
+  quantity: number;
+}
+const { quantity } = Astro.props;
+---
+
+<a href={getLinkForQuantity(quantity)} class="stripe">
+  <SlCreditCard />
+  <SiGooglepay />
+  <SiApplepay /> Pay with Stripe
+</a>
+
+<style>
+  .stripe {
+    width: 100%;
+    height: 45px;
+    max-width: 750px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid black;
+    border-radius: 16px;
+    padding: 10px 5px;
+    box-shadow: 3px 3px 0 0 black;
+    color: black;
+    background-color: white;
+    gap: 10px;
+    filter: invert();
+  }
+  .stripe:hover {
+    filter: none;
+  }
+</style>

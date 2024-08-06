@@ -7,7 +7,6 @@ import remarkCapitalizeTitles, {
 } from "@fujocoded/remark-capitalize-titles";
 import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
-
 import metaTags from "astro-meta-tags";
 
 // https://astro.build/config
@@ -15,7 +14,12 @@ export default defineConfig({
   integrations: [icon(), tailwind(), mdx(), metaTags()],
   markdown: {
     remarkPlugins: [
-      [remarkCapitalizeTitles, { special: DEFAULT_CAPITALIZATIONS }],
+      [
+        remarkCapitalizeTitles,
+        {
+          special: DEFAULT_CAPITALIZATIONS,
+        },
+      ],
     ],
     rehypePlugins: [
       rehypeSlug,

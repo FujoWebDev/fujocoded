@@ -1,18 +1,20 @@
 ---
 import Faqs from "../../components/Faqs.astro";
 import Layout from "../../layouts/Layout.astro";
+import thenksSupporterImg from "../../images/support-us/thenks-suporter.png";
+import { Image } from "astro:assets";
 ---
 
 <Layout
   title="Essential Randomness — Thank you for your support!"
-  description="It means a lot to me :)"
-  preview="/support-us/og-image.png"
+  description="It means a lot to us :)"
+  preview="/src/images/support-us/og-image.png"
 >
-  <main class="thank-you">
+  <article class="thank-you mb-6 rounded-xl bg-white drop-shadow-purple">
     <section class="confirmation">
       <picture>
-        <img
-          src="/support-us/thenks-suporter.png"
+        <Image
+          src={thenksSupporterImg}
           alt={`Remake of a popular meme reading "Thenks suporter for my rent' (sic)"`}
         />
       </picture>
@@ -45,38 +47,38 @@ import Layout from "../../layouts/Layout.astro";
       <h2>Still-relevant FAQs</h2>
       <Faqs successOnly />
     </section>
-  </main>
 
-  <style>
-    .confirmation {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin-bottom: 60px;
+    <style>
+      .confirmation {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 60px;
 
-      img {
-        border-radius: 100%;
-        border-radius: 100%;
-        aspect-ratio: 1;
-        max-width: 500px;
-        width: 100%;
-        height: auto;
-        display: block;
-        object-fit: cover;
+        img {
+          border-radius: 100%;
+          border-radius: 100%;
+          aspect-ratio: 1;
+          max-width: 500px;
+          width: 100%;
+          height: auto;
+          display: block;
+          object-fit: cover;
+        }
+
+        p {
+          max-width: 600px;
+          width: 100%;
+          text-align: center;
+        }
+
+        h2 {
+          font-size: 80px;
+          margin: 10px;
+          line-height: 63px;
+          text-align: center;
+        }
       }
-
-      p {
-        max-width: 600px;
-        width: 100%;
-        text-align: center;
-      }
-
-      h2 {
-        font-size: 80px;
-        margin: 10px;
-        line-height: 63px;
-        text-align: center;
-      }
-    }
-  </style>
+    </style>
+  </article>
 </Layout>

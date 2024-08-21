@@ -1,0 +1,191 @@
+---
+import { SlClose } from "react-icons/sl";
+import type { TierType } from "./TiersDisplay.astro";
+import StripeButton from "./StripeButton.astro";
+import { Image } from "astro:assets";
+import type { ImageMetadata } from "astro";
+
+type Props = TierType;
+
+const { dollarsPerMonth, imageUrl, tagline, perks, name } = Astro.props;
+const id = name.replaceAll(" ", "-");
+
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  "/src/images/support-us/*.{jpeg,jpg,png,gif}",
+);
+if (!images[imageUrl])
+  throw new Error(
+    `"${imageUrl}" does not exist in glob: "/src/images/support-us/*.{jpeg,jpg,png,gif}"`,
+  );
+---
+
+<label class="support-tier card" for={id} id={id + "-label"}>
+  <input type="radio" name="support-tiers" id={id} value={dollarsPerMonth} />
+  <span class="title">{name}</span>
+  <span class="price">${dollarsPerMonth}/month</span>
+  <Image
+    src={images[imageUrl]()}
+    alt={name}
+    width={460}
+    height={200}
+    loading="eager"
+  />
+  <span class="tagline">{tagline}</span>
+  <ul class="perks">
+    {perks.map((perk) => <li>{perk.description}</li>)}
+  </ul>
+  <span class="fake-payment-button">
+    Give ${dollarsPerMonth} monthly
+  </span>
+  <span class="payment-buttons">
+    <button type="reset" class="close">
+      <SlClose />
+    </button>
+    <StripeButton quantity={dollarsPerMonth} />
+    <div class="paypal-btn" data-quantity={dollarsPerMonth}></div>
+  </span>
+  <style>
+    :root {
+      --box-shadow-shallow: 1px 1px 0 0px black;
+      --box-shadow: 3px 3px 0 0px black;
+      --box-shadow-deep: 5px 5px 0 0px black;
+      --box-shadow-hover: 7px 7px 0 0 black;
+    }
+    .support-tier.card {
+      display: flex;
+      flex-direction: column;
+      outline: 2px solid black;
+      background-color: white;
+      border-radius: 16px;
+      padding: 25px 20px;
+      gap: 10px;
+      align-items: center;
+      position: relative;
+    }
+
+    label.support-tier.card:has(input:checked) {
+      box-shadow: var(--box-shadow-deep);
+      filter: invert();
+    }
+
+    .support-tier.card:hover {
+      box-shadow: var(--box-shadow-hover);
+      cursor: pointer;
+    }
+
+    .support-tier.card:not(:has(input:checked)):hover {
+      transform: rotate(-0.3deg);
+    }
+    .support-tier.card input[type="radio"] {
+      display: none;
+    }
+    .support-tier.card .title {
+      font-weight: bold;
+      text-transform: capitalize;
+      text-align: center;
+    }
+
+    .support-tier.card .price {
+      font-size: 1.2em;
+    }
+
+    .support-tier.card .tagline {
+      font-style: italic;
+      text-align: center;
+      max-width: 270px;
+      text-wrap: pretty;
+    }
+
+    .support-tier.card .perks {
+      flex-grow: 1;
+    }
+
+    .support-tier.card .donate {
+      width: 100%;
+    }
+
+    .support-tier.card img {
+      width: 200px;
+      height: auto;
+    }
+
+    .support-tier.card .fake-payment-button {
+      display: block;
+      border: 2px solid black;
+      border-radius: 16px;
+      padding: 10px 5px;
+      box-shadow: 3px 3px 0 0 black;
+      text-align: center;
+      color: black;
+      background-color: white;
+      width: 100%;
+    }
+
+    .support-tier.card .fake-payment-button:hover {
+      filter: invert();
+    }
+
+    .support-tier.card .payment-buttons {
+      display: none;
+      gap: 15px;
+      animation: buttons 0.5s;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 70%);
+      flex-wrap: wrap;
+      flex-direction: column;
+      justify-content: center;
+      padding: 15px;
+    }
+    .support-tier.card .payment-buttons > * {
+      width: 100%;
+    }
+
+    .support-tier.card .payment-buttons .close {
+      all: unset;
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      bottom: 60%;
+      filter: invert(1);
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      z-index: 101;
+    }
+
+    .support-tier.card .payment-buttons .close:hover {
+      cursor: pointer;
+      filter: none;
+    }
+
+    .support-tier.card .payment-buttons .close svg {
+      position: sticky;
+      top: 15px;
+      background-color: white;
+      border-radius: 50%;
+    }
+
+    .support-tier.card:has(input:checked) .payment-buttons {
+      display: flex;
+      position: absolute;
+    }
+
+    .support-tier.card .perks {
+      margin: 0;
+      font-size: 14px;
+      padding: 0px 25px;
+    }
+
+    @keyframes buttons {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 100;
+      }
+    }
+  </style>
+</label>

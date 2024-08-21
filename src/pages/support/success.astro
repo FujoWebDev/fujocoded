@@ -1,0 +1,84 @@
+---
+import Faqs from "../../components/Faqs.astro";
+import Layout from "../../layouts/Layout.astro";
+import thenksSupporterImg from "../../images/support-us/thenks-suporter.png";
+import { Image } from "astro:assets";
+---
+
+<Layout
+  title="Essential Randomness — Thank you for your support!"
+  description="It means a lot to us :)"
+  preview="/src/images/support-us/og-image.png"
+>
+  <article class="thank-you mb-6 rounded-xl bg-white drop-shadow-purple">
+    <section class="confirmation">
+      <picture>
+        <Image
+          src={thenksSupporterImg}
+          alt={`Remake of a popular meme reading "Thenks suporter for my rent' (sic)"`}
+        />
+      </picture>
+      <h2>Thank you!</h2>
+      <p>
+        You will soon receive an email asking you to confirm your subscription
+        to my newsletter. Unless explicitly cancelled (see FAQs), <strong
+          >your paid membership will remain active regardless of whether you
+          choose to susbscribe.</strong
+        >
+      </p>
+      <p>
+        <strong
+          >The newsletter is the only way to access supporters-only content at
+          this time.</strong
+        > I'm working to make the experience more special, and to create a supporters-only
+        area directly on this site. Until then, if you have questions, suggestions,
+        or need help, <a href="mailto:essential.randomn3ss@gmail.com"
+          >write me at any time</a
+        > and we'll figure it out together!
+      </p>
+
+      <p>
+        Want to help even more? <a href="/support-us#donate"
+          >Go back to the support page</a
+        > and share it with a friend!
+      </p>
+    </section>
+    <section class="faq">
+      <h2>Still-relevant FAQs</h2>
+      <Faqs successOnly />
+    </section>
+
+    <style>
+      .confirmation {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 60px;
+
+        img {
+          border-radius: 100%;
+          border-radius: 100%;
+          aspect-ratio: 1;
+          max-width: 500px;
+          width: 100%;
+          height: auto;
+          display: block;
+          object-fit: cover;
+        }
+
+        p {
+          max-width: 600px;
+          width: 100%;
+          text-align: center;
+        }
+
+        h2 {
+          font-size: 80px;
+          margin: 10px;
+          line-height: 63px;
+          text-align: center;
+        }
+      }
+    </style>
+  </article>
+</Layout>

@@ -1,0 +1,293 @@
+---
+import Faqs from "../../components/Faqs.astro";
+import TiersDisplay from "../../components/TiersDisplay.astro";
+import Layout from "../../layouts/Layout.astro";
+import { SiPatreon } from "react-icons/si";
+import { SiKofi } from "react-icons/si";
+---
+
+<Layout
+  description="Help us build a better internet with your support!"
+  preview="/support-us/og-image.png"
+>
+  <article class="mb-6 rounded-xl bg-white drop-shadow-purple">
+    <h1>Support Us</h1>
+    <section class="intro">
+      <picture>
+        <img
+          src="/support-us/thenks-suporter.png"
+          alt={`Remake of a popular meme reading "Thenks suporter for my rent' (sic)"`}
+        />
+      </picture>
+      <h2>What I do (with your support)</h2>
+      <div>
+        My projects focus on:
+
+        <ul>
+          <li>
+            <strong>“A more fun, more social web”</strong> for fandom and other niche
+            online communities
+          </li>
+          <li>
+            Approachable, <strong
+              >beginner-to-intermediate technical education</strong
+            > targeted at historically marginalized internet dwellers
+          </li>
+          <li>
+            <strong>More accessible open source development</strong>, with a
+            focus on open and decentralized technologies
+          </li>
+        </ul>
+
+        <p>
+          You can read more about them on the <a href="/projects"
+            >projects page,</a
+          > and support them on
+          <a href="https://www.patreon.com/essentialrandomness">Patreon</a>,
+          <a href="https://ko-fi.com/essentialrandomness">Ko-fi</a>, or on one
+          of the self-hosted tiers below.
+        </p>
+      </div>
+    </section>
+    <section id="donate" class="donate">
+      <h2>
+        <a href={`#donate`}>
+          Help <em>me</em> pay <em> me</em>
+          <span>(and throw money at my collaborators)</span></a
+        >
+      </h2>
+
+      My work charts a path towards <a
+        href="https://www.patreon.com/essentialrandomness/posts/enter-the-fujoverse"
+        >a more independent, community-led web.</a
+      > With a long and windy road ahead, your help <em>really</em> makes a difference.
+
+      <h3>Self-hosted support tiers</h3>
+      <TiersDisplay />
+      <h3>...or through these external websites:</h3>
+      <ul id="donate-others" class="social-links">
+        <li>
+          <a href="https://www.patreon.com/essentialrandomness"
+            ><SiPatreon /> Patreon</a
+          >
+        </li>
+        <li>
+          <a href="https://ko-fi.com/essentialrandomness"><SiKofi />Ko-fi</a>
+        </li>
+      </ul>
+      <details>
+        <summary><h4>Looking for one-time support?</h4></summary>
+        You can also support me by buying <a href="https://robinboob.com"
+          >a ship ownership certificate on RobinBoob</a
+        > ($10+, digital), <a href="https://fujoboard.com"
+          >a yaoi cheese paddle on FujoBoard</a
+        > ($20+, physical), or grab <a
+          href="https://store.bobaboard.com/#!/Emoji-Set-Discord-etc/p/369069273/category=113134803"
+          >a pay-what-you-want Boba-tan emoji set</a
+        >!
+      </details>
+      <details>
+        <summary><h4>Want to give more? Consider sponsoring me!</h4></summary>
+        Sponsorships are <strong
+          >custom support tiers for those who wish to make even more of an
+          impact!</strong
+        > They can be one-time or ongoing, and they can include custom rewards that
+        are particularly meaningful to you. If you're interested in sponsoring me,
+        please reach out at <a
+          href="mailto:essential.randomn3ss+sponsorships@gmail.com"
+          >essential.randomn3ss@gmail.com</a
+        > for next steps!
+      </details>
+    </section>
+  </article>
+
+  <article class="faq rounded-xl bg-white drop-shadow-purple">
+    <h2>FAQs</h2>
+    <Faqs />
+  </article>
+</Layout>
+
+<script
+  src="https://www.sandbox.paypal.com/sdk/js?client-id=AcTlVdT0tmCUP45F7DbEg1y4_neQnI8EEruw6DKCZgl6nYFVF4TmFQmeijreym9V-KYZSKs4qnOIoCR4"
+  is:inline></script>
+<script>
+  const DEV_PAYPAL_PLAN_ID = "P-1T805503J47278516MUYD2NA";
+  const PROD_PAYPAL_PLAN_ID = "P-2T800313EX3963603MMBL4MI";
+  const PROD_PAYPAL_CLIENT_ID =
+    "AbYamsrG5_XYxgwQm3wrH4rsCeveTZZFmDrjbxD4QjsWbitArq9DZNpJs19I3bGWyrESPWfdqYKP-6Lu";
+  const DEV_PAYPAL_CLIENT_ID =
+    "AcTlVdT0tmCUP45F7DbEg1y4_neQnI8EEruw6DKCZgl6nYFVF4TmFQmeijreym9V-KYZSKs4qnOIoCR4";
+
+  let planId =
+    process.env.NODE_ENV === "production"
+      ? PROD_PAYPAL_PLAN_ID
+      : DEV_PAYPAL_PLAN_ID;
+
+/*   
+ I don't remember why I'm not using this but I feel like I should be
+    let clientId =
+    process.env.NODE_ENV === "production"
+      ? PROD_PAYPAL_CLIENT_ID
+      : DEV_PAYPAL_CLIENT_ID; */
+
+      // @ts-expect-error
+  let paypal = window.paypal!;
+
+  if (paypal && paypal.Buttons) {
+    const buttons = document.querySelectorAll(".paypal-btn");
+
+    buttons.forEach(function (button) {
+      if (button instanceof HTMLElement) {
+        paypal
+          .Buttons({
+            style: {
+              shape: "pill",
+              color: "gold",
+              layout: "vertical",
+              label: "subscribe",
+            },
+            fundingSource: "paypal",
+            // @ts-expect-error
+            createSubscription: (_, actions) => {
+              console.log("creating subscription for #test");
+              return actions.subscription.create({
+                plan_id: planId,
+                quantity: button!.dataset.quantity,
+                application_context: {
+                  shipping_preference: "NO_SHIPPING",
+                  return_url: "/support-us",
+                  cancel_url: "/support-us",
+                },
+              });
+            },
+            onApprove: async () => {
+              window.location.href = "/support-us/success";
+            },
+          })
+          .render(button);
+      }
+    });
+  }
+</script>
+
+<style>
+  .social-links {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(6em, 10em));
+    justify-items: center;
+    list-style-type: none;
+    gap: 10px;
+    margin: 0px;
+    padding: 0px;
+    justify-content: center;
+  }
+
+  .social-links .url {
+    display: none;
+  }
+  .social-links .name {
+    text-transform: capitalize;
+  }
+
+  .social-links a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    justify-content: center;
+  }
+
+  .social-links li {
+    width: 100%;
+  }
+  .social-links a {
+    border: 2px solid black;
+    border-radius: 16px;
+    padding: 5px 10px;
+  }
+
+  .social-links a:hover {
+    box-shadow: 3px 3px 0 0px black;
+    transform: translate(-2px, -2px);
+  }
+
+  .intro {
+    display: grid;
+    grid-template-columns: auto 350px;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+      "title image"
+      "body image";
+    align-items: center;
+    column-gap: 20px;
+  }
+  @media only screen and (max-width: 750px) {
+    .intro {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  .intro h2 {
+    margin: 0;
+  }
+
+  picture {
+    display: block;
+    grid-area: image;
+  }
+  img {
+    width: 100%;
+    height: auto;
+    ratio: 1;
+    border-radius: 16px;
+  }
+
+  summary > a {
+    color: black;
+  }
+  summary > a:hover {
+    text-decoration: underline;
+    cursor: pointer;
+    color: red;
+  }
+  summary {
+    display: flex;
+    align-items: center;
+    list-style: none;
+  }
+  details > summary::before {
+    content: "▹ ";
+    margin-right: 5px;
+  }
+  details[open] > summary::before {
+    content: "▿ ";
+    margin-right: 5px;
+  }
+
+  .faqs {
+    border-radius: 16px;
+    padding: 20px 15px;
+  }
+  .faqs details {
+    width: 100%;
+  }
+  .faqs details summary {
+    padding-block: 10px;
+    font-size: var(--font-size-title-smaller);
+  }
+  .faqs details summary:hover {
+    cursor: pointer;
+  }
+
+  .faqs details[open] {
+    margin-bottom: 20px;
+  }
+
+  .faqs details[open] summary {
+    margin-bottom: 10px;
+  }
+  .success-only details:not([data-success]) {
+    display: none;
+  }
+</style>

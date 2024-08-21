@@ -123,11 +123,14 @@ import { SiKofi } from "react-icons/si";
       ? PROD_PAYPAL_PLAN_ID
       : DEV_PAYPAL_PLAN_ID;
 
-  let clientId =
+/*   
+ I don't remember why I'm not using this but I feel like I should be
+    let clientId =
     process.env.NODE_ENV === "production"
       ? PROD_PAYPAL_CLIENT_ID
-      : DEV_PAYPAL_CLIENT_ID;
+      : DEV_PAYPAL_CLIENT_ID; */
 
+      // @ts-expect-error
   let paypal = window.paypal!;
 
   if (paypal && paypal.Buttons) {
@@ -144,6 +147,7 @@ import { SiKofi } from "react-icons/si";
               label: "subscribe",
             },
             fundingSource: "paypal",
+            // @ts-expect-error
             createSubscription: (_, actions) => {
               console.log("creating subscription for #test");
               return actions.subscription.create({

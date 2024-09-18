@@ -10,8 +10,8 @@ class KonamiCode extends HTMLElement {
     "ArrowRight",
     "ArrowLeft",
     "ArrowRight",
-    "KeyB",
-    "KeyA",
+    "b",
+    "a",
   ];
   nextIndex = 0;
   buttonElements: Element[] = [];

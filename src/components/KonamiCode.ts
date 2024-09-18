@@ -57,7 +57,7 @@ class KonamiCode extends HTMLElement {
     });
 
     document.addEventListener("keydown", (event) => {
-      this.onPotentialTrigger(event.code);
+      this.onPotentialTrigger(event.key);
     });
   }
 }

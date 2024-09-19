@@ -10,8 +10,8 @@ class KonamiCode extends HTMLElement {
     "ArrowRight",
     "ArrowLeft",
     "ArrowRight",
-    "KeyB",
-    "KeyA",
+    "b",
+    "a",
   ];
   nextIndex = 0;
   buttonElements: Element[] = [];
@@ -57,7 +57,7 @@ class KonamiCode extends HTMLElement {
     });
 
     document.addEventListener("keydown", (event) => {
-      this.onPotentialTrigger(event.code);
+      this.onPotentialTrigger(event.key);
     });
   }
 }

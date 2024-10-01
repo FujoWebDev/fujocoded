@@ -15,29 +15,35 @@ import { Icon } from "astro-icon/components";
   </style>
 
   <script>
-    const toTopButton = document.querySelector<HTMLElement>(".to-top");
+    document.addEventListener("DOMContentLoaded", () => {
+      const toTopButton = document.querySelector<HTMLElement>(".to-top");
 
-    document.addEventListener("scroll", () => {
-      if (!toTopButton) {
-        return;
-      }
-      if (window.scrollY > 250) {
-        toTopButton.style.opacity = "1";
-      } else {
-        toTopButton.style.opacity = "0";
-      }
+      if (!toTopButton) return;
+
+      const handleScroll = () => {
+        const isScrolledToBottom = (window.innerHeight + window.scrollY) >= (document.documentElement.scrollHeight - 1);
+        const isMobile = window.innerWidth <= 768;
+
+        if (window.scrollY > 250) {
+          toTopButton.style.opacity = "1";
+        } else {
+          toTopButton.style.opacity = "0";
+        }
+
+        if (isScrolledToBottom && isMobile) {
+          toTopButton.style.marginBottom = "50px";
+        } else {
+          toTopButton.style.marginBottom = "0";
+        }
+      };
+
+      document.addEventListener("scroll", handleScroll);
+
+      toTopButton.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      handleScroll();
     });
-
-    toTopButton?.addEventListener("click", () => {
-      window.scrollTo(0, 0);
-    });
-
-    if (toTopButton) {
-      if (window.scrollY > 250) {
-        toTopButton.style.opacity = "1";
-      } else {
-        toTopButton.style.opacity = "0";
-      }
-    }
-  </script></button
->
+  </script>
+</button>

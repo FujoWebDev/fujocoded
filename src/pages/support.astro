@@ -2,7 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import { Image } from "astro:assets";
 import bobawip_color from "../images/bobawip_color.png";
-import backerkit_just_launched from "../images/campaign/backerkit-just-launched.png";
+import patreon from "../images/patreon.jpeg";
 
 const description =
   "FujoCoded LLC is building a new online storefront to support our projects. Help us build something exciting by backing us on Backerkit!";
@@ -16,14 +16,21 @@ const description =
       and get some cool merch in
       <a href="https://store.fujocoded.com/">our new store</a>!
     </p>
+    <figure>
+      <a href="https://www.patreon.com/fujocoded"
+        ><Image src={patreon} alt="TODO" class="mx-auto w-full pt-8" /></a
+      >
+      <figcaption class="mb-4 mt-2 text-sm">
+        what your support allows us to do
+      </figcaption>
+    </figure>
     <Image
       src={bobawip_color}
       alt="Boba-tan wearing a construction helmet and digging a hole."
       class="mx-auto w-full max-w-36 pt-10"
     />
-    <p class="text-center">
-      More support initiatives are under construction. In the meantime, you can
-      check out our original fundraising campaign <a
+    <p class="text-pretty text-center">
+      Curious about our origins? Check out our seed fundraising campaign <a
         href="https://www.backerkit.com/c/projects/fujocoded-llc/fujocoded-software-and-education-for-a-better-web?preview_token=pRP66u0ywMO&ref=website"
         class="no-underline"
         >on Backerkit

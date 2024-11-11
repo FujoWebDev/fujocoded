@@ -1,0 +1,54 @@
+---  
+import Layout from "../layouts/Layout.astro"; 
+import { turso } from "../components/tursoClient"; 
+
+type BlorboEntry = { 
+    id: number; 
+    name: string; 
+    fandom: string; 
+    image_url: string; 
+    supporter_id: number; 
+    external_id: string; // external_id of the user
+    email: string; 
+    subscription_status: string; 
+    subscription_tier: string; 
+}; 
+
+// Execute the query and get the result 
+const result = await turso.execute(`
+  SELECT b.id, b.name, b.fandom, b.image_url, b.supporter_id, s.external_id, s.email, s.subscription_status, s.subscription_tier
+  FROM Blorbos b
+  JOIN Supporters s ON b.supporter_id = s.id
+`);
+
+// Extract rows from the result 
+const blorboEntries: BlorboEntry[] = result.rows as unknown as BlorboEntry[];
+
+
+
+// <img src={blorbo.image_url} alt={'A picture of '+ blorbo.name + ' from ' + blorbo.fandom } width="100" />
+
+---
+
+<Layout>
+  <article class="rounded-xl bg-white drop-shadow-purple">
+    <h1>Supporters' Blorbos</h1>
+    <p><strong>This is where the supporters' blorbos will be displayed.</strong></p>
+    <ul class="list-disc pl-6">
+      {blorboEntries.map((blorbo) => (
+        <>
+          <li>
+            <strong>{blorbo.name}</strong> from <em>{blorbo.fandom}</em> <br /> 
+            <span>Blorbo ID: {blorbo.id}</span><br />
+            <span>Image url: {blorbo.image_url}</span><br />
+            <span>Email: {blorbo.email}</span> <br /> 
+            <span>Status: {blorbo.subscription_status}</span> <br /> 
+            <span>Tier: {blorbo.subscription_tier}</span><br />
+            <span>Supporter ID: {blorbo.supporter_id}</span><br />
+            <span>Owner: {blorbo.external_id}</span>
+          </li>
+        </>
+      ))}
+    </ul>
+  </article>
+</Layout>

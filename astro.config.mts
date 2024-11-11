@@ -1,4 +1,7 @@
 import { defineConfig } from "astro/config";
+import 'dotenv/config';
+import db from "@astrojs/db";
+
 import icon from "astro-icon";
 import mdx from "@astrojs/mdx";
 import tailwind from "@astrojs/tailwind";
@@ -7,7 +10,6 @@ import remarkCapitalizeTitles, {
 } from "@fujocoded/remark-capitalize-titles";
 import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
-
 import metaTags from "astro-meta-tags";
 
 // https://astro.build/config

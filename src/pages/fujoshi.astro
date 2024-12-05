@@ -6,21 +6,25 @@ import { getCollection } from "astro:content";
 import FujoCard from "../components/fujoshi/FujoCard.astro";
 
 const fujin = (await getCollection("fujin")).toSorted(
-  (a, b) => a.data.order - b.data.order
+  (a, b) => a.data.order - b.data.order,
 );
 
-const description = "FujoCoded LLC closely aligns their work with fujoshi and fujin. Why did we chose to align ourselves with them and other marginalized online subcultures?";
+const description =
+  "FujoCoded LLC closely aligns their work with fujoshi and fujin. Why did we chose to align ourselves with them and other marginalized online subcultures?";
 ---
 
 <Layout description={description}>
   <article class="rounded-xl bg-white drop-shadow-purple">
-    <h1>What is a fujoshi?</h1>
+    <a href="#what-is-a-fujoshi">
+      <h1 id="what-is-a-fujoshi">What is a fujoshi?</h1>
+    </a>
     <p>
-      <span class="text-fujo-pink">Fujoshi</span> (lit. "rotten woman") was a pejorative
-      name given to Japanese fans of <abbr title="Boys Love" class="cursor-help"
-        >BL</abbr
-      > media for going against social expectations of traditional femininity. In
-      the early 2000s, as the popularity of anime and manga soared internationally,
+      <span class="text-fujo-pink">Fujoshi</span> (lit. "rotten woman") was <strong
+        >a pejorative name given to Japanese fans of <abbr
+          title="Boys Love"
+          class="cursor-help">BL</abbr
+        > media for going against social expectations of traditional femininity.</strong
+      > In the early 2000s, as the popularity of anime and manga soared internationally,
       online BL spaces became a worldwide haven for (often female, queer, and/or
       neurodivergent) millennials seeking to explore their sexuality outside of normative
       constraints. This led to the term being adopted globally.
@@ -34,7 +38,9 @@ const description = "FujoCoded LLC closely aligns their work with fujoshi and fu
       of the community.
     </p>
 
-    <h2>Fujoshi today</h2>
+    <a href="#fujoshi-today">
+      <h2 id="fujoshi-today">Fujoshi today</h2>
+    </a>
     <p>
       <strong>
         <span class="text-fujo-pink">Fujoshi</span> (or, more inclusively, <em
@@ -57,13 +63,12 @@ const description = "FujoCoded LLC closely aligns their work with fujoshi and fu
     <p>
       Overall, fujin are a highly diverse group of loosely-aligned folks brought
       together by their shared love of queer fictional relationships.
-      Online-minded folks can think of them as cousins of the furry
-      subculture, with whom they share similar challenges, including
-      stigmatization and censorship. Rather than creating works focused on
-      anthropomorphized animals, fujin center their own stories, art, comics,
-      and complex worldbuilding around fictional relationships from pre-existing
-      media—often between men, but with other gender expressions on the rise
-      alongside them.
+      Online-minded folks can think of them as cousins of the furry subculture,
+      with whom they share similar challenges, including stigmatization and
+      censorship. Rather than creating works focused on anthropomorphized
+      animals, fujin center their own stories, art, comics, and complex
+      worldbuilding around fictional relationships from pre-existing media—often
+      between men, but with other gender expressions on the rise alongside them.
     </p>
     <p>
       In our own conception, and with the evolving face of the community within
@@ -76,7 +81,10 @@ const description = "FujoCoded LLC closely aligns their work with fujoshi and fu
       <em>id</em> of the internet—frequently weird, sometimes perplexing, but overall
       harmless and full of unbridled passion.
     </p>
-    <h2>Why <em>Fujo</em>Coded?</h2>
+
+    <a href="#why-fujocoded">
+      <h2 id="why-fujocoded">Why <em>Fujo</em>Coded?</h2>
+    </a>
     <p>
       Since the start, we've closely aligned our work with the <a
         href="https://fanlore.org/wiki/Transformational_Fandom"
@@ -124,7 +132,10 @@ const description = "FujoCoded LLC closely aligns their work with fujoshi and fu
       series, or participating in communal practices that may be hard to
       understand from the outside.
     </p>
-    <h2>Famous fujin</h2>
+
+    <a href="#famous-fujin">
+      <h2 id="famous-fujin">Famous fujin</h2>
+    </a>
     <div>
       As an underground subculture, fujin are rarely open about their
       involvement in the community. However, here's a small list of fujin you

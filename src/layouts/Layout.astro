@@ -135,6 +135,9 @@ const {
         text-decoration: underline;
         text-underline-offset: 2px;
       }
+      .content a:has(h1, h2, h3) {
+        @apply no-underline;
+      }
 
       .prose-lg figure img {
         @apply mx-auto my-0;

@@ -5,21 +5,24 @@ import ProjectCard from "../components/projects/ProjectCard.astro";
 
 const currentProjects = await getCollection(
   "projects",
-  (project) => !project.data.graduated
+  (project) => !project.data.graduated,
 );
 const graduatedProjects = await getCollection(
   "projects",
-  (project) => project.data.graduated
+  (project) => project.data.graduated,
 );
 
-const description = "The FujoVerse™ collects everything we’ve launched under a single banner. Our projects rest on three pillars: software, education, and community.";
+const description =
+  "The FujoVerse™ collects everything we’ve launched under a single banner. Our projects rest on three pillars: software, education, and community.";
 ---
 
 <Layout description={description}>
   <article class="rounded-xl bg-white drop-shadow-purple">
-    <h1>
-      Enter the <em>FujoVerse™</em>
-    </h1>
+    <a href="#enter-the-fujoverse">
+      <h1 id="enter-the-fujoverse">
+        Enter the <em>FujoVerse™</em>
+      </h1>
+    </a>
     <p>
       <strong
         >The FujoVerse™ collects everything we’ve launched under a single
@@ -57,7 +60,9 @@ const description = "The FujoVerse™ collects everything we’ve launched under
           awareness of our goals among our followers and beyond.
         </li>
       </ul>
-      <h2><em>Current</em> Projects</h2>
+      <a href="#current-projects">
+        <h2 id="current-projects"><em>Current</em> Projects</h2>
+      </a>
       <p>
         The projects below are maintained or led by FujoCoded. Your support
         helps with their continued development and growth.
@@ -71,7 +76,9 @@ const description = "The FujoVerse™ collects everything we’ve launched under
           ))
         }
       </ul>
-      <h2><em>Graduated</em> Projects</h2>
+      <a href="#graduated-projects">
+        <h2 id="graduated-projects"><em>Graduated</em> Projects</h2>
+      </a>
       <p>
         These projects have been released to their communities to nurture and
         grow on their own. The governance and day-by-day operations are left up

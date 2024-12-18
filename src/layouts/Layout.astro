@@ -145,6 +145,14 @@ const {
       figure figcaption {
         @apply text-center;
       }
+      /* Add this CSS to your stylesheet */
+      :target::before {
+        content: "";
+        display: block;
+        height: 80px; /* Adjust this value to the height of your fixed header */
+        margin-top: -60px; /* Same value as above */
+        visibility: hidden;
+      }
     </style>
   </head>
   <body class="min-h-dvh antialiased">

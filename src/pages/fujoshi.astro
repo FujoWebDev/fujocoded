@@ -1,9 +1,7 @@
 ---
-import FujoshiTerminal from "../components/FujoshiTerminal.astro";
-import Layout from "../layouts/Layout.astro";
-import Browser from "../components/Browser.astro";
 import { getCollection } from "astro:content";
 import FujoCard from "../components/fujoshi/FujoCard.astro";
+import Layout from "../layouts/Layout.astro";
 
 const fujin = (await getCollection("fujin")).toSorted(
   (a, b) => a.data.order - b.data.order,
@@ -16,40 +14,16 @@ const description =
 <Layout description={description}>
   <article class="rounded-xl bg-white drop-shadow-purple">
     <a href="#what-is-a-fujoshi">
-      <h1 id="what-is-a-fujoshi">What is a fujoshi?</h1>
-    </a>
-    <p>
-      <span class="text-fujo-pink">Fujoshi</span> (lit. "rotten woman") was <strong
-        >a pejorative name given to Japanese fans of <abbr
-          title="Boys Love"
-          class="cursor-help">BL</abbr
-        > media for going against social expectations of traditional femininity.</strong
-      > In the early 2000s, as the popularity of anime and manga soared internationally,
-      online BL spaces became a worldwide haven for (often female, queer, and/or
-      neurodivergent) millennials seeking to explore their sexuality outside of normative
-      constraints. This led to the term being adopted globally.
-    </p>
-    <p>
-      In recent years, <span class="text-fujo-pink">fujoshi</span> and its counterpart
-      <span class="text-fujo-pink">fudanshi</span> (lit. "rotten man") have been
-      reclaimed by fans of the genre and are often worn as a badge of honor. The
-      <span class="text-fujo-pink">fujin</span> variant (lit. "rotten person") is
-      also becoming popularized alongside them to accurately represent the diversity
-      of the community.
-    </p>
-
-    <a href="#fujoshi-today">
-      <h2 id="fujoshi-today">Fujoshi today</h2>
+      <h1 id="what-is-a-fujoshi fujoshi-today">What is a fujoshi?</h1>
     </a>
     <p>
       <strong>
-        <span class="text-fujo-pink">Fujoshi</span> (or, more inclusively, <em
-          >fujin</em
-        >) have always been an integral part of online and offline fandom
-        ecosystems.</strong
-      > Despite being historically reviled, their creativity and passion for their
-      favorite series often drive the success of <a
-        href="https://twitter.com/Rune_Sa_Riik/status/1734951399299953099"
+        <a href="#term-origins"><span class="text-fujo-pink">Fujoshi</span></a>
+        (or, more inclusively, <em>fujin</em>) are and have always been an
+        integral part of the online ecosystem.</strong
+      > Despite being historically looked down upon and sometimes even reviled, their
+      creativity and passion for their favorite series often drive the success of
+      <a href="https://twitter.com/Rune_Sa_Riik/status/1734951399299953099"
         >popular</a
       >
       <a href="https://twitter.com/headfallsoff/status/1771262665937031395"
@@ -61,14 +35,16 @@ const description =
       >.
     </p>
     <p>
-      Overall, fujin are a highly diverse group of loosely-aligned folks brought
-      together by their shared love of queer fictional relationships.
-      Online-minded folks can think of them as cousins of the furry subculture,
-      with whom they share similar challenges, including stigmatization and
-      censorship. Rather than creating works focused on anthropomorphized
-      animals, fujin center their own stories, art, comics, and complex
-      worldbuilding around fictional relationships from pre-existing media—often
-      between men, but with other gender expressions on the rise alongside them.
+      Overall, <strong>
+        fujin are a highly diverse group of loosely-aligned folks brought
+        together by their shared love of queer fictional relationships.
+      </strong>
+      Online-minded folks can think of them as cousins of the furry subculture, with
+      whom they share similar challenges, including stigmatization and censorship.
+      Rather than creating works focused on anthropomorphized animals, fujin center
+      their own stories, art, comics, and complex worldbuilding around fictional
+      relationships from pre-existing media—often between men, but with other gender
+      expressions on the rise alongside them.
     </p>
     <p>
       In our own conception, and with the evolving face of the community within
@@ -131,6 +107,30 @@ const description =
       characters, obsessively collecting random facts about their favorite
       series, or participating in communal practices that may be hard to
       understand from the outside.
+    </p>
+
+    <a href="#term-origins">
+      <h2 id="term-origins">Origins of the Term</h2>
+    </a>
+
+    <p>
+      <span class="text-fujo-pink">Fujoshi</span> (lit. "rotten woman") was <strong
+        >a pejorative name given to Japanese fans of <abbr
+          title="Boys Love"
+          class="cursor-help">BL</abbr
+        > media for going against social expectations of traditional femininity.</strong
+      > In the early 2000s, as the popularity of anime and manga soared internationally,
+      online BL spaces became a worldwide haven for (often female, queer, and/or
+      neurodivergent) millennials seeking to explore their sexuality outside of normative
+      constraints. This led to the term being adopted globally.
+    </p>
+    <p>
+      In recent years, <span class="text-fujo-pink">fujoshi</span> and its counterpart
+      <span class="text-fujo-pink">fudanshi</span> (lit. "rotten man") have been
+      reclaimed by fans of the genre and are often worn as a badge of honor. The
+      <span class="text-fujo-pink">fujin</span> variant (lit. "rotten person") is
+      also becoming popularized alongside them to accurately represent the diversity
+      of the community.
     </p>
 
     <a href="#famous-fujin">

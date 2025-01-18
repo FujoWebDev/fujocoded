@@ -27,4 +27,10 @@ export default defineConfig({
       ],
     ],
   },
+  redirects: {
+    "/store": {
+      status: 302,
+      destination: "https://store.fujocoded.com",
+    },
+  },
 });

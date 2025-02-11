@@ -21,9 +21,9 @@ const { name, contacts, avatar } = Astro.props;
   >
     <a
       href={`#${name.toLowerCase().replace(/\s+/g, "-")}`}
-      class="hover:pointer flex items-center gap-4 font-zeitung !no-underline"
+      class="hover:pointer flex items-center gap-4 !no-underline"
     >
-      <span class="-mt-1 text-fujo-pink">{name}</span>
+      <span class="-mt-1 font-zeitung text-fujo-pink">{name}</span>
       <Image
         class="rounded-xl object-cover"
         width={40}
@@ -98,15 +98,11 @@ const { name, contacts, avatar } = Astro.props;
     /* @apply rounded-xl; */
     border-radius: calc(0.75rem);
   }
-  .outer-box:global(:has(*:target)) {
-    h3 {
-      font-weight: bold;
-    }
-    &::before {
-    }
-    &::after {
-      background-color: #ffd8fb;
-    }
+  .outer-box:global(:has(*:target)) h3 {
+    font-weight: bold;
+  }
+  .outer-box:global(:has(*:target))::after {
+    background-color: #ffd8fb;
   }
 
   @media (prefers-reduced-motion: no-preference) {

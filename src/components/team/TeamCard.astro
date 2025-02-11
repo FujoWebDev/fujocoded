@@ -13,19 +13,27 @@ const { name, contacts, avatar } = Astro.props;
 ---
 
 <div
-  class="outer-box relative z-10 flex flex-col gap-2 rounded-xl bg-white p-4 pb-2.5 md:p-6 md:pb-[1.125rem]"
+  class="outer-box relative z-10 flex flex-col gap-4 rounded-xl bg-white md:pb-[1.125rem]"
 >
-  <h3 class="m-0 flex items-center gap-3 font-macho not-italic text-fujo-pink">
-    <Image
-      class="rounded-xl object-cover"
-      width={40}
-      height={40}
-      src={avatar}
-      alt=""
-    />
-    <span class="-mt-1">{name}</span>
+  <h3
+    class="font- m-0 flex items-center gap-3 self-center px-3 pt-5 text-xl not-italic"
+    id={`${name.toLowerCase().replace(/\s+/g, "-")}`}
+  >
+    <a
+      href={`#${name.toLowerCase().replace(/\s+/g, "-")}`}
+      class="hover:pointer flex items-center gap-4 font-zeitung !no-underline"
+    >
+      <span class="-mt-1 text-fujo-pink">{name}</span>
+      <Image
+        class="rounded-xl object-cover"
+        width={40}
+        height={40}
+        src={avatar}
+        alt=""
+      />
+    </a>
   </h3>
-  <ul class="flex flex-col">
+  <ul class="flex flex-col p-4 pb-2.5 pt-0 md:p-6 md:pb-[1.125rem] md:pt-0">
     {
       contacts.map((contact) => {
         return (
@@ -89,6 +97,16 @@ const { name, contacts, avatar } = Astro.props;
     z-index: -1;
     /* @apply rounded-xl; */
     border-radius: calc(0.75rem);
+  }
+  .outer-box:global(:has(*:target)) {
+    h3 {
+      font-weight: bold;
+    }
+    &::before {
+    }
+    &::after {
+      background-color: #ffd8fb;
+    }
   }
 
   @media (prefers-reduced-motion: no-preference) {

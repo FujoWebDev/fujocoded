@@ -344,9 +344,11 @@ const { pathname } = Astro.url;
     menuDialog?.close();
   });
   menuDialog?.addEventListener("close", () => {
-    document.documentElement.style.overflowY = "";
-    scrollTo({ top: scrollLocation, behavior: "instant" });
-    menu?.classList.remove("script-hidden");
+    if (menuDialog?.open) {
+      document.documentElement.style.overflowY = "";
+      scrollTo({ top: scrollLocation, behavior: "instant" });
+      menu?.classList.remove("script-hidden");
+    }
   });
 
   const resizeObserver = new ResizeObserver((entries) => {
@@ -359,6 +361,7 @@ const { pathname } = Astro.url;
       }
     }
   });
+
   const body = document.querySelector("body");
   if (body) {
     resizeObserver.observe(body);

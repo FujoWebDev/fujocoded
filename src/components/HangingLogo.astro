@@ -182,7 +182,7 @@ const wordLogoSvg = readFileSync("./src/images/word-logo.svg", {
 
 <script>
   const prefersReducedMotion = window.matchMedia(
-    `(prefers-reduced-motion: reduce)`,
+    `(prefers-reduced-motion: reduce)`
   ).matches;
   const RATE_DIVISOR = 600;
   const lemon = document.querySelector(".lemon");
@@ -192,18 +192,25 @@ const wordLogoSvg = readFileSync("./src/images/word-logo.svg", {
   const llc = document.querySelector(".llc");
   const logoFinalPosition = -600;
   const logoRate = logoFinalPosition / RATE_DIVISOR;
-  const container = document.querySelector(".hanging-container");
+  const container =
+    document.querySelector<HTMLDivElement>(".hanging-container");
   // I don't know what you were trying to do here, but it was leaving the link stuck in the middle of the screen
   const containerFinalPosition = -600;
   const containerRate = containerFinalPosition / RATE_DIVISOR;
 
-  let lastScrollPosition = 0;
+  let lastScrollPosition = window.scrollY;
 
-  document.addEventListener("scroll", () => {
+  if (!lemon || !logo || !llc || !container) {
+    throw new Error("Hanging logo elements not found");
+  }
+
+  if (window.scrollY > 200) {
+    // We hide the logo until load
+    container.style.opacity = "0";
+  }
+
+  function setPosition() {
     if (window.scrollY > 200 && lastScrollPosition > 200) {
-      return;
-    }
-    if (!lemon || !logo || !llc || !container) {
       return;
     }
     if (prefersReducedMotion) {
@@ -224,7 +231,6 @@ const wordLogoSvg = readFileSync("./src/images/word-logo.svg", {
       lastScrollPosition = window.scrollY;
       return;
     }
-    lastScrollPosition = window.scrollY;
     if (window.scrollY > 200) {
       (lemon as HTMLElement).style.translate = `0px ${lemonFinalPosition}px`;
       (logo as HTMLElement).style.translate = `0px ${logoFinalPosition}px`;
@@ -241,5 +247,15 @@ const wordLogoSvg = readFileSync("./src/images/word-logo.svg", {
       `0px ${logoRate * lastScrollPosition}px`;
     (container as HTMLElement).style.translate =
       `0px ${containerRate * lastScrollPosition}px`;
+  }
+
+  document.addEventListener("scroll", () => {
+    lastScrollPosition = window.scrollY;
+    setPosition();
+  });
+  window.addEventListener("load", () => {
+    container.style.opacity = "1";
+    lastScrollPosition = 0;
+    setPosition();
   });
 </script>

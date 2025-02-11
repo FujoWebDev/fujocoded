@@ -83,7 +83,7 @@ const {
 
       @media (prefers-reduced-motion: no-preference) {
         :root {
-          scroll-behavior: smooth;
+          animation: 0s linear 0.5s 1 forwards smoothLater;
         }
       }
 
@@ -152,6 +152,15 @@ const {
         height: 80px; /* Adjust this value to the height of your fixed header */
         margin-top: -80px; /* Same value as above */
         visibility: hidden;
+      }
+
+      @keyframes smoothLater {
+        from {
+          scroll-behavior: auto;
+        }
+        to {
+          scroll-behavior: smooth;
+        }
       }
     </style>
   </head>

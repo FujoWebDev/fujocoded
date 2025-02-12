@@ -1,0 +1,44 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import Error from "../images/error.png";
+import { Icon } from "astro-icon/components";
+
+const description =
+	"The page you are looking for could not be found. Please check the URL and try again.";
+---
+
+<Layout title="404: Not Found - FujoCoded LLC" description={description}>
+	<article
+		class="align-center flex flex-col justify-center gap-4 rounded-xl bg-white drop-shadow-purple"
+	>
+		<h1><em>Oops!</em> This page could not be found.</h1>
+		<Image
+			src={Error}
+			alt="Boba-tan in her fursuit crawling around looking for her glasses"
+		/>
+		<a
+			class="button-link my-2 w-full rounded-xl bg-gradient-to-b from-[#CE00FF] to-[#A700CF] px-12 py-3 text-center font-hatch text-lg font-medium"
+			href="/"
+			><Icon name="lucide:home" class="inline stroke-2 text-2xl font-bold" /> Take
+			me home
+		</a>
+		<p>
+			We’ve lost track of this page, but you can still keep track of us through <a
+				href="#">our newsletter</a
+			>.
+		</p>
+	</article>
+	<style>
+		img {
+			filter: hue-rotate(220deg) brightness(70%) contrast(150%) saturate(125%);
+			margin: 2rem 0 4rem;
+		}
+		.button-link {
+			color: white;
+			text-decoration: none;
+			width: fit-content;
+			margin: 0.5rem auto 1rem;
+		}
+	</style>
+</Layout>

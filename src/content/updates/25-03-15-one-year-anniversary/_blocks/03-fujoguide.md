@@ -1,9 +1,7 @@
-### FujoGuide
-
-#### FujoGuide Kickstarter Fulfillment Progress: Recent
+## Recent Progress on the Fujoshi Guide to Web Development
 
 - **Alphas Become Betas:** We scheduled our beta reading for “FujoGuide Issue 2:
-  GitHub”. If everything goes as planned (🤞) it will happen in early May\!
+  GitHub”. If everything goes as planned (🤞) **it will happen in early May\!**
 - **Feeding Feedback:** It’s not yet time to release “FujoGuide Issue 1: Git” to
   the wider public, but rest assured: we’re finding this launch a sweet spot in
   our busy schedule\! In the meantime… have we asked you for _feedback_ yet?
@@ -13,7 +11,7 @@
   site](https://docs.google.com/forms/d/e/1FAIpQLScDr4p8CQp0iDh0HgLL8DfCdLQLXyKWX30ElChUGxlAtGXWaA/viewform),
   make sure to make your voice heard\!
 
-#### FujoGuide Kickstarter Fulfillment Progress: Future
+## What’s Next for FujoGuide
 
 - **Better Beta:** Now that the second trial for “FujoGuide Issue 2: GitHub” is
   scheduled, it is time to tame the unruly alpha into a much more orderly beta.

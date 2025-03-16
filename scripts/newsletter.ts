@@ -98,8 +98,8 @@ if (action === "build") {
     throw new Error("Please enter a valid path");
   }
 
-  const title = await text({
-    message: "What is the newsletter title?",
+  let title = await text({
+    message: "What is the newsletter title? (empty for previous)",
     placeholder: "Fujocoded Newsletter",
   });
   if (typeof title === "symbol") {
@@ -122,6 +122,16 @@ if (action === "build") {
     },
     {} as Record<string, string>,
   );
+
+  if (!title) {
+    title = readFileSync(
+      path.join(process.cwd(), "..", name, "index.md"),
+      "utf-8",
+    ).match(/title: "([^"]+)"/)?.[1] as string;
+    if (!title) {
+      throw new Error("No title found");
+    }
+  }
 
   const s = spinner();
   s.start("Building newsletter content...");

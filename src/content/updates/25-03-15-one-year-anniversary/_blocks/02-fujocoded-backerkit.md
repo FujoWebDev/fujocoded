@@ -1,4 +1,4 @@
-#### FujoCoded BackerKit Fulfillment Progress: Recent
+## Recent Progress on Our Backerkit Campaign
 
 - **New Outlines:** We’re getting ready to tackle our first “hired gig” for a
   [learn.fujoweb.dev](http://learn.fujoweb.dev) article: our introductory(ish)
@@ -15,7 +15,7 @@
 - **Baby’s First Contract:** We got our first artist contract officially
   signed\! The legal ducks dance happily in their row 🦆🦆🦆
 
-#### FujoCoded BackerKit Fulfillment Progress: Future
+### What’s Next for the FujoCoded Backerkit
 
 - **Baby’s First Writer:** Once we’re done gathering all the feedback, we’ll
   face an important choice: should we spend more time brainstorming, or are we
@@ -38,6 +38,6 @@
     warning
 
   If you have experience with any sort of fandom confrontation like this, or a
-  fandom confrontation that really needed to happen but _didn’t_, then Dove
-  would love to talk to you\! Please reach out to
-  [info@fujocoded.com](mailto:info@fujocoded.com) to get in touch.
+  fandom confrontation that really needed to happen but _didn’t_, then **Dove
+  would love to talk to you\!** Please reach out to
+  [contacts@fujocoded.com](mailto:contacts@fujocoded.com) to get in touch.

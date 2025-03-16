@@ -177,7 +177,7 @@ confrontation grievances with us, or if you’d like to get involved in other
 ways, please let us know at
 [contacts@fujocoded.com](mailto:contacts@fujocoded.com). Or, if you’re an
 artist, use our [Artist Business Card Drop-Off
-form](https://forms.gle/bvUhPTdxM6nUGwAYA). .
+form](https://forms.gle/bvUhPTdxM6nUGwAYA).
 
 ## That’s All, Folks\!
 

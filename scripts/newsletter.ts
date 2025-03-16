@@ -50,7 +50,7 @@ const PREAMBLES = {
     `---\ntitle: "${title}"\n---\n\n`,
 } as const;
 
-program.argument("<action>", "The action to perform");
+program.arguments("<action>");
 
 program.parse(process.argv);
 

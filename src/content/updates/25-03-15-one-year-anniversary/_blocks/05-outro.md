@@ -3,5 +3,5 @@
 And with this… we’re done for this month\! See you on-the-day-you-expect for our
 April 1st sorta-surprise\!
 
-Love,  
+Love,
 The FujoCoded Team

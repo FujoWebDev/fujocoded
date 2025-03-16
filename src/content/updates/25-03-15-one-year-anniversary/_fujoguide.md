@@ -84,7 +84,8 @@ below for this opportunity and more:
   a penchant for writing cursed puns? Do you want some behind-the-scenes deets
   on all we’re up to? We’re looking to hire a newsletter writer\! Whether you’re
   a hobbyist seeking a challenge or a professional writer seeking an
-  itty-bitty-hyper-tiny gig as an enrichment activity, get in touch with us if
+  itty-bitty-hyper-tiny gig as an enrichment activity, whether English is your
+  native language or "fanfictions taught you well", get in touch with us if
   you’d like to, well, _take my job_.
 - **Fannish Conflict Advisors:** We’re looking for people willing to tell us
   more about how confronting (or being confronted by) fellow fans has gone in

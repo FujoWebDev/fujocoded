@@ -39,11 +39,15 @@ const CONTENT_BLOCKS: Record<string, (typeof BLOCKS)[number][]> = {
 } as const;
 
 const PREAMBLES = {
-  index: (title: string, date: Date) =>
-    `---\ntitle: "${title}"\ntagline: TBD\ncreated_at: ${date.toISOString()}\ntags:\n  - monthly newsletter\nsocials: []\n---\n\n`,
-  "fujocoded-newsletter": (title: string, _date: Date) =>
+  index: (title: string, date: Date, tagline: string | undefined) =>
+    `---\ntitle: "${title}"\ntagline: "${tagline ?? "TBD"}"\ncreated_at: ${date.toISOString()}\ntags:\n  - monthly newsletter\nsocials: []\n---\n\n`,
+  "fujocoded-newsletter": (
+    title: string,
+    _date: Date,
+    _tagline: string | undefined,
+  ) => `---\ntitle: "${title}"\n---\n\n`,
+  fujoguide: (title: string, _date: Date, _tagline: string | undefined) =>
     `---\ntitle: "${title}"\n---\n\n`,
-  fujoguide: (title: string, _date: Date) => `---\ntitle: "${title}"\n---\n\n`,
 } as const;
 
 program.argument("<action>", "The action to perform");
@@ -123,11 +127,16 @@ if (action === "build") {
     {} as Record<string, string>,
   );
 
+  let tagline: string | undefined;
   if (!title) {
     title = readFileSync(
       path.join(process.cwd(), "..", name, "index.md"),
       "utf-8",
     ).match(/title: "([^"]+)"/)?.[1] as string;
+    tagline = readFileSync(
+      path.join(process.cwd(), "..", name, "index.md"),
+      "utf-8",
+    ).match(/tagline: "([^"]+)"/)?.[1] as string;
     if (!title) {
       throw new Error("No title found");
     }
@@ -144,8 +153,11 @@ if (action === "build") {
         name,
         `${contentType == "index" ? contentType : `_${contentType}`}.md`,
       ),
-      PREAMBLES[contentType as keyof typeof PREAMBLES](title, new Date()) +
-        content,
+      PREAMBLES[contentType as keyof typeof PREAMBLES](
+        title,
+        new Date(),
+        tagline,
+      ) + content,
     );
   }
   s.stop(`Newsletter content created at ../${name}`);

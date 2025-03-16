@@ -5,6 +5,7 @@ interface Props {
   preview?: string;
 }
 
+import { decode } from "html-entities";
 import CornerBuddy from "../components/CornerBuddy.astro";
 import Nav from "../components/Nav.astro";
 import Grid from "../images/grid.svg";
@@ -12,6 +13,8 @@ import HangingLogo from "../components/HangingLogo.astro";
 import ToTopArrow from "../components/ToTopArrow.astro";
 import Footer from "../components/Footer.astro";
 import HallOfSponsors from "../components/sponsors-hall/HallOfSponsors.astro";
+
+console.log(decode(Astro.props.title));
 
 const {
   title = "FujoCoded LLC – A Better Web, Together",
@@ -29,13 +32,13 @@ const {
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>{title}</title>
-    <meta property="og:title" content={title} />
-    <meta property="twitter:title" content={title} />
+    <title>{decode(title)}</title>
+    <meta property="og:title" content={decode(title)} />
+    <meta property="twitter:title" content={decode(title)} />
 
-    <meta name="description" content={description} />
-    <meta property="og:description" content={description} />
-    <meta property="twitter:description" content={description} />
+    <meta name="description" content={decode(description)} />
+    <meta property="og:description" content={decode(description)} />
+    <meta property="twitter:description" content={decode(description)} />
 
     <meta property="og:image" content={preview} />
     <meta name="twitter:image" content={preview} />

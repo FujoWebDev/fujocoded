@@ -1,5 +1,5 @@
 import { text, outro, spinner } from "@clack/prompts";
-import { Command } from "commander";
+import { Command } from "@commander-js/extra-typings";
 import {
   existsSync,
   writeFileSync,

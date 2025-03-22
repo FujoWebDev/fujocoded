@@ -32,5 +32,10 @@ export default defineConfig({
       status: 302,
       destination: "https://store.fujocoded.com",
     },
+    "/yearning": {
+      status: 302,
+      destination:
+        "https://docs.google.com/presentation/d/1NRNSL9wheh-wfHHBkjEUoSghPYY5wWWbVGh3_HEMny0/edit?usp=sharing",
+    },
   },
 });

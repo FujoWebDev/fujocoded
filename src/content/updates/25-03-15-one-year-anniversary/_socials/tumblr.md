@@ -11,4 +11,6 @@ Busy with preparations, some of our flagship projects had to take a bit of a bac
 
 ![file:./images/img_7b506df41f92fa495f0161afdeaebf71.alt.txt](./images/img_7b506df41f92fa495f0161afdeaebf71.png)
 
-If you're interested in helping us write our monthly newsletter for a fee, write us at contacts@fujocoded.com. Or, if you’re an artist who wishes to put their name up for long-term commission requests, [use our Artist Business Card Drop-Off form!](https://forms.gle/bvUhPTdxM6nUGwAYA)
+If you're interested in getting paid to help us write our monthly newsletter, write us at contacts@fujocoded.com.
+
+Or, if you’re an artist who wishes to put their name up for long-term commission requests, use our Artist Business Card Drop-Off form https://forms.gle/bvUhPTdxM6nUGwAYA

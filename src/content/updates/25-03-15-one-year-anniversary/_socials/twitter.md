@@ -1,5 +1,6 @@
 ---
 ---
+
 It's time... for our Monthly Newsletter!
 
 Believe it or not, it's been a year since FujoCoded LLC was born. A lot has happened since then, and a lot will still happen, including... our April 1st sorta-surprise 👀
@@ -14,4 +15,6 @@ We've been so busy with our April 1st preparation and some of our flagship proje
 
 +++
 
-If you're interested in helping us write our monthly newsletter for a fee, write us at contacts@fujocoded.com. Or, if you’re an artist who wishes to put their name up for long-term commission requests, use our Artist Business Card Drop-Off form https://forms.gle/bvUhPTdxM6nUGwAYA
+If you're interested in getting paid to help us write our monthly newsletter, write us at contacts@fujocoded.com.
+
+Or, if you’re an artist who wishes to put their name up for long-term commission requests, use our Artist Business Card Drop-Off form https://forms.gle/bvUhPTdxM6nUGwAYA

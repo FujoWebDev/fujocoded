@@ -121,7 +121,6 @@ const description =
           {
             team
               .filter((member) => member.data.type === "contractor")
-              // @ts-ignore
               .map((member) => <TeamCard {...member.data} />)
           }
         </div>
@@ -148,7 +147,6 @@ const description =
           {
             team
               .filter((member) => member.data.type === "community")
-              // @ts-ignore
               .map((member) => <TeamCard {...member.data} />)
           }
         </div>

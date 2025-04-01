@@ -16,7 +16,7 @@ const team = await getCollection("team");
         team
           .filter((member) => member.data.type == "founder")
           .map((member) => (
-            // @ts-ignore
+            // @ts-expect-error
             <TeamCard {...member.data} />
           ))
       }
@@ -26,7 +26,7 @@ const team = await getCollection("team");
       {
         team
           .filter((member) => member.data.type == "contractor")
-          // @ts-ignore
+          // @ts-expect-error
           .map((member) => <TeamCard {...member.data} />)
       }
     </section>
@@ -35,7 +35,7 @@ const team = await getCollection("team");
       {
         team
           .filter((member) => member.data.type == "community")
-          // @ts-ignore
+          // @ts-expect-error
           .map((member) => <TeamCard {...member.data} />)
       }
     </section>

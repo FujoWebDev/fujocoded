@@ -1,0 +1,52 @@
+---
+import TeamCard from "../../components/team/TeamCard.astro";
+import Layout from "../../layouts/Layout.astro";
+import { getCollection } from "astro:content";
+const team = await getCollection("team");
+---
+
+<Layout>
+  <article class="rounded-xl bg-white drop-shadow-purple">
+    <a href="/team">
+      <h1>Our <em>team</em></h1>
+    </a>
+    <section class="mb-12 mt-6 flex flex-col gap-6 md:items-center">
+      <h2 class="col-span-2 text-center">Our founder</h2>
+      {
+        team
+          .filter((member) => member.data.type == "founder")
+          .map((member) => (
+            // @ts-ignore
+            <TeamCard {...member.data} />
+          ))
+      }
+    </section>
+    <section class="mb-12 mt-6 flex flex-col gap-6 md:grid md:grid-cols-2">
+      <h2 class="col-span-2 text-center">Our contractors</h2>
+      {
+        team
+          .filter((member) => member.data.type == "contractor")
+          // @ts-ignore
+          .map((member) => <TeamCard {...member.data} />)
+      }
+    </section>
+    <section class="mb-12 mt-6 flex flex-col gap-6 md:grid md:grid-cols-2">
+      <h2 class="col-span-2 text-center">Our community contributors</h2>
+      {
+        team
+          .filter((member) => member.data.type == "community")
+          // @ts-ignore
+          .map((member) => <TeamCard {...member.data} />)
+      }
+    </section>
+  </article>
+</Layout>
+
+<style>
+  .card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min-content, 1fr));
+    gap: 1rem;
+    padding: 1rem;
+  }
+</style>

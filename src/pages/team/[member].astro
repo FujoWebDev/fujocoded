@@ -1,0 +1,96 @@
+---
+import type { GetStaticPaths } from "astro";
+import { type CollectionEntry, getCollection, getEntry } from "astro:content";
+
+import { Image } from "astro:assets";
+import Error from "../images/error.png";
+import { Icon } from "astro-icon/components";
+import Layout from "../../layouts/Layout.astro";
+import TeamCard from "../../components/team/TeamCard.astro";
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  const team = await getCollection("team");
+  return team.map((member, index) => {
+    return {
+      params: {
+        member: member.id,
+      },
+      props: {
+        next: index < team.length - 1 ? team[index + 1].id : null,
+        previous: index > 0 ? team[index - 1].id : null,
+      },
+    };
+  });
+};
+
+const { member } = Astro.params;
+const { previous, next } = Astro.props;
+
+const memberEntry = await getEntry(
+  "team",
+  member as CollectionEntry<"team">["id"],
+);
+---
+
+<Layout title="Fujocoded LLC – Our team">
+  <h1><a href="/team">Our team</a></h1>
+  <div>
+    <!--     @ts-expect-error -->
+    <TeamCard {...memberEntry.data} />
+    <nav>
+      <a
+        class:list={{
+          disabled: !previous,
+        }}
+        href={`/team/${previous}`}>Previous</a
+      >
+      <a href="/team/">All</a>
+      <a
+        class:list={{
+          hidden: !next,
+        }}
+        href={`/team/${next}`}>Next</a
+      >
+    </nav>
+  </div>
+</Layout>
+<style>
+  img {
+    max-width: 150px;
+    align-self: center;
+  }
+  ul {
+    padding-left: 40px;
+  }
+  section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  h2 {
+    grid-column: span 2;
+  }
+  article {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  nav {
+    margin-top: 30px;
+    display: flex;
+    gap: 15px;
+    justify-content: space-evenly;
+    width: 100%;
+    max-width: 500px;
+  }
+  div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .disabled {
+    opacity: 25%;
+    pointer-events: none;
+  }
+</style>

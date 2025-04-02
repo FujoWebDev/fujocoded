@@ -11,14 +11,14 @@ const { name, contacts, avatar } = Astro.props;
 ---
 
 <div
-  class="outer-box relative z-10 flex min-w-72 max-w-full flex-col gap-4 rounded-xl bg-white md:pb-[1.125rem]"
+  class="outer-box relative z-10 flex w-80 min-w-72 max-w-full flex-col gap-4 rounded-xl bg-white md:pb-[1.125rem]"
 >
   <h3
     class="font- m-0 flex items-center gap-3 self-center px-3 pt-5 text-xl not-italic"
     id={`${name.toLowerCase().replace(/\s+/g, "-")}`}
   >
     <a
-      href={`#${name.toLowerCase().replace(/\s+/g, "-")}`}
+      href={`/team/${name.toLowerCase().replace(/\s+/g, "-")}`}
       class="hover:pointer flex items-center gap-4 !no-underline"
     >
       <span class="-mt-1 font-zeitung text-fujo-pink">{name}</span>

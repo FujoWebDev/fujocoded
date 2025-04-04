@@ -99,7 +99,7 @@ const description =
           {
             team
               .filter((member) => member.data.type == "founder")
-              // @ts-ignore
+              // @ts-expect-error
               .map((member) => <TeamCard {...member.data} />)
           }
         </div>
@@ -122,7 +122,7 @@ const description =
           {
             team
               .filter((member) => member.data.type == "contractor")
-              // @ts-ignore
+              // @ts-expect-error
               .map((member) => <TeamCard {...member.data} />)
           }
         </div>
@@ -149,7 +149,7 @@ const description =
           {
             team
               .filter((member) => member.data.type == "community")
-              // @ts-ignore
+              // @ts-expect-error
               .map((member) => <TeamCard {...member.data} />)
           }
         </div>

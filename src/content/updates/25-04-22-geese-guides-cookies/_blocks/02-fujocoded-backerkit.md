@@ -1,0 +1,8 @@
+### Recent Progress on Our Backerkit Campaign
+
+* **Writing Frenzy:** It’s not all geese and gobbling, we also wrote (and then rewrote ad infinitum) the outline for our soon-to-be-famous NPM article\! We might have had it (mostly) ready for the last newsletter, but Ms Boba spent some time rearranging it after a break…and it’s now four whole articles\! That might stretch the budget a bit, but it’s also going to cover most of what we’ve learned the community is struggling with.   
+* **Village People:** Still, it takes a village to code (and learn to code) a website so we gathered a bunch of great and enthusiastic feedback from the Fandom Coders community to make this article even better. We even got it reviewed from one of BobaBoard’s professional volunteer tech writers to ensure our outline can set our future hire (see below) up for success\!
+
+### What’s Next for the FujoCoded Backerkit
+* **Extended Contracts:** Our contracts are, to quote sociocracy, “good enough for now, safe enough to try”, but they need a bit of extending to be suitable for tech writers too\! And we’ll need this ASAP because…   
+* **Needed Prose Master**:... we’re looking to hire a tech writer for the NPM articles, which we’ll pay for with the funds raised through the corresponding stretch goal of our BackerKit campaign\! If you’d like this to be you (or someone you know), check out our call for hire below\!

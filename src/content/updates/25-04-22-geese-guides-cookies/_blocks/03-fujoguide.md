@@ -1,0 +1,6 @@
+## Recent Progress on the Fujoshi Guide to Web Development
+* **Beta Git Ready:** As promised, we’ve reviewed the alpha version of our GitHub guide and started our second pass, preparing it to become a full-fledged beta\! This involved a full reread to get us back into the (better-structured-than-feared) swing of things, fixing some hacky “custom zine software” workarounds from the launch of “Issue 1: Git (preview edition)”, and looking back at the original beta feedback to *git ready* from  some targeted improvements.
+
+## What’s Next for FujoGuide
+ * **Git Beta Ready:** With the beta re-read, the feedback reviewed, and all our horrible hacks forever removed from the codebase—*ah\! As if\!*—it’s time to Whip this Beta into Shape… “title of my fanfiction,” as they say.  
+* **Git Ready, Beta:** As we *git* the beta ready, we also need to *git* ourselves some beta…testers\! We’ve got quite a few potential candidates from our communities, but we’ll be looking to balance a wide range of experience, interest, and operating systems to make the best guide we can. We’re planning to start mid-May (just a few weeks\!) so by the time you hear back from us again, we might have already started, or at least be close to doing so. 

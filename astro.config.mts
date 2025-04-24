@@ -7,6 +7,7 @@ import remarkCapitalizeTitles, {
 } from "@fujocoded/remark-capitalize-titles";
 import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
+import remarkAltTextFiles from "@fujocoded/remark-alt-text-files";
 
 import metaTags from "astro-meta-tags";
 
@@ -16,6 +17,7 @@ export default defineConfig({
   markdown: {
     remarkPlugins: [
       [remarkCapitalizeTitles, { special: DEFAULT_CAPITALIZATIONS }],
+      remarkAltTextFiles,
     ],
     rehypePlugins: [
       rehypeSlug,

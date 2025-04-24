@@ -1,4 +1,4 @@
 That’s all folks!
 
-Love,
-The FujoCoded Team
+Love,<br />
+The FujoCoded Team _(A Gandering Gathering of Geese)_

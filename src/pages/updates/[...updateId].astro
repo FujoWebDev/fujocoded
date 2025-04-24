@@ -50,7 +50,7 @@ const { Content, data } = Astro.props;
         )
       }
     </div>
-    <div class="prose prose-lg m-auto mt-4">
+    <div class="prose prose-lg m-auto mt-4 max-w-max">
       <Content />
     </div>
   </article>
@@ -114,5 +114,9 @@ const { Content, data } = Astro.props;
   .prose :global(h2) :global(a:hover) {
     text-decoration: underline;
     cursor: pointer;
+  }
+
+  .prose :global(li) {
+    max-width: 68ch;
   }
 </style>

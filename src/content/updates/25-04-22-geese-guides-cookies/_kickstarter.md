@@ -1,10 +1,5 @@
 ---
 title: "FujoCoded LLC: Geese, Guides, and Good Luck Cookies 🪿📔🥠"
-tagline: "Growing bigger, better, and beta!"
-created_at: 2025-04-24T08:28:48.642Z
-tags:
-  - monthly newsletter
-socials: []
 ---
 
 Fujoshi, fudanshi, fujin, and friends,
@@ -30,19 +25,6 @@ Now _that_ is what we call impact!
 
 - **Bake Sale:** In other news, we had a delicious return to April 1st tradition with a treat rather than a ~~trick~~_large-scale fundraiser_—[Yaoi fortune cookies](https://store.fujocoded.com/fandom-cookies)\! On sale were “Chocolate Doves”, “Kinda Vanilla”, and “Lemony Prompts”, each with its own set of specifically-crafted fortunes...we even got some [lovely](https://www.tumblr.com/harvestspriteirl/780416155855765504/choco-dove-sweep-this-determines-the-bedroom) [fanart](https://blorbo.social/@LeGaosaure/114309563070767137)! Chocolate Doves flew over the competition to [win our cookie run](https://bsky.app/profile/fujocoded.bsky.social/post/3lmn5ovzv6s2y), but really, aren’t we _all_ winners? Check out our contributors spotlight on [Bluesky](https://bsky.app/profile/fujocoded.bsky.social/post/3lmkmknupas2h), [Mastodon](https://blorbo.social/@fujocoded/114320796135859218), [Tumblr](https://www.tumblr.com/fujocoded/780556227268771840/with-only-24-hoursish-left-to-buy-your-fandom?source=share), or [Twitter](https://twitter.com/fujoc0ded/status/1910754458520478144)\!
 - **Hiring Fun(ds):** And of course, selling cookies is not just delicious fun, it gives us enough money for our next goal: hiring a sysadmin to help us better setup our servers so they can be reliable, and will promptly alert us if anything happens\! Who knows, this might finally make us confident enough to host stuff for _you_ in the future...
-
-
-## Recent Progress on Our Backerkit Campaign
-
-- **Writing Frenzy:** It’s not all geese and gobbling, we also wrote (and then rewrote ad infinitum) the outline for our soon-to-be-famous NPM article\! We might have had it (mostly) ready for the last newsletter, but Ms Boba spent some time rearranging it after a break…_and it’s now four whole articles\!_ That might stretch the budget a bit, but it’s also going to cover most of what we’ve learned the community is struggling with...just like [our already-available Terminal content](https://learn.fujoweb.dev/quickstarts/terminal-quickstart/)!
-- **Village People:** Still, it takes a village to code (and learn to code) a website so we gathered a bunch of _enthusiastic feedback_ from the Fandom Coders community. We even had it reviewed by one of BobaBoard’s professional volunteer tech writers to ensure our outline sets our future hire (see below) up for success\!
-
-## What’s Next for the FujoCoded BackerKit
-
-- **Extended Contracts:** Our contracts are, to quote sociocracy, “good enough for now, safe enough to try”—but they’ll need a bit of extending to cover tech writers, too! And we’ll need this ASAP because…
-- **Needed Prose Masters:** …we’re looking to hire a tech writer for the NPM articles with the funds raised through the [corresponding stretch goal](https://www.backerkit.com/c/projects/fujocoded-llc/fujocoded-software-and-education-for-a-better-web#:~:text=%245000%20%E2%80%93%C2%A0%20Closing%20the%20NPM%20Loop) in our BackerKit campaign! If you’d like this to beyou (or someone you know), check out our call for hire below!
-
-![file:](./images/stretch-goal.png)
 
 
 ## Recent Progress on the Fujoshi Guide to Web Development

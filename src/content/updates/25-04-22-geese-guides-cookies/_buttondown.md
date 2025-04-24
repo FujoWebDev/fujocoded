@@ -2,6 +2,8 @@
 title: "FujoCoded LLC: Geese, Guides, and Good Luck Cookies 🪿📔🥠"
 ---
 
+Fujoshi, fudanshi, fujin, and friends,
+
 Geese (and fujin) invaded the first ATproto conference, with us leading the
 charge: through the power of community (and in less than 5 hours) [we got work-safe geese
 yaoi on the
@@ -9,6 +11,33 @@ screen](https://bsky.app/profile/essentialrandom.bsky.social/post/3ll3ov3hqhs2r)
 Now _that_ is what we call impact!
 
 ![file:](./images/geese.png)
+
+
+## FujoCoded General Company News
+
+- **Setting Some ATmosphere:** March 22-23 saw us join the [ATmosphere conference](https://atprotocol.dev/atmosphereconf/), the first conference dedicated to the ATproto ecosystem—that is, the decentralized protocol behind apps like BlueSky. It was an incredible gathering of people who _really, really care_ about a freer and more independent web, including many ActivityPub/Mastodon friends, and fujin-friendly, to say the least… ([Check out all talks here!](https://www.youtube.com/watch?v=d-H1nzWHLoI&list=PLyIg0j_mbb2tVegEMBg5ke2Z-1ALksU-I&ref=atprotocol.dev))
+
+- **Friendly Geese:** Not only the ATmosphere Conf organizers invited Ms Boba after hearing about her [ATproto experiments for fujin](https://atfujo.fujocoded.com/), but much affectionate talk was made about everyone’s new OTP: conference mascot Gustopher and The Untitled Goose Game goose. So, in a span of just 5 hours from putting out our call to hearing back joyous honks of love, we got not just one or two, but _many_ submissions of tasteful [\#goosetopher](https://bsky.app/hashtag/Goosetopher) fanart—[we even got them on the closing slides of the conference](https://bsky.app/profile/essentialrandom.bsky.social/post/3ll3ov3hqhs2r)\! Let’s hope Gustopher’s a good influence on his new paramour.
+
+- **Miss Speaking:** Ms Boba gave a fantastic talk at the conference to a great response from attendees and remote watchers! Throughout the conference, there was a lot of audience interest in how we can get more communities involved in the future of the (social) web, which fits perfectly with all we're doing. Check out the full details in [the BobaBoard retrospective](https://bobaboard.com/retro/development-logs-12#prelude-back-to-the-future), or go straight to [her talk: “Yearning for the Open Protocols”](https://www.youtube.com/watch?v=RbnRWKjYVn0).
+
+  - _Just remember:_ there’s a fine line to walk between building up your professional profile, and maintaining sensible internet anonymity, which is why Ms Boba attended in disguise—if you think you now know what she looks like, no you don't!
+
+- **Bake Sale:** In other news, we had a delicious return to April 1st tradition with a treat rather than a ~~trick~~_large-scale fundraiser_—[Yaoi fortune cookies](https://store.fujocoded.com/fandom-cookies)\! On sale were “Chocolate Doves”, “Kinda Vanilla”, and “Lemony Prompts”, each with its own set of specifically-crafted fortunes...we even got some [lovely](https://www.tumblr.com/harvestspriteirl/780416155855765504/choco-dove-sweep-this-determines-the-bedroom) [fanart](https://blorbo.social/@LeGaosaure/114309563070767137)! Chocolate Doves flew over the competition to [win our cookie run](https://bsky.app/profile/fujocoded.bsky.social/post/3lmn5ovzv6s2y), but really, aren’t we _all_ winners? Check out our contributors spotlight on [Bluesky](https://bsky.app/profile/fujocoded.bsky.social/post/3lmkmknupas2h), [Mastodon](https://blorbo.social/@fujocoded/114320796135859218), [Tumblr](https://www.tumblr.com/fujocoded/780556227268771840/with-only-24-hoursish-left-to-buy-your-fandom?source=share), or [Twitter](https://twitter.com/fujoc0ded/status/1910754458520478144)\!
+- **Hiring Fun(ds):** And of course, selling cookies is not just delicious fun, it gives us enough money for our next goal: hiring a sysadmin to help us better setup our servers so they can be reliable, and will promptly alert us if anything happens\! Who knows, this might finally make us confident enough to host stuff for _you_ in the future...
+
+
+## Recent Progress on Our Backerkit Campaign
+
+- **Writing Frenzy:** It’s not all geese and gobbling, we also wrote (and then rewrote ad infinitum) the outline for our soon-to-be-famous NPM article\! We might have had it (mostly) ready for the last newsletter, but Ms Boba spent some time rearranging it after a break…_and it’s now four whole articles\!_ That might stretch the budget a bit, but it’s also going to cover most of what we’ve learned the community is struggling with...just like [our already-available Terminal content](https://learn.fujoweb.dev/quickstarts/terminal-quickstart/)!
+- **Village People:** Still, it takes a village to code (and learn to code) a website so we gathered a bunch of _enthusiastic feedback_ from the Fandom Coders community. We even had it reviewed by one of BobaBoard’s professional volunteer tech writers to ensure our outline sets our future hire (see below) up for success\!
+
+## What’s Next for the FujoCoded BackerKit
+
+- **Extended Contracts:** Our contracts are, to quote sociocracy, “good enough for now, safe enough to try”—but they’ll need a bit of extending to cover tech writers, too! And we’ll need this ASAP because…
+- **Needed Prose Masters:** …we’re looking to hire a tech writer for the NPM articles with the funds raised through the [corresponding stretch goal](https://www.backerkit.com/c/projects/fujocoded-llc/fujocoded-software-and-education-for-a-better-web#:~:text=%245000%20%E2%80%93%C2%A0%20Closing%20the%20NPM%20Loop) in our BackerKit campaign! If you’d like this to beyou (or someone you know), check out our call for hire below!
+
+![file:](./images/stretch-goal.png)
 
 
 ## Recent Progress on the Fujoshi Guide to Web Development

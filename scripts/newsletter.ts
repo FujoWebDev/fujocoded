@@ -21,7 +21,7 @@ const BLOCKS = [
   "outro",
 ] as const;
 
-const CONTENT_BLOCKS: Record<string, (typeof BLOCKS)[number][]> = {
+const CONTENT_BLOCKS = {
   index: [
     "intro",
     "fujocoded",
@@ -30,15 +30,24 @@ const CONTENT_BLOCKS: Record<string, (typeof BLOCKS)[number][]> = {
     "fujoverse",
     "outro",
   ],
-  "fujocoded-newsletter": [
+  buttondown: [
+    "intro",
+    "fujocoded",
+    "fujocoded-backerkit",
+    "fujoguide",
+    "fujoverse",
+    "outro",
+  ],
+  backerkit: [
     "intro",
     "fujocoded",
     "fujocoded-backerkit",
     "fujoverse",
     "outro",
   ],
-  fujoguide: ["intro", "fujoguide", "fujoverse", "outro"],
-} as const;
+  kickstarter: ["intro", "fujocoded", "fujoguide", "fujoverse", "outro"],
+} as const satisfies Record<string, (typeof BLOCKS)[number][]>;
+type PLATFORMS = keyof typeof CONTENT_BLOCKS;
 
 const throwIfSymbol = (
   text: Symbol | string | undefined,
@@ -54,14 +63,13 @@ const throwIfSymbol = (
 const PREAMBLES = {
   index: (title: string, date: Date, tagline: string | undefined) =>
     `---\ntitle: "${title}"\ntagline: "${tagline ?? "TBD"}"\ncreated_at: ${date.toISOString()}\ntags:\n  - monthly newsletter\nsocials: []\n---\n\n`,
-  "fujocoded-newsletter": (
-    title: string,
-    _date: Date,
-    _tagline: string | undefined,
-  ) => `---\ntitle: "${title}"\n---\n\n`,
-  fujoguide: (title: string, _date: Date, _tagline: string | undefined) =>
+  backerkit: (title: string, _date: Date, _tagline: string | undefined) =>
     `---\ntitle: "${title}"\n---\n\n`,
-} as const;
+  kickstarter: (title: string, _date: Date, _tagline: string | undefined) =>
+    `---\ntitle: "${title}"\n---\n\n`,
+  buttondown: (title: string, _date: Date, _tagline: string | undefined) =>
+    `---\ntitle: "${title}"\n---\n\n`,
+} as const satisfies Record<PLATFORMS, any>;
 
 program.arguments("<action>");
 

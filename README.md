@@ -20,7 +20,12 @@ Once all the blocks are filled run this to generate the various entries:
 npm run --workspace scripts start build
 ```
 
+If you want to continue generating as you edit, you can run the script in watch mode
+
+```
+npm run --workspace scripts start watch
+```
+
 ### WIP
 
 - [ ] Allow "create" to directly create the directory for the new newsletter
-- [ ] Let build suggest the last couple directories created

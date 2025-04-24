@@ -111,6 +111,10 @@ const { Content, data } = Astro.props;
     @apply text-fujo-pink;
     text-decoration: none;
   }
+
+  .prose :global(h3 a) {
+    @apply text-fujo-purple;
+  }
   .prose :global(h2) :global(a:hover) {
     text-decoration: underline;
     cursor: pointer;
@@ -118,5 +122,28 @@ const { Content, data } = Astro.props;
 
   .prose :global(li) {
     max-width: 68ch;
+  }
+
+  .prose :global(a) {
+    @apply text-fujo-blue decoration-fujo-purple;
+  }
+
+  .prose :global(.toc) {
+    @apply relative rounded-xl border border-fujo-pink bg-white px-12 py-7 pb-8;
+  }
+  .prose :global(.toc h2) {
+    @apply relative z-10  m-0 mb-2;
+  }
+  .prose :global(.toc-level) {
+    @apply relative z-10 m-0 flex list-none flex-col gap-1  p-0 text-fujo-pink;
+  }
+  .prose :global(.toc-level-2) {
+    @apply mt-1 gap-2 pl-6 text-base;
+  }
+  .prose :global(.toc-item) {
+    @apply m-0 p-0;
+  }
+  .prose :global(.toc-link) {
+    @apply text-fujo-blue hover:text-fujo-pink;
   }
 </style>

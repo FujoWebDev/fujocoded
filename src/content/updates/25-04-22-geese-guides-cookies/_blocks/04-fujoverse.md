@@ -2,7 +2,7 @@
 
 ### In the press
 
-![](./images/retro.png)
+![file:](./images/retro.png)
 
 - **Back to the Bubbles:** We’ve published the [Bobaboard retrospective](https://bobaboard.com/retro/development-logs-12)\! This is a once-a-year look back at everything our Bubbly Bubbles of BobaBoard volunteers (some of us included) have been up to. Whilst BobaBoard became our first graduated project last year (and thus moved out of the FujoCoded nest, it’s still deeply tied to us, and we’re helping each other as need be—especially when it comes to effort that benefits both of us (contracts\! Documentation\!)
 - **Bubbling to the Future:** …and just so you know, the retrospective also includes a section on [BobaBoard’s plans for 2025](https://bobaboard.com/retro/development-logs-12#our-2025-plans-sociocracy-intensifies)\! If you’re curious what we’ll be (also) up to, go check that out\!

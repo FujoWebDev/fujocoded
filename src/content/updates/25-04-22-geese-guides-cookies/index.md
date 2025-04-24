@@ -1,7 +1,7 @@
 ---
 title: "FujoCoded LLC: Geese, Guides, and Good Luck Cookies 🪿📔🥠"
 tagline: "Growing bigger, better, and beta!"
-created_at: 2025-04-24T02:33:01.144Z
+created_at: 2025-04-24T04:28:26.180Z
 tags:
   - monthly newsletter
 socials: []
@@ -54,7 +54,7 @@ Now _that_ is what we call impact!
 
 ### In the press
 
-![](./images/retro.png)
+![file:](./images/retro.png)
 
 - **Back to the Bubbles:** We’ve published the [Bobaboard retrospective](https://bobaboard.com/retro/development-logs-12)\! This is a once-a-year look back at everything our Bubbly Bubbles of BobaBoard volunteers (some of us included) have been up to. Whilst BobaBoard became our first graduated project last year (and thus moved out of the FujoCoded nest, it’s still deeply tied to us, and we’re helping each other as need be—especially when it comes to effort that benefits both of us (contracts\! Documentation\!)
 - **Bubbling to the Future:** …and just so you know, the retrospective also includes a section on [BobaBoard’s plans for 2025](https://bobaboard.com/retro/development-logs-12#our-2025-plans-sociocracy-intensifies)\! If you’re curious what we’ll be (also) up to, go check that out\!
@@ -87,7 +87,10 @@ Last but not least, our usual call for hired help and/or willing volunteers\! Th
 If any of these calls for aid sound up your alley, or if you’d like to get involved in other ways, please reach out at [contacts@fujocoded.com](mailto:contacts@fujocoded.com)!
 
 
-That’s all folks!
+## That’s all, folks!
 
-Love,<br />
-The FujoCoded Team _(A Gandering Gathering of Geese)_
+And with this, our update for April concludes. See you next month ([and on
+Twitch](https://www.twitch.tv/essentialrandomness)) for more adventures
+together!
+
+Love,<br /> The FujoCoded Team _(A Gandering Gathering of Geese)_

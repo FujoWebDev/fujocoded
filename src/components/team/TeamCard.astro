@@ -36,6 +36,7 @@ const { name, contacts, avatar } = Astro.props;
   <ul class="flex flex-col p-4 pb-2.5 pt-0 md:p-6 md:pb-[1.125rem] md:pt-0">
     {
       contacts.map((contact) => {
+        const url = new URL(contact.url);
         return (
           <li class="mt-0">
             <a
@@ -61,7 +62,9 @@ const { name, contacts, avatar } = Astro.props;
                 </span>
               )}
               <span class="-mt-1 truncate">
-                {contact.username ? `@${contact.username}` : contact.url}
+                {contact.username
+                  ? `@${contact.username}`
+                  : `${url.hostname}${url.pathname == "/" ? "" : url.pathname}`}
               </span>
             </a>
           </li>

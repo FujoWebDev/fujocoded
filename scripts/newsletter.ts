@@ -126,7 +126,7 @@ if (action === "build" || action == "watch") {
     .filter((d) => d.isDirectory())
     .map((d) => ({
       ...d,
-      ...statSync(path.resolve(d.path, d.name)),
+      ...statSync(path.resolve(d.parentPath, d.name)),
     }))
     .sort((a, b) => b.birthtimeMs - a.birthtimeMs);
   const options = [];
@@ -241,6 +241,9 @@ if (action === "build" || action == "watch") {
       await buildNewsletter();
       s.stop(`Newsletter content updated at ${name}`);
     });
+  }
+  else if (action == "build") {
+    stream.info("Newsletter built at index.md");
   } else {
     throw Error("unknown action");
   }

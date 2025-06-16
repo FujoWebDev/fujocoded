@@ -146,4 +146,12 @@ const { Content, data } = Astro.props;
   .prose :global(.toc-link) {
     @apply text-fujo-blue hover:text-fujo-pink;
   }
+
+  .prose :global(img) {
+    margin-inline: auto;
+  }
+
+  .prose :global(li p:first-child strong:first-child) {
+    @apply text-fujo-pink;
+  }
 </style>

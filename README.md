@@ -29,3 +29,4 @@ npm run --workspace scripts start watch
 ### WIP
 
 - [ ] Allow "create" to directly create the directory for the new newsletter
+- [ ] MDX Plugin: `[Summer Jobs:](#)` => `<a id="summer-jobs" href="#summer-jobs"> Summer Jobs:</a>`

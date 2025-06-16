@@ -132,17 +132,17 @@ if (action === "build" || action == "watch") {
   const options = [];
   lastUpdates[0] &&
     options.push({
-      value: path.resolve(lastUpdates[0].path, lastUpdates[0].name),
+      value: path.resolve(lastUpdates[0].parentPath, lastUpdates[0].name),
       label: lastUpdates[0].name,
     });
   lastUpdates[1] &&
     options.push({
-      value: path.resolve(lastUpdates[1].path, lastUpdates[1].name),
+      value: path.resolve(lastUpdates[1].parentPath, lastUpdates[1].name),
       label: lastUpdates[1].name,
     });
   lastUpdates[2] &&
     options.push({
-      value: path.resolve(lastUpdates[2].path, lastUpdates[2].name),
+      value: path.resolve(lastUpdates[2].parentPath, lastUpdates[2].name),
       label: lastUpdates[2].name,
     });
 

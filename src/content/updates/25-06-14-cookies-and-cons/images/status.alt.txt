@@ -1,0 +1,1 @@
+A status page showing each of the FujoVerse services. All of them are at 100% and in green except for fanworksfeeds which is at 0% and in red.

@@ -1,0 +1,8 @@
+Screenshot of the HTML/CSS/JavaScript learn-along from the Fandom Cookies digital item
+pack. On the left side is a CSS code comment that briefy introduces the fortunes
+generator and lists the table of contents for what will be covered, such as
+styling the fonts and various page elements. On the right is a smaller inset
+thumbnail of the resulting fortunes generator, with Prophet Boba-tan and a red,
+white, and tan or cream color scheme. The current fortune is leave all comments,
+save all fanworks, give all kudos. The user is invited to select a cookie flavor
+with three radio buttons (vanilla, chocolate, or lemon) to get a fortune.

@@ -1,0 +1,1 @@
+ A CSS example for the Fortunes Generator learn-along. It describes the guide and its assumptions (that you&#x27;re familiar with basic CSS), and how to set an accessible font size.

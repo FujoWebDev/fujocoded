@@ -1,14 +1,13 @@
 ---
 title: "Careers, Cons, and Cookies (again) — 🏦 We're Hiring! 🏦"
 tagline: "Boba-tan Wants YOU! ...and her blorbos! (but mostly you)"
-created_at: 2025-06-16T04:15:51.166Z
+created_at: 2025-06-17T21:09:10.794Z
 tags:
   - monthly newsletter
 socials: []
 ---
 
-Greetings, fujoshi, fudanshi, fujin, and friends,
-
+Greetings, fujoshi, fudanshi, fujin, and friends,<br />
 This month, we bring you a double-heaping of hiring, conventions, and cookies to make up for the fact that May’s newsletter is late (or is June’s early?)—we’ve got a lot more than Yaoi cookies on our plates, so we’re eager to outsource some of it. **Time to put _you_ (and our bake sale funds) to work.**
 
 See below for more details!
@@ -85,7 +84,7 @@ See below for more details!
 
   At the con you’ll also find a discount code for our store, and a space to come meet us and get help with your web-dev questions. **If you’d like to [register](https://www.eventbrite.com/e/citrus-con-2025-tickets-949332648507), it’s free but you gotta do it by June 19th!**
 
-- **Better Late than Never:** And speaking of Ms Boba yapping about building collaborative organizations, **she’s just started publishing the blog version of her talk from last year’s CitrusCon**, [“Rebuilding Community on the (Fujo)Web”](https://www.essentialrandomness.com/posts/rebuilding-community-on-the-web/part-1). It’s got everything you want in a _fic_—I mean, _talk_: interpersonal struggle, power dynamics, and a call for Fujos to Assemble.
+- **Better Late than Never:** And speaking of Ms Boba yapping about building collaborative organizations, **she’s started publishing the blog version of her talk from last year’s CitrusCon**, with [“Rebuilding Community on the (Fujo)Web” pt. 1](https://www.essentialrandomness.com/posts/rebuilding-community-on-the-web/part-1) & [“pt. 2 (her favorite)](https://www.essentialrandomness.com/posts/rebuilding-community-on-the-web/part-2). It’s got everything you want in a _fic_—I mean, _talk_: interpersonal struggle, power dynamics, and a call for Fujos to Assemble.
 
 - **Leaving the Nest:** **We also started transitioning the governance of our Fandom Coders Discord server to [Sociocracy](https://www.sociocracyforall.org/content/)**, so that it can grow big and strong with the direct support of its members. This’ll help in our effort to make FujoCoded’s own load more sustainable, and means the community will soon have the power to decide how its own spaces should be run. The first meeting of the Transition bubble/team kicked off to a great start, and the second meeting is already scheduled.
 
@@ -111,7 +110,7 @@ As part of our push for more moneyful delegation, we’re going to periodically 
 
 - **✏️ Writers assemble!** Do you want to help with our NPM articles? Or maybe, you want to help us [sell the lore behind our catboys (and beyond)](https://www.fujoweb.dev/characters) to the wider public? Our [Writers Intake Form](https://forms.gle/DensB2JHppK4A98M8) is for you!
 
-- **💻 WebDev Gigs incoming!** There is _a lot_ going on in the FujoVerse™ and many pages (like our [FujoGuide Volume 0 one](https://www.fujoweb.dev/volume-0)) could use some TLC from entry-level HTML/CSS-wranglers. We also have a few other challenges at different levels we’ll be looking to take care of as we grow. [Join the fight here!](https://forms.gle/HNMHCJ5N5XoV35Y27)
+- **💻 WebDev Gigs incoming!** There is _a lot_ going on in the FujoVerse™ and many pages (like the one on [FujoGuide Volume 0](https://www.fujoweb.dev/volume-0)) could use some TLC from entry-level HTML/CSS-wranglers. We also have a few other challenges at different levels we’ll be looking to take care of as we grow. [Join the fight here!](https://forms.gle/HNMHCJ5N5XoV35Y27)
 
 - **🖼️ Art(ist) Archive!** We’ve got some character art needs in the pipeline (don’t we always?), and we’d love to have even more artists on tap for when that gets firmed up—monsterfucking tendencies appreciated but not required. [Add your info here!](https://forms.gle/Cm2wq9numpBMoUZJA)
 

@@ -1,17 +1,21 @@
 ---
 title: "Careers, Cons, and Cookies (again) — 🏦 We're Hiring! 🏦"
 tagline: "Boba-tan Wants YOU! ...and her blorbos! (but mostly you)"
-created_at: 2025-06-17T21:09:10.794Z
+created_at: 2025-06-17T21:23:50.969Z
 tags:
   - monthly newsletter
-socials: []
+socials:
+  - https://bsky.app/profile/fujocoded.bsky.social/post/3lrtlucis2c2n
+  - platform: mastodon
+    url: https://blorbo.social/@fujocoded/114701235460383452
+  - https://www.tumblr.com/fujocoded/786643398946930688/the-fujocoded-mune-jay-newsletter-is-out?source=share
+  - https://x.com/fujoc0ded/status/1935114651660075136
 ---
 
 Greetings, fujoshi, fudanshi, fujin, and friends,<br />
 This month, we bring you a double-heaping of hiring, conventions, and cookies to make up for the fact that May’s newsletter is late (or is June’s early?)—we’ve got a lot more than Yaoi cookies on our plates, so we’re eager to outsource some of it. **Time to put _you_ (and our bake sale funds) to work.**
 
 See below for more details!
-
 
 ## FujoCoded General Company News
 
@@ -30,7 +34,6 @@ See below for more details!
 - **Baking Your Own:** We’ve been hard at work on the web-dev learn-along included in our latest digital pack: a “fortune cookie” generator website based on our cookie fortunes (with some never-before-seen ones!) **The code comes in beginner and intermediate versions, and it’s chock-full of helpful comments**, HTML and CSS features you may be new to, and some neat JavaScript tricks to help you get started! It was free during the fortune cookies campaign, but if you missed it [you can now pre-order it for $5](https://store.fujocoded.com/products/fandom-cookies/fandom-cookies-digital-items-pack-discounted) (or read below for a discount 👀)!
 
 ![file:](./images/learnalong_css.png)
-
 
 ## FujoCoded Backerkit Update
 
@@ -52,7 +55,6 @@ See below for more details!
 
 ![file:](./images/we_want_you.png)
 
-
 ## The Fujoshi Guide to Web Development
 
 ### Recent Progress on the FujoGuide
@@ -72,7 +74,6 @@ See below for more details!
 - **Git’ing Touchy:** We’re putting the final touches on the new badges and catboy character sheets, and **these new rewards will be corralled into your rewards folder soon!** If you can’t remember where that is, don’t worry: we’ll be sending out email reminders too. If only we can find it ourselves...
 
 - **Beta? I ‘ardly know ‘er! (_sorry_ 🥺):** Don’t worry: **we’re still planning to get the GitHub beta underway as soon as we can!** Ms Boba’s currently focused on CitrusCon like a pirate dying of scurvy, but once we resurrect her using dark magic (that is, plenty of coffee) we’ll be sailing full steam ahead to getting this out. We’ll keep you posted!
-
 
 ## Around the FujoVerse
 
@@ -113,7 +114,6 @@ As part of our push for more moneyful delegation, we’re going to periodically 
 - **💻 WebDev Gigs incoming!** There is _a lot_ going on in the FujoVerse™ and many pages (like the one on [FujoGuide Volume 0](https://www.fujoweb.dev/volume-0)) could use some TLC from entry-level HTML/CSS-wranglers. We also have a few other challenges at different levels we’ll be looking to take care of as we grow. [Join the fight here!](https://forms.gle/HNMHCJ5N5XoV35Y27)
 
 - **🖼️ Art(ist) Archive!** We’ve got some character art needs in the pipeline (don’t we always?), and we’d love to have even more artists on tap for when that gets firmed up—monsterfucking tendencies appreciated but not required. [Add your info here!](https://forms.gle/Cm2wq9numpBMoUZJA)
-
 
 ## That’s all, folks!
 

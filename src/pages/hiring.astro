@@ -1,0 +1,66 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import we_want_you from "../images/we_want_you.png";
+
+const description =
+  "FujoCoded LLC builds projects that make the internet weirder and kinder. Help us by supporting us on our Patreon and store!";
+---
+
+<Layout description={description}>
+  <article class="rounded-xl bg-white drop-shadow-purple">
+    <h1>Paid Opportunities: You can help!</h1>
+
+    <p class="text-pretty text-center">
+      As part of our push for more moneyful delegation, we're going to
+      periodically open new opportunities for people to pitch in and get paid!
+      If you're interested in throwing your <a
+        href="https://store.fujocoded.com/products/paddles">yaoi paddle</a
+      > in the ring, <strong>
+        fill out the forms below and we'll be in touch when a good match shows
+        up.</strong
+      >
+    </p>
+
+    <Image
+      src={we_want_you}
+      alt="A poster showing Boba-tan gleeful in front of fire and under a shower of money, in a very shiny suit jacket and sunglasses doing finger guns and saying 'FujoCoded needs your help!'"
+      class="w-xl mx-auto py-8"
+    />
+    <ul>
+      <li>
+        <p class="text-pretty text-center">
+          <strong>✏️ Writers assemble!</strong> Do you want to help with our NPM
+          articles? Or maybe, you want to help us <a
+            href="https://www.fujoweb.dev/characters"
+            >sell the lore behind our catboys (and beyond)</a
+          > to the wider public? Our <a
+            href="https://forms.gle/DensB2JHppK4A98M8">Writers Intake Form</a
+          > is for you!
+        </p>
+      </li>
+      <li>
+        <p class="text-pretty text-center">
+          <strong>💻 WebDev Gigs incoming!</strong> There is <em>a lot</em> going
+          on in the FujoVerse™ and many pages (like the one on <a
+            href="https://www.fujoweb.dev/volume-0">FujoGuide Volume 0</a
+          >) could use some TLC from entry-level HTML/CSS-wranglers. We also
+          have a few other challenges at different levels we’ll be looking to
+          take care of as we grow. <a href="https://forms.gle/HNMHCJ5N5XoV35Y27"
+            >Join the fight here!</a
+          >
+        </p>
+      </li>
+      <li>
+        <p class="text-pretty text-center">
+          <strong>🖼️ Art(ist) Archive!</strong> We’ve got some character art needs
+          in the pipeline (don’t we always?), and we’d love to have even more artists
+          on tap for when that gets firmed up—monsterfucking tendencies appreciated
+          but not required. <a href="https://forms.gle/Cm2wq9numpBMoUZJA"
+            >Add your info here!</a
+          >
+        </p>
+      </li>
+    </ul>
+  </article>
+</Layout>

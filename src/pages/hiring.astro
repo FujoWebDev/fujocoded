@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import { Image } from "astro:assets";
 import we_want_you from "../images/we_want_you.png";
+import SubscriptionForm from "../components/SubscriptionForm.astro";
 
 const description =
   "FujoCoded LLC builds projects that make the internet weirder and kinder. Help us by supporting us on our Patreon and store!";
@@ -62,5 +63,14 @@ const description =
         </p>
       </li>
     </ul>
+    <hr class="my-10" />
+
+    <p class="text-pretty text-center">
+      None of these catch your eye right now? Hear about future opportunities in
+      our newsletter! ✨
+    </p>
+    <p class="text-pretty text-center">
+      <SubscriptionForm />
+    </p>
   </article>
 </Layout>

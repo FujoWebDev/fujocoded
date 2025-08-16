@@ -1,10 +1,5 @@
 ---
-title: "Catboys, Cons, and Cookies"
-tagline: "Ms Boba is blasting off on the world stage, we've got more articles, and we need YOU to sell our paddles!"
-created_at: 2025-08-16T21:51:09.031Z
-tags:
-  - monthly newsletter
-socials: []
+title: "undefined"
 ---
 
 Greetings, fujoshi, fudanshi, fujin, and friends,

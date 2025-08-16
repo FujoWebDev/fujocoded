@@ -9,6 +9,7 @@
 - Provide a preview image for it too 
 
 - Get me a profile link for Hyena
+- Section link for the card dropoff, in the hiring section
 
 ## Backerkit Recent - Fujoguide
 - Get a preview Git badge

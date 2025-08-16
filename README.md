@@ -8,19 +8,41 @@ You can run this website with `npm run dev`.
 
 ## Newsletter Generation Script
 
-To create a new newsletter entry run:
+### Create a new newsletter
+
+```
+npm run newsletter:create
+```
+
+OR
 
 ```
 npm run --workspace scripts start create
 ```
 
-Once all the blocks are filled run this to generate the various entries:
+### Generate content for a newsletter
+
+Once all the blocks are filled, generate the final versions with:
+
+```
+npm run newsletter:build
+```
+
+OR
 
 ```
 npm run --workspace scripts start build
 ```
 
-If you want to continue generating as you edit, you can run the script in watch mode
+### Generate content for a newsletter (watch mode)
+
+If you want to continue generating as you edit, you can run the script in watch mode:
+
+```
+npm run newsletter:watch
+```
+
+OR
 
 ```
 npm run --workspace scripts start watch
@@ -28,5 +50,4 @@ npm run --workspace scripts start watch
 
 ### WIP
 
-- [ ] Allow "create" to directly create the directory for the new newsletter
 - [ ] MDX Plugin: `[Summer Jobs:](#)` => `<a id="summer-jobs" href="#summer-jobs"> Summer Jobs:</a>`

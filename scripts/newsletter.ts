@@ -12,6 +12,7 @@ import {
 import path from "path";
 const program = new Command();
 
+const NEWSLETTERS_ROOT = "src/content/updates";
 const BLOCKS = [
   "intro",
   "fujocoded",
@@ -78,50 +79,53 @@ program.parse(process.argv);
 const action = program.args[0];
 
 if (action === "create") {
-  const name = await text({
-    message: "Where should we save the newsletter?",
-    placeholder: "src/content/updates",
+  let name = await text({
+    message: "What's the slug of this newsletter?",
+    placeholder: "25-04-20-some-funny-name",
     validate: (value) => {
-      if (
-        !value ||
-        !existsSync(path.resolve(process.cwd(), "..", value)) ||
-        !statSync(path.resolve(process.cwd(), "..", value)).isDirectory()
-      ) {
-        return new Error("Please enter a valid path");
+      if (!value) {
+        return new Error("Please enter a slug");
+      }
+      if (value.trim().match(/\s/)) {
+        return new Error("The slug cannot contain spaces");
       }
       return undefined;
     },
   });
   if (typeof name === "symbol") {
-    throw new Error("Please enter a valid path");
+    throw new Error("Please enter a valid slug");
   }
-  mkdirSync(path.resolve(process.cwd(), "..", name, "_blocks"), {
+  name = name.trim();
+  const newsletterRoot = path.resolve(
+    process.cwd(),
+    "..",
+    NEWSLETTERS_ROOT,
+    name,
+  );
+  mkdirSync(path.resolve(newsletterRoot, "_blocks"), {
     recursive: true,
   });
   let blockIndex = 0;
   for (const block of BLOCKS) {
     writeFileSync(
       path.resolve(
-        process.cwd(),
-        "..",
-        name,
+        newsletterRoot,
         `_blocks/${blockIndex.toString().padStart(2, "0")}-${block}.md`,
       ),
       "",
     );
     blockIndex++;
   }
-  await outro(`Newsletter blocks created at ../${name}/_blocks`);
+  await outro(
+    `Newsletter blocks created at ${path.resolve(newsletterRoot, "_blocks")}`,
+  );
 }
 
 if (action === "build" || action == "watch") {
   const lastUpdates = (
-    await readdirSync(
-      path.resolve(process.cwd(), "..", "src/content/updates"),
-      {
-        withFileTypes: true,
-      },
-    )
+    await readdirSync(path.resolve(process.cwd(), "..", NEWSLETTERS_ROOT), {
+      withFileTypes: true,
+    })
   )
     .filter((d) => d.isDirectory())
     .map((d) => ({
@@ -146,18 +150,27 @@ if (action === "build" || action == "watch") {
       label: lastUpdates[2].name,
     });
 
+  const A_NEW_ONE = "A_NEW_ONE";
   let name = await select({
     message: "Which newsletter do you want to build?",
-    options: [...options, { value: "", label: "Custom path" }],
+    options: [
+      ...options,
+      { value: "", label: "Another one" },
+      { value: A_NEW_ONE, label: "A new one" },
+    ],
   });
 
   if (typeof name === "symbol") {
     throw new Error("Please enter a valid path");
   }
+  if (name === A_NEW_ONE) {
+    await stream.error(`You should use the "create" command then :P`);
+    process.exit();
+  }
   if (name === "") {
     name = await text({
-      message: "Where is the newsletter located?",
-      placeholder: "./src/content/updates",
+      message: "What's the newsletter slug?",
+      placeholder: "25-04-20-an-existing-name",
     });
   }
 
@@ -166,7 +179,7 @@ if (action === "build" || action == "watch") {
   }
 
   const fileContent = readFileSync(
-    path.resolve(process.cwd(), "..", name, "index.md"),
+    path.resolve(process.cwd(), "..", NEWSLETTERS_ROOT, name, "index.md"),
     "utf-8",
   );
 
@@ -197,7 +210,7 @@ if (action === "build" || action == "watch") {
     }),
     new Error("Please enter a valid tagline"),
   );
-  const directory = path.resolve(process.cwd(), "..", name);
+  const directory = path.resolve(process.cwd(), "..", NEWSLETTERS_ROOT, name);
   const blocksDirectory = path.resolve(directory, "_blocks");
 
   const buildNewsletter = async () => {
@@ -235,14 +248,16 @@ if (action === "build" || action == "watch") {
   await buildNewsletter();
   s.stop(`Newsletter content created at ${name}`);
   if (action == "watch") {
-    stream.info("Now watching newsletter content...");
+    stream.info([
+      "Now watching newsletter content...",
+      `Find the blocks to edit at ${blocksDirectory}`,
+    ]);
     watch(blocksDirectory, async () => {
       s.start("Rebuilding newsletter content...");
       await buildNewsletter();
       s.stop(`Newsletter content updated at ${name}`);
     });
-  }
-  else if (action == "build") {
+  } else if (action == "build") {
     stream.info("Newsletter built at index.md");
   } else {
     throw Error("unknown action");

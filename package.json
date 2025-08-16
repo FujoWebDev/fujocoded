@@ -6,6 +6,9 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro check && astro build",
+    "newsletter:create": "npm run --workspace scripts start create",
+    "newsletter:build": "npm run --workspace scripts start build",
+    "newsletter:watch": "npm run --workspace scripts start watch",
     "preview": "astro preview",
     "astro": "astro"
   },

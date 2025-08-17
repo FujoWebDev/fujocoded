@@ -2,7 +2,6 @@
 
 ## Overall
 - Write up IDs where necessary.
-- Put in images where necessary.
 
 ## General news
 - Link the slides for the CitrusCon talk

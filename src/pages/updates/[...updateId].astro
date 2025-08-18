@@ -150,8 +150,21 @@ const { Content, data } = Astro.props;
   .prose :global(img) {
     margin-inline: auto;
   }
+  .prose :global(code) {
+    @apply font-zeitung;
+    letter-spacing: -1.5px;
+  }
+  .prose :global(::before) {
+    content: "";
+  }
+  .prose :global(::after) {
+    content: "";
+  }
 
-  .prose :global(li p:first-child strong:first-child) {
+  .prose
+    :global(
+      :where(li p:first-child strong:first-child, li > strong:first-child)
+    ) {
     @apply text-fujo-pink;
   }
 </style>

@@ -9,13 +9,9 @@
 - **Lemon-stealing Applause \#1:** Ms Boba’s CitrusCon talk “Working Together in
   a Dying World” debuted to raving reviews. If you want to ~~hear~~ read about
   toxic collaboration triangles, and toxic triangular villains, you can find the
-  slides here (XXX), and various related works on AO3, we’re sure. TODO: preview
-  image
+  slides here (XXX), and various related works on AO3, we’re sure.
 
-- **Encore:** Hot off of that, Ms Boba then jumped into the DashCon 2 ball pit
-  to share her talk from last year again, this time with added testimonial from
-  the Cohost runner about how shit’s, well, still pretty fucked in the “running
-  social media platforms” world…and in her schedule.
+  ![file:](./images/presentation-feedback.png)
 
 - **That’s How the Cookie Crumbles:** Our [Fandom
   Cookies](https://store.fujocoded.com/) are all mailed out and no longer

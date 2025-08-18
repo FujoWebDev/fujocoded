@@ -1,7 +1,7 @@
 ---
 title: "New Ones Come in Pairs: NPM Articles, Patreon Tiers (& Catboys)"
 tagline: "This month more than ever, “everything” happens so much! And by everything, we mean our new updates."
-created_at: 2025-08-18T07:44:12.855Z
+created_at: 2025-08-18T07:53:52.182Z
 tags:
   - monthly newsletter
 socials: []
@@ -80,6 +80,8 @@ Let's dive right in!
   Even with these obstacles our hired writers knocked it out of the park. You
   can find the fruits of their labour [in the newest “JavaScript beyond the
   Browser” section](https://learn.fujoweb.dev/) of learn@fujoweb.dev\!
+
+  ![file:](./images/npm-exercise.png)
 
 - **Feeding Frenzy:** We’ve also learned that _holy hell_, fans tasked with
   “simply uploading” new article drafts on our learning site will instead rip

@@ -9,6 +9,8 @@
   can find the fruits of their labour [in the newest “JavaScript beyond the
   Browser” section](https://learn.fujoweb.dev/) of learn@fujoweb.dev\!
 
+  ![file:](./images/npm-exercise.png)
+
 - **Feeding Frenzy:** We’ve also learned that _holy hell_, fans tasked with
   “simply uploading” new article drafts on our learning site will instead rip
   them apart like piranhas on a cow, and rebuild them better like… piranha

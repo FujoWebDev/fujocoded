@@ -7,7 +7,7 @@
 ## General news
 
 - [ ] Link the slides for the CitrusCon talk
-- [ ] Provide a preview image for it too
+- [x] Provide a preview image for it too
 
 - [ ] Get me a profile link for Hyena
 - [ ] Section link for the card dropoff, in the hiring section
@@ -15,7 +15,7 @@
 ## Backerkit Recent - Fujoguide
 
 - [ ] Get a preview Git badge
-- [ ] Decide whether to keep the FujoGuide issue 1 preview news or not
+- [x] Decide whether to keep the FujoGuide issue 1 preview news or not
 
 ## Backerkit Future - FujoGuide
 

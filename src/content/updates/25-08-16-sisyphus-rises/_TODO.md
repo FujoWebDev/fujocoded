@@ -6,32 +6,36 @@
 
 ## General news
 
-- [ ] Link the slides for the CitrusCon talk
+- [x] Link the slides for the CitrusCon talk
 - [x] Provide a preview image for it too
+- [x] Write up ID where necessary.
 
-- [ ] Get me a profile link for Hyena
-- [ ] Section link for the card dropoff, in the hiring section
+- [x] Get me a profile link for Hyena
+- [x] Section link for the card dropoff, in the hiring section
 
 ## Backerkit Recent - Fujoguide
 
-- [ ] Get a preview Git badge
+- [x] Get a preview Git badge
 - [x] Decide whether to keep the FujoGuide issue 1 preview news or not
+- [ ] Write up catboys + badges announcements
 
 ## Backerkit Future - FujoGuide
 
-- [ ] Link for the cookies learnalong
+- [x] Link for the cookies learnalong
 
 ## Fujoverse
 
-- [ ] Link for the Rebuilding Community on the FujoWeb recording
+- [x] Link for the Rebuilding Community on the FujoWeb recording
 - [ ] Link for the third part of that blog
-- [ ] Something witty for the paddle block =P
+- [x] Something witty for the paddle block =P
 
-- [ ] Link to digital pack
-- [ ] Gingerchew profile link
+- [x] Link to digital pack
+- [x] Gingerchew profile link
 
-- [ ] Write up the "In the community" bits.
+- [x] Write up the "In the community" bits.
 
 - [ ] Date for streaming schedule and Astro talk.
 
-- [ ] Write up the hiring section.
+- [x] Write up the hiring section.
+- [ ] Form for hte hiring section
+- [ ] Fix up the hiring section

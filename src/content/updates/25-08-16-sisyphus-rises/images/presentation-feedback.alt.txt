@@ -1,1 +1,7 @@
-TODO
+A slide of a presentation with comments placed over it. The slide says "Working Together in a Dying World (in Comic Sans) by FujoCoded" and the comments say
+
+"there are people out there who feel like I do but are coherent enough to make presentations about it"
+
+"this was what I needed"
+
+"graphics are incredible, 10/10, laughing as I cry"

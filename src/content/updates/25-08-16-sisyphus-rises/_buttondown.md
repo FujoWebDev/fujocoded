@@ -3,10 +3,9 @@ title: "New Ones Come in Pairs: NPM Articles, Patreon Tiers (& Catboys)"
 ---
 
 <span class="text-xl text-fujo-pink">Greetings, _fu(jo|dan|jin)_ and friends,
-<br/></span>
-It's been a busy busy time in the Fujoverse: plenty of lessons learned, cool
-stuff sent out (and preparing to be sent), plus new [learn@
-articles](https://learn.fujoweb.dev/) written—and how could we forget the
+<br/></span> It's been a busy busy time in the Fujoverse: plenty of lessons
+learned, cool stuff sent out (and preparing to be sent), plus new [learn@
+articles](https://learn.fujoweb.dev/) written—and how could we forget...the
 catboys?
 
 Let's dive right in!
@@ -18,12 +17,14 @@ Let's dive right in!
   tiers](https://www.patreon.com/join/fujocoded): **"Supporter Georg”**, because
   someone asked to give $100, and **“You Fund Me(ette)?”**, because we had to
   make a $50 one too, just for good measure\! We’re running out of names though
-  so don’t ask us for $200… unless? 👀 (if you can't find them, just keep going
+  so don’t ask us for $200… unless? 👀 (if you can't [find them on
+  Patreon](https://www.patreon.com/join/fujocoded), just keep clicking to the
   right 😜)
-- **Lemon-stealing Applause \#1:** Ms Boba’s CitrusCon talk “Working Together in
-  a Dying World” debuted to raving reviews. If you want to ~~hear~~ read about
-  toxic collaboration triangles, and toxic triangular villains, you can find the
-  slides here (XXX), and various related works on AO3, we’re sure.
+- **Lemon-stealing Applause \#1:** Ms Boba’s CitrusCon talk **“Working Together in
+  a Dying World”debuted to raving reviews.** If you want to ~~hear~~ read about
+  toxic collaboration triangles, and toxic triangular villains, [you can find
+  the slides here](https://essentialrandomness.com/working-together) and
+  various thematically-related works on AO3, we’re sure.
 
   ![file:](./images/presentation-feedback.png)
 
@@ -39,11 +40,12 @@ Let's dive right in!
 
   ![file:](./images/cookies2.png)
 
-- **Here’s Some We Made Earlier:** If that’s not enough, [the Digital Cookie
+- **Here’s Some We Made Earlier:** If that’s not enough, **[the Digital Cookie
   Pack](https://store.fujocoded.com/products/other/fandom-cookies-digital-items-pack)
-  is also nearly ready and we’ve hired Hyena, also featured in our campaign art,
-  to make some delicious cookie-themed wallpapers using both their immensurate
-  visual skills _and_ [our CSS wallpaper
+  is also nearly ready** and we’ve hired
+  [Hyena](https://fluffyhyena.neocities.org/), also featured in our promotional
+  art, to make some delicious cookie-themed wallpapers using both their
+  immensurate visual skills _and_ [our CSS wallpaper
   maker](https://github.com/FujoWebDev/wallpaper-maker).
 
 - **Getting Our Teaching Degree:** Speaking of the [Digital Cookie
@@ -51,7 +53,7 @@ Let's dive right in!
   we’re _also_ working on the JS/HTML/CSS learn-along which is going steady, but
   taught us that even our multitasking has limits… at least when it comes to
   deadlines. Next time, only “basic” _or_ “fancy” code in our learn-alongs, not
-  both\!
+  both!
 
 - **Planning for Success:** Q3 planning for Fujoverse is done, in the nick of
   time\! We’re going to continue hiring more people, and laying the foundations
@@ -59,10 +61,11 @@ Let's dive right in!
   hot?) sweat thinking about TypeScript. You can read about the NPM outsourcing
   [below](#FujoCoded-BackerKit-Fulfillment-Progress:-Recent) or simply gaze at
   one of Ms Boba’s humungous project management charts in equal awe and fear\!
-  If you’d like to be confronted by one of those monstrosities (and paid for
-  your service), drop a card below\!
 
-![file:](./images/chart.png)
+  ![file:](./images/chart.png)
+
+  If you’d like to be confronted by one of those monstrosities (and paid for
+  your service), [drop a card below](#we-are-hiring)!
 
 
 ## FujoCoded Backerkit Update
@@ -177,19 +180,19 @@ Let's dive right in!
 - **~~Seeing~~ Talking Double:** Hot off the tails of her newest Citrus Con
   talk, Ms Boba jumped straight into the DashCon 2 ball pit to give last year’s
   again. Check out [the new “Rebuilding Community on the FujoWeb”
-  recording](TODO) to hear about how shit’s, well, _still pretty fucked_ in the
-  “running social media platforms” world. Now featuring Cohost’s runner's own
-  testimonial.
+  recording](https://www.youtube.com/watch?v=glAHIjtmYmk) to hear about how
+  shit’s, well, _still pretty fucked_ in the “running social media platforms”
+  world. Now featuring Cohost’s runner's own testimonial.
 - **Writing Triple:** If _watching_ is not your cup of (git)tea, the third and
   last part of “Rebuilding Community on the FujoWeb” is also all yours for
   _reading_\! Continue from where you left off to [learn more about the journey
-  ahead](TODO), or start back from the beginning [to understand how we got here](TODO)
-  (and how we might get out).
+  ahead](TODO), or start back from the beginning [to understand how we got
+  here](TODO) (and how we might get out).
 - **Boards Love Cameo:** Our FujoBoards got even more web-famous this month
   after they were featured on esteemed-BL-manga-publisher Seven Seas
   Entertainment’s [own Twitter
-  account](https://x.com/fujoc0ded/status/1952809772983755012). "Senpai noticed us"
-  ...and bought our wares (and hearts).
+  account](https://x.com/fujoc0ded/status/1952809772983755012). "Senpai noticed
+  us—" (and our wares, and our hearts).
 
   ![file:](./images/paddle.png)
 
@@ -203,16 +206,17 @@ Let's dive right in!
 - **Wall Pa(m)pered:** our [“HTML\&CSS Wallpaper
   Maker”](https://github.com/FujoWebDev/wallpaper-maker) got an upgrade\! With
   our memory of its inner workings dusted off for our Fortune Cookies wallpapers
-  (soon in our digital pack\!), we’ve released our “internal upgrades” for
+  ([soon in our digital pack!](https://store.fujocoded.com/products/other/fandom-cookies-digital-items-pack)), we’ve released our “internal upgrades” for
   everyone to enjoy: _you too_ can now import HTML snippets across multiple
   wallpapers. **What better way to practice your HTML & CSS?** Make some, and
   share them with us!
-- **Long Staffed:** `@bobaboard/ao3.js` got a _tiny bit_ more powerful
-  thanks to _a_ short-but-mighty external contribution: our friend
-  Gingerchew—_thank you\!_—added built-in support for short “ao3.org” links\!
-  Want to help us develop even more features? [Open or grab an
-  issue](https://github.com/FujoWebDev/AO3.js/issues), or be a “pinch-hitter” for [one
-  of our open
+- **Long Staffed:** `@bobaboard/ao3.js` got a _tiny bit_ more powerful thanks to
+  _a_ short-but-mighty external contribution: [our friend
+  Gingerchew](https://queer.party/@gingerchew)—_thank you\!_—added built-in
+  support for short “ao3.org” links\! Want to help us develop even more
+  features? [Open or grab an
+  issue](https://github.com/FujoWebDev/AO3.js/issues), or be a “pinch-hitter”
+  for [one of our open
   PRs](https://github.com/FujoWebDev/AO3.js/pulls?q=is:open+is:pr+label:%22%E2%9A%BE+Needs+Pinch+Hitter%22)**.**
   All skill levels are welcome\!
 
@@ -233,6 +237,38 @@ NPM ones we’re already planning?
 Join us on \[date tbd\], and let’s discuss\!
 
 ## We Are Hiring!
+
+It remains true, month after month: writers, coders, and artists are _always_
+welcome to submit their business cards via our [Business Cards Drop-off
+Forms](https://fujocoded.com/hiring)! As we get more opportunities for (small)
+gigs, we always consider our current contacts as well as new ones.
+
+With this preamble, welcome to the special contracting opportunities we're
+hiring for at this time 👇
+
+- **💰Digital Relea$e:** Are you a hype-generating machine? Do you know how to
+  make online dwellers' hearts go _doki doki_? **Help us create a release plan
+  for [our upcoming Digital
+  Pack](https://store.fujocoded.com/products/other/fandom-cookies-digital-items-pack)!**
+  You won't have to do _everything_ yourself, but this task involves helping us
+  think through (and writing some) content to land this release across our
+  different channels...and getting people to share our joy (and, hopefully,
+  their money)!
+- 💰**WRITEME.md:** Do you like writing? Do you like (some light) coding? Do you
+  like using pre-made libraries, maybe even _Astro integrations_, to (as they
+  say) "supercharge" your coding powers,? **Come explain to others how to use
+  our code by writing [the `README.md`
+  files](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-readmes)
+  for our repositories!** First step: our WIP [`@fujocoded/authproto`
+  integration](https://github.com/FujoWebDev/fujocoded-plugins/tree/main/astro-authproto)
+  for adding ATproto authentication to Astro sites!
+
+**[New] Wish to express special interest for these currently-open
+opportunities?** Does one _just call_ to you at the _perfect_ time, but you
+already filled [our usual forms](https://fujocoded.com/hiring) (or they aren't
+quite right)? [Use our **new, expedited** "Hiring Right Now"
+form!](https://forms.gle/xQtKhiT9E1KEsn9c6) to more quickly let us know you'd be
+a perfect match.
 
 
 ## That's all, folks!

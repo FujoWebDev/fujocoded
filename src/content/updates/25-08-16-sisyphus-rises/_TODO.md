@@ -27,6 +27,7 @@
 
 - [x] Link for the Rebuilding Community on the FujoWeb recording
 - [ ] Link for the third part of that blog
+- [ ] Link in blog to the 3rd part
 - [x] Something witty for the paddle block =P
 
 - [x] Link to digital pack
@@ -34,8 +35,8 @@
 
 - [x] Write up the "In the community" bits.
 
-- [ ] Date for streaming schedule and Astro talk.
+- [x] Date for streaming schedule and Astro talk.
 
 - [x] Write up the hiring section.
-- [ ] Form for hte hiring section
-- [ ] Fix up the hiring section
+- [x] Form for hte hiring section
+- [x] Fix up the hiring section

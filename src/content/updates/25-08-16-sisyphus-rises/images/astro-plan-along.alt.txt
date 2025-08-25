@@ -1,0 +1,3 @@
+A poster advertising an Astro stream. It says "learn@FujoWeb.dev presents Special Stream: Learning Path plan-along". The stream is to brainstorm new Astro articles together and is at Thursday September 4th, 3pm Pacific time, on the "essentialrandomness" channel on Twitch. 
+
+In the corner is Boba-tan holding a rubber duck saying "We can ship it!"

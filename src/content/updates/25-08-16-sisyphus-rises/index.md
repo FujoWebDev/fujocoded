@@ -1,7 +1,7 @@
 ---
 title: "New Ones Come in Pairs: NPM Articles, Patreon Tiers (& Catboys)"
 tagline: "This month more than ever, “everything” happens so much! And by everything, we mean our new updates."
-created_at: 2025-08-25T02:21:11.136Z
+created_at: 2025-08-25T23:09:30.016Z
 tags:
   - monthly newsletter
 socials: []

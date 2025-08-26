@@ -1,0 +1,5 @@
+The shop page for FujoGuide Volume 0 Issue 1 on Git which costs $12. 
+
+The cover shows Boba-tan sitting and posing, holding tiny figures of Terminal, Git, Aria, and HTML. 
+
+It is subtitled "Local version control with Git".

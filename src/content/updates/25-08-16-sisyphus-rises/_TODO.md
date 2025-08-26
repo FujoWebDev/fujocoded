@@ -26,7 +26,7 @@
 ## Fujoverse
 
 - [x] Link for the Rebuilding Community on the FujoWeb recording
-- [ ] Link for the third part of that blog
+- [x] Link for the third part of that blog
 - [ ] Link in blog to the 3rd part
 - [x] Something witty for the paddle block =P
 

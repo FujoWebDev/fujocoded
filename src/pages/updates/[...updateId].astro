@@ -167,7 +167,11 @@ const { Content, data } = Astro.props;
 
   .prose
     :global(
-      :where(li p:first-child strong:first-child, li > strong:first-child)
+      :where(
+        li p:first-child strong:first-child,
+        li > strong:first-child,
+        li > strong:first-child code
+      )
     ) {
     @apply text-fujo-pink;
   }

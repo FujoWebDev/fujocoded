@@ -4,8 +4,8 @@ title: "New Ones Come in Pairs: NPM Articles, Patreon Tiers (& Catboys)"
 
 <span class="text-xl text-fujo-pink">Greetings, _fu(jo|dan|jin)_ and friends,
 <br/></span> It's been a busy busy time in the Fujoverse: plenty of lessons
-learned, cool stuff sent out (and preparing to be sent), plus new [learn@
-articles](https://learn.fujoweb.dev/) written—and how could we forget...the
+learned, cool stuff sent out (and preparing to be sent), plus [new learn@
+articles](https://learn.fujoweb.dev/)—and how could we forget...the
 catboys?
 
 Let's dive right in!
@@ -15,12 +15,12 @@ Let's dive right in!
 
 - **Buy Our Love:** We have not one, but [TWO new Patreon
   tiers](https://www.patreon.com/join/fujocoded): **"Supporter Georg”**, because
-  someone asked to give $100, and **“You Fund Me(ette)?”**, because we had to
+  someone asked to give us $100, and **“You Fund Me(ette)?”**, because we had to
   make a $50 one too, just for good measure\! We’re running out of names though
   so don’t ask us for $200… unless? 👀 (if you can't [find them on
   Patreon](https://www.patreon.com/join/fujocoded), just keep clicking to the
   right 😜)
-- **Lemon-stealing Applause \#1:** Ms Boba’s CitrusCon talk **“Working Together in
+- **Lemon-stealing Applause:** Ms Boba’s CitrusCon talk **“Working Together in
   a Dying World”debuted to raving reviews.** If you want to ~~hear~~ read about
   toxic collaboration triangles, and toxic triangular villains, [you can find
   the slides here](https://essentialrandomness.com/working-together) and
@@ -28,8 +28,8 @@ Let's dive right in!
 
   ![file:](./images/presentation-feedback.png)
 
-- **That’s How the Cookie Crumbles:** Our [Fandom
-  Cookies](https://store.fujocoded.com/) are all mailed out and no longer
+- **That’s How the Cookie Crumbles:** **Our [Fandom
+  Cookies](https://store.fujocoded.com/) are all mailed out** and no longer
   threaten to crush Ms Boba in a devastating, if hilarious, avalanche—which
   means people have already been stuffing their mouths with delicious treats\!
   And also the cookies. Thanks to
@@ -50,70 +50,76 @@ Let's dive right in!
 
 - **Getting Our Teaching Degree:** Speaking of the [Digital Cookie
   Pack](https://store.fujocoded.com/products/other/fandom-cookies-digital-items-pack)**,**
-  we’re _also_ working on the JS/HTML/CSS learn-along which is going steady, but
-  taught us that even our multitasking has limits… at least when it comes to
-  deadlines. Next time, only “basic” _or_ “fancy” code in our learn-alongs, not
-  both!
+  **we’re _also_ working on [the promised JS/HTML/CSS
+  learn-along](https://store.fujocoded.com/products/other/fandom-cookies-digital-items-pack).**
+  It is going steady, but ut taught us that even our multitasking has limits… at
+  least when it comes to deadlines. Next time, only a “basic" _or_ “fancy" code
+  version in our learn-alongs, not both!
 
 - **Planning for Success:** Q3 planning for Fujoverse is done, in the nick of
-  time\! We’re going to continue hiring more people, and laying the foundations
-  to keep that sustainable, so that Ms Boba no longer wakes up in a cold (or
-  hot?) sweat thinking about TypeScript. You can read about the NPM outsourcing
-  [below](#FujoCoded-BackerKit-Fulfillment-Progress:-Recent) or simply gaze at
+  time\! **We’re going to continue hiring more people, and laying the
+  foundations to make our work sustainable**, so that Ms Boba no longer wakes up
+  in a cold (or hot?) sweat thinking about (teaching) TypeScript. You can read
+  [about our NPM articles outsourcing
+  below](#FujoCoded-BackerKit-Fulfillment-Progress:-Recent) or simply gaze at
   one of Ms Boba’s humungous project management charts in equal awe and fear\!
 
   ![file:](./images/chart.png)
 
   If you’d like to be confronted by one of those monstrosities (and paid for
-  your service), [drop a card below](#we-are-hiring)!
+  your service), [drop your card in the hiring section below](#we-are-hiring)!
 
 
 ## FujoCoded Backerkit Update
 
 ### FujoCoded BackerKit Fulfillment Progress: Recent
 
-- **NPMployees:** We landed our first articles—that you paid for\!—written by
-  someone _other_ than Ms Boba and learned a lot from the process\! Such as
+- **NPMployees:** **We landed our first articles**—that you paid for\!—**written by
+  someone _other_ than Ms Boba**, and learned a lot from the process\! Such as
   “_Wow, this stuff costs money_” and “_Huh, other people write differently to me_”.
   Even with these obstacles our hired writers knocked it out of the park. You
-  can find the fruits of their labour [in the newest “JavaScript beyond the
-  Browser” section](https://learn.fujoweb.dev/) of learn@fujoweb.dev\!
+  can find the fruits of their labour [in the new “JavaScript beyond the
+  Browser” section](https://learn.fujoweb.dev/) of learn@<span>fujoweb.dev</span>\!
 
   ![file:](./images/npm-exercise.png)
 
-- **Feeding Frenzy:** We’ve also learned that _holy hell_, fans tasked with
-  “simply uploading” new article drafts on our learning site will instead rip
-  them apart like piranhas on a cow, and rebuild them better like… piranha
+- **Feeding Frenzy:** We’ve also learned that _holy hell_, **fans tasked with
+  “just uploading” new article drafts on our learning site will instead rip
+  them apart** like piranhas on a cow, and rebuild them better like… piranha
   scientists on a cyborg cow. Unlike this simile, the final articles came out
   great\! Next time, we’ll save time and effort by _intentionally_ channeling
-  this energy, perhaps into some kind of FujoBeam.
+  this energy, perhaps into some kind of prose-editing FujoBeam.
 
 - **Barely Beginners:** We also got some great feedback about our terminology:
   turns out a lotta people read “beginners” to mean “Starting from scratch”
-  rather than our “ankle-deep and wanting more”. With this in mind, we’re gonna
-  look over our messaging for learn@ and beyond, so we can fujo-snipe our main
-  targets into coding forces of ~~nature~~ yaoi\!
+  rather than our “Ankle-deep and wanting more”. With this in mind, **we’re gonna
+  work on improving our messaging for learn@ and beyond**, so we can
+  fujo-snipe our main targets into coding forces of ~~nature~~ yaoi\!
 
-- **A Need for NPM:** Finally, our NPM articles had a bit of a mid-creation
-  crisis—they’re useful, but it’s not always obvious why, especially to
-  ~~beginners~~ _hobbyists_. Next month, we’re taking them out to buy a
-  motorbike and hook them up with Astro so that _you_ can shoot for the stars.
-  More below\!
+- **A Need for NPM:** Finally, our new content had a bit of a mid-creation
+  crisis—**the NPM articles are useful, but it’s not always clear where they
+  _fit_,** especially to ~~beginners~~ hobbyists. Next up, we’re taking them out
+  to buy a motorbike and hooking them up with Astro, so that together you _all_
+  can shoot for the stars. [More below\!](#fujocoded-backerkit-fulfillment-progress-future)
 
 ### FujoCoded BackerKit Fulfillment Progress: Future
 
-- **Dressing to Impress:** One of our article writers,
-  [Rie](https://notavodkashot.carrd.co/), gave us some excellent post-delivery
-  advice like how to do “better storytelling” and “stricter content guidelines”,
-  which they claim are “important”. We’ll be evolving the style guide in
-  preparation for our next learn@ releases\!
+- **Dressing to Impress:** **One of our writers**,
+  [Rie](https://notavodkashot.carrd.co/), **gave us some excellent
+  post-article-delivery advice**, like how to do “better storytelling” and
+  "clearer content guidelines”, which they claim are “important”. Under their
+  guidance, we’ll be evolving the style guide in preparation for our next learn@
+  releases\!
 
-- **Shooting for the Stars:** To showcase NPM’s learning value, we’re gonna be
-  tying our NPM articles closer to Astro like it’s a 3-legged race\! We’re still
-  figuring out how, but we’ll keep you all updated—nay, _involved_: we’ll be
-  gathering feedback _live_ from _you_ on stream*\!* Join our “learn@ planning,
-  Astro edition” [Twitch stream](http://twitch.tv/essentialrandomness) on
-  \[TBD\]\!
+- **Shooting for the Stars:** As mentioned, we plan to showcase NPM’s learning
+  value by tying it closer to Astro like it’s a 3-legged race\! We’re still
+  working on the details, but we’ll keep you all updated—nay, _involved_: **next
+  week, we’ll be gathering feedback _live_ from _you_ on stream\*\!** Join our
+  “Learning Path Plan-Along (Astro edition)” [Twitch
+  stream](http://twitch.tv/essentialrandomness) on Monday, September 1st, 2PM
+  Pacific!
+
+  ![file:](./images/astro-plan-along.png)
 
 
 ## The Fujoshi Guide to Web Development

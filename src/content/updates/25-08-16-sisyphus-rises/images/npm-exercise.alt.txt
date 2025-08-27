@@ -1,1 +1,1 @@
-TODO
+A screenshot of an article about how to initialize your NPM project

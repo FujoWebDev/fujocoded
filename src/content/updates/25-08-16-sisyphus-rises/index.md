@@ -1,7 +1,7 @@
 ---
 title: "New Ones Come in Pairs: NPM Articles, Patreon Tiers (& Catboys)"
-tagline: "More than ever, “everything” happens so much! And by everything, we mean our new updates."
-created_at: 2025-08-26T12:25:29.240Z
+tagline: "This month more than ever, “everything” happens so much! And by everything, we mean our new updates."
+created_at: 2025-08-27T20:16:02.335Z
 tags:
   - monthly newsletter
 socials: []
@@ -184,17 +184,15 @@ Let's dive right in!
   newsletter.** Thank you everyone for your patience—in the meantime,
   look forward to getting the new badges and character sheets into your hands\!
 
-## Around the FujoVerse
-
 ### In the press
 
 - **~~Seeing~~ Talking Double:** Hot off the tails of [this year's Citrus Con
   talk](#fujocoded-general-company-news), Ms Boba jumped straight into the
   [DashCon 2](https://www.dashcontwo.com/) ball pit to give last year’s again.
   **Check out [the “Rebuilding Community on the FujoWeb”
-  re-recording](https://www.youtube.com/watch?v=glAHIjtmYmk)** to hear about how
+  re-recording](https://www.youtube.com/watch?v=glAHIjtmYmk)** to hear how
   shit’s, well, _still pretty fucked_ in the “running social media platforms”
-  world.
+  world—or, if you prefer, just her [dispassionate rambling in the final Q&A](https://youtu.be/glAHIjtmYmk?&t=3193).
 - **Writing Triple:** If _watching_ is not your cup of (git)tea, **the third and
   last part of “Rebuilding Community on the FujoWeb” is also all yours for
   _reading_\!** [Continue from where you left

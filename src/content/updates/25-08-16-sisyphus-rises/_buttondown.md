@@ -191,9 +191,9 @@ Let's dive right in!
   talk](#fujocoded-general-company-news), Ms Boba jumped straight into the
   [DashCon 2](https://www.dashcontwo.com/) ball pit to give last year’s again.
   **Check out [the “Rebuilding Community on the FujoWeb”
-  re-recording](https://www.youtube.com/watch?v=glAHIjtmYmk)** to hear about how
+  re-recording](https://www.youtube.com/watch?v=glAHIjtmYmk)** to hear how
   shit’s, well, _still pretty fucked_ in the “running social media platforms”
-  world.
+  world—or, if you prefer, just her dispassionate rambling in the final Q&A.
 - **Writing Triple:** If _watching_ is not your cup of (git)tea, **the third and
   last part of “Rebuilding Community on the FujoWeb” is also all yours for
   _reading_\!** [Continue from where you left

@@ -10,7 +10,7 @@
 - **Lemon-stealing Applause:** Ms Boba’s CitrusCon talk **“Working Together in
   a Dying World”debuted to raving reviews.** If you want to ~~hear~~ read about
   toxic collaboration triangles, and toxic triangular villains, [you can find
-  the slides here](https://essentialrandomness.com/working-together) and
+  the slides here (turn on speaker notes)](https://essentialrandomness.com/working-together) and
   various thematically-related works on AO3, we’re sure.
 
   ![file:](./images/presentation-feedback.png)

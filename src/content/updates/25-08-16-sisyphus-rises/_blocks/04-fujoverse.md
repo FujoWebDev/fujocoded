@@ -8,7 +8,7 @@
   **Check out [the “Rebuilding Community on the FujoWeb”
   re-recording](https://www.youtube.com/watch?v=glAHIjtmYmk)** to hear how
   shit’s, well, _still pretty fucked_ in the “running social media platforms”
-  world—or, if you prefer, just her dispassionate rambling in the final Q&A.
+  world—or, if you prefer, just her passionate rambling in the final Q&A.
 - **Writing Triple:** If _watching_ is not your cup of (git)tea, **the third and
   last part of “Rebuilding Community on the FujoWeb” is also all yours for
   _reading_\!** [Continue from where you left

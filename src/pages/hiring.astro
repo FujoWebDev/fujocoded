@@ -12,15 +12,22 @@ const description =
   <article class="rounded-xl bg-white drop-shadow-purple">
     <h1>Paid Opportunities: You can help!</h1>
 
-    <p class="text-pretty text-center">
-      As part of our push for more moneyful delegation, we're going to
-      periodically open new opportunities for people to pitch in and get paid!
+    <p class="text-pretty">
+      <strong
+        >FujoCoded LLC periodically creates small-gig opportunities for people
+        to pitch in and get paid!</strong
+      > While—<em></em>for full disclosure—we currently operate at loss with a
+      limited budget, these are great opportunities to work on something
+      meaningful, stretch your wings, and (we're told) have a great time. <strong
+        >Non-professionals are encouraged to apply!</strong
+      >
+    </p><p>
       If you're interested in throwing your <a
         href="https://store.fujocoded.com/products/paddles">yaoi paddle</a
       > in the ring, <strong>
-        fill out the forms below and we'll be in touch when a good match shows
-        up.</strong
-      >
+        fill out the forms below 👇 and we'll be in touch when a good match
+        shows up.</strong
+      > We work with folks from all over the world, so don't hesitate!
     </p>
 
     <Image
@@ -28,9 +35,33 @@ const description =
       alt="A poster showing Boba-tan gleeful in front of fire and under a shower of money, in a very shiny suit jacket and sunglasses doing finger guns and saying 'FujoCoded needs your help!'"
       class="w-xl mx-auto py-8"
     />
+    <h2>"Hiring Right Now" Form</h2>
+    <p>
+      This new, experimental form is to express interest AND availability for <u
+        >a specific open opportunity</u
+      > if you:
+    </p>
+    <ul class="with-discs">
+      <li>Have already filled the out the long-term forms below OR</li>
+      <li>Are an amazing fit with no time to fill out the long forms OR</li>
+      <li>Were sent here because there's no long-term form for the role</li>
+    </ul>
+    <p>
+      Make sure you check out <a href="/updates"
+        >the latest edition of our newsletter</a
+      > for the latest hiring news and job descriptions! We'll remove opportunities
+      from the form as they get filled.
+    </p>
+    <div class="mt-2 text-center font-bold">
+      <a
+        href="https://docs.google.com/forms/d/e/1FAIpQLSfM0-bD_KygLQYpb0uDFE8a0EYFB5uuXRw_gjqTd8wayxmdPw/viewform"
+        >Go to the "Hiring Right Now" form →</a
+      >
+    </div>
+    <h2>Long-term Business Card Drops</h2>
     <ul>
       <li>
-        <p class="text-pretty text-center">
+        <p class="text-pretty">
           <strong>✏️ Writers assemble!</strong> Do you want to help with our NPM
           articles? Or maybe, you want to help us <a
             href="https://www.fujoweb.dev/characters"
@@ -41,7 +72,7 @@ const description =
         </p>
       </li>
       <li>
-        <p class="text-pretty text-center">
+        <p class="text-pretty">
           <strong>💻 WebDev Gigs incoming!</strong> There is <em>a lot</em> going
           on in the FujoVerse™ and many pages (like the one on <a
             href="https://www.fujoweb.dev/volume-0">FujoGuide Volume 0</a
@@ -53,7 +84,7 @@ const description =
         </p>
       </li>
       <li>
-        <p class="text-pretty text-center">
+        <p class="text-pretty">
           <strong>🖼️ Art(ist) Archive!</strong> We’ve got some character art needs
           in the pipeline (don’t we always?), and we’d love to have even more artists
           on tap for when that gets firmed up—monsterfucking tendencies appreciated
@@ -74,8 +105,25 @@ const description =
       Hear about future opportunities in
       <em class="shadow-fujo-pink"> our newsletter! ✨</em>
     </p>
-    <p class="my-4 text-pretty text-center">
+    <p class="my-4 text-pretty">
       <SubscriptionForm />
     </p>
   </article>
 </Layout>
+
+<style>
+  ul.with-discs {
+    list-style: disc;
+    padding-left: 40px;
+    li {
+      @apply mt-6;
+    }
+    li:not(:first-child) {
+      @apply mt-1;
+    }
+
+    & + * {
+      @apply mt-6;
+    }
+  }
+</style>

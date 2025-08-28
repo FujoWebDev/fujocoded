@@ -1,7 +1,7 @@
 ---
 title: "New Ones Come in Pairs: NPM Articles, Patreon Tiers (& Catboys)"
 tagline: "This month more than ever, “everything” happens so much! And by everything, we mean our new updates."
-created_at: 2025-08-27T20:16:02.335Z
+created_at: 2025-08-28T20:53:14.571Z
 tags:
   - monthly newsletter
 socials: []
@@ -15,6 +15,7 @@ catboys?
 
 Let's dive right in!
 
+
 ## FujoCoded General Company News
 
 - **Buy Our Love:** We have not one, but [TWO new Patreon
@@ -27,7 +28,7 @@ Let's dive right in!
 - **Lemon-stealing Applause:** Ms Boba’s CitrusCon talk **“Working Together in
   a Dying World”debuted to raving reviews.** If you want to ~~hear~~ read about
   toxic collaboration triangles, and toxic triangular villains, [you can find
-  the slides here](https://essentialrandomness.com/working-together) and
+  the slides here (turn on speaker notes)](https://essentialrandomness.com/working-together) and
   various thematically-related works on AO3, we’re sure.
 
   ![file:](./images/presentation-feedback.png)
@@ -72,6 +73,7 @@ Let's dive right in!
 
   If you’d like to be confronted by one of those monstrosities (and paid for
   your service), [drop your card in the hiring section below](#we-are-hiring)!
+
 
 ## FujoCoded Backerkit Update
 
@@ -123,6 +125,7 @@ Let's dive right in!
   Pacific!
 
   ![file:](./images/astro-plan-along.png)
+
 
 ## The Fujoshi Guide to Web Development
 
@@ -184,6 +187,9 @@ Let's dive right in!
   newsletter.** Thank you everyone for your patience—in the meantime,
   look forward to getting the new badges and character sheets into your hands\!
 
+
+## Around the FujoVerse
+
 ### In the press
 
 - **~~Seeing~~ Talking Double:** Hot off the tails of [this year's Citrus Con
@@ -192,7 +198,7 @@ Let's dive right in!
   **Check out [the “Rebuilding Community on the FujoWeb”
   re-recording](https://www.youtube.com/watch?v=glAHIjtmYmk)** to hear how
   shit’s, well, _still pretty fucked_ in the “running social media platforms”
-  world—or, if you prefer, just her [dispassionate rambling in the final Q&A](https://youtu.be/glAHIjtmYmk?&t=3193).
+  world—or, if you prefer, just her passionate rambling in the final Q&A.
 - **Writing Triple:** If _watching_ is not your cup of (git)tea, **the third and
   last part of “Rebuilding Community on the FujoWeb” is also all yours for
   _reading_\!** [Continue from where you left
@@ -287,6 +293,7 @@ To express interest for these short-term opportunities, **use our [**expedited**
 let us know you're <u>currently available</u>, and a good match for the position.** If you don't quite
 fit (and have filled out [our usual forms](https://fujocoded.com/hiring)),
 we'll still look over those records to find additional candidates.
+
 
 ## That's all, folks!
 

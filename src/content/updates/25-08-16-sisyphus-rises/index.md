@@ -1,7 +1,7 @@
 ---
 title: "New Ones Come in Pairs: NPM Articles, Patreon Tiers (& Catboys)"
 tagline: "This month more than ever, “everything” happens so much! And by everything, we mean our new updates."
-created_at: 2025-08-28T20:53:14.571Z
+created_at: 2025-08-28T21:13:18.649Z
 tags:
   - monthly newsletter
 socials: []
@@ -298,6 +298,7 @@ we'll still look over those records to find additional candidates.
 ## That's all, folks!
 
 And with that, our August [update] is finished! See you next edition for more adventures
-together!
+together, and [don't forget to check out our Patreon](https://www.patreon.com/c/fujocoded)
+to help us continue building all of the above!
 
 Love,<br /> The FujoCoded Team _(A Confluence of Calamities)_

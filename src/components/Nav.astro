@@ -109,11 +109,12 @@ const { pathname } = Astro.url;
     href="/support"><span>Support us</span></a
   >
 </nav>
+<!-- Mobile menu -->
 <dialog
   class="menu-dialog relative m-0 h-dvh max-h-dvh w-full max-w-full items-center justify-center"
 >
   <nav
-    class="small-screen z-20 flex h-full flex-col items-center justify-around gap-1 bg-white px-2 pb-[200px] pt-8 text-center font-hatch text-2xl text-fujo-pink"
+    class="small-screen pt-40text-center z-20 flex h-full w-full flex-col items-center justify-center gap-4 bg-white px-2 pb-12 font-hatch text-2xl text-fujo-pink"
   >
     <a
       autofocus
@@ -179,10 +180,10 @@ const { pathname } = Astro.url;
     background-size: 250% 250%;
     content: "";
     position: absolute;
-    top: -2px;
-    left: -2px;
-    right: -2px;
-    bottom: -2px;
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
     z-index: -2;
     @apply rounded-full;
   }
@@ -207,7 +208,8 @@ const { pathname } = Astro.url;
   }
 
   .small-screen {
-    max-height: min(600px, 50dvh);
+    max-height: 100dvh;
+    overflow-y: auto;
   }
   .small-screen a,
   .big-screen a span {
@@ -327,43 +329,49 @@ const { pathname } = Astro.url;
 </style>
 <script>
   const openMenu = document.querySelector(".menu-open");
-  openMenu?.classList.remove("script-hidden");
   const menu = document.querySelector(".menu");
   const menuDialog = document.querySelector<HTMLDialogElement>(".menu-dialog");
   const closeMenu = document.querySelector(".menu-close");
 
-  let scrollLocation = 0;
+  // Cache elements exist check
+  if (!openMenu || !menu || !menuDialog || !closeMenu) {
+    console.warn("Navigation elements not found");
+  } else {
+    openMenu.classList.remove("script-hidden");
 
-  openMenu?.addEventListener("click", () => {
-    menu?.classList.add("script-hidden");
-    scrollLocation = window.scrollY;
-    menuDialog?.showModal();
-    document.documentElement.style.overflowY = "hidden";
-  });
-  closeMenu?.addEventListener("click", () => {
-    menuDialog?.close();
-  });
-  menuDialog?.addEventListener("close", () => {
-    if (menuDialog?.open) {
-      document.documentElement.style.overflowY = "";
-      scrollTo({ top: scrollLocation, behavior: "instant" });
-      menu?.classList.remove("script-hidden");
-    }
-  });
+    let scrollLocation = 0;
 
-  const resizeObserver = new ResizeObserver((entries) => {
-    for (const entry of entries) {
-      if (
-        entry.borderBoxSize[0]?.inlineSize >= 768 ||
-        entry.contentRect.width >= 768
-      ) {
+    const mediaQuery = window.matchMedia("(min-width: 768px)");
+
+    function handleMediaChange(e: MediaQueryListEvent | MediaQueryList) {
+      if (e.matches && menuDialog?.open) {
         menuDialog?.close();
       }
     }
-  });
 
-  const body = document.querySelector("body");
-  if (body) {
-    resizeObserver.observe(body);
+    mediaQuery.addEventListener("change", handleMediaChange);
+
+    // Check initial state
+    handleMediaChange(mediaQuery);
+
+    openMenu.addEventListener("click", () => {
+      menu.classList.add("script-hidden");
+      scrollLocation = window.scrollY;
+      menuDialog.showModal();
+      document.documentElement.style.overflowY = "hidden";
+    });
+
+    closeMenu.addEventListener("click", () => {
+      menuDialog.close();
+    });
+
+    menuDialog.addEventListener("close", () => {
+      if (!menuDialog.open) {
+        document.documentElement.style.overflowY = "";
+        // Use scrollTo with instant behavior to avoid smooth scroll performance hit
+        window.scrollTo({ top: scrollLocation, behavior: "instant" });
+        menu.classList.remove("script-hidden");
+      }
+    });
   }
 </script>

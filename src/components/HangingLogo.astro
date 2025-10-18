@@ -184,78 +184,160 @@ const wordLogoSvg = readFileSync("./src/images/word-logo.svg", {
   const prefersReducedMotion = window.matchMedia(
     `(prefers-reduced-motion: reduce)`
   ).matches;
+  const THRESHOLD = 200;
   const RATE_DIVISOR = 600;
-  const lemon = document.querySelector(".lemon");
+  const lemonElement = document.querySelector<HTMLElement>(".lemon");
   const lemonFinalPosition = -400;
   const lemonRate = lemonFinalPosition / RATE_DIVISOR;
-  const logo = document.querySelector(".logo");
-  const llc = document.querySelector(".llc");
+  const logoElement = document.querySelector<HTMLElement>(".logo");
+  const llcElement = document.querySelector<HTMLElement>(".llc");
   const logoFinalPosition = -600;
   const logoRate = logoFinalPosition / RATE_DIVISOR;
   const container =
     document.querySelector<HTMLDivElement>(".hanging-container");
-  // I don't know what you were trying to do here, but it was leaving the link stuck in the middle of the screen
   const containerFinalPosition = -600;
   const containerRate = containerFinalPosition / RATE_DIVISOR;
 
-  let lastScrollPosition = window.scrollY;
-
-  if (!lemon || !logo || !llc || !container) {
+  if (!lemonElement || !logoElement || !llcElement || !container) {
     throw new Error("Hanging logo elements not found");
   }
 
-  if (window.scrollY > 200) {
-    // We hide the logo until load
-    container.style.opacity = "0";
-  }
+  const lemon: HTMLElement = lemonElement;
+  const logo: HTMLElement = logoElement;
+  const llc: HTMLElement = llcElement;
+  const containerDiv: HTMLDivElement = container;
 
-  function setPosition() {
-    if (window.scrollY > 200 && lastScrollPosition > 200) {
+  let lastScrollPosition = window.scrollY;
+  let animationFrameId: number | null = null;
+  let isInitialized = false;
+  let hasShownLogo = false; // Track if we've ever shown the logo
+  let currentOpacity = "0"; // Track current opacity to avoid redundant style changes
+
+  // Hide logo initially
+  containerDiv.style.opacity = "0";
+
+  // Use will-change for better performance
+  containerDiv.style.willChange = "opacity, transform";
+  lemon.style.willChange = "transform";
+  logo.style.willChange = "transform";
+  llc.style.willChange = "transform";
+
+  function setPosition(currentScrollY: number) {
+    // Early exit if we're far past the threshold and were already past it
+    if (currentScrollY > THRESHOLD && lastScrollPosition > THRESHOLD) {
       return;
     }
+
     if (prefersReducedMotion) {
-      const scrollDifference = lastScrollPosition - window.scrollY;
-      if (scrollDifference > 0 && window.scrollY < 200) {
-        (lemon as HTMLElement).style.translate = `0px 0px`;
-        (logo as HTMLElement).style.translate = `0px 0px`;
-        (llc as HTMLElement).style.translate = `0px 0px`;
-        (container as HTMLElement).style.translate = `0px 0px`;
+      const scrollDifference = lastScrollPosition - currentScrollY;
+      if (scrollDifference > 0 && currentScrollY < THRESHOLD) {
+        lemon.style.translate = `0px 0px`;
+        logo.style.translate = `0px 0px`;
+        llc.style.translate = `0px 0px`;
+        containerDiv.style.translate = `0px 0px`;
       }
       if (scrollDifference < 0) {
-        (lemon as HTMLElement).style.translate = `0px ${lemonFinalPosition}px`;
-        (logo as HTMLElement).style.translate = `0px ${logoFinalPosition}px`;
-        (llc as HTMLElement).style.translate = `0px ${logoFinalPosition}px`;
-        (container as HTMLElement).style.translate =
-          `0px ${containerFinalPosition}px`;
+        lemon.style.translate = `0px ${lemonFinalPosition}px`;
+        logo.style.translate = `0px ${logoFinalPosition}px`;
+        llc.style.translate = `0px ${logoFinalPosition}px`;
+        containerDiv.style.translate = `0px ${containerFinalPosition}px`;
       }
-      lastScrollPosition = window.scrollY;
       return;
     }
-    if (window.scrollY > 200) {
-      (lemon as HTMLElement).style.translate = `0px ${lemonFinalPosition}px`;
-      (logo as HTMLElement).style.translate = `0px ${logoFinalPosition}px`;
-      (llc as HTMLElement).style.translate = `0px ${logoFinalPosition}px`;
-      (container as HTMLElement).style.translate =
-        `0px ${containerFinalPosition}px`;
+
+    if (currentScrollY > THRESHOLD) {
+      // Only update if not already at final position
+      if (lemon.style.translate !== `0px ${lemonFinalPosition}px`) {
+        lemon.style.translate = `0px ${lemonFinalPosition}px`;
+        logo.style.translate = `0px ${logoFinalPosition}px`;
+        llc.style.translate = `0px ${logoFinalPosition}px`;
+        containerDiv.style.translate = `0px ${containerFinalPosition}px`;
+      }
       return;
     }
-    (lemon as HTMLElement).style.translate =
-      `0px ${lemonRate * lastScrollPosition}px`;
-    (logo as HTMLElement).style.translate =
-      `0px ${logoRate * lastScrollPosition}px`;
-    (llc as HTMLElement).style.translate =
-      `0px ${logoRate * lastScrollPosition}px`;
-    (container as HTMLElement).style.translate =
-      `0px ${containerRate * lastScrollPosition}px`;
+
+    // Only update if position actually changed
+    const lemonY = lemonRate * currentScrollY;
+    const logoY = logoRate * currentScrollY;
+    const containerY = containerRate * currentScrollY;
+
+    lemon.style.translate = `0px ${lemonY}px`;
+    logo.style.translate = `0px ${logoY}px`;
+    llc.style.translate = `0px ${logoY}px`;
+    containerDiv.style.translate = `0px ${containerY}px`;
   }
 
-  document.addEventListener("scroll", () => {
-    lastScrollPosition = window.scrollY;
-    setPosition();
-  });
-  window.addEventListener("load", () => {
-    container.style.opacity = "1";
-    lastScrollPosition = 0;
-    setPosition();
-  });
+  function initialize() {
+    const currentScrollY = window.scrollY;
+
+    lastScrollPosition = currentScrollY;
+    setPosition(currentScrollY);
+    if (!isInitialized) {
+      isInitialized = true;
+      // Only show logo if we're near the top
+      if (currentScrollY <= THRESHOLD) {
+        containerDiv.style.opacity = "1";
+        currentOpacity = "1";
+        hasShownLogo = true;
+      } else {
+        hasShownLogo = false;
+      }
+    } else {
+      // Update lastScrollPosition so we don't trigger false threshold crossing
+      lastScrollPosition = currentScrollY;
+    }
+  }
+
+  function onScroll() {
+    if (!isInitialized) {
+      initialize();
+      return;
+    }
+
+    if (animationFrameId !== null) {
+      return;
+    }
+
+    animationFrameId = requestAnimationFrame(() => {
+      const currentScrollY = window.scrollY;
+      const wasAboveThreshold = lastScrollPosition <= THRESHOLD;
+      const isAboveThreshold = currentScrollY <= THRESHOLD;
+
+      setPosition(currentScrollY);
+
+      // Only change visibility when crossing the threshold (and only if logo was actually shown initially)
+      if (
+        wasAboveThreshold &&
+        !isAboveThreshold &&
+        hasShownLogo &&
+        currentOpacity !== "0"
+      ) {
+        containerDiv.style.opacity = "0";
+        currentOpacity = "0";
+      } else if (
+        !wasAboveThreshold &&
+        isAboveThreshold &&
+        currentOpacity !== "1"
+      ) {
+        containerDiv.style.opacity = "1";
+        currentOpacity = "1";
+        hasShownLogo = true;
+      }
+
+      lastScrollPosition = currentScrollY;
+      animationFrameId = null;
+    });
+  }
+
+  document.addEventListener("scroll", onScroll, { passive: true });
+
+  // Try to initialize as soon as possible
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initialize);
+  } else {
+    initialize();
+  }
+
+  // Also initialize on load in case scroll position changes
+  window.addEventListener("load", initialize);
 </script>

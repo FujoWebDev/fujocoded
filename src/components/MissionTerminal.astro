@@ -22,13 +22,13 @@
     background-size: 500% 500%;
     content: "";
     position: absolute;
-    top: -2px;
-    left: -2px;
-    right: -2px;
-    bottom: -2px;
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
     z-index: -1;
     /* @apply rounded-xl; */
-    border-radius: calc(0.75rem + 1px);
+    border-radius: calc(0.75rem + 4px);
   }
 
   h2 {
@@ -55,7 +55,7 @@
 
   @media (prefers-reduced-motion: no-preference) {
     div::before {
-      animation: gradient 15s ease infinite;
+      animation: gradient 12s ease infinite;
     }
 
     @keyframes gradient {

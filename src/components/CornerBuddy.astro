@@ -67,6 +67,11 @@ const { showOnMobile = false } = Astro.props;
       border-width: 6px;
       margin-top: -6px;
     }
+    @media (max-height: 666px) {
+      .git {
+        display: none;
+      }
+    }
     /* a :global(svg) {
     color: white;
   } */

@@ -3,7 +3,7 @@ title: "New Ones Come in Pairs: NPM Articles, Patreon Tiers (& Catboys)"
 tagline: "This month more than ever, “everything” happens so much! And by everything, we mean our new updates."
 created_at: 2025-08-28T21:13:18.649Z
 tags:
-  - monthly newsletter
+  - newsletter
 socials: []
 ---
 
@@ -14,7 +14,6 @@ articles](https://learn.fujoweb.dev/)—and how could we forget...the
 catboys?
 
 Let's dive right in!
-
 
 ## FujoCoded General Company News
 
@@ -74,7 +73,6 @@ Let's dive right in!
   If you’d like to be confronted by one of those monstrosities (and paid for
   your service), [drop your card in the hiring section below](#we-are-hiring)!
 
-
 ## FujoCoded Backerkit Update
 
 ### FujoCoded BackerKit Fulfillment Progress: Recent
@@ -125,7 +123,6 @@ Let's dive right in!
   Pacific!
 
   ![file:](./images/astro-plan-along.png)
-
 
 ## The Fujoshi Guide to Web Development
 
@@ -186,7 +183,6 @@ Let's dive right in!
   **we pinky-promise to have an update on the GitHub Zine beta by the next
   newsletter.** Thank you everyone for your patience—in the meantime,
   look forward to getting the new badges and character sheets into your hands\!
-
 
 ## Around the FujoVerse
 
@@ -293,7 +289,6 @@ To express interest for these short-term opportunities, **use our [**expedited**
 let us know you're <u>currently available</u>, and a good match for the position.** If you don't quite
 fit (and have filled out [our usual forms](https://fujocoded.com/hiring)),
 we'll still look over those records to find additional candidates.
-
 
 ## That's all, folks!
 

@@ -3,7 +3,7 @@ title: "FujoCoded LLC: Baby's First Year 🍼"
 tagline: "Baby step by baby step, the journey carries on!"
 created_at: 2025-03-16T19:19:28.552Z
 tags:
-  - monthly newsletter
+  - newsletter
 socials: []
 ---
 

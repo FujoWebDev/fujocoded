@@ -3,7 +3,7 @@ title: "Careers, Cons, and Cookies (again) — 🏦 We're Hiring! 🏦"
 tagline: "Boba-tan Wants YOU! ...and her blorbos! (but mostly you)"
 created_at: 2025-06-17T21:23:50.969Z
 tags:
-  - monthly newsletter
+  - newsletter
 socials:
   - https://bsky.app/profile/fujocoded.bsky.social/post/3lrtlucis2c2n
   - platform: mastodon

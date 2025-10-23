@@ -1,9 +1,9 @@
 ---
 title: "FujoCoded, LLC: Down to Business"
-tagline: It's time for our first monthly newsletter, with all the latest updates on what we've been up to!
+tagline: It's time for our first newsletter, with all the latest updates on what we've been up to!
 created_at: 2024-05-16 11:43:44
 tags:
-  - monthly newsletter
+  - newsletter
 ---
 
 Welcome fujoshi, fudanshi, fujin, and friends/allies to our first dedicated newsletter for FujoCoded, LLC!

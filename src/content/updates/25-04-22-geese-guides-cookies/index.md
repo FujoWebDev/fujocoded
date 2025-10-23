@@ -3,7 +3,7 @@ title: "FujoCoded LLC: Geese, Guides, and Good Luck Cookies 🪿📔🥠"
 tagline: "Growing bigger, better, and beta!"
 created_at: 2025-04-24T19:40:43.035Z
 tags:
-  - monthly newsletter
+  - newsletter
 socials: []
 ---
 
@@ -16,7 +16,6 @@ screen](https://bsky.app/profile/essentialrandom.bsky.social/post/3ll3ov3hqhs2r)
 Now _that_ is what we call impact!
 
 ![file:](./images/geese.png)
-
 
 ## FujoCoded General Company News
 
@@ -31,7 +30,6 @@ Now _that_ is what we call impact!
 - **Bake Sale:** In other news, we had a delicious return to April 1st tradition with a treat rather than a ~~trick~~_large-scale fundraiser_—[Yaoi fortune cookies](https://store.fujocoded.com/fandom-cookies)\! On sale were “Chocolate Doves”, “Kinda Vanilla”, and “Lemony Prompts”, each with its own set of specifically-crafted fortunes...we even got some [lovely](https://www.tumblr.com/harvestspriteirl/780416155855765504/choco-dove-sweep-this-determines-the-bedroom) [fanart](https://blorbo.social/@LeGaosaure/114309563070767137)! Chocolate Doves flew over the competition to [win our cookie run](https://bsky.app/profile/fujocoded.bsky.social/post/3lmn5ovzv6s2y), but really, aren’t we _all_ winners? Check out our contributors spotlight on [Bluesky](https://bsky.app/profile/fujocoded.bsky.social/post/3lmkmknupas2h), [Mastodon](https://blorbo.social/@fujocoded/114320796135859218), [Tumblr](https://www.tumblr.com/fujocoded/780556227268771840/with-only-24-hoursish-left-to-buy-your-fandom?source=share), or [Twitter](https://twitter.com/fujoc0ded/status/1910754458520478144)\!
 - **Hiring Fun(ds):** And of course, selling cookies is not just delicious fun, it gives us enough money for our next goal: hiring a sysadmin to help us better setup our servers so they can be reliable, and will promptly alert us if anything happens\! Who knows, this might finally make us confident enough to host stuff for _you_ in the future...
 
-
 ## Recent Progress on Our Backerkit Campaign
 
 - **Writing Frenzy:** It’s not all geese and gobbling, we also wrote (and then rewrote ad infinitum) the outline for our soon-to-be-famous NPM article\! We might have had it (mostly) ready for the last newsletter, but Ms Boba spent some time rearranging it after a break…_and it’s now four whole articles\!_ That might stretch the budget a bit, but it’s also going to cover most of what we’ve learned the community is struggling with...just like [our already-available Terminal content](https://learn.fujoweb.dev/quickstarts/terminal-quickstart/)!
@@ -44,13 +42,14 @@ Now _that_ is what we call impact!
 
 ![file:](./images/stretch-goal.png)
 
-
 ## Recent Progress on the Fujoshi Guide to Web Development
-* **Beta Git Ready:** As promised, we’ve reviewed the alpha version of our GitHub guide and started our second pass, preparing it to become a full-fledged beta\! This involved a full reread to get us back into the (better-structured-than-feared) swing of things, fixing some hacky “custom zine software” workarounds from the launch of “Issue 1: Git (preview edition)”, and looking back at the original beta feedback to *git ready* from  some targeted improvements.
+
+- **Beta Git Ready:** As promised, we’ve reviewed the alpha version of our GitHub guide and started our second pass, preparing it to become a full-fledged beta\! This involved a full reread to get us back into the (better-structured-than-feared) swing of things, fixing some hacky “custom zine software” workarounds from the launch of “Issue 1: Git (preview edition)”, and looking back at the original beta feedback to _git ready_ from some targeted improvements.
 
 ## What’s Next for FujoGuide
- * **Git Beta Ready:** With the beta re-read, the feedback reviewed, and all our horrible hacks forever removed from the codebase—*ah\! As if\!*—it’s time to Whip this Beta into Shape… “title of my fanfiction,” as they say.  
-* **Git Ready, Beta:** As we *git* the beta ready, we also need to *git* ourselves some beta…testers\! We’ve got quite a few potential candidates from our communities, but we’ll be looking to balance a wide range of experience, interest, and operating systems to make the best guide we can. We’re planning to start mid-May (just a few weeks\!) so by the time you hear back from us again, we might have already started, or at least be close to doing so. 
+
+- **Git Beta Ready:** With the beta re-read, the feedback reviewed, and all our horrible hacks forever removed from the codebase—_ah\! As if\!_—it’s time to Whip this Beta into Shape… “title of my fanfiction,” as they say.
+- **Git Ready, Beta:** As we _git_ the beta ready, we also need to _git_ ourselves some beta…testers\! We’ve got quite a few potential candidates from our communities, but we’ll be looking to balance a wide range of experience, interest, and operating systems to make the best guide we can. We’re planning to start mid-May (just a few weeks\!) so by the time you hear back from us again, we might have already started, or at least be close to doing so.
 
 ## Around the FujoVerse
 
@@ -89,7 +88,6 @@ Last but not least, our usual call for hired help and/or willing volunteers\! Th
 - **Smithing Videos📹…for Glory:** Are you willing to wrangle video wranglers? BobaBoard’s documentation bubble is looking for <u>a wondrous lead volunteer to coordinate our wonderful video volunteers</u> as they turn our many, many hours of recorded web development and BobaBoard documentation into something the whole FujoVerse™ and beyond can put to good use. If you have previous experience with managing work on video, or have been part of similar work and want to build some managing experience of your own, reach out\!
 
 If any of these calls for aid sound up your alley, or if you’d like to get involved in other ways, please reach out at [contacts@fujocoded.com](mailto:contacts@fujocoded.com)!
-
 
 ## That’s all, folks!
 

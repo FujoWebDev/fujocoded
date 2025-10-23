@@ -63,7 +63,7 @@ const throwIfSymbol = (
 
 const PREAMBLES = {
   index: (title: string, date: Date, tagline: string | undefined) =>
-    `---\ntitle: "${title}"\ntagline: "${tagline ?? "TBD"}"\ncreated_at: ${date.toISOString()}\ntags:\n  - monthly newsletter\nsocials: []\n---\n\n`,
+    `---\ntitle: "${title}"\ntagline: "${tagline ?? "TBD"}"\ncreated_at: ${date.toISOString()}\ntags:\n  - newsletter\nsocials: []\n---\n\n`,
   backerkit: (title: string, _date: Date, _tagline: string | undefined) =>
     `---\ntitle: "${title}"\n---\n\n`,
   kickstarter: (title: string, _date: Date, _tagline: string | undefined) =>

@@ -9,6 +9,7 @@
     "newsletter:create": "npm run --workspace scripts start create",
     "newsletter:build": "npm run --workspace scripts start build",
     "newsletter:watch": "npm run --workspace scripts start watch",
+    "sync-contributors": "npm run --workspace scripts sync-contributors",
     "preview": "astro preview",
     "astro": "astro"
   },

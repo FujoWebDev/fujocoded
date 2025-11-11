@@ -1,13 +1,11 @@
 ---
 import { Icon } from "astro-icon/components";
 import { Image } from "astro:assets";
-import type { SocialLinksData } from "@fujocoded/zod-transform-socials";
+import type { CollectionEntry } from "astro:content";
 
-interface Props {
-  name: string;
-  avatar: string;
-  contacts: SocialLinksData;
-}
+type ContributorData = CollectionEntry<"team">["data"]
+
+interface Props extends ContributorData {};
 
 const { name, contacts, avatar } = Astro.props;
 ---

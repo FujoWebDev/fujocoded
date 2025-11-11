@@ -1,0 +1,12 @@
+name: ria
+avatar: "./avatars/riazaia.png"
+type: 
+  - community
+  - contractor
+roles:
+  Fandom Cookies:
+    - role: Programming 
+      details: General Coding
+    - Digital Item Pack Assembly
+contacts:
+  - https://github.com/riazaia

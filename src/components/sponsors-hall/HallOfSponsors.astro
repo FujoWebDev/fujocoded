@@ -302,7 +302,6 @@ const sponsors = await getCollection("sponsors");
     if (event[0].attributeName == "open") {
       // React to open/close changes
       const dialog = event[0].target as HTMLDialogElement;
-      console.log(dialog.getAttribute("open"));
       if (dialog.getAttribute("open") !== null) {
         scrollLocation = window.scrollY;
         document.documentElement.style.overflowY = "hidden";

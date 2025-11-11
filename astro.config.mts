@@ -87,4 +87,7 @@ export default defineConfig({
         "https://docs.google.com/presentation/d/1NRNSL9wheh-wfHHBkjEUoSghPYY5wWWbVGh3_HEMny0/edit?usp=sharing",
     },
   },
+  experimental: {
+    contentIntellisense: true
+  }
 });

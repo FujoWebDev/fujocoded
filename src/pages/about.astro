@@ -95,11 +95,11 @@ const description =
           <h3 id="our-founder" class="text-fujo-purple">Our founder</h3>
         </a>
         <p>...and only employee.</p>
-        <div class="mb-12 mt-6 w-full gap-4 md:max-w-lg">
+        <div class="mb-12 mt-6 flex flex-col gap-6 w-[calc(100% + 80px)] mx-[-40px] items-center">
           {
             team
               .filter((member) => member.data.type === "founder")
-              .map((member) => <TeamCard {...member.data} />)
+              .map((member) => <TeamCard {...member.data} slug={member.id} />)
           }
         </div>
       </section>
@@ -117,12 +117,11 @@ const description =
             their websites!
           </p>
         </div>
-        <div class="mb-12 mt-6 flex flex-col gap-6 md:grid md:grid-cols-2">
+        <div class="mb-12 mt-6 flex flex-col gap-6 md:grid md:grid-cols-2 mx-[-40px]  items-center md:items-stretch">
           {
             team
               .filter((member) => member.data.type === "contractor")
-              // @ts-ignore
-              .map((member) => <TeamCard {...member.data} />)
+              .map((member) => <TeamCard {...member.data} slug={member.id} />)
           }
         </div>
         <div
@@ -144,12 +143,11 @@ const description =
           community moderation, moral support, specialized expertise, software
           development, and so much more.
         </p>
-        <div class="mb-12 mt-6 flex flex-col gap-6 md:grid md:grid-cols-2">
+        <div class="mb-12 mt-6 flex flex-col gap-6 md:grid md:grid-cols-2 mx-[-40px] items-center md:items-stretch">
           {
             team
               .filter((member) => member.data.type === "community")
-              // @ts-ignore
-              .map((member) => <TeamCard {...member.data} />)
+              .map((member) => <TeamCard {...member.data} slug={member.id} />)
           }
         </div>
         <div

@@ -3,22 +3,28 @@ import { Icon } from "astro-icon/components";
 import { Image } from "astro:assets";
 import type { CollectionEntry } from "astro:content";
 
-type ContributorData = CollectionEntry<"team">["data"]
+type ContributorData = CollectionEntry<"team">["data"] | CollectionEntry<"contributors">["data"]
 
-interface Props extends ContributorData {};
+interface Props {
+  slug: string;
+  name: ContributorData["name"];
+  contacts: ContributorData["contacts"];
+  avatar: ContributorData["avatar"];
+}
 
-const { name, contacts, avatar } = Astro.props;
+
+const { name, contacts, avatar, slug } = Astro.props;
 ---
 
 <div
-  class="outer-box relative z-10 flex w-80 min-w-72 max-w-full flex-col gap-4 rounded-xl bg-white md:pb-[1.125rem]"
+  class="outer-box relative z-10 flex w-80 min-w-72 w-[500px] max-w-full flex-col gap-4 rounded-xl bg-white md:pb-[1.125rem]"
 >
   <h3
     class="font- m-0 flex items-center gap-3 self-center px-3 pt-5 text-xl not-italic"
-    id={`${name.toLowerCase().replace(/\s+/g, "-")}`}
+    id={`${slug}`}
   >
     <a
-      href={`/team/${name.toLowerCase().replace(/\s+/g, "-")}`}
+      href={`/contributors/${slug}`}
       class="hover:pointer flex items-center gap-4 !no-underline"
     >
       <span class="-mt-1 font-zeitung text-fujo-pink">{name}</span>

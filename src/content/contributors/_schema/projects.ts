@@ -46,6 +46,7 @@ export const FANDOM_COOKIES_ROLES = [
   "Extra Hands (and Brains)",
   "CSS & Design",
   "Art Direction",
+  "Feedback",  
 ];
 
 export const PROJECT_ROLES : Record<Project, string[]> = {

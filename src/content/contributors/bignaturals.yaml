@@ -7,4 +7,6 @@ roles:
     - role: Extra 
       details: Alt Text
 contacts:
-  - https://blorbo.social/@xieliansbignaturals
+  - url: https://blorbo.social/@xieliansbignaturals
+    platform: mastodon
+    username: xieliansbignaturals

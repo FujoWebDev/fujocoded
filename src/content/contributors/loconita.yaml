@@ -1,0 +1,11 @@
+name: Loconita
+avatar: "./avatars/default.png"
+type:
+  - community
+roles:
+  Fandom Cookies:
+    - Feedback
+contacts:
+  - https://loconita.bsky.social
+  - https://loconita.neocities.org
+  - https://codeberg.org/Loconita

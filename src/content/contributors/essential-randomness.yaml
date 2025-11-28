@@ -7,6 +7,7 @@ roles:
   Fandom Cookies:
     - role: Programming 
       details: General Coding
+    - Cookie Catcher Design  
     - Digital Item Pack Assembly
 contacts:
   - https://essentialrandomness.com

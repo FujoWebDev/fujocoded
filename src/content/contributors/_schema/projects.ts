@@ -46,6 +46,7 @@ export const FANDOM_COOKIES_ROLES = [
   "Extra Hands (and Brains)",
   "CSS & Design",
   "Art Direction",
+  "Cookie Catcher Design",
   "Feedback",  
 ];
 

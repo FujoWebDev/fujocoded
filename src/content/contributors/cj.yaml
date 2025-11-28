@@ -1,11 +1,12 @@
 name: CJ
 avatar: "./avatars/cj.png"
-type: community
+type:
+  - community
 roles:
   Fandom Cookies:
     - Feedback
 contacts:
   - url: https://gamedev.lgbt/@illuminesce
     platform: mastodon
-    username: illuminesce  
+    username: illuminesce
   - https://illuminesce.net/

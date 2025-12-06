@@ -4,7 +4,7 @@ import llcSvg from "../images/LLC.svg?raw";
 import wordLogoSvg from "../images/word-logo.svg?raw";
 ---
 
-<a class="hanging-container z-40 hover:cursor-pointer" href="/">
+<a class="hanging-container z-50 hover:cursor-pointer" href="/">
   <div class="lemon">
     <Fragment set:html={lemonLogoSvg} />
   </div>
@@ -17,16 +17,6 @@ import wordLogoSvg from "../images/word-logo.svg?raw";
 </a>
 
 <style>
-  /* Leaving this here, just commented out for now because it performs more smoothly than my js crimes, so we might want to use it for those who do have support for it
-  @supports (animation-timeline: scroll()) {
-    .lemon,
-    .logo,
-    .llc {
-      animation: pullup linear both;
-      animation-timeline: scroll();
-    }
-  } */
-
   .hanging-container {
     position: fixed;
     width: 200px;
@@ -35,9 +25,30 @@ import wordLogoSvg from "../images/word-logo.svg?raw";
     left: 50%;
     transform: translateX(calc(-50% - 5px));
     --rope-color: #d9d9d944;
-    --lemon-final-position: -300px;
-    --logo-final-position: -400px;
+    --lemon-final-position: -400px;
+    --logo-final-position: -600px;
+    --container-final-position: -600px;
   }
+
+  .hanging-container {
+    animation: container-pullup linear both;
+    animation-timeline: scroll(root);
+    animation-range: 0px 1300px;
+  }
+
+  .lemon {
+    animation: pullup linear both;
+    animation-timeline: scroll(root);
+    animation-range: 500px 1300px;
+  }
+
+  .logo,
+  .llc {
+    animation: pullup linear both;
+    animation-timeline: scroll(root);
+    animation-range: 0px 1300px;
+  }
+
   .lemon {
     width: 80px;
     position: absolute;
@@ -47,7 +58,6 @@ import wordLogoSvg from "../images/word-logo.svg?raw";
     transform: translateX(-50%);
     --translate-x: -50%;
     --final-position: var(--lemon-final-position);
-    animation-range: entry 0% exit 30%;
     --color-neon-glow: #ffbf00;
     --color-neon-fill: white;
     --color-neon-inner-glow: #f6d880;
@@ -86,7 +96,6 @@ import wordLogoSvg from "../images/word-logo.svg?raw";
     transform: translateX(-50%);
     --translate-x: -50%;
     --final-position: var(--logo-final-position);
-    animation-range: entry 0% exit 30%;
     --color-neon-glow: #d529ff;
     --color-neon-fill: #d529ff;
     --color-neon-inner-glow: #d529ff;
@@ -127,7 +136,6 @@ import wordLogoSvg from "../images/word-logo.svg?raw";
     right: 7px;
     --translate-x: 0;
     --final-position: var(--logo-final-position);
-    animation-range: entry 0% exit 30%;
     --color-neon-glow: #4360f7;
     --color-neon-fill: #4360f7;
     --color-neon-inner-glow: #4360f7;
@@ -160,6 +168,7 @@ import wordLogoSvg from "../images/word-logo.svg?raw";
     background-color: var(--rope-color);
     z-index: -1;
   }
+
   @keyframes pullup {
     from {
       transform: translate(var(--translate-x, 0), 0px);
@@ -168,166 +177,29 @@ import wordLogoSvg from "../images/word-logo.svg?raw";
       transform: translate(var(--translate-x, 0), var(--final-position));
     }
   }
+
+  @keyframes container-pullup {
+    from {
+      opacity: 1;
+      transform: translate(-50%, 0px) translateX(-5px);
+    }
+    to {
+      opacity: 0;
+      transform: translate(-50%, var(--container-final-position))
+        translateX(-5px);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hanging-container,
+    .lemon,
+    .logo,
+    .llc {
+      animation: none;
+    }
+  }
 </style>
 
 <script>
-  const prefersReducedMotion = window.matchMedia(
-    `(prefers-reduced-motion: reduce)`
-  ).matches;
-  const THRESHOLD = 200;
-  const RATE_DIVISOR = 600;
-  const lemonElement = document.querySelector<HTMLElement>(".lemon");
-  const lemonFinalPosition = -400;
-  const lemonRate = lemonFinalPosition / RATE_DIVISOR;
-  const logoElement = document.querySelector<HTMLElement>(".logo");
-  const llcElement = document.querySelector<HTMLElement>(".llc");
-  const logoFinalPosition = -600;
-  const logoRate = logoFinalPosition / RATE_DIVISOR;
-  const container =
-    document.querySelector<HTMLDivElement>(".hanging-container");
-  const containerFinalPosition = -600;
-  const containerRate = containerFinalPosition / RATE_DIVISOR;
-
-  if (!lemonElement || !logoElement || !llcElement || !container) {
-    throw new Error("Hanging logo elements not found");
-  }
-
-  const lemon: HTMLElement = lemonElement;
-  const logo: HTMLElement = logoElement;
-  const llc: HTMLElement = llcElement;
-  const containerDiv: HTMLDivElement = container;
-
-  let lastScrollPosition = window.scrollY;
-  let animationFrameId: number | null = null;
-  let isInitialized = false;
-  let hasShownLogo = false; // Track if we've ever shown the logo
-  let currentOpacity = "0"; // Track current opacity to avoid redundant style changes
-
-  // Hide logo initially
-  containerDiv.style.opacity = "0";
-
-  // Use will-change for better performance
-  containerDiv.style.willChange = "opacity, transform";
-  lemon.style.willChange = "transform";
-  logo.style.willChange = "transform";
-  llc.style.willChange = "transform";
-
-  function setPosition(currentScrollY: number) {
-    // Early exit if we're far past the threshold and were already past it
-    if (currentScrollY > THRESHOLD && lastScrollPosition > THRESHOLD) {
-      return;
-    }
-
-    if (prefersReducedMotion) {
-      const scrollDifference = lastScrollPosition - currentScrollY;
-      if (scrollDifference > 0 && currentScrollY < THRESHOLD) {
-        lemon.style.translate = `0px 0px`;
-        logo.style.translate = `0px 0px`;
-        llc.style.translate = `0px 0px`;
-        containerDiv.style.translate = `0px 0px`;
-      }
-      if (scrollDifference < 0) {
-        lemon.style.translate = `0px ${lemonFinalPosition}px`;
-        logo.style.translate = `0px ${logoFinalPosition}px`;
-        llc.style.translate = `0px ${logoFinalPosition}px`;
-        containerDiv.style.translate = `0px ${containerFinalPosition}px`;
-      }
-      return;
-    }
-
-    if (currentScrollY > THRESHOLD) {
-      // Only update if not already at final position
-      if (lemon.style.translate !== `0px ${lemonFinalPosition}px`) {
-        lemon.style.translate = `0px ${lemonFinalPosition}px`;
-        logo.style.translate = `0px ${logoFinalPosition}px`;
-        llc.style.translate = `0px ${logoFinalPosition}px`;
-        containerDiv.style.translate = `0px ${containerFinalPosition}px`;
-      }
-      return;
-    }
-
-    // Only update if position actually changed
-    const lemonY = lemonRate * currentScrollY;
-    const logoY = logoRate * currentScrollY;
-    const containerY = containerRate * currentScrollY;
-
-    lemon.style.translate = `0px ${lemonY}px`;
-    logo.style.translate = `0px ${logoY}px`;
-    llc.style.translate = `0px ${logoY}px`;
-    containerDiv.style.translate = `0px ${containerY}px`;
-  }
-
-  function initialize() {
-    const currentScrollY = window.scrollY;
-
-    lastScrollPosition = currentScrollY;
-    setPosition(currentScrollY);
-    if (!isInitialized) {
-      isInitialized = true;
-      // Only show logo if we're near the top
-      if (currentScrollY <= THRESHOLD) {
-        containerDiv.style.opacity = "1";
-        currentOpacity = "1";
-        hasShownLogo = true;
-      } else {
-        hasShownLogo = false;
-      }
-    } else {
-      // Update lastScrollPosition so we don't trigger false threshold crossing
-      lastScrollPosition = currentScrollY;
-    }
-  }
-
-  function onScroll() {
-    if (!isInitialized) {
-      initialize();
-      return;
-    }
-
-    if (animationFrameId !== null) {
-      return;
-    }
-
-    animationFrameId = requestAnimationFrame(() => {
-      const currentScrollY = window.scrollY;
-      const wasAboveThreshold = lastScrollPosition <= THRESHOLD;
-      const isAboveThreshold = currentScrollY <= THRESHOLD;
-
-      setPosition(currentScrollY);
-
-      // Only change visibility when crossing the threshold (and only if logo was actually shown initially)
-      if (
-        wasAboveThreshold &&
-        !isAboveThreshold &&
-        hasShownLogo &&
-        currentOpacity !== "0"
-      ) {
-        containerDiv.style.opacity = "0";
-        currentOpacity = "0";
-      } else if (
-        !wasAboveThreshold &&
-        isAboveThreshold &&
-        currentOpacity !== "1"
-      ) {
-        containerDiv.style.opacity = "1";
-        currentOpacity = "1";
-        hasShownLogo = true;
-      }
-
-      lastScrollPosition = currentScrollY;
-      animationFrameId = null;
-    });
-  }
-
-  document.addEventListener("scroll", onScroll, { passive: true });
-
-  // Try to initialize as soon as possible
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", initialize);
-  } else {
-    initialize();
-  }
-
-  // Also initialize on load in case scroll position changes
-  window.addEventListener("load", initialize);
+  import "scroll-timeline-polyfill/dist/scroll-timeline.js";
 </script>

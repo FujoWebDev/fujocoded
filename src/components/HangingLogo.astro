@@ -4,7 +4,7 @@ import llcSvg from "../images/LLC.svg?raw";
 import wordLogoSvg from "../images/word-logo.svg?raw";
 ---
 
-<a class="hanging-container z-50 hover:cursor-pointer" href="/">
+<a class="hanging-container hover:cursor-pointer" href="/">
   <div class="lemon">
     <Fragment set:html={lemonLogoSvg} />
   </div>
@@ -32,20 +32,23 @@ import wordLogoSvg from "../images/word-logo.svg?raw";
 
   .hanging-container {
     animation: container-pullup linear both;
-    animation-timeline: scroll(root);
+    animation-timeline: scroll(block root);
+    animation-duration: 10000000s;
     animation-range: 0px 1300px;
   }
 
   .lemon {
     animation: pullup linear both;
-    animation-timeline: scroll(root);
+    animation-timeline: scroll(block root);
+    animation-duration: 10000000s;
     animation-range: 500px 1300px;
   }
 
   .logo,
   .llc {
     animation: pullup linear both;
-    animation-timeline: scroll(root);
+    animation-timeline: scroll(block root);
+    animation-duration: 10000000s;
     animation-range: 0px 1300px;
   }
 
@@ -198,8 +201,40 @@ import wordLogoSvg from "../images/word-logo.svg?raw";
       animation: none;
     }
   }
+
+  /* @supports removed as play-state is no longer managed */
 </style>
 
 <script>
   import "scroll-timeline-polyfill/dist/scroll-timeline.js";
+
+  // Kickstart animations for the polyfill
+  // Inspired by: https://github.com/flackr/scroll-timeline/issues/112#issuecomment-1936334977
+  const kickstartPolyfill = () => {
+    const elements = document.querySelectorAll(
+      ".hanging-container, .lemon, .logo, .llc",
+    );
+
+    // If native support exists, do nothing (CSS @supports handles it)
+    // TODO: this doesn't work because firefox is being terrible @ me
+    // personally (says it's supported but it's not)
+    // if (CSS.supports("animation-timeline: scroll()")) {
+    //   return;
+    // }
+
+    requestAnimationFrame(() => {
+      elements.forEach((el) => {
+        // Force restart animations so polyfill catches them
+        const animations = el.getAnimations();
+
+        animations.forEach((anim) => {
+          anim.cancel();
+          anim.play();
+        });
+      });
+    });
+  };
+
+  // Run once when module loads
+  kickstartPolyfill();
 </script>

@@ -98,7 +98,6 @@ const { class: className, title } = Astro.props;
     })
     .on("doubletap", (event) => {
       const target = event.currentTarget;
-      console.log("doubletapped, target", target);
       resetPosition(target);
     })
     .on("tap", (event) => {

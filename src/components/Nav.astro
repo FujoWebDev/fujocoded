@@ -1,11 +1,8 @@
 ---
-import { readFileSync } from "node:fs";
 import { Icon } from "astro-icon/components";
 import CornerBuddy from "./CornerBuddy.astro";
+import lemonLogoSvg from "../icons/lemon-logo.svg?raw";
 
-const lemonLogoSvg = readFileSync("./src/icons/lemon-logo.svg", {
-  encoding: "utf8",
-});
 const { pathname } = Astro.url;
 ---
 

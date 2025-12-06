@@ -1,17 +1,7 @@
 ---
-import { readFileSync } from "node:fs";
-// style="--color-neon-glow: #ffbf00; --color-neon-fill: white; --color-neon-inner-glow:#f6d880;"
-
-const lemonLogoSvg = readFileSync("./src/images/lemon-logo.svg", {
-  encoding: "utf8",
-});
-const llcSvg = readFileSync("./src/images/LLC.svg", {
-  encoding: "utf8",
-});
-
-const wordLogoSvg = readFileSync("./src/images/word-logo.svg", {
-  encoding: "utf8",
-});
+import lemonLogoSvg from "../images/lemon-logo.svg?raw";
+import llcSvg from "../images/LLC.svg?raw";
+import wordLogoSvg from "../images/word-logo.svg?raw";
 ---
 
 <a class="hanging-container z-40 hover:cursor-pointer" href="/">

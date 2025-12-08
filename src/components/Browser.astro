@@ -113,28 +113,35 @@ const { class: className, title } = Astro.props;
       resetPosition(target);
     });
 
-  interact(".dropzone").dropzone({
-    overlap: 0.4,
-    accept: ".drag-me",
-    checker: (
-      dragEvent, // related dragmove or dragend
-      event, // Touch, Pointer or Mouse Event
-      dropped, // bool default checker result
-      dropzone, // dropzone Interactable
-      dropzoneElement, // dropzone element
-      draggable, // draggable Interactable
-      draggableElement // draggable element
-    ) => {
-      return (
-        dropped &&
-        dropzoneElement.dataset.dropId === draggableElement.dataset.dropId
+  interact(".dropzone")
+    .dropzone({
+      overlap: 0.4,
+      accept: ".drag-me",
+      checker: (
+        dragEvent, // related dragmove or dragend
+        event, // Touch, Pointer or Mouse Event
+        dropped, // bool default checker result
+        dropzone, // dropzone Interactable
+        dropzoneElement, // dropzone element
+        draggable, // draggable Interactable
+        draggableElement, // draggable element
+      ) => {
+        return (
+          dropped &&
+          dropzoneElement.dataset.dropId === draggableElement.dataset.dropId
+        );
+      },
+      ondrop: (event) => {
+        const target = event.relatedTarget;
+        resetPosition(target);
+      },
+    })
+    .on("doubletap", (event) => {
+      const target = document.querySelector<HTMLElement>(
+        `.drag-me[data-drop-id="${event.currentTarget.dataset.dropId}"]`,
       );
-    },
-    ondrop: (event) => {
-      const target = event.relatedTarget;
-      resetPosition(target);
-    },
-  });
+      target && resetPosition(target);
+    });
 </script>
 <style>
   .window {

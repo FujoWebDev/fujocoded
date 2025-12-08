@@ -108,10 +108,10 @@ const { pathname } = Astro.url;
 </nav>
 <!-- Mobile menu -->
 <dialog
-  class="menu-dialog pointer-events-auto relative m-0 h-dvh max-h-dvh w-full max-w-full items-center justify-center"
+  class="menu-dialog pointer-events-auto fixed inset-0 m-0 h-dvh max-h-dvh w-full max-w-full items-center justify-center"
 >
   <nav
-    class="small-screen pt-40text-center z-20 flex h-full w-full flex-col items-center justify-center gap-4 bg-white px-2 pb-12 font-hatch text-2xl text-fujo-pink"
+    class="small-screen z-20 flex h-full w-full flex-col items-center justify-center gap-4 bg-white px-2 pb-20 text-center font-hatch text-2xl text-fujo-pink"
   >
     <a
       autofocus
@@ -363,7 +363,7 @@ const { pathname } = Astro.url;
     handleMediaChange(mediaQuery);
 
     openMenu.addEventListener("click", () => {
-      menu.classList.add("script-hidden");
+      menu.classList.add("invisible");
       scrollLocation = window.scrollY;
       menuDialog.showModal();
       document.documentElement.style.overflowY = "hidden";
@@ -377,7 +377,7 @@ const { pathname } = Astro.url;
       if (!menuDialog.open) {
         document.documentElement.style.overflowY = "";
         window.scrollTo({ top: scrollLocation, behavior: "instant" });
-        menu.classList.remove("script-hidden");
+        menu.classList.remove("invisible");
       }
     });
   }

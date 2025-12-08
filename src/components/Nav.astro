@@ -7,7 +7,7 @@ const { pathname } = Astro.url;
 ---
 
 <div
-  class="menu sticky top-8 z-50 mx-auto mt-[var(--content-margin)] min-h-[52px] min-w-[150px] max-w-[700px] -translate-y-1/2 px-2 py-3 md:hidden"
+  class="menu pointer-events-auto sticky top-8 z-50 mx-auto mt-[var(--content-margin)] min-h-[52px] min-w-[150px] max-w-[700px] -translate-y-1/2 px-2 py-3 md:hidden"
 >
   <button
     type="button"
@@ -58,7 +58,7 @@ const { pathname } = Astro.url;
   </noscript>
 </div>
 <nav
-  class="big-screen sticky top-8 z-30 mt-[var(--content-margin)] hidden -translate-y-1/2 transform items-center justify-around rounded-full font-hatch text-xl text-fujo-pink md:flex"
+  class="big-screen pointer-events-auto sticky top-8 z-30 mt-[var(--content-margin)] hidden -translate-y-1/2 transform items-center justify-around rounded-full font-hatch text-xl text-fujo-pink md:flex"
 >
   <a
     aria-current={pathname == "/" ? "page" : "false"}
@@ -108,7 +108,7 @@ const { pathname } = Astro.url;
 </nav>
 <!-- Mobile menu -->
 <dialog
-  class="menu-dialog relative m-0 h-dvh max-h-dvh w-full max-w-full items-center justify-center"
+  class="menu-dialog pointer-events-auto relative m-0 h-dvh max-h-dvh w-full max-w-full items-center justify-center"
 >
   <nav
     class="small-screen pt-40text-center z-20 flex h-full w-full flex-col items-center justify-center gap-4 bg-white px-2 pb-12 font-hatch text-2xl text-fujo-pink"
@@ -258,73 +258,84 @@ const { pathname } = Astro.url;
     display: none;
   }
 
-  @media (prefers-reduced-motion: reduce) {
-    nav.big-screen {
-      padding-left: calc(52px);
+  nav.big-screen {
+    padding-left: calc(52px);
+    animation: pad linear both;
+    animation-timeline: scroll(root);
+    animation-duration: 10000s;
+    animation-range: 0px 200px;
+  }
+
+  .lemon {
+    width: calc(52px);
+    opacity: 1;
+    animation: appear linear both;
+    animation-timeline: scroll(root);
+    animation-duration: 10000s;
+    animation-range: 0px 200px;
+  }
+
+  nav.big-screen::before,
+  .menu::before {
+    filter: drop-shadow(2px 2px 7px #4360f7);
+    animation:
+      gradient 10s ease infinite,
+      shadow linear both;
+    animation-timeline: none, scroll(root);
+    animation-duration: 10s, 10000s;
+  }
+
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
     }
   }
 
-  @media (prefers-reduced-motion: no-preference) {
+  @keyframes pad {
+    from {
+      padding-left: 0;
+    }
+    to {
+      padding-left: calc(52px);
+    }
+  }
+  @keyframes shadow {
+    from {
+      filter: drop-shadow(0 0 0 #4360f7);
+    }
+    to {
+      filter: drop-shadow(2px 2px 7px #4360f7);
+    }
+  }
+  @keyframes appear {
+    from {
+      width: 0;
+      opacity: 0;
+    }
+    to {
+      width: calc(52px);
+      opacity: 1;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    nav.big-screen,
+    .lemon,
     nav.big-screen::before,
     .menu::before {
-      animation:
-        gradient 10s ease infinite,
-        shadow linear both;
-      animation-timeline: none, scroll(root);
-    }
-
-    @keyframes gradient {
-      0% {
-        background-position: 0% 50%;
-      }
-      50% {
-        background-position: 100% 50%;
-      }
-      100% {
-        background-position: 0% 50%;
-      }
-    }
-
-    nav.big-screen {
-      animation: pad linear both;
-      animation-timeline: scroll();
-      animation-range: entry 0% exit 5%;
-    }
-    .lemon {
-      animation: appear linear both;
-      animation-timeline: scroll();
-      animation-range: entry 0% exit 5%;
-    }
-
-    @keyframes pad {
-      from {
-        padding-left: 0;
-      }
-      to {
-        padding-left: calc(52px);
-      }
-    }
-    @keyframes shadow {
-      from {
-        filter: drop-shadow(0 0 0 #4360f7);
-      }
-      to {
-        filter: drop-shadow(2px 2px 7px #4360f7);
-      }
-    }
-    @keyframes appear {
-      from {
-        width: 0;
-        opacity: 0;
-      }
-      to {
-        width: calc(52px);
-        opacity: 1;
-      }
+      animation: none;
     }
   }
 </style>
 <script>
+  import "scroll-timeline-polyfill/dist/scroll-timeline.js";
+
   const openMenu = document.querySelector(".menu-open");
   const menu = document.querySelector(".menu");
   const menuDialog = document.querySelector<HTMLDialogElement>(".menu-dialog");
@@ -365,10 +376,31 @@ const { pathname } = Astro.url;
     menuDialog.addEventListener("close", () => {
       if (!menuDialog.open) {
         document.documentElement.style.overflowY = "";
-        // Use scrollTo with instant behavior to avoid smooth scroll performance hit
         window.scrollTo({ top: scrollLocation, behavior: "instant" });
         menu.classList.remove("script-hidden");
       }
     });
   }
+
+  // Kickstart animations for the polyfill
+  // Inspired by: https://github.com/flackr/scroll-timeline/issues/112#issuecomment-1936334977
+  // TODO: remove this when scroll-timeline is widely available across browsers
+  const kickstartPolyfill = () => {
+    const elements = document.querySelectorAll("nav.big-screen, .lemon");
+
+    requestAnimationFrame(() => {
+      elements.forEach((el) => {
+        // Force restart animations so polyfill catches them
+        const animations = el.getAnimations();
+
+        animations.forEach((anim) => {
+          anim.cancel();
+          anim.play();
+        });
+      });
+    });
+  };
+
+  // Run once when module loads
+  kickstartPolyfill();
 </script>

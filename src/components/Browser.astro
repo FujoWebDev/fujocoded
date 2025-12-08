@@ -32,7 +32,7 @@ const { class: className, title } = Astro.props;
   >
     <!-- <div class="absolute top-0 bottom-0 right-0 left-0 shadow-lg z-0 rounded-lg"> -->
     <header
-      class="drag-handle relative flex items-center justify-between gap-2 rounded-tl-lg rounded-tr-lg border-2 border-b-0 border-[#2a1a4c] bg-fujo-purple py-1 pl-1 pr-4"
+      class="drag-handle relative flex select-none items-center justify-between gap-2 rounded-tl-lg rounded-tr-lg border-2 border-b-0 border-[#2a1a4c] bg-fujo-purple py-1 pl-1 pr-4"
     >
       <div class="flex shrink-0">
         <Image
@@ -67,15 +67,17 @@ const { class: className, title } = Astro.props;
 <script>
   import interact from "interactjs";
   const resetPosition = (target: HTMLElement) => {
-    const x = parseFloat(target.getAttribute("data-x") || "0") * -1;
-    const y = parseFloat(target.getAttribute("data-y") || "0") * -1;
-    target.style.transform = "translate(" + x + "px, " + y + "px)";
+    target.style.removeProperty("translate");
+    target.style.removeProperty("transform");
+    delete target.dataset["x"];
+    delete target.dataset["y"];
     target.classList.toggle("dragging", false);
   };
 
   interact(".drag-me")
     .draggable({
-      allowFrom: ".drag-handle",
+      // Let it drag from anywhere
+      // allowFrom: ".drag-handle",
       ignoreFrom: ".ignore",
       autoScroll: true,
       listeners: {
@@ -93,7 +95,7 @@ const { class: className, title } = Astro.props;
       },
     })
     .pointerEvents({
-      allowFrom: ".drag-handle",
+      // allowFrom: ".drag-handle",
       ignoreFrom: ".ignore-pointer",
     })
     .on("doubletap", (event) => {
@@ -163,5 +165,25 @@ const { class: className, title } = Astro.props;
   }
   .drag-me:not(.dragging) button {
     display: none;
+  }
+
+  @keyframes wiggleBrowser {
+    0%,
+    100% {
+      transform: rotate(0deg);
+    }
+    25% {
+      transform: rotate(-0.2deg);
+    }
+    75% {
+      transform: rotate(0.2deg);
+    }
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .drag-me:hover:not(.dragging) {
+      animation: wiggleBrowser 0.3s ease-in-out;
+      animation-iteration-count: 2;
+    }
   }
 </style>

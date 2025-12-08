@@ -20,10 +20,13 @@ const { showOnMobile = false } = Astro.props;
     class="bubble absolute right-[135px] flex flex-col items-center rounded-md border-2 border-black bg-white px-4 py-2 font-macho"
   >
     <slot>
-      <a class="flex flex-col items-center gap-1" href="/support">
+      <a
+        class="flex flex-col items-center gap-1 hover:underline"
+        href="/support"
+      >
         <!-- <Icon class="text-xl text-white" name="logos:backerkit" /> -->
         <div class="w-20 text-center text-sm font-bold">
-          Support our work <span class="underlined text-fujo-pink">today</span>!
+          Support our work <span class="text-fujo-pink">today</span>!
         </div>
       </a>
     </slot>
@@ -70,6 +73,26 @@ const { showOnMobile = false } = Astro.props;
     @media (max-height: 666px) {
       .git {
         display: none;
+      }
+    }
+
+    @keyframes wiggle {
+      0%,
+      100% {
+        transform: rotate(0deg);
+      }
+      25% {
+        transform: rotate(-1deg);
+      }
+      75% {
+        transform: rotate(1deg);
+      }
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      .git:hover .bubble {
+        animation: wiggle 0.2s ease-in-out;
+        animation-iteration-count: 2;
       }
     }
     /* a :global(svg) {

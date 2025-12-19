@@ -80,6 +80,7 @@ const {
         --color-neon-glow: #ffbf00;
         --color-neon-fill: #f3e5bc;
         --color-neon-inner-glow: #f7de94;
+        scroll-padding-top: 70px;
       }
 
       @media (prefers-reduced-motion: no-preference) {
@@ -145,14 +146,6 @@ const {
       }
       figure figcaption {
         @apply text-center;
-      }
-      /* Add this CSS to your stylesheet */
-      :target::before {
-        content: "";
-        display: block;
-        height: 80px; /* Adjust this value to the height of your fixed header */
-        margin-top: -80px; /* Same value as above */
-        visibility: hidden;
       }
 
       @keyframes smoothLater {

@@ -169,10 +169,9 @@ const { Content, data } = Astro.props;
     :global(
       :where(
         li p:first-child strong:first-child,
-        li > strong:first-child,
-        li > strong:first-child code
-      )
+        li > strong:first-child
+      ) a 
     ) {
-    @apply text-fujo-pink;
+    @apply text-fujo-pink no-underline hover:underline hover:decoration-wavy hover:decoration-current;
   }
 </style>

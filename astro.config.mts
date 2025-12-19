@@ -10,6 +10,7 @@ import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import remarkAltTextFiles from "@fujocoded/remark-alt-text-files";
 import metaTags from "astro-meta-tags";
 import rehypeToc from "rehype-toc";
+import { sectionLinks } from "./src/components/lib/remark-plugins";
 
 import type { Processor, Transformer } from "unified";
 import type { Node } from "unist";
@@ -39,6 +40,7 @@ export default defineConfig({
     remarkPlugins: [
       [remarkCapitalizeTitles, { special: DEFAULT_CAPITALIZATIONS }],
       remarkAltTextFiles,
+      sectionLinks
     ],
     rehypePlugins: [
       rehypeSlug,

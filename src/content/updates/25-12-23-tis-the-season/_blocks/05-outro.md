@@ -3,7 +3,7 @@
 Phew, what a journey\! Thank _you_ for reading (_or skimming_) all the way down.
 
 We can't wait to see you in the next year (and newsletter), with ~~even
-more~~ _a moderate quantity of new_ updates. Since not quite as much time will pass—we
+more~~ _a moderate quantity of_ new updates. Since not quite as much time will pass—we
 pinkie swear!—we _hope_ the update will look thinner, but not for that less
 meaty.
 

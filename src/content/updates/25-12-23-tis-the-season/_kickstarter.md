@@ -1,5 +1,5 @@
 ---
-title: "TIS THE SEASON"
+title: " Digital pack launch, Garage Sale 📦, and... so. many. articles."
 ---
 
 <span class="text-xl text-fujo-pink">Greetings, _fu(jo|dan|jin)_ and friends,
@@ -56,8 +56,23 @@ If you’ve not already boarded our _ship_, [jump on our Patreon now](https://ww
 
 ![file:](./images/astrolabe.png)
 
+<<<<<<<
 - **Join the Cult:** What’s better than us adding new functionality to our open source projects? Helping _you_—yes you\!—do the same\! The BobaBoard Builders Bubble recently banded together to open contributor-friendly issues for both [AO3.js](https://github.com/FujoWebDev/ao3.js/issues) and [Astrolabe](https://github.com/FujoWebDev/astrolabe/issues), so people like _you_—yes you\!—can come show (or learn) how it’s done\! So look around, swing by, throw some code at the wall, and come ask help if lost\! These’ll look great on your resume, portfolio, _and_ Hinge profile, we swear.
+=======
+- **Join the Cult:** What’s better than us adding new functionality to our open source projects? Helping _you_—yes you\!—do the same\! The BobaBoard Builders Bubble recently banded together to **open <u>contributor-friendly</u> issues for both [AO3.js](https://github.com/FujoWebDev/ao3.js/issues) and [Astrolabe](https://github.com/FujoWebDev/astrolabe/issues)**, so people like _you_—yes you\!—can come show (or learn) how it’s done\! So look around, **swing by, throw some code at the wall, and come ask for help if lost\!** These’ll look great on your resume, portfolio, _and_ Hinge profile, we swear.
+>>>>>>>
 
+<<<<<<<
+=======
+- **A Plethora of Plugins:** While the aforementioned autorelease will (eventually) help communicate our changes in an efficient and orderly manner, we _unfortunately_ aren’t quite there _yet_, so…**here’s a quick roundup of updates** \*deep breath\*: [haetae](https://bsky.app/profile/did:plc:dg2qmmjic7mmecrbvpuhtvh6) has been working doubletime to add README and examples to [authproto](https://github.com/FujoWebDev/fujocoded-plugins/tree/main/astro-authproto), we’ve been prototyping [friends-only Astro page functionality](https://bsky.app/profile/essentialrandom.bsky.social/post/3m2sr75baak2r), [cross-posting to Bluesky from your very own blog](https://bsky.app/profile/essentialrandom.bsky.social/post/3m3vnbhi3rc2h), and [fetching your latest social contacts](https://github.com/FujoWebDev/fujocoded-plugins/tree/webc-pds-links/webcomponent-pds-links) from your own PDS; we’ve also been pumping [our Guestbook](https://github.com/FujoWebDev/lexicon-guestbook/) full of moderation goodness, like blocking users, hiding submissions, and deleting guestbooks\! At this stage, it is [almost ready for launch](https://github.com/FujoWebDev/lexicon-guestbook?tab=readme-ov-file#todo-list), awaiting a final deliberation on text formatting while our sysadmin [Kat](https://fujocoded.com/contributors/kat) sets it up to run on our server); and we’d be remiss not to mention tools built for our own use, like syncing our collaborators repository with [our website’s “contributors” folder](https://github.com/FujoWebDev/fujocoded/blob/main/scripts/sync-contributors.ts) (making it much easier to credit appropriately), or [centralizing and standardizing](https://github.com/FujoWebDev/.github/tree/main/.github/workflows) our deploy scripts.
+
+### Our Streaming Schedule
+
+Ms Boba loves [streaming](https://www.essentialrandomness.com/streams)—or so say the _allegations_—but it’s hard to juggle a stable schedule while also corralling a horde of raccoons in a vaguely-cohesive direction. Which is why, we’re _NOT_ going to promise any particular schedule right now: we’ll make **our best effort to maintain the Monday & Thursdays at 3PM tradition**, and let you know on our socials if any special stream gets scheduled\!
+
+For the rest, come discover what’s up, get Ms Boba to rant about your favorite pet topic (she’s _very_ easy to bait), or just co-work with us while we cry over code\! Whether on [Twitch](https://twitch.tv/essentialrandomness) or [Streamplace](https://stream.place/essentialrandom.bsky.social), **you know where (and when) to find us**_**…mostly\!**_
+
+>>>>>>>
 ## FujoStore Highlights: Restocks, Sales, and Limited-Time Offers
 
 ![file:](./images/garage-sale.png)
@@ -88,7 +103,7 @@ Phew, what a journey\! Thank _you_ for reading (_or skimming_) all the way down.
 
 We can't wait to see you in the next year (and newsletter), with ~~even
 more~~ _a moderate quantity of new_ updates. Since not quite as much time will pass—we
-pinkie swear!—we _hope_ the update might will look thinner, but not for that less
+pinkie swear!—we _hope_ the update will look thinner, but not for that less
 meaty.
 
 As always, _quality over quantity, mind over matter, seme over

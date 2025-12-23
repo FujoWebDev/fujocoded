@@ -1,5 +1,5 @@
 ---
-title: " Digital pack launch, our first Garage Sale 📦, and... so. many. articles."
+title: " Digital pack launch, Garage Sale 📦, and... so. many. articles."
 tagline: "Between stores and writing processes, betas and autoreleases, there's a lot of ground to cover. We hope you brought a shovel (or a Project Manager) ❄️🏂"
 created_at: 2025-12-23T09:53:00.301Z
 tags:

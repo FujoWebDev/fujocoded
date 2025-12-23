@@ -1,1 +1,1 @@
-TODO
+A screenshot of the "Using GitHub in the Terminal" guide on learn-at, showing an overview and "Authenticating ot GitHub via CLI" section. 

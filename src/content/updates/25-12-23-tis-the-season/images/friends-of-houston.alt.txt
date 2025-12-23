@@ -1,1 +1,1 @@
-TODO
+An animated gif badge saying "Friends of Houston" with a smiling Houston next to it. It has a shine effect and a purple-gradient starry background. 

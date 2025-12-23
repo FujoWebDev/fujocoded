@@ -1,10 +1,1 @@
-Astrolabe
-
-Rich Text Editor, plugins, and content adapters for fandom and ATmosphere-friendly editors.
-
-Astrolabe is a block-based Rich Text Editor which aims to provide a simple, extensible, and modern text editing experience to be reused across projects and provide a bridge across platforms.
-
-It consists of two main parts:
-
-Plugins, components that extend the TipTap editor with new features and functionality.
-Adapters, libraries to translate between the output of the editor and the API of modern social platforms, using Remark/Mdast as a translation layer.
+A screenshot of the Astrolabe read-me file describing it as a "Rich Text Editor, plugins, and content adapters for fandom and atmosphere-friendly editors." containing plugins to extend the editor and adapters to translate the editor output to social platform APIs for flexibility.

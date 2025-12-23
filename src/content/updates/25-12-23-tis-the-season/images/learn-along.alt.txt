@@ -1,15 +1,3 @@
-A screencap of the Fortune Cookie learn along. A white and grey circuit-board
-background, with a cream block in the center. Within the cream block is an image
-mimicking a webpage, with a yellow border, red columns on each side, and a cream
-background. Boba-tan, with a fortune cookie moustache, stands in the top middle.
-Below is a white text box with red border, saying "seek a fortune if you dare",
-and options for vanilla, chocolate, or lemon cookie flavors. White text with
-black outline reads: "Learn along as we build a fortune generator-- select a
-flavor, push a button, get a fortune!" Text below that outlines what is
-included: a centered single column layout; visual and practical interactions;
-pages, texts, and images where you want them, at any size, and more! Features
-are listed on the top right, with black text on a white text box outlined in
-black. Inside a black text field with white text, at the bottom right, there are
-more detailed features listed. These feature boxes highlight the approachable
-nature of the learn along, professional knowledge included, and customizable
-nature of the product.
+A screencap of the Fortune Cookie learn along, showing the finished UI annotated with features. It is titled "Learn along as we build a fortune generator: Select a Flavor, Press a Button, Get a Fortune" and shows a text output window reading "Seek a fortune, if you dare" above a radio-button selector for cookie flavour (Vanilla, Chocolate, Lemon) and a "Get a Fortune" button. Each feature is labelled including "Centred, single-column layout"; "Pages, text, and images where you want them, at any size"; "visual and practical instructions"; "and more" listing features like accessibility, extra  exercises, and reacting to user actions. 
+
+Boba-Tan is sitting on top of the output box, eating a fortune cookie. 

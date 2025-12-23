@@ -1,1 +1,14 @@
-TODO
+A screenshot of the index for Fujo Guide Volume 0 Issue 1 - Git. 
+
+The sections are: 
+About this Guide
+What are Version Control Systems?
+Repositories: Where Your Code Lives
+Commits: Code Checkpoints Made Easy
+Git'ing good: More Commit Scenarios
+Traveling Through Your Code's History
+Log: Your code Diary
+Checkout: A Quick Dip into the Past 
+Reset: A Time Machine at Your Fingertips 
+I'm Ready to Practice, Now What?
+More Tips and Tricks

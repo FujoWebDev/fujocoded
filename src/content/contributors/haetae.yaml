@@ -1,0 +1,11 @@
+name: haetae
+avatar: "./avatars/haetae.png"
+type:
+  - community
+  - contractor
+roles:
+  Code Contributor:
+    - role: Documentation
+      details: Authproto README
+contacts:
+  - https://bsky.app/profile/haetae.cozy.fan

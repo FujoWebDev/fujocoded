@@ -1,7 +1,6 @@
 name: Loconita
 avatar: "./avatars/default.png"
-type:
-  - community
+type: community
 roles:
   Fandom Cookies:
     - Feedback

@@ -8,8 +8,9 @@ export const PROJECTS = [
   "Volume 0 Issue 1",
   "Fandom Cookies",
   "FujoCoded",
+  "Learn@",
 ] as const;
-export type Project = typeof PROJECTS[number];
+export type Project = (typeof PROJECTS)[number];
 
 export const VOLUME_0_ISSUE_1_ROLES = [
   "Technical Writer",
@@ -25,15 +26,9 @@ export const VOLUME_0_ISSUE_1_ROLES = [
   "Data Collection & Entry",
 ];
 
-export const WEBSITES_ROLES = [
-  "fujoweb.dev",
-  "fujocoded.com",
-];
+export const WEBSITES_ROLES = ["fujoweb.dev", "fujocoded.com"];
 
-export const FUJOCODED_ROLES = [
-  "HimeOps",
-  "FujoCoded",
-];
+export const FUJOCODED_ROLES = ["HimeOps", "FujoCoded"];
 
 export const FANDOM_COOKIES_ROLES = [
   "Artist",
@@ -47,16 +42,20 @@ export const FANDOM_COOKIES_ROLES = [
   "CSS & Design",
   "Art Direction",
   "Cookie Catcher Design",
-  "Feedback",  
+  "Promo Campaign Assistance",
+  "Feedback",
 ];
 
-export const PROJECT_ROLES : Record<Project, string[]> = {
+export const LEARN_AT_ROLES = ["Writers Coordinator", "Article Writer"];
+
+export const PROJECT_ROLES: Record<Project, string[]> = {
   "Volume 0 Issue 1": VOLUME_0_ISSUE_1_ROLES,
   "Volume 0 Kickstarter": [],
   "Volume 0": [],
-  "Websites": WEBSITES_ROLES,
+  Websites: WEBSITES_ROLES,
   "Fandom Cookies": FANDOM_COOKIES_ROLES,
-  "FujoCoded": FUJOCODED_ROLES,
+  FujoCoded: FUJOCODED_ROLES,
+  "Learn@": LEARN_AT_ROLES,
 };
 
 export default PROJECTS;

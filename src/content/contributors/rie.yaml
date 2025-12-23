@@ -1,0 +1,13 @@
+name: Rie
+avatar: "./avatars/rie.png"
+type:
+  - community
+  - contractor
+roles:
+  Learn@:
+    - role: Writers Coordinator
+      details: Style Guide Author & Process Coordinator
+    - role: Article Writer
+      details: Introduction to NodeJS
+contacts:
+  - https://notavodkashot.carrd.co/

@@ -33,13 +33,15 @@ const Roles = z
     )
   )
   .strict();
-  
-export const ContributorSchema = ({ image } : SchemaContext) => z.object({
-  name: z.string(),
-  avatar: image(),
-  type: z.enum(["founder", "contractor", "community"]).array(),
-  roles: Roles,
-  contacts: SocialsSchema.array()
-    .default([])
-    .transform((contacts) => contacts.map(transformSocial)),
-});
+
+const TYPE = z.enum(["founder", "contractor", "community"]);
+export const ContributorSchema = ({ image }: SchemaContext) =>
+  z.object({
+    name: z.string(),
+    avatar: image(),
+    type: z.union([TYPE, TYPE.array()]),
+    roles: Roles,
+    contacts: SocialsSchema.array()
+      .default([])
+      .transform((contacts) => contacts.map(transformSocial)),
+  });

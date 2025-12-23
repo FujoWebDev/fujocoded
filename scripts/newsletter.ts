@@ -9,6 +9,7 @@ import {
   readdirSync,
   watch,
 } from "fs";
+import { merge } from "node-diff3";
 import path from "path";
 const program = new Command();
 
@@ -59,6 +60,25 @@ const throwIfSymbol = (
   }
 
   return text as string | undefined;
+};
+
+const hasConflictMarkers = (content: string): boolean =>
+  /^<{7} |^={7}$|^>{7} /m.test(content);
+
+const threeWayMerge = (
+  current: string,
+  base: string,
+  updated: string,
+): { merged: string; hasConflicts: boolean } => {
+  const result = merge(
+    current.split("\n"),
+    base.split("\n"),
+    updated.split("\n"),
+  );
+  return {
+    merged: result.result.join("\n"),
+    hasConflicts: result.conflict,
+  };
 };
 
 const PREAMBLES = {
@@ -212,8 +232,11 @@ if (action === "build" || action == "watch") {
   );
   const directory = path.resolve(process.cwd(), "..", NEWSLETTERS_ROOT, name);
   const blocksDirectory = path.resolve(directory, "_blocks");
+  const lastBuiltDir = path.resolve(blocksDirectory, ".last-built");
 
   const buildNewsletter = async () => {
+    mkdirSync(lastBuiltDir, { recursive: true });
+
     const blocksContent = BLOCKS.reduce(
       (acc, block, index) => {
         acc[block] = readFileSync(
@@ -230,17 +253,56 @@ if (action === "build" || action == "watch") {
 
     for (const [contentType, blocks] of Object.entries(CONTENT_BLOCKS)) {
       const content = blocks.map((block) => blocksContent[block]).join("\n\n");
-      await writeFileSync(
-        path.resolve(
-          directory,
-          `${contentType == "index" ? contentType : `_${contentType}`}.md`,
-        ),
+      const fileName = `${contentType == "index" ? contentType : `_${contentType}`}.md`;
+      const filePath = path.resolve(directory, fileName);
+      const lastBuiltPath = path.resolve(lastBuiltDir, fileName);
+
+      const newContent =
         PREAMBLES[contentType as keyof typeof PREAMBLES](
           title ?? originalTitle,
           new Date(),
           tagline ?? originalTagline ?? "TODO",
-        ) + content,
-      );
+        ) + content;
+
+      let finalContent = newContent;
+
+      // Check for manual edits and merge if needed
+      if (existsSync(filePath) && existsSync(lastBuiltPath)) {
+        const currentContent = readFileSync(filePath, "utf-8");
+        const lastBuiltContent = readFileSync(lastBuiltPath, "utf-8");
+
+        if (currentContent !== lastBuiltContent) {
+          // Check for unresolved conflicts from previous merge
+          if (hasConflictMarkers(currentContent)) {
+            await stream.warn(
+              `Unresolved conflicts in ${fileName} - resolve before next build`,
+            );
+            // Update baseline so it stays current, but preserve their file
+            writeFileSync(lastBuiltPath, newContent);
+            continue;
+          }
+
+          // Manual edits detected - perform three-way merge
+          const { merged, hasConflicts } = threeWayMerge(
+            currentContent,
+            lastBuiltContent,
+            newContent,
+          );
+          finalContent = merged;
+
+          if (hasConflicts) {
+            await stream.warn(
+              `Merge conflicts in ${fileName} - resolve manually`,
+            );
+          } else {
+            await stream.info(`Preserved manual edits in ${fileName}`);
+          }
+        }
+      }
+
+      writeFileSync(filePath, finalContent);
+      // Save new content (not merged) as last-built baseline
+      writeFileSync(lastBuiltPath, newContent);
     }
   };
   const s = spinner();
@@ -248,7 +310,7 @@ if (action === "build" || action == "watch") {
   await buildNewsletter();
   s.stop(`Newsletter content created at ${name}`);
   if (action == "watch") {
-    stream.info([
+    await stream.info([
       "Now watching newsletter content...",
       `Find the blocks to edit at ${blocksDirectory}`,
     ]);
@@ -258,7 +320,7 @@ if (action === "build" || action == "watch") {
       s.stop(`Newsletter content updated at ${name}`);
     });
   } else if (action == "build") {
-    stream.info("Newsletter built at index.md");
+    await stream.info("Newsletter built at index.md");
   } else {
     throw Error("unknown action");
   }

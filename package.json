@@ -18,7 +18,7 @@
     "@astrojs/mdx": "^3.0.0",
     "@astrojs/tailwind": "^5.1.0",
     "@fujocoded/remark-alt-text-files": "^0.0.2",
-    "@fujocoded/remark-capitalize-titles": "^0.0.7",
+    "@fujocoded/remark-capitalize-titles": "^0.0.13",
     "@fujocoded/zod-transform-socials": "^0.0.12",
     "@iconify-json/logos": "^1.1.42",
     "@sindresorhus/slugify": "^3.0.0",

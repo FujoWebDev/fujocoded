@@ -17,6 +17,7 @@
     "@isomorphic-git/lightning-fs": "^4.6.2",
     "commander": "^13.1.0",
     "isomorphic-git": "^1.34.2",
+    "node-diff3": "^3.1.2",
     "memfs": "^4.50.0",
     "tsx": "^4.19.3"
   }

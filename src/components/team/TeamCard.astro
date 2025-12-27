@@ -17,7 +17,7 @@ const { name, contacts, avatar, slug } = Astro.props;
 ---
 
 <div
-  class="outer-box relative z-10 flex w-80 min-w-72 w-[500px] max-w-full flex-col gap-4 rounded-xl bg-white md:pb-[1.125rem]"
+  class="outer-box relative z-10 flex w-80 min-w-72 w-[500px] max-w-full flex-col gap-4 rounded-xl md:pb-[1.125rem]"
 >
   <h3
     class="font- m-0 flex items-center gap-3 self-center px-3 pt-5 text-xl not-italic"
@@ -78,61 +78,69 @@ const { name, contacts, avatar, slug } = Astro.props;
   </ul>
 </div>
 <style>
-  .outer-box::before {
-    /* background: linear-gradient(180deg, #ff21e9 0%, #4360f7 100%); */
-    background: radial-gradient(circle at center, #ff21e9, #4360f7);
-    background-size: 500% 500%;
-    content: "";
-    position: absolute;
-    top: -2px;
-    left: -2px;
-    right: -2px;
-    bottom: -2px;
-    z-index: -2;
-    /* @apply rounded-xl; */
-    border-radius: calc(0.75rem + 2px);
+  @property --gradient-angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
   }
-  .outer-box::after {
-    background-color: white;
-    background-size: 500% 500%;
-    content: "";
-    position: absolute;
-    top: 0px;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: -1;
-    /* @apply rounded-xl; */
-    border-radius: calc(0.75rem);
+
+  .outer-box {
+    border: 2px solid transparent;
+    background:
+      linear-gradient(white, white) padding-box,
+      conic-gradient(
+          from var(--gradient-angle),
+          rgba(255, 33, 233, 0.8),
+          rgba(67, 96, 247, 0.8),
+          rgba(255, 33, 233, 0.8),
+          rgba(67, 96, 247, 0.8),
+          rgba(255, 33, 233, 0.8)
+        )
+        border-box;
+    transition:
+      box-shadow 0.2s ease,
+      transform 0.2s ease;
   }
+
+  .outer-box:hover {
+    box-shadow: 0 0 15px rgba(255, 33, 233, 0.15);
+    transform: translateY(-4px) scale(1.02);
+  }
+
   .outer-box:global(:has(*:target)) h3 {
     font-weight: bold;
   }
-  .outer-box:global(:has(*:target))::after {
-    background-color: #ffd8fb;
+
+  .outer-box:global(:has(*:target)) {
+    background:
+      linear-gradient(#ffd8fb, #ffd8fb) padding-box,
+      conic-gradient(
+          from var(--gradient-angle),
+          rgba(255, 33, 233, 0.8),
+          rgba(67, 96, 247, 0.8),
+          rgba(255, 33, 233, 0.8),
+          rgba(67, 96, 247, 0.8),
+          rgba(255, 33, 233, 0.8)
+        )
+        border-box;
   }
 
   @media (prefers-reduced-motion: no-preference) {
-    .outer-box::before {
-      animation: gradient 15s ease infinite;
-      transform: translate3d(0px, 0px, 0.1px);
-      overflow-clip-margin: unset;
-    }
-    .outer-box::after {
-      animation: gradient 15s ease infinite;
-      transform: translate3d(0px, 0px, 0.1px);
-      overflow-clip-margin: unset;
+    .outer-box {
+      animation: rotate-gradient 6s linear infinite;
     }
 
-    @keyframes gradient {
-      0% {
-        background-position: 0% 50%;
-      }
-      50% {
-        background-position: 100% 50%;
-      }
-      100% {
-        background-position: 0% 50%;
+    /* Stagger animation start for each card */
+    .outer-box:nth-child(6n + 1) { animation-delay: 0s; }
+    .outer-box:nth-child(6n + 2) { animation-delay: -1s; }
+    .outer-box:nth-child(6n + 3) { animation-delay: -2s; }
+    .outer-box:nth-child(6n + 4) { animation-delay: -3s; }
+    .outer-box:nth-child(6n + 5) { animation-delay: -4s; }
+    .outer-box:nth-child(6n + 6) { animation-delay: -5s; }
+
+    @keyframes rotate-gradient {
+      to {
+        --gradient-angle: 360deg;
       }
     }
   }

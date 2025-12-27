@@ -10,8 +10,11 @@ export const getStaticPaths: GetStaticPaths = async () => {
   // For now we merge them so we get the legacy ones in too
   const team = [
     ...contributorsCollection,
-    ...teamCollection.filter((member) =>
-      !contributorsCollection.some((contributor) => member.id == contributor.id)
+    ...teamCollection.filter(
+      (member) =>
+        !contributorsCollection.some(
+          (contributor) => member.id == contributor.id
+        )
     ),
   ];
   return team.map((member, index) => {
@@ -42,12 +45,12 @@ if (!memberEntry) {
 ---
 
 <Layout title="Fujocoded LLC – Our team">
-  <article class="rounded-xl bg-white drop-shadow-purple w-full">    
+  <article class="w-full rounded-xl bg-white drop-shadow-purple">
     <a href="/contributors">
       <h1>Our <em>team</em> & contributors</h1>
     </a>
     <div>
-      <TeamCard {...memberEntry.data} slug={memberEntry.id} class:list={"box"} />
+      <TeamCard {...memberEntry.data} slug={memberEntry.id} />
       <nav>
         <a
           class:list={{

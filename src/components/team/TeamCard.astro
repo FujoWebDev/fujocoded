@@ -3,51 +3,91 @@ import { Icon } from "astro-icon/components";
 import { Image } from "astro:assets";
 import type { CollectionEntry } from "astro:content";
 
-type ContributorData = CollectionEntry<"team">["data"] | CollectionEntry<"contributors">["data"]
+type ContributorData =
+  | CollectionEntry<"team">["data"]
+  | CollectionEntry<"contributors">["data"];
 
 interface Props {
   slug: string;
   name: ContributorData["name"];
   contacts: ContributorData["contacts"];
   avatar: ContributorData["avatar"];
+  type?: "link" | "display";
 }
 
-
-const { name, contacts, avatar, slug } = Astro.props;
+const { name, contacts, avatar, slug, type = "link" } = Astro.props;
+const isLinkMode = type === "link";
 ---
 
 <div
-  class="outer-box relative z-10 flex w-80 min-w-72 w-[500px] max-w-full flex-col gap-4 rounded-xl md:pb-[1.125rem]"
+  class:list={[
+    "outer-box group relative z-10 flex w-80 w-[500px] min-w-72 max-w-full flex-col gap-4 rounded-xl md:pb-[1.125rem]",
+    isLinkMode ? "link-mode" : "display-mode",
+  ]}
 >
   <h3
-    class="font- m-0 flex items-center gap-3 self-center px-3 pt-5 text-xl not-italic"
+    class="header-row m-0 flex items-center gap-3 self-center text-xl not-italic"
     id={`${slug}`}
   >
-    <a
-      href={`/contributors/${slug}`}
-      class="hover:pointer flex items-center gap-4 !no-underline"
-    >
-      <span class="-mt-1 font-zeitung text-fujo-pink">{name}</span>
-      <Image
-        class="rounded-xl object-cover"
-        width={40}
-        height={40}
-        src={avatar}
-        alt=""
-      />
-    </a>
+    {
+      isLinkMode ? (
+        <a
+          href={`/contributors/${slug}`}
+          class="card-link flex items-center gap-4 !no-underline"
+        >
+          <span class="card-name -mt-1 font-zeitung text-fujo-pink">
+            {name}
+          </span>
+          <Image
+            class="rounded-xl object-cover"
+            width={40}
+            height={40}
+            src={avatar}
+            alt="Avatar of the contributor"
+          />
+          <Icon
+            name="lucide:arrow-right"
+            size={20}
+            class="arrow-icon -ml-2 text-fujo-pink opacity-40 transition-all"
+          />
+        </a>
+      ) : (
+        <div class="flex items-center gap-4">
+          <span class="-mt-1 font-zeitung text-fujo-pink">{name}</span>
+          <Image
+            class="rounded-xl object-cover"
+            width={40}
+            height={40}
+            src={avatar}
+            alt="Avatar of the contributor"
+          />
+        </div>
+      )
+    }
   </h3>
+  {
+    !isLinkMode && (
+      <button
+        class="copy-button absolute right-3 top-3 flex rounded-lg p-2 text-fujo-pink opacity-40 transition-all hover:opacity-100"
+        data-url={`/contributors/${slug}`}
+        aria-label="Copy link to this profile"
+      >
+        <Icon name="lucide:copy" size={18} class="copy-icon" />
+        <Icon name="lucide:check" size={18} class="check-icon hidden" />
+      </button>
+    )
+  }
   <ul class="flex flex-col p-4 pb-2.5 pt-0 md:p-6 md:pb-[1.125rem] md:pt-0">
     {
       contacts.map((contact) => {
         const url = new URL(contact.url);
         return (
-          <li class="mt-0">
+          <li class="contact-row mt-0">
             <a
               href={contact.url}
-              class="group flex items-center gap-3 py-1.5 !no-underline"
+              class="group/contact flex items-center gap-3 py-1.5 !no-underline"
             >
-              <div class="flex rounded-lg bg-fujo-purple/10 p-2 group-hover:bg-fujo-purple/20">
+              <div class="flex rounded-lg bg-fujo-purple/10 p-2 group-hover/contact:bg-fujo-purple/20">
                 <Icon
                   size={24}
                   aria-labelledby={
@@ -77,6 +117,32 @@ const { name, contacts, avatar, slug } = Astro.props;
     }
   </ul>
 </div>
+
+<script>
+  document.querySelectorAll(".copy-button").forEach((button) => {
+    button.addEventListener("click", async () => {
+      const url = new URL(
+        button.getAttribute("data-url") || "",
+        window.location.origin
+      );
+      const copyIcon = button.querySelector(".copy-icon");
+      const checkIcon = button.querySelector(".check-icon");
+
+      try {
+        await navigator.clipboard.writeText(url.toString());
+        copyIcon?.classList.add("hidden");
+        checkIcon?.classList.remove("hidden");
+        setTimeout(() => {
+          copyIcon?.classList.remove("hidden");
+          checkIcon?.classList.add("hidden");
+        }, 2000);
+      } catch (err) {
+        console.error("Failed to copy:", err);
+      }
+    });
+  });
+</script>
+
 <style>
   @property --gradient-angle {
     syntax: "<angle>";
@@ -102,9 +168,76 @@ const { name, contacts, avatar, slug } = Astro.props;
       transform 0.2s ease;
   }
 
-  .outer-box:hover {
+  .link-mode {
+    cursor: pointer;
+  }
+
+  .link-mode .card-link::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 0.75rem;
+  }
+
+  .link-mode:hover:not(:has(.contact-row a:hover)) .header-row {
+    background: linear-gradient(
+      to right,
+      rgba(255, 33, 233, 0.15),
+      rgba(67, 96, 247, 0.1)
+    );
+  }
+
+  .link-mode:hover:not(:has(.contact-row a:hover)) .arrow-icon {
+    opacity: 1;
+    transform: translateX(0.25rem);
+  }
+
+  .link-mode:hover:not(:has(.contact-row a:hover)) .card-name {
+    text-decoration: underline;
+  }
+
+  .link-mode:hover {
     box-shadow: 0 0 15px rgba(255, 33, 233, 0.15);
     transform: translateY(-4px) scale(1.02);
+  }
+
+  .display-mode {
+    cursor: default;
+  }
+
+  .copy-button:hover {
+    background: linear-gradient(
+      to right,
+      rgba(255, 33, 233, 0.15),
+      rgba(67, 96, 247, 0.1)
+    );
+  }
+
+  /* Shared styles */
+  .header-row {
+    border-radius: 0.5rem;
+    margin-top: 0.5rem;
+    padding: 0.5rem 1rem;
+    transition: background 0.15s ease;
+  }
+
+  .contact-row {
+    border-radius: 0.5rem;
+    padding-left: 0.5rem;
+    transition: background 0.15s ease;
+  }
+
+  .contact-row a {
+    position: relative;
+    z-index: 1;
+  }
+
+  .contact-row:has(a:hover) {
+    background: linear-gradient(
+      to right,
+      rgba(255, 33, 233, 0.2),
+      rgba(67, 96, 247, 0.15)
+    );
   }
 
   .outer-box:global(:has(*:target)) h3 {
@@ -131,12 +264,24 @@ const { name, contacts, avatar, slug } = Astro.props;
     }
 
     /* Stagger animation start for each card */
-    .outer-box:nth-child(6n + 1) { animation-delay: 0s; }
-    .outer-box:nth-child(6n + 2) { animation-delay: -1s; }
-    .outer-box:nth-child(6n + 3) { animation-delay: -2s; }
-    .outer-box:nth-child(6n + 4) { animation-delay: -3s; }
-    .outer-box:nth-child(6n + 5) { animation-delay: -4s; }
-    .outer-box:nth-child(6n + 6) { animation-delay: -5s; }
+    .outer-box:nth-child(6n + 1) {
+      animation-delay: 0s;
+    }
+    .outer-box:nth-child(6n + 2) {
+      animation-delay: -1s;
+    }
+    .outer-box:nth-child(6n + 3) {
+      animation-delay: -2s;
+    }
+    .outer-box:nth-child(6n + 4) {
+      animation-delay: -3s;
+    }
+    .outer-box:nth-child(6n + 5) {
+      animation-delay: -4s;
+    }
+    .outer-box:nth-child(6n + 6) {
+      animation-delay: -5s;
+    }
 
     @keyframes rotate-gradient {
       to {

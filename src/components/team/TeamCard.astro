@@ -15,7 +15,7 @@ interface Props {
   mode?: "link" | "display";
 }
 
-const { name, contacts, avatar, slug, mode = "link" } = Astro.props;
+const { name, contacts, avatar, slug, mode = "display" } = Astro.props;
 const isLinkMode = mode === "link";
 ---
 

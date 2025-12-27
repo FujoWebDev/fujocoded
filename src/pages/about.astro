@@ -95,15 +95,19 @@ const description =
           <h3 id="our-founder" class="text-fujo-purple">Our founder</h3>
         </a>
         <p>...and only employee.</p>
-        <div class="mb-12 mt-6 flex flex-col gap-6 w-[calc(100% + 80px)] mx-[-40px] items-center">
+        <div
+          class="w-[calc(100% + 80px)] mx-[-40px] mb-12 mt-6 flex flex-col items-center gap-6"
+        >
           {
             team
               .filter((member) => member.data.type === "founder")
-              .map((member) => <TeamCard {...member.data} slug={member.id} />)
+              .map((member) => (
+                <TeamCard {...member.data} slug={member.id} mode="link" />
+              ))
           }
         </div>
       </section>
-       <section>
+      <section>
         <a href="#our-contractors">
           <h3 id="our-contractors" class="text-fujo-purple">Our contractors</h3>
         </a>
@@ -117,11 +121,15 @@ const description =
             their websites!
           </p>
         </div>
-        <div class="mb-12 mt-6 flex flex-col gap-6 md:grid md:grid-cols-2 mx-[-40px]  items-center md:items-stretch">
+        <div
+          class="mx-[-40px] mb-12 mt-6 flex flex-col items-center gap-6 md:grid md:grid-cols-2 md:items-stretch"
+        >
           {
             team
               .filter((member) => member.data.type === "contractor")
-              .map((member) => <TeamCard {...member.data} slug={member.id} />)
+              .map((member) => (
+                <TeamCard {...member.data} slug={member.id} mode="link" />
+              ))
           }
         </div>
         <div
@@ -143,11 +151,15 @@ const description =
           community moderation, moral support, specialized expertise, software
           development, and so much more.
         </p>
-        <div class="mb-12 mt-6 flex flex-col gap-6 md:grid md:grid-cols-2 mx-[-40px] items-center md:items-stretch">
+        <div
+          class="mx-[-40px] mb-12 mt-6 flex flex-col items-center gap-6 md:grid md:grid-cols-2 md:items-stretch"
+        >
           {
             team
               .filter((member) => member.data.type === "community")
-              .map((member) => <TeamCard {...member.data} slug={member.id} />)
+              .map((member) => (
+                <TeamCard {...member.data} slug={member.id} mode="link" />
+              ))
           }
         </div>
         <div
@@ -155,7 +167,7 @@ const description =
         >
           ... and more.
         </div>
-      </section> 
+      </section>
     </section>
   </article>
 </Layout>

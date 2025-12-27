@@ -12,11 +12,11 @@ interface Props {
   name: ContributorData["name"];
   contacts: ContributorData["contacts"];
   avatar: ContributorData["avatar"];
-  type?: "link" | "display";
+  mode?: "link" | "display";
 }
 
-const { name, contacts, avatar, slug, type = "link" } = Astro.props;
-const isLinkMode = type === "link";
+const { name, contacts, avatar, slug, mode = "link" } = Astro.props;
+const isLinkMode = mode === "link";
 ---
 
 <div

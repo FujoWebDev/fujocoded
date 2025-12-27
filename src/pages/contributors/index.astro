@@ -17,7 +17,7 @@ const team = await getCollection("contributors");
         team
           .filter((member) => member.data.type.includes("founder"))
           .map((member) => (
-            <TeamCard {...member.data} slug={member.id} type="link" />
+            <TeamCard {...member.data} slug={member.id} mode="link" />
           ))
       }
     </section>
@@ -27,7 +27,7 @@ const team = await getCollection("contributors");
         team
           .filter((member) => member.data.type.includes("contractor"))
           .map((member) => (
-            <TeamCard {...member.data} slug={member.id} type="link" />
+            <TeamCard {...member.data} slug={member.id} mode="link" />
           ))
       }
     </section>
@@ -37,7 +37,7 @@ const team = await getCollection("contributors");
         team
           .filter((member) => member.data.type.includes("community"))
           .map((member) => (
-            <TeamCard {...member.data} slug={member.id} type="link" />
+            <TeamCard {...member.data} slug={member.id} mode="link" />
           ))
       }
     </section>

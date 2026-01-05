@@ -2,6 +2,7 @@
 import { getCollection } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
 import TagList from "../../components/TagList.astro";
+import SubscriptionForm from "../../components/updates/SubscriptionForm.astro";
 
 const updates = (
   await getCollection("updates", (update) => !update.data.unlisted)
@@ -13,21 +14,18 @@ const updates = (
 ---
 
 <Layout>
-  <a href="#updates">
-    <h1 id="updates" class="text-white">Updates</h1>
-  </a>
+  <SubscriptionForm />
   <ol class="flex flex-col gap-4">
     {
       updates.map((update) => {
         return (
-          <li class="flex flex-col items-center rounded-xl bg-white drop-shadow-purple">
-            <article class="flex flex-col gap-2 px-6 pb-6 pt-7 sm:px-10">
+          <li class="m-0 flex flex-col items-center rounded-xl bg-white drop-shadow-purple">
+            <article class="flex w-full flex-col gap-2 px-8 pb-12 pt-10 sm:px-14">
               <date
-                class="text-[16px] text-slate-500"
+                class="text-base text-slate-500"
                 style="font-variant: small-caps;"
               >
                 {update.data.created_at.toLocaleString("en", {
-                  weekday: "long",
                   year: "numeric",
                   month: "long",
                   day: "numeric",
@@ -41,10 +39,10 @@ const updates = (
                 />
               </h2>
 
-              {!!update.data.tags.length && <TagList tags={update.data.tags} />}
               {update.data.tagline && (
                 <p class="tagline">{update.data.tagline}</p>
               )}
+              {!!update.data.tags.length && <TagList tags={update.data.tags} />}
             </article>
           </li>
         );
@@ -52,15 +50,3 @@ const updates = (
     }
   </ol>
 </Layout>
-
-<style>
-  article {
-    width: min(100% - 32px, 75ch);
-  }
-
-  h1 {
-    text-shadow:
-      0 2px 6px rgba(255, 56, 235, 0.7),
-      0 3px 12px rgba(77, 46, 145, 0.4);
-  }
-</style>

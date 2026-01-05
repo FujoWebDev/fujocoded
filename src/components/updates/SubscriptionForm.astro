@@ -1,0 +1,91 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
+<div
+  class="inbox-card relative mb-8 mt-4 flex max-w-xl flex-col gap-4 justify-self-center rounded-xl bg-gradient-to-b from-[#260F56] to-[#4D2E91] px-10 py-6 text-center font-macho text-white"
+>
+  <p class="text-md font-zeitung font-semibold text-fujo-green">
+    > Get 'em in your inbox
+  </p>
+  <form
+    action="https://buttondown.email/api/emails/embed-subscribe/fujocoded"
+    method="post"
+    target="popupwindow"
+    onsubmit="window.open('https://buttondown.email/fujocoded', 'popupwindow')"
+    class="flex rounded-full border-2 border-white/30"
+  >
+    <input
+      type="email"
+      name="email"
+      id="bd-email"
+      aria-label="email"
+      placeholder="boba-tan@fujocoded.com"
+      required="true"
+      class="h-12 w-[20rem] self-center rounded-l-full px-5 text-black placeholder:italic"
+    />
+    <input
+      type="submit"
+      value="Subscribe"
+      class="button-links h-12 w-full rounded-r-full bg-gradient-to-b from-[#CE00FF] to-[#A700CF] pl-4 pr-5 text-center font-hatch text-lg font-medium text-white sm:w-auto"
+    />
+  </form>
+  <p class="text-md flex items-center justify-center gap-2 text-white">
+    Too many emails?
+    <a
+      href="https://twitter.com/fujoc0ded"
+      class="!text-white hover:!text-fujo-pink"
+      ><Icon name="simple-icons:twitter" /></a
+    >
+    <a
+      href="https://www.tumblr.com/fujocoded"
+      class="!text-white hover:!text-fujo-pink"
+      ><Icon name="simple-icons:tumblr" /></a
+    >
+    <a
+      href="https://bsky.app/profile/fujocoded.bsky.social"
+      class="!text-white hover:!text-fujo-pink"
+      ><Icon name="simple-icons:bluesky" /></a
+    >
+    <a
+      href="https://blorbo.social/@fujocoded"
+      class="!text-white hover:!text-fujo-pink"
+      ><Icon name="simple-icons:mastodon" /></a
+    >
+  </p>
+</div>
+
+<style>
+  .inbox-card::before {
+    /* background: linear-gradient(180deg, #ff21e9 0%, #4360f7 100%); */
+    background: radial-gradient(circle at center, #ff21e9, #4360f7);
+    background-size: 500% 500%;
+    content: "";
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+    z-index: -1;
+    /* @apply rounded-xl; */
+    border-radius: calc(0.75rem + 3px);
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .inbox-card::before {
+      animation: gradient 12s ease infinite;
+    }
+
+    @keyframes gradient {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+  }
+</style>

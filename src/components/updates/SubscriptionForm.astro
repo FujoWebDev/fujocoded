@@ -3,7 +3,7 @@ import { Icon } from "astro-icon/components";
 ---
 
 <div
-  class="inbox-card relative mb-8 mt-4 flex max-w-xl flex-col gap-4 justify-self-center rounded-xl bg-gradient-to-b from-[#260F56] to-[#4D2E91] px-10 py-6 text-center font-macho text-white"
+  class="inbox-card relative mx-auto mb-8 mt-4 flex w-full max-w-xl flex-col items-center gap-4 rounded-xl bg-gradient-to-b from-[#260F56] to-[#4D2E91] px-6 py-6 text-center font-macho text-white"
 >
   <p class="text-md font-zeitung font-semibold text-fujo-green">
     > Get 'em in your inbox
@@ -13,7 +13,7 @@ import { Icon } from "astro-icon/components";
     method="post"
     target="popupwindow"
     onsubmit="window.open('https://buttondown.email/fujocoded', 'popupwindow')"
-    class="flex rounded-full border-2 border-white/30"
+    class="subscription-form flex w-full max-w-md flex-col gap-2 sm:flex-row sm:gap-0 sm:rounded-full sm:border-2 sm:border-white/30"
   >
     <input
       type="email"
@@ -22,12 +22,12 @@ import { Icon } from "astro-icon/components";
       aria-label="email"
       placeholder="boba-tan@fujocoded.com"
       required="true"
-      class="h-12 w-[20rem] self-center rounded-l-full px-5 text-black placeholder:italic"
+      class="email-input h-11 w-full flex-1 self-center rounded-full border border-white/30 px-6 py-1 text-black placeholder:italic focus:outline-none sm:rounded-l-full sm:rounded-r-none sm:border-0 sm:px-5"
     />
     <input
       type="submit"
       value="Subscribe"
-      class="button-links h-12 w-full rounded-r-full bg-gradient-to-b from-[#CE00FF] to-[#A700CF] pl-4 pr-5 text-center font-hatch text-lg font-medium text-white sm:w-auto"
+      class="button-links h-9 w-full rounded-full bg-gradient-to-b from-[#CE00FF] to-[#A700CF] px-5 text-center font-hatch text-sm font-medium text-white sm:h-11 sm:w-auto sm:rounded-l-none sm:rounded-r-full sm:pl-4 sm:pr-5 sm:text-lg"
     />
   </form>
   <p class="text-md flex items-center justify-center gap-2 text-white">
@@ -56,6 +56,19 @@ import { Icon } from "astro-icon/components";
 </div>
 
 <style>
+  .email-input:focus {
+    box-shadow: 0 0 0 2px rgba(255, 105, 180, 0.4);
+  }
+
+  @media (min-width: 640px) {
+    .email-input:focus {
+      box-shadow: none;
+    }
+    .subscription-form:focus-within {
+      box-shadow: 0 0 0 2px rgba(255, 105, 180, 0.5);
+    }
+  }
+
   .inbox-card::before {
     /* background: linear-gradient(180deg, #ff21e9 0%, #4360f7 100%); */
     background: radial-gradient(circle at center, #ff21e9, #4360f7);

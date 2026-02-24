@@ -1,21 +1,24 @@
 ---
 title: "Special (Offer) Edition — Certified In Love: The Return 💕 (+ 🍋 CitrusCon Q&A)"
 tagline: "A special offer for you... just (not) in time for Valentine's Day."
-created_at: 2026-02-23T10:38:22.744Z
+created_at: 2026-02-24T02:30:01.702Z
 tags:
-  - event announcement
-  - FujoCoded LLC fundraiser
+  - newsletter
 socials: []
 ---
 
+<!-- ⚠️ AUTO-GENERATED — edit _blocks/ instead ⚠️ -->
+
 ## 15% off your Timeless Ship 💌 + 🍋 CitrusCon Q&A now Open
 
-> **tl;dr:** send in your Qs [for our CitrusCon Q&A](https://citruscon.fillout.com/fujocoded-qna) & get 15% off [the new and improved RobinBoob](https://robinboob.com).
-> Read below for deetz 👇
+> **tl;dr:** send in your Qs [for our CitrusCon
+> Q&A](https://citruscon.fillout.com/fujocoded-qna) & get 15% off [the new and
+> improved RobinBoob](https://robinboob.com). Read below for deetz 👇
 
-<span class="text-xl text-fujo-pink">Greetings, _fu(jo|dan|jin)_ and friends,</span><br />
-First off: **the _full_ newsletter is coming out this week!** But here's a itty-bitty taster
-we want to make sure got to you..._in time_.
+<span class="text-xl text-fujo-pink">Greetings, _fu(jo|dan|jin)_ and
+friends,</span><br />
+First off: **the _full_ newsletter is coming out this week!** But here's a
+itty-bitty taster we want to make sure got to you..._in time_.
 
 ### Meet us @ CitrusCon — Send in your Q&A
 
@@ -73,21 +76,20 @@ And now, the ~~weather~~ updates:
   are they?)_.
 - **Certified Gift-Giver:** In true Valentine's spirit, **you can now officially
   gift ship certificates to other people.** No more putting in your bestie's
-  email at checkout and hoping Stripe won't forward your credit card details (_it wouldn't_):
-  we've built **a proper gifting flow, complete with a notification email and
-  personal note**, so your giftees will always know you're thinking of them
-  thinking of fictional characters smashing. If you haven't sent a proper
-  Valentine's yet, this makes **[the perfect gift for your
-  partner](https://robinboob.com/buy-ship?characters=414,409), your best friend, or even just yourself.**
-  Already sent one? Well, you know what we think: _time means nothing when
-  you're sharing some love._
+  email at checkout and hoping Stripe won't forward your credit card details
+  (_it wouldn't_): we've built **a proper gifting flow, complete with a
+  notification email and personal note**, so your giftees will always know
+  you're thinking of them thinking of fictional characters smashing. If you
+  haven't sent a proper Valentine's yet, this makes **[the perfect gift for your
+  partner](https://robinboob.com/buy-ship?characters=414,409), your best friend,
+  or even just yourself.** Already sent one? Well, you know what we think: _time
+  means nothing when you're sharing some love._
 - **Return of the Ship-Watchers:** Remember when **the RobinBoob Twitter account
   used to post every ship purchase**, uniting us in celebration of each other's
   excellent taste, or _(for some)_, in the pleasure of inflicting our
-  questionable palate upon others? Unfortunately, having fallen to... [you
-  know...](https://www.wired.com/story/twitter-data-api-prices-out-nearly-everyone/),
-  that tradition was lost..._until now_: starting today, **Ship-watching is back
-  on all our store socials** ([tumblr](https://www.tumblr.com/fujostore),
+  questionable palate upon others? Unfortunately, having fallen to ["imperscrutable business acumen"](https://www.wired.com/story/twitter-data-api-prices-out-nearly-everyone/), that tradition was lost..._until now_: starting today,
+  **Ship-watching is back on all our store socials**
+  ([tumblr](https://www.tumblr.com/fujostore),
   [mastodon](https://blorbo.social/@fujostore), and
   [bluesky](https://bsky.app/profile/fujostore.bsky.social)) _except
   [Twitter](https://x.com/fujostore)_. Subscribe, spectate, and ~~judge~~

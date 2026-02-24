@@ -2,14 +2,18 @@
 title: "Special (Offer) Edition — Certified In Love: The Return 💕 (+ 🍋 CitrusCon Q&A)"
 ---
 
+<!-- ⚠️ AUTO-GENERATED — edit _blocks/ instead ⚠️ -->
+
 ## 15% off your Timeless Ship 💌 + 🍋 CitrusCon Q&A now Open
 
-> **tl;dr:** send in your Qs [for our CitrusCon Q&A](https://citruscon.fillout.com/fujocoded-qna) & get 15% off [the new and improved RobinBoob](https://robinboob.com).
-> Read below for deetz 👇
+> **tl;dr:** send in your Qs [for our CitrusCon
+> Q&A](https://citruscon.fillout.com/fujocoded-qna) & get 15% off [the new and
+> improved RobinBoob](https://robinboob.com). Read below for deetz 👇
 
-<span class="text-xl text-fujo-pink">Greetings, _fu(jo|dan|jin)_ and friends,</span><br />
-First off: **the _full_ newsletter is coming out this week!** But here's a itty-bitty taster
-we want to make sure got to you..._in time_.
+<span class="text-xl text-fujo-pink">Greetings, _fu(jo|dan|jin)_ and
+friends,</span><br />
+First off: **the _full_ newsletter is coming out this week!** But here's a
+itty-bitty taster we want to make sure got to you..._in time_.
 
 ### Meet us @ CitrusCon — Send in your Q&A
 
@@ -52,14 +56,14 @@ couple](https://robinboob.com/buy-ship?characters=9615118,1459) from fans who
 RobinBoob.com](https://robinboob.com) and **use code `LOVE_IS_TIMELESS` to
 kickstart your very own VC (_Valentine Certificates_) fund.**
 
-And now, the ~~weather~~ ~~weekend~~ RobinBoob updates:
+And now, the ~~weather~~ updates:
 
 - **In Top Shipshape:** What better way to spend New Year holidays than to
   revisit one of [our most beloved ~~moneymakers~~ April 1st
   jokes](https://www.essentialrandom.dev/posts/april-1st-tradition-part-2)?
-  RobinBoob came out the other side of 2025 with a serious glow-up: we added
-  PayPal (our longest-standing request), braved database optimization so
-  searches aren't painfully slow, and snuck in a handful of quality-of-life
+  RobinBoob came out the other side of 2025 with a serious "new year, new me":
+  we added PayPal (our longest-standing request), braved database optimization
+  so searches aren't painfully slow, and snuck in a handful of quality-of-life
   improvements [ready for you to discover on your
   own](https://robinboob.com/buy-ship?characters=4622,4625). **The short
   version: everything's faster, smoother, more featureful**—and, of course,
@@ -67,22 +71,20 @@ And now, the ~~weather~~ ~~weekend~~ RobinBoob updates:
   are they?)_.
 - **Certified Gift-Giver:** In true Valentine's spirit, **you can now officially
   gift ship certificates to other people.** No more putting in your bestie's
-  email at checkout and hoping Stripe won't forward your credit card details (_it wouldn't_):
-  we've built **a proper gifting flow, complete with a notification email and
-  personal note**, so your giftees will always know you're thinking of them
-  thinking of fictional characters smashing. If you haven't sent a proper
-  Valentine's yet, this makes **[the perfect gift for your
-  partner](https://robinboob.com/buy-ship?characters=414,409), your best friend, or even just yourself.**
-  Already sent one? Well, you know what we think: _time means nothing when
-  you're sharing some love._
+  email at checkout and hoping Stripe won't forward your credit card details
+  (_it wouldn't_): we've built **a proper gifting flow, complete with a
+  notification email and personal note**, so your giftees will always know
+  you're thinking of them thinking of fictional characters smashing. If you
+  haven't sent a proper Valentine's yet, this makes **[the perfect gift for your
+  partner](https://robinboob.com/buy-ship?characters=414,409), your best friend,
+  or even just yourself.** Already sent one? Well, you know what we think: _time
+  means nothing when you're sharing some love._
 - **Return of the Ship-Watchers:** Remember when **the RobinBoob Twitter account
   used to post every ship purchase**, uniting us in celebration of each other's
   excellent taste, or _(for some)_, in the pleasure of inflicting our
-  questionable palate upon others? Unfortunately, having fallen to [Twitter's
-  questionable
-  choices](https://www.wired.com/story/twitter-data-api-prices-out-nearly-everyone/),
-  that tradition was lost..._until now_: starting today, **Ship-watching is back
-  on all our store socials** ([tumblr](https://www.tumblr.com/fujostore),
+  questionable palate upon others? Unfortunately, having fallen to ["imperscrutable business acumen"](https://www.wired.com/story/twitter-data-api-prices-out-nearly-everyone/), that tradition was lost..._until now_: starting today,
+  **Ship-watching is back on all our store socials**
+  ([tumblr](https://www.tumblr.com/fujostore),
   [mastodon](https://blorbo.social/@fujostore), and
   [bluesky](https://bsky.app/profile/fujostore.bsky.social)) _except
   [Twitter](https://x.com/fujostore)_. Subscribe, spectate, and ~~judge~~

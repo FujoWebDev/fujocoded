@@ -15,8 +15,8 @@ itty-bitty taster we want to make sure got to you..._in time_.
 
 ### Meet us @ CitrusCon — Send in your Q&A
 
-This Sunday, March 1st 2026, we’ll be (once again) **[haunting the virtual halls
-of CitrusCon](https://www.citruscon.com/)—not with a talk, but with a
+This Sunday, March 1st 2026, we’ll be (once again) [haunting the virtual halls
+of CitrusCon](https://www.citruscon.com/)—**not with a talk, but with a
 “Q&Ad-lib”**, an innovative panel format where Ms Boba attempts to prepare in
 advance, runs out of time, and is then forced to improvise live. Luckily, she’s
 good at that! _…or is she?_

@@ -17,11 +17,19 @@ interface Props {
 
 const { name, contacts, avatar, slug, mode = "display" } = Astro.props;
 const isLinkMode = mode === "link";
+
+const getContactLabel = (
+  contact: ContributorData["contacts"][number],
+  url: URL,
+) => {
+  if (contact.username) return `@${contact.username}`;
+  return `${url.hostname}${url.pathname === "/" ? "" : url.pathname}`;
+};
 ---
 
 <div
   class:list={[
-    "outer-box group relative z-10 flex w-80 w-[500px] min-w-72 max-w-full flex-col gap-4 rounded-xl md:pb-[1.125rem]",
+    "outer-box group relative z-10 flex w-80 min-w-72 max-w-full flex-col gap-4 rounded-xl md:pb-[1.125rem]",
     isLinkMode ? "link-mode" : "display-mode",
   ]}
 >
@@ -90,25 +98,15 @@ const isLinkMode = mode === "link";
               <div class="flex rounded-lg bg-fujo-purple/10 p-2 group-hover/contact:bg-fujo-purple/20">
                 <Icon
                   size={24}
-                  aria-labelledby={
-                    contact.platform !== "web" ? "platform" : undefined
-                  }
                   aria-label={
-                    contact.platform === "web" ? "website" : undefined
+                    contact.platform === "web" ? "website" : contact.platform
                   }
                   name={contact.icon ?? "world-www"}
                   class="flex-shrink-0"
                 />
               </div>
-              {contact.platform !== "web" && (
-                <span class="sr-only" id="platform">
-                  {contact.platform}:{" "}
-                </span>
-              )}
               <span class="-mt-1 truncate">
-                {contact.username
-                  ? `@${contact.username}`
-                  : `${url.hostname}${url.pathname == "/" ? "" : url.pathname}`}
+                {getContactLabel(contact, url)}
               </span>
             </a>
           </li>
@@ -119,11 +117,25 @@ const isLinkMode = mode === "link";
 </div>
 
 <script>
+  const observer = new IntersectionObserver(
+    (entries) => {
+      for (const entry of entries) {
+        entry.target.classList.toggle("is-visible", entry.isIntersecting);
+      }
+    },
+    { rootMargin: "50px" },
+  );
+  document
+    .querySelectorAll(".outer-box")
+    .forEach((card) => observer.observe(card));
+</script>
+
+<script>
   document.querySelectorAll(".copy-button").forEach((button) => {
     button.addEventListener("click", async () => {
       const url = new URL(
         button.getAttribute("data-url") || "",
-        window.location.origin
+        window.location.origin,
       );
       const copyIcon = button.querySelector(".copy-icon");
       const checkIcon = button.querySelector(".check-icon");
@@ -151,16 +163,18 @@ const isLinkMode = mode === "link";
   }
 
   .outer-box {
+    --gradient-pink-rgb: 255, 33, 233;
+    --gradient-blue-rgb: 67, 96, 247;
     border: 2px solid transparent;
     background:
       linear-gradient(white, white) padding-box,
       conic-gradient(
           from var(--gradient-angle),
-          rgba(255, 33, 233, 0.8),
-          rgba(67, 96, 247, 0.8),
-          rgba(255, 33, 233, 0.8),
-          rgba(67, 96, 247, 0.8),
-          rgba(255, 33, 233, 0.8)
+          rgba(var(--gradient-pink-rgb), 0.8),
+          rgba(var(--gradient-blue-rgb), 0.8),
+          rgba(var(--gradient-pink-rgb), 0.8),
+          rgba(var(--gradient-blue-rgb), 0.8),
+          rgba(var(--gradient-pink-rgb), 0.8)
         )
         border-box;
     transition:
@@ -182,8 +196,8 @@ const isLinkMode = mode === "link";
   .link-mode:hover:not(:has(.contact-row a:hover)) .header-row {
     background: linear-gradient(
       to right,
-      rgba(255, 33, 233, 0.15),
-      rgba(67, 96, 247, 0.1)
+      rgba(var(--gradient-pink-rgb), 0.15),
+      rgba(var(--gradient-blue-rgb), 0.1)
     );
   }
 
@@ -197,7 +211,7 @@ const isLinkMode = mode === "link";
   }
 
   .link-mode:hover {
-    box-shadow: 0 0 15px rgba(255, 33, 233, 0.15);
+    box-shadow: 0 0 15px rgba(var(--gradient-pink-rgb), 0.15);
     transform: translateY(-4px) scale(1.02);
   }
 
@@ -208,8 +222,8 @@ const isLinkMode = mode === "link";
   .copy-button:hover {
     background: linear-gradient(
       to right,
-      rgba(255, 33, 233, 0.15),
-      rgba(67, 96, 247, 0.1)
+      rgba(var(--gradient-pink-rgb), 0.15),
+      rgba(var(--gradient-blue-rgb), 0.1)
     );
   }
 
@@ -235,8 +249,8 @@ const isLinkMode = mode === "link";
   .contact-row:has(a:hover) {
     background: linear-gradient(
       to right,
-      rgba(255, 33, 233, 0.2),
-      rgba(67, 96, 247, 0.15)
+      rgba(var(--gradient-pink-rgb), 0.2),
+      rgba(var(--gradient-blue-rgb), 0.15)
     );
   }
 
@@ -249,17 +263,17 @@ const isLinkMode = mode === "link";
       linear-gradient(#ffd8fb, #ffd8fb) padding-box,
       conic-gradient(
           from var(--gradient-angle),
-          rgba(255, 33, 233, 0.8),
-          rgba(67, 96, 247, 0.8),
-          rgba(255, 33, 233, 0.8),
-          rgba(67, 96, 247, 0.8),
-          rgba(255, 33, 233, 0.8)
+          rgba(var(--gradient-pink-rgb), 0.8),
+          rgba(var(--gradient-blue-rgb), 0.8),
+          rgba(var(--gradient-pink-rgb), 0.8),
+          rgba(var(--gradient-blue-rgb), 0.8),
+          rgba(var(--gradient-pink-rgb), 0.8)
         )
         border-box;
   }
 
   @media (prefers-reduced-motion: no-preference) {
-    .outer-box {
+    .outer-box.is-visible {
       animation: rotate-gradient 6s linear infinite;
     }
 

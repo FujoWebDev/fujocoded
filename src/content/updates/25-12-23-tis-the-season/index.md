@@ -4,11 +4,15 @@ tagline: "Between stores and writing processes, betas and autoreleases, there's 
 created_at: 2025-12-23T09:53:00.301Z
 tags:
   - newsletter
-socials: []
+socials:
+  - https://bsky.app/profile/did:plc:737bslnnf7vyaktosjlrshmd/post/3maoyfpdhmk2x
+  - https://blorbo.social/@fujocoded/115771682494999539
+  - https://x.com/fujoc0ded/status/2003628595491852717
+  - https://www.tumblr.com/fujocoded/803774080225624064/its-finally-at-last-time-fujocodeds
 ---
 
-<span class="text-xl text-fujo-pink">Greetings, _fu(jo|dan|jin)_ and friends,
-<br/></span> End of year celebrations are upon us, and what better way to usher them in than the unique—_and belated_ 🙇—gift of a signature FujoCoded update?
+<span class="text-xl text-fujo-pink">Greetings, _fu(jo|dan|jin)_ and friends,</span>
+<br/> End of year celebrations are upon us, and what better way to usher them in than the unique—_and belated_ 🙇—gift of a signature FujoCoded update?
 
 Venture down this edition for the release of our first publicly-buyable teaching product (a one-of-a-kind tour de force that truly stretched our resources), the steadfast progress on taking the [production of learn@ content](https://learn.fujoweb.dev/) off Ms Boba's tired shoulders, and the many things happening in the ever-expanding FujoVerse™\!
 

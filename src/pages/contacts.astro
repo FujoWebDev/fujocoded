@@ -1,0 +1,103 @@
+---
+import ProjectCard from "../components/projects/ProjectCard.astro";
+import { Icon } from "astro-icon/components";
+import Layout from "../layouts/Layout.astro";
+import { getCollection } from "astro:content";
+
+const sns = await getCollection("contacts");
+
+const description = "Contact Us ";
+---
+
+<Layout description={description}>
+  <article class="rounded-xl bg-white drop-shadow-purple">
+    <a href="#contact-fujocoded-llc">
+      <h1 id="contact-fujocoded-llc">Contact <em>FujoCoded LLC</em></h1>
+    </a>
+    <section>
+		<p>
+			Reach out to us via our social media!
+		</p>
+    </section>
+	<section>
+		{
+			sns.map((soc) => (
+				<a href={`#${soc.data.name.toLowerCase()}-soc`}>
+					<h2 id={`${soc.data.name.toLowerCase()}-soc`}>{soc.data.name}</h2>
+				</a>
+
+				<ul class="mb-2 flex flex-wrap gap-2">
+					{soc.data.websites.map((link) => (
+						<li class="m-0">
+							<a href={link.url}>
+								<div class="flex rounded-lg bg-fujo-purple/10 p-2 group-hover:bg-fujo-purple/20">
+									<Icon
+										size={24}
+										aria-labelledby={link.platform !== "web" ? "website" : undefined}
+										aria-label={link.platform === "web" ? "website" : undefined}
+										name={link.icon ?? "world-www"}
+										class="flex-shrink-0"
+									/>
+								</div>
+							</a>
+						</li>
+					))}
+				</ul>
+			))
+		}
+    </section>
+  </article>
+</Layout>
+
+<style>
+  details::before {
+    /* background: linear-gradient(180deg, #ff21e9 0%, #4360f7 100%); */
+    background: radial-gradient(circle at center, #ff21e9, #4360f7);
+    background-size: 500% 500%;
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    z-index: -2;
+    /* @apply rounded-xl; */
+    border-radius: calc(0.75rem + 2px);
+  }
+  details::after {
+    @apply bg-gradient-to-b from-[#260F56] to-[#4D2E91];
+    background-size: 500% 500%;
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    /* @apply rounded-xl; */
+    border-radius: calc(0.75rem);
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    details::before {
+      animation: gradient 15s ease infinite;
+    }
+    details::after {
+      animation: gradient 15s ease infinite;
+    }
+
+    @keyframes gradient {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+  }
+</style>
+
+

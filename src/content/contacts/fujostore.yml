@@ -1,4 +1,12 @@
 name: FujoStore
 websites:
-  - https://store.fujocoded.com/
-  - https://blorbo.social/@fujostore/
+  - url: https://store.fujocoded.com/
+    icon: "lucide:store"
+  - url: https://www.robinboob.com/
+    icon: "lucide:store"
+  - url: https://www.fujoboard.com/
+    icon: "lucide:store"
+  - url: https://blorbo.social/@fujostore/
+    platform: mastodon
+  - https://twitter.com/fujoboard
+  - https://fujoboard.tumblr.com/

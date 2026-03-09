@@ -48,7 +48,6 @@ export default defineConfig({
   },
   experimental: {
     contentIntellisense: true,
-    contentLayer: true,
   },
 });
 4;

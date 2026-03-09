@@ -1,0 +1,10 @@
+name: StrayCatalyst
+avatar: "./avatars/straycatalyst.jpg"
+type:
+  - community
+roles:
+  Learn@:
+    - role: Article Writer
+      details: Installing NPM with NVM
+contacts:
+  - https://bsky.app/profile/straycatalyst.bsky.social

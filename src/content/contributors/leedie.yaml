@@ -1,0 +1,12 @@
+name: Leedie
+avatar: ./avatars/leedie.png
+type: community
+roles:
+  Websites:
+    - role: fujoweb.dev
+      details: Data Collector
+  Volume 0 Issue 1:
+    - Tasks Coordinator
+contacts:
+  - https://twitter.com/pyhpyjka/
+  - https://tarantasina.tumblr.com/

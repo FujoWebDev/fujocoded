@@ -1,0 +1,12 @@
+name: Elf Herself
+avatar: "./avatars/elf-herself.png"
+type: community
+roles:
+  Volume 0 Kickstarter:
+    - Lead Research
+  Websites:
+    - role: fujoweb.dev
+      details: Copy Writer
+contacts:
+  - https://elf.dreamwidth.org
+  - https://elfherself.bsky.social

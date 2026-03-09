@@ -1,0 +1,11 @@
+name: rudy tuesday
+avatar: "./avatars/rudy-tuesday.png"
+type: community
+roles:
+  Websites:
+    - role: fujoweb.dev
+      details: Coder
+  Volume 0 Issue 1:
+    - Beta Reader
+contacts:
+  - https://rudytues.day

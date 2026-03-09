@@ -1,9 +1,19 @@
 name: ymkse
 avatar: "./avatars/ymkse.jpg"
-type: 
+type:
   - community
   - contractor
 roles:
+  Volume 0 Kickstarter:
+    - Artist
+    - role: Character Designer
+      details: HTML & CSS
+  Volume 0:
+    - role: Character Designer
+      details: HTML & CSS
+  Volume 0 Issue 1:
+    - role: Artist
+      details: Cover & HTML Maid
   Fandom Cookies:
     - role: Artist
       details: Boba Prophet, Cookie Run(away), Cookie-xplosion

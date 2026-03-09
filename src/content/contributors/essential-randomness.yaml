@@ -1,13 +1,35 @@
 name: Ms Boba
 alias: essential-randomness
-type: 
+type:
   - founder
 avatar: "./avatars/essential-randomness.png"
 roles:
+  Volume 0 Kickstarter:
+    - Project Lead
+    - Writer
+    - Merch Designer
+    - Graphic Design
+  Volume 0:
+    - Project Lead
+    - role: Writer
+      details: Technical and Scenario
+    - The One Who Talks With The Lawyers
+  Volume 0 Issue 1:
+    - Technical Writer
+    - Scenario Writer
+    - role: Artist
+      details: Beta Sketches
+  Websites:
+    - role: fujoweb.dev
+      details: Web Mistress
+    - role: fujoweb.dev
+      details: Coder
+    - role: fujoweb.dev
+      details: Copy Writer
   Fandom Cookies:
-    - role: Programming 
+    - role: Programming
       details: General Coding
-    - Cookie Catcher Design  
+    - Cookie Catcher Design
     - Digital Item Pack Assembly
 contacts:
   - https://essentialrandomness.com

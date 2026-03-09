@@ -3,6 +3,12 @@ avatar: "./avatars/yuu.png"
 type:
   - community
 roles:
+  Volume 0 Kickstarter:
+    - QA Testing
+    - Lead Research
+  Volume 0 Issue 1:
+    - Beta Reader
+    - Proofreader
   Fandom Cookies:
     - Extra Hands (and Brains)
 contacts:

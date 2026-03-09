@@ -1,0 +1,10 @@
+name: Ev
+avatar: "./avatars/ev.png"
+type:
+  - community
+roles:
+  Code Contributor:
+    - role: Documentation
+      details: FujoCoded plugins README
+contacts:
+  - https://github.com/emarsh1995

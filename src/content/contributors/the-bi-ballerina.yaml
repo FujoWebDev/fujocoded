@@ -1,0 +1,12 @@
+name: the-bi-ballerina
+avatar: "./avatars/the-bi-ballerina.png"
+type: community
+roles:
+  Volume 0 Kickstarter:
+    - Social Media & Marketing
+contacts:
+  - https://thebiballerina.tumblr.com
+  - https://thebiballerina.dreamwidth.org
+  - url: https://fandom.ink/@thebiballerina
+    platform: mastodon
+    username: thebiballerina

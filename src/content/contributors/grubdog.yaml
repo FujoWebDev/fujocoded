@@ -1,0 +1,9 @@
+name: Grubdog
+avatar: "./avatars/grubdog.png"
+type: community
+roles:
+  Learn@:
+    - role: Article Writer
+      details: GitHub Codespaces
+contacts:
+  - https://your-local-grubdog.neocities.org/

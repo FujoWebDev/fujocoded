@@ -15,7 +15,7 @@ export async function getStaticPaths() {
         Content: (await update.render()).Content,
         data: update.data,
       },
-    }))
+    })),
   );
 }
 
@@ -51,11 +51,38 @@ const { Content, data } = Astro.props;
       }
     </div>
     <div class="prose prose-lg m-auto mt-4 max-w-max">
+      {
+        !!data.socials.length && (
+          <div class="header-socials text-center">
+            <h3 class="m-0 mb-3 font-hatch text-lg font-medium italic text-fujo-pink">
+              Read 'em on <em class="text-white shadow-fujo-pink">socials</em>{" "}
+              ❤︎
+            </h3>
+            <ul class="m-0 flex list-none justify-center gap-5 p-0">
+              {data.socials.map((contact) => (
+                <li class="m-0 p-0">
+                  <a
+                    class="inline-block text-fujo-blue transition-all hover:scale-110 hover:text-fujo-pink"
+                    href={contact.url}
+                    aria-label={contact.platform}
+                  >
+                    <Icon
+                      size={28}
+                      aria-hidden="true"
+                      name={contact.icon ?? "world-www"}
+                    />
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )
+      }
       <Content />
     </div>
   </article>
   <aside
-    class="mx-auto mt-4 flex flex-col items-center gap-3 rounded-xl bg-white px-6 pb-6 pt-7 text-center drop-shadow-purple sm:px-10"
+    class="mx-auto mt-4 flex max-w-xl flex-col items-center gap-3 rounded-xl bg-white px-6 pb-6 pt-7 text-center drop-shadow-purple sm:px-10"
   >
     {
       !!data.socials.length && (
@@ -63,34 +90,22 @@ const { Content, data } = Astro.props;
           <h3 class="mb-0 mt-1 font-hatch text-[24px] font-medium italic text-fujo-pink">
             Share us on <em class="text-white shadow-fujo-pink">socials</em> ❤︎
           </h3>
-          <ul class="mb-1 flex w-full max-w-md justify-around gap-2">
-            {data.socials.map((contact) => {
-              return (
-                <li class="flex flex-col items-center gap-2">
-                  <a href={contact.url}>
-                    <Icon
-                      size={24}
-                      aria-labelledby={
-                        contact.platform !== "web" ? "platform" : undefined
-                      }
-                      aria-label={
-                        contact.platform === "web" ? "website" : undefined
-                      }
-                      name={contact.icon ?? "world-www"}
-                    />
-                  </a>
-                  <a href={contact.url}>
-                    {contact.platform === "web" ? (
-                      contact.url
-                    ) : (
-                      <span class="capitalize" id="platform">
-                        {`${contact.platform?.charAt(0)}${contact.platform?.slice(1)}`}
-                      </span>
-                    )}
-                  </a>
-                </li>
-              );
-            })}
+          <ul class="mb-1 flex justify-center gap-5">
+            {data.socials.map((contact) => (
+              <li>
+                <a
+                  class="inline-block text-fujo-blue transition-all hover:scale-110 hover:text-fujo-pink"
+                  href={contact.url}
+                  aria-label={contact.platform}
+                >
+                  <Icon
+                    size={28}
+                    aria-hidden="true"
+                    name={contact.icon ?? "world-www"}
+                  />
+                </a>
+              </li>
+            ))}
           </ul>
         </>
       )
@@ -136,10 +151,10 @@ const { Content, data } = Astro.props;
     @apply relative mx-[-30px] rounded-xl border border-dashed border-fujo-pink bg-white px-12 py-7 pb-8;
   }
   .prose :global(.toc h2) {
-    @apply relative z-10  m-0 mb-2;
+    @apply relative z-10 m-0 mb-2;
   }
   .prose :global(.toc-level) {
-    @apply relative z-10 m-0 flex list-none flex-col gap-1  p-0 text-fujo-pink;
+    @apply relative z-10 m-0 flex list-none flex-col gap-1 p-0 text-fujo-pink;
   }
   .prose :global(.toc-level-2) {
     @apply mt-1 gap-2 pl-6 text-base;
@@ -167,11 +182,20 @@ const { Content, data } = Astro.props;
 
   .prose
     :global(
-      :where(
-        li p:first-child strong:first-child,
-        li > strong:first-child
-      ) a 
+      :where(li p:first-child strong:first-child, li > strong:first-child) a
     ) {
-    @apply text-fujo-pink no-underline hover:underline hover:decoration-wavy hover:decoration-current;
+    @apply text-fujo-pink no-underline hover:underline hover:decoration-current hover:decoration-wavy;
+  }
+
+  .prose :global(.toc .header-socials) {
+    @apply mt-4 border-t border-dashed border-fujo-pink/30 pt-4;
   }
 </style>
+
+<script>
+  const socials = document.querySelector(".header-socials");
+  const toc = document.querySelector(".toc");
+  if (socials && toc) {
+    toc.insertAdjacentElement("beforeend", socials);
+  }
+</script>

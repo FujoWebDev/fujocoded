@@ -1,18 +1,34 @@
 name: enigmalea
 avatar: "./avatars/enigmalea.png"
-type: 
+type:
   - community
 roles:
+  Volume 0 Kickstarter:
+    - Project Organizing
+    - Technical Writer
+    - Editor
+    - QA Testing
+  Volume 0:
+    - Project Organizing
+    - Technical Writer
+    - Editor
+    - Beta Wrangler
+  Volume 0 Issue 1:
+    - Technical Writer
+    - Beta Reading Coordinator
+    - Additional Coding
+  Websites:
+    - role: fujoweb.dev
+      details: Maintainer
+    - role: fujoweb.dev
+      details: Coder
+    - role: fujoweb.dev
+      details: Copy Writer
   Fandom Cookies:
     - Extra Hands (and Brains)
 contacts:
   - https://enigmalea.quest
-  - https://enigmalea.tumblr.com
-  - https://enigmalea.bsky.social
-  - url: https://easymode.im/@enigmalea
-    platform: firefish
-    username: enigmalea
+  - url: https://bsky.app/profile/enigmalea.quest
+    icon: simple-icons:bluesky
   - https://archiveofourown.org/users/enigmalea
-  - https://github.com/enigmalea
-  - https://enigmalea.dreamwidth.org
-  - https://ko-fi.com/enigmalea
+  - https://enigmalea.tumblr.com

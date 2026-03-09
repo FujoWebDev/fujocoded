@@ -1,0 +1,10 @@
+TypeScript libraries for ATproto, from the official site OAuthPattern
+
+At the bottom, with a arrow that says "it us!"
+@fujocoded/authproto (npmjs) - Community implementation for Astro apps
+
+Other include:
+@atproto/oauth-client-browser (npmjs) - Suitable for frontend-only applications (e.g. SPAs).
+@atproto/oauth-client-node (npmjs) - Suitable for Electron desktop apps or server-side deployments.
+@atproto/oauth-client-expo (npmjs) - For use in React Native projects (e.g. mobile apps)
+@atproto/oauth-client (npmjs) (This is the core implementation on which the above three libraries depend)

@@ -1,0 +1,16 @@
+name: Dove
+avatar: ./avatars/merelydovely.png
+type: community
+roles:
+  Websites:
+    - role: fujoweb.dev
+      details: Copy Writer
+  Volume 0 Issue 1:
+    - Communications
+    - Beta Reader
+contacts:
+  - https://twitter.com/merelydovely/
+  - https://archiveofourown.org/users/merelydovely
+  - https://merelydovely.bsky.social
+  - https://starfieldcanvas.tumblr.com/
+  - https://github.com/merelydovely

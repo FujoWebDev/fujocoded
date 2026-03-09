@@ -1,12 +1,17 @@
 name: ria
-avatar: "./avatars/riazaia.png"
-type: 
+avatar: ./avatars/riazaia.png
+type:
   - community
   - contractor
 roles:
+  Volume 0:
+    - Additional Coding
+  Volume 0 Issue 1:
+    - Additional Coding
   Fandom Cookies:
-    - role: Programming 
+    - role: Programming
       details: General Coding
     - Digital Item Pack Assembly
 contacts:
   - https://github.com/riazaia
+  - https://bsky.app/profile/riazaia.bsky.social

@@ -1,0 +1,16 @@
+export const FANDOM_COOKIES_ROLES = [
+  "Additional Research, Feedback, Development, and Assistance",
+  "Alt Text",
+  "Art Direction",
+  "Artist",
+  "Cookie Catcher Design",
+  "CSS & Design",
+  "Digital Item Pack Assembly",
+  "Digital Item Pack Wallpapers",
+  "Extra",
+  "Extra Hands (and Brains)",
+  "Feedback",
+  "Programming",
+  "Project Management",
+  "Promo Campaign Assistance",
+];

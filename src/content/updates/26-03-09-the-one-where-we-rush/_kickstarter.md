@@ -1,5 +1,5 @@
 ---
-title: "Special (Offer) Edition — Certified In Love: The Return 💕"
+title: "Everything, Everywhere, All at Once...just slightly late"
 ---
 
 <!-- ⚠️ AUTO-GENERATED — edit _blocks/ instead ⚠️ -->
@@ -125,7 +125,7 @@ Read on for our diagnosis (and solution) ✨
 
 - **Git Intro'd:** We've also **taken another next step into expanding the Git
   chapters on our site.** In our new intro chapter, written [by our friend
-  Hyena](contributors/hyena) and [appropriately named "Say Hi to Git (and
+  Hyena](/contributors/hyena) and [appropriately named "Say Hi to Git (and
   GitHub)"](https://learn.fujoweb.dev/git/intro/), we **give a real quick overview
   of Version Control to help teach it (and sell it) to all visitors to our site**—not just our zine buyers!
 
@@ -176,9 +176,11 @@ preference.
 ### In the Git(hub)
 
 - **Welcome to the GitHub:** A warm shoutout to the **newest first-time
-  contributors to our GitHub—and _for some_ GitHub itself: [TODO: NAMES]!**
-  Whether with a PR, a review, or a README, their generous contribution keeps us
-  going and _(not going to lie)_ makes us shed little tears of gratitude. **Thank you
+  contributors to our GitHub—and _for some_ GitHub itself:
+  [Ev](/contributors/ev), [Hyena](/contributors/hyena) _(✨first ever!✨)_, PC
+  _(✨first ever!✨)_, and [Rie](/contributors/rie) _(✨first ever!✨)_!** Whether
+  with a PR, a review, or a README, their generous contribution keeps us going
+  and _(not going to lie)_ makes us shed little tears of gratitude. **Thank you
   for making the FujoVerse a little bit shinier ✨**
 
 - **Astro-nomical Fanfic Data:** Scraping AO3 data is fun, but you know what's
@@ -186,27 +188,29 @@ preference.
   [Astro AO3 loader
   plugin](https://github.com/FujoWebDev/fujocoded-plugins/tree/main/astro-ao3-loader)!**
   This plugin's first official release now works with Astro 5, and **supports
-  _series_ in addition to _works_.** Plus, **[Ev](/contributors/ev) (our _valiant
-  hero_) gave it [a proper
+  _series_ in addition to _works_.** Plus, **[Ev](/contributors/ev) (our
+  _valiant hero_) gave it [a proper
   README](https://github.com/FujoWebDev/fujocoded-plugins/tree/main/astro-ao3-loader#fujocodedastro-ao3-loader)!**
-  So go forth now, load fics on your Astro site, and call it "_learning webdev_"...cause
-  it totally is!
+  So go forth now, load fics on your Astro site, and call it "_learning
+  webdev_"...cause it totally is!
 
 ![file:](./images/ao3-loader-example.png)
 
 - **AO3.js goes Adult:** Our [AO3 scraping
   library](https://github.com/FujoWebDev/AO3.js)/Official "Fan Bait" Project™
   got a bunch of upgrades: we've **added support for adult works** (we see you
-  😎) **and listing tag synonyms** (for internal purposes _Certified Shady®_ 🥷),
-  exported Zod schemas for ease of integration (e.g. our Astro loader
+  😎) **and listing tag synonyms** (for internal purposes _Certified Shady®_
+  🥷), exported Zod schemas for ease of integration (e.g. our Astro loader
   plugin 👀👆), and overhauled error handling. **Check out the [release
-  notes](https://github.com/FujoWebDev/AO3.js/releases/tag/v0.23.0) for the full changelog.**
+  notes](https://github.com/FujoWebDev/AO3.js/releases/tag/v0.23.0) for the full
+  changelog.**
 
-- **Official Rec-list:** Last but not least: `@fujocoded/authproto`, our [ATProto
-  authentication library for Astro
+- **Official Rec-list:** Last but not least: `@fujocoded/authproto`, our
+  [ATProto authentication library for Astro
   sites](https://github.com/FujoWebDev/fujocoded-plugins/tree/main/astro-authproto),
-  is now **recommended in [the official ATProto documentation](https://atproto.com/guides/oauth-patterns)**. Look,
-  fandom! _Senpai noticed us._ No pressure.
+  is now **recommended in [the official ATProto
+  documentation](https://atproto.com/guides/oauth-patterns)**. Look, fandom!
+  _Senpai noticed us._ No pressure.
 
 ![file:](./images/authproto.png)
 
@@ -261,7 +265,7 @@ time to The Cause™? Read on!
 And with this, it's all for these months! It took us _a long while_, but we've made it
 on the other side..._somehow._
 
-FujoGuide updates aside (follow them [on our socials]()), **we'll see you on the other side
+FujoGuide updates aside (follow them [on our socials](/find-us#fujowebdev)), **we'll see you on the other side
 of March 31st 👀** until then, "good night, ship tight, don't let the discourse bite!"
 
 _Yours,_<br />

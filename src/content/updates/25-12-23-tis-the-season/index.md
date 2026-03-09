@@ -6,7 +6,8 @@ tags:
   - newsletter
 socials:
   - https://bsky.app/profile/did:plc:737bslnnf7vyaktosjlrshmd/post/3maoyfpdhmk2x
-  - https://blorbo.social/@fujocoded/115771682494999539
+  - platform: mastodon
+    url: https://blorbo.social/@fujocoded/115771682494999539
   - https://x.com/fujoc0ded/status/2003628595491852717
   - https://www.tumblr.com/fujocoded/803774080225624064/its-finally-at-last-time-fujocodeds
 ---

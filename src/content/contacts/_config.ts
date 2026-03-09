@@ -7,6 +7,7 @@ export const collection = defineCollection({
   schema: (tools) =>
     z.object({
       name: z.string(),
+      description: z.string(),
       websites: SocialLinks,
     }),
 });

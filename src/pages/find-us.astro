@@ -1,50 +1,190 @@
 ---
-import ProjectCard from "../components/projects/ProjectCard.astro";
 import { Icon } from "astro-icon/components";
 import Layout from "../layouts/Layout.astro";
 import { getCollection } from "astro:content";
 
-const sns = await getCollection("contacts");
+const contacts = await getCollection("contacts");
 
-const description = "Contact Us";
+const SOCIAL_PLATFORMS = ["bsky", "tumblr", "mastodon", "twitter"];
+
+const isSocial = (link: { platform?: string }) =>
+  link.platform != null && SOCIAL_PLATFORMS.includes(link.platform);
 ---
 
-<Layout description={description}>
-  <article class="rounded-xl bg-white drop-shadow-purple">
-    <a href="#contact-fujocoded-llc">
-      <h1 id="contact-fujocoded-llc">Contact <em>FujoCoded LLC</em></h1>
+<Layout>
+  <article class="rounded-xl bg-white text-center drop-shadow-purple">
+    <a href="#find-us">
+      <h1 id="find-us">Find Us on the <em>Web</em></h1>
     </a>
     <section>
-		<p>
-			Reach out to us via our social media!
-		</p>
+      <p>Wherever you want us, wherever you need us.</p>
     </section>
-	<section>
-		{
-			sns.map((soc) => (
-				<a href={`#${soc.data.name.toLowerCase()}-soc`}>
-					<h2 id={`${soc.data.name.toLowerCase()}-soc`}>{soc.data.name}</h2>
-				</a>
+    <section class="mt-8">
+      <ul
+        class="site-cards mx-auto flex max-w-lg list-none flex-col items-center gap-8 p-0 [&>li]:mt-0"
+      >
+        {
+          contacts.map((contact, i) => {
+            const sites = contact.data.websites.filter(
+              (link) => !isSocial(link),
+            );
+            const socials = contact.data.websites
+              .filter(isSocial)
+              .sort((a, b) => SOCIAL_PLATFORMS.indexOf(a.platform!) - SOCIAL_PLATFORMS.indexOf(b.platform!));
+            return (
+              <li
+                class="site-card relative z-10 flex w-full flex-col gap-5 overflow-hidden rounded-xl p-7 text-left"
+                style={`--stagger: ${i}`}
+              >
+                <div>
+                  <a href={`#${contact.id}`}>
+                    <h2
+                      id={contact.id}
+                      class="m-0 font-zeitung text-xl not-italic leading-6"
+                    >
+                      {contact.data.name}
+                    </h2>
+                  </a>
+                  <p class="mb-0 mt-1 text-base text-fujo-purple/65">
+                    {contact.data.description}
+                  </p>
+                </div>
 
-				<ul class="mb-2 flex flex-wrap gap-2">
-					{soc.data.websites.map((link) => (
-						<li class="m-0">
-							<a href={link.url} title={link.platform === "custom" ? "website" : link.platform}>
-								<div class="flex rounded-lg bg-fujo-purple/10 p-2 group-hover:bg-fujo-purple/20">
-									<Icon
-										size={24}
-										aria-labelledby={link.platform !== "web" ? "website" : undefined}
-										aria-label={link.platform === "web" ? "website" : undefined}
-										name={link.icon ?? "world-www"}
-										class="flex-shrink-0"
-									/>
-								</div>
-							</a>
-						</li>
-					))}
-				</ul>
-			))
-		}
+                {sites.length > 0 && (
+                  <ul class="flex list-none flex-col">
+                    {sites.map((link) => (
+                      <li class="contact-row m-0 rounded-lg px-2 py-1.5">
+                        <a
+                          href={link.url}
+                          class="group/link flex items-center gap-3 rounded-lg !no-underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-fujo-purple/40"
+                        >
+                          <div class="flex rounded-lg bg-fujo-purple/10 p-2 transition-colors group-hover/link:bg-fujo-purple/20">
+                            <Icon
+                              size={24}
+                              aria-label="website"
+                              name={link.icon ?? "world-www"}
+                              class="flex-shrink-0"
+                            />
+                          </div>
+                          <span class="truncate">
+                            {new URL(link.url).hostname.replace(/^www\./, "")}
+                          </span>
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+
+                {socials.length > 0 && (
+                  <ul
+                    class:list={[
+                      "flex flex-wrap justify-center gap-2",
+                      sites.length > 0
+                        ? "border-t border-fujo-purple/10 pt-3"
+                        : "",
+                    ]}
+                  >
+                    {socials.map((link) => (
+                      <li class="m-0 list-none">
+                        <a
+                          href={link.url}
+                          aria-label={link.platform ?? "social link"}
+                          class="flex rounded-lg bg-fujo-purple/10 p-2 !no-underline transition-colors hover:bg-fujo-purple/20 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-fujo-purple/40 active:bg-fujo-purple/25"
+                        >
+                          <Icon
+                            size={24}
+                            name={link.icon ?? "world-www"}
+                            class="flex-shrink-0"
+                          />
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </li>
+            );
+          })
+        }
+      </ul>
     </section>
   </article>
 </Layout>
+
+<style>
+  @property --gradient-angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+  }
+
+  .site-card {
+    --gradient-pink-rgb: 255, 33, 233;
+    --gradient-blue-rgb: 67, 96, 247;
+    list-style: none;
+    border: 2px solid transparent;
+    background:
+      linear-gradient(white, white) padding-box,
+      conic-gradient(
+          from var(--gradient-angle),
+          rgba(var(--gradient-pink-rgb), 0.8),
+          rgba(var(--gradient-blue-rgb), 0.8),
+          rgba(var(--gradient-pink-rgb), 0.8),
+          rgba(var(--gradient-blue-rgb), 0.8),
+          rgba(var(--gradient-pink-rgb), 0.8)
+        )
+        border-box;
+  }
+
+  .site-card:has(:target) {
+    border-width: 3px;
+    background:
+      linear-gradient(#fff8fd, #fff8fd) padding-box,
+      conic-gradient(
+          from var(--gradient-angle),
+          rgb(var(--gradient-pink-rgb)),
+          rgb(var(--gradient-blue-rgb)),
+          rgb(var(--gradient-pink-rgb)),
+          rgb(var(--gradient-blue-rgb)),
+          rgb(var(--gradient-pink-rgb))
+        )
+        border-box;
+  }
+
+  .contact-row {
+    transition: background 0.15s ease;
+  }
+
+  .contact-row:hover {
+    background: linear-gradient(
+      to right,
+      rgba(var(--gradient-pink-rgb), 0.15),
+      rgba(var(--gradient-blue-rgb), 0.1)
+    );
+  }
+
+  .contact-row:active {
+    background: linear-gradient(
+      to right,
+      rgba(var(--gradient-pink-rgb), 0.22),
+      rgba(var(--gradient-blue-rgb), 0.16)
+    );
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .site-card {
+      animation: rotate-gradient 6s linear infinite;
+      animation-delay: calc(var(--stagger) * -2s);
+    }
+
+    .site-card:has(:target) {
+      animation-duration: 3s;
+      transform: rotate(-1deg) scale(1.02);
+    }
+
+    @keyframes rotate-gradient {
+      to {
+        --gradient-angle: 360deg;
+      }
+    }
+  }
+</style>

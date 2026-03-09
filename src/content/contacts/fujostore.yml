@@ -1,4 +1,5 @@
 name: FujoStore
+description: Money makes the web go round
 websites:
   - url: https://store.fujocoded.com/
     icon: "lucide:store"

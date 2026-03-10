@@ -4,12 +4,12 @@ title: "Everything, Everywhere, All at Once...just slightly late"
 
 <!-- ⚠️ AUTO-GENERATED — edit _blocks/ instead ⚠️ -->
 
-<span class="text-xl text-fujo-pink">Greetings, _fu(jo|dan|jin)_ and
-friends,</span><br/>
+### Greetings, _fu(jo|dan|jin)_ and friends,
+
 It's almost _that_ time of the year again, when [BobaBoard
 retrospectives](https://bobaboard.com/blog) get written and April 1st jokes are
-planned and "one way or the other" delivered. Before we go **heads down again on our Recurring
-Spring Obligations™ (and FujoGuide Issue 2, our current priority)**, here's the
+planned and _(one way or the other)_ delivered. Before we go **heads down again on our Recurring
+Spring Obligations™ and FujoGuide Issue 2, our current priority**, here's the
 roundup of what we've been up to since you last ~~saw~~ read us.
 
 > **🌸✨ A FRIENDLY NOTE ✨🌸**
@@ -18,6 +18,7 @@ roundup of what we've been up to since you last ~~saw~~ read us.
 > ~~stop her~~ help review and revise. Please enjoy her typos, writing quirks,
 > excessive parentheticals (and occasional digressions (and nested asides)).
 
+_**Want a Table of Contents? Sharing with a friend?** [Grab it all on our site!](https://fujocoded.com/updates/26-03-09-the-one-where-we-rush)_
 
 ## FujoCoded General News
 
@@ -55,7 +56,7 @@ roundup of what we've been up to since you last ~~saw~~ read us.
   get their hands on each OTP.** Who will claim _yours_?
 
 - **`Get-ProjectManager`'d:** Thanks to last newsletter's plea, **we have an
-  official Project Manager!** While not _exactly_ a fujin (yet?), **[James](/contributors/james) is a
+  official Project Manager!** While not _exactly_ a fujin (yet?), **[James](https://fujocoded.com/contributors/james) is a
   wise, older, non-binary eldritch horror of knowledge** who has been helping
   fan communities since 1995...and now helps _us_. Other than **guiding the
   transition from Ms Boba's planet-sized charts to _actual GitHub issues_**, and
@@ -70,13 +71,12 @@ roundup of what we've been up to since you last ~~saw~~ read us.
   our database is synced, and **our _not-finished-but-ravingly-(pre)reviewed_ $upporters lounge can now welcome our latest patrons**. Unfortunately,
   it's hard to test this code without new $upporters...so if you wish to help us "test in production"—_no other reason, really_—**[pledge to our Patreon](https://www.patreon.com/c/fujocoded) and become our angel ~~investor~~ tester.**
 
-
 ## FujoCoded BackerKit Update
 
 ### FujoCoded BackerKit Fulfillment Progress: Recent
 
 - **Coding in Space(s):** There's a new article at the event horizon!
-  [Sel](/contributors/sel) and [Grubdog](/contributors/grubdog) joined forces to
+  [Sel](https://fujocoded.com/contributors/sel) and [Grubdog](https://fujocoded.com/contributors/grubdog) joined forces to
   [(space)ship learn@ readers](https://learn.fujoweb.dev/) straight into a full
   development environment by teaching them about GitHub Codespaces. **Want to
   Halo jump into coding your site or contributing to one of our projects**
@@ -107,7 +107,7 @@ roundup of what we've been up to since you last ~~saw~~ read us.
   very appreciated collaboration, while "just as ~~planned~~ hoped", adds the
   extra challenge of \*deep breath\* _creating a cohesive creative vision across
   a variety of creatives_. To (style) guide us,
-  **[Rie](/contributors/rie) has updated—and even PR'd!—[our
+  **[Rie](https://fujocoded.com/contributors/rie) has updated—and even PR'd!—[our
   community@'s learn@ writing
   specs](https://community.fujocoded.com/fujowebdev/style-guide/style/).**
   Incidentally, we've also discovered [the Diataxis
@@ -132,7 +132,7 @@ roundup of what we've been up to since you last ~~saw~~ read us.
 
 - **Nearly Viable Manuscript:** Now that we're in the future (section), you may
   wonder where [our article on installing
-  `NVM`](/updates/25-12-23-tis-the-season#nvm-extras) is at. TL;DR(eview):
+  `NVM`](https://fujocoded.com/updates/25-12-23-tis-the-season#nvm-extras) is at. TL;DR(eview):
   Submerged in an avalanche of `"//TODO"`s, **we left the most complete article
   for last...then found it needed just _a bit more_ style-guide polish to fit
   with its peers**. While we didn't have time to give it, there's no need to
@@ -145,7 +145,6 @@ roundup of what we've been up to since you last ~~saw~~ read us.
   FujoGuide rewrite, and FujoCoded's LLC _#1 Company Holiday_ slash _Prime
   Immovable Deadline™_—that is, our April 1st fun(d)raiser—**we'll keep Learn@
   work going in the background so it can properly absorb all those creative juices.**
-
 
 ## The Fujoshi Guide to Web Development
 
@@ -201,7 +200,7 @@ Read on for our diagnosis (and solution) ✨
 
 - **Git Intro'd:** We've also **taken another next step into expanding the Git
   chapters on our site.** In our new intro chapter, written [by our friend
-  Hyena](/contributors/hyena) and [appropriately named "Say Hi to Git (and
+  Hyena](https://fujocoded.com/contributors/hyena) and [appropriately named "Say Hi to Git (and
   GitHub)"](https://learn.fujoweb.dev/git/intro/), we **give a real quick overview
   of Version Control to help teach it (and sell it) to all visitors to our site**—not just our zine buyers!
 
@@ -228,7 +227,6 @@ Read on for our diagnosis (and solution) ✨
   months)_ and make sure they don't get _too_ stuck?** Write us at
   [contacts@fujocoded.com](mailto:contacts@fujocoded.com). We'll be in touch!
 
-
 ## Intermission — A Word _to_ our $ponsors
 
 **This update (and ongoing work) is brought to you [by our lovely
@@ -253,8 +251,8 @@ preference.
 
 - **Welcome to the GitHub:** A warm shoutout to the **newest first-time
   contributors to our GitHub—and _for some_ GitHub itself:
-  [Ev](/contributors/ev), [Hyena](/contributors/hyena) _(✨first ever!✨)_, PC
-  _(✨first ever!✨)_, and [Rie](/contributors/rie) _(✨first ever!✨)_!** Whether
+  [Ev](https://fujocoded.com/contributors/ev), [Hyena](https://fujocoded.com/contributors/hyena) _(✨first ever!✨)_, deepspaceaxolotl
+  _(✨first ever!✨)_, and [Rie](https://fujocoded.com/contributors/rie) _(✨first ever!✨)_!** Whether
   with a PR, a review, or a README, their generous contribution keeps us going
   and _(not going to lie)_ makes us shed little tears of gratitude. **Thank you
   for making the FujoVerse a little bit shinier ✨**
@@ -264,7 +262,7 @@ preference.
   [Astro AO3 loader
   plugin](https://github.com/FujoWebDev/fujocoded-plugins/tree/main/astro-ao3-loader)!**
   This plugin's first official release now works with Astro 5, and **supports
-  _series_ in addition to _works_.** Plus, **[Ev](/contributors/ev) (our
+  _series_ in addition to _works_.** Plus, **[Ev](https://fujocoded.com/contributors/ev) (our
   _valiant hero_) gave it [a proper
   README](https://github.com/FujoWebDev/fujocoded-plugins/tree/main/astro-ao3-loader#fujocodedastro-ao3-loader)!**
   So go forth now, load fics on your Astro site, and call it "_learning
@@ -290,11 +288,10 @@ preference.
 
 ![file:](./images/authproto.png)
 
-
 ## FujoStore Highlights: Restocks, Sales, and Limited-Time Offers
 
 You've (hopefully) already seen **[our RobinBoob
-relaunch](/updates/26-02-23-my-endless-valentine) and associated "limited-time
+relaunch](https://fujocoded.com/updates/26-02-23-my-endless-valentine) and associated "limited-time
 offer"**, which officially expired..._almost a week ago_.
 
 That said, and _stop me if you've heard this..._**what is time, to real love?**
@@ -305,7 +302,6 @@ setting up _another promo_) we're extending **RobinBoob's Valentine's Day 15% of
 RobinBoob.com!](https://robinboob.com)
 
 ![file:](./images/robinboob-promo.png)
-
 
 ## Collaborate with Us\!
 
@@ -335,13 +331,12 @@ time to The Cause™? Read on!
   or anywhere you've had to get people excited and rallying. **[Apply
   here!](https://forms.gle/8An4oeVTCMoHQixf9)**
 
-
 ## That’s All, Folks\!
 
 And with this, it's all for these months! It took us _a long while_, but we've made it
 on the other side..._somehow._
 
-FujoGuide updates aside (follow them [on our socials](/find-us#fujowebdev)), **we'll see you on the other side
+FujoGuide updates aside (follow them [on our socials](https://fujocoded.com/find-us#fujowebdev)), **we'll see you on the other side
 of March 31st 👀** until then, "good night, ship tight, don't let the discourse bite!"
 
 _Yours,_<br />

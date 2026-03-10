@@ -2,8 +2,8 @@
 friends,</span><br/>
 It's almost _that_ time of the year again, when [BobaBoard
 retrospectives](https://bobaboard.com/blog) get written and April 1st jokes are
-planned and "one way or the other" delivered. Before we go **heads down again on our Recurring
-Spring Obligations™ (and FujoGuide Issue 2, our current priority)**, here's the
+planned and _(one way or the other)_ delivered. Before we go **heads down again on our Recurring
+Spring Obligations™ and FujoGuide Issue 2, our current priority**, here's the
 roundup of what we've been up to since you last ~~saw~~ read us.
 
 > **🌸✨ A FRIENDLY NOTE ✨🌸**

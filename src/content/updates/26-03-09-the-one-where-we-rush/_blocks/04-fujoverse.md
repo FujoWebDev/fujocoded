@@ -22,7 +22,7 @@ preference.
 
 - **Welcome to the GitHub:** A warm shoutout to the **newest first-time
   contributors to our GitHub—and _for some_ GitHub itself:
-  [Ev](/contributors/ev), [Hyena](/contributors/hyena) _(✨first ever!✨)_, PC
+  [Ev](/contributors/ev), [Hyena](/contributors/hyena) _(✨first ever!✨)_, deepspaceaxolotl
   _(✨first ever!✨)_, and [Rie](/contributors/rie) _(✨first ever!✨)_!** Whether
   with a PR, a review, or a README, their generous contribution keeps us going
   and _(not going to lie)_ makes us shed little tears of gratitude. **Thank you

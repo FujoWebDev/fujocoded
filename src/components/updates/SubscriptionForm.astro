@@ -3,17 +3,17 @@ import { Icon } from "astro-icon/components";
 ---
 
 <div
-  class="inbox-card relative mx-auto mb-8 mt-4 flex w-full max-w-xl flex-col items-center gap-4 rounded-xl bg-gradient-to-b from-[#260F56] to-[#4D2E91] px-6 py-6 text-center font-macho text-white"
+  class="inbox-card relative mx-auto mb-8 mt-4 flex w-full max-w-xl flex-col items-center gap-5 rounded-xl bg-gradient-to-b from-[#260F56] to-[#4D2E91] px-8 py-8 text-center text-white"
 >
-  <p class="text-md font-zeitung font-semibold text-fujo-green">
-    > Get 'em in your inbox
+  <p class="font-hatch text-xl italic text-white">
+    Get 'em in your <em class="not-italic text-fujo-green">inbox</em> ❤︎
   </p>
   <form
     action="https://buttondown.email/api/emails/embed-subscribe/fujocoded"
     method="post"
     target="popupwindow"
     onsubmit="window.open('https://buttondown.email/fujocoded', 'popupwindow')"
-    class="subscription-form flex w-full max-w-md flex-col gap-2 sm:flex-row sm:gap-0 sm:rounded-full sm:border-2 sm:border-white/30"
+    class="subscription-form flex w-full max-w-md flex-col gap-2 sm:flex-row sm:gap-0 sm:rounded-full sm:border-2 sm:border-white/20"
   >
     <input
       type="email"
@@ -22,35 +22,35 @@ import { Icon } from "astro-icon/components";
       aria-label="email"
       placeholder="boba-tan@fujocoded.com"
       required="true"
-      class="email-input h-11 w-full flex-1 self-center rounded-full border border-white/30 px-6 py-1 text-black placeholder:italic focus:outline-none sm:rounded-l-full sm:rounded-r-none sm:border-0 sm:px-5"
+      class="email-input h-12 w-full self-center rounded-full border border-white/20 bg-white/10 px-6 py-1 text-white placeholder:italic placeholder:text-white/50 focus:outline-none sm:h-10 sm:flex-1 sm:rounded-l-full sm:rounded-r-none sm:border-0 sm:px-5"
     />
     <input
       type="submit"
       value="Subscribe"
-      class="button-links h-9 w-full rounded-full bg-gradient-to-b from-[#CE00FF] to-[#A700CF] px-5 text-center font-hatch text-sm font-medium text-white sm:h-11 sm:w-auto sm:rounded-l-none sm:rounded-r-full sm:pl-4 sm:pr-5 sm:text-lg"
+      class="subscribe-btn h-10 w-full cursor-pointer rounded-full bg-fujo-pink px-6 text-center font-hatch text-sm font-medium text-white sm:h-10 sm:w-auto sm:rounded-l-none sm:rounded-r-full sm:px-6 sm:text-lg"
     />
   </form>
-  <p class="text-md flex items-center justify-center gap-2 text-white">
+  <p class="flex items-center justify-center gap-3 text-sm text-white/70">
     Too many emails?
     <a
       href="https://twitter.com/fujoc0ded"
-      class="!text-white hover:!text-fujo-pink"
-      ><Icon name="simple-icons:twitter" /></a
+      class="!text-white/70 transition-colors hover:!text-fujo-pink"
+      ><Icon name="simple-icons:twitter" size={18} /></a
     >
     <a
       href="https://www.tumblr.com/fujocoded"
-      class="!text-white hover:!text-fujo-pink"
-      ><Icon name="simple-icons:tumblr" /></a
+      class="!text-white/70 transition-colors hover:!text-fujo-pink"
+      ><Icon name="simple-icons:tumblr" size={18} /></a
     >
     <a
       href="https://bsky.app/profile/fujocoded.bsky.social"
-      class="!text-white hover:!text-fujo-pink"
-      ><Icon name="simple-icons:bluesky" /></a
+      class="!text-white/70 transition-colors hover:!text-fujo-pink"
+      ><Icon name="simple-icons:bluesky" size={18} /></a
     >
     <a
       href="https://blorbo.social/@fujocoded"
-      class="!text-white hover:!text-fujo-pink"
-      ><Icon name="simple-icons:mastodon" /></a
+      class="!text-white/70 transition-colors hover:!text-fujo-pink"
+      ><Icon name="simple-icons:mastodon" size={18} /></a
     >
   </p>
 </div>
@@ -60,12 +60,43 @@ import { Icon } from "astro-icon/components";
     box-shadow: 0 0 0 2px rgba(255, 105, 180, 0.4);
   }
 
+  .subscribe-btn {
+    transition:
+      transform 0.15s cubic-bezier(0.25, 1, 0.5, 1),
+      box-shadow 0.15s cubic-bezier(0.25, 1, 0.5, 1),
+      background-color 0.2s;
+  }
+
+  .subscribe-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 56, 235, 0.4);
+  }
+
+  .subscribe-btn:active {
+    transform: translateY(1px);
+    box-shadow: 0 1px 3px rgba(255, 56, 235, 0.2);
+  }
+
   @media (min-width: 640px) {
     .email-input:focus {
       box-shadow: none;
     }
     .subscription-form:focus-within {
       box-shadow: 0 0 0 2px rgba(255, 105, 180, 0.5);
+    }
+    .subscription-form {
+      transition: box-shadow 0.2s;
+    }
+
+    .subscribe-btn:hover {
+      transform: none;
+      box-shadow: none;
+      background-color: #e030d3;
+    }
+    .subscribe-btn:active {
+      transform: none;
+      box-shadow: none;
+      background-color: #c828b8;
     }
   }
 

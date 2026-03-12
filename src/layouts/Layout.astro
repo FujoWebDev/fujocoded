@@ -70,12 +70,16 @@ const {
     <link rel="shortcut icon" href="favicons/favicon.ico" />
     <meta name="msapplication-TileColor" content="#f6d880" />
     <meta name="msapplication-config" content="favicons/browserconfig.xml" />
-    <meta name="theme-color" content="#ffffff" />
+    <meta name="theme-color" content="#9687fa" />
     <script
       defer
       data-domain="fujocoded.com"
       src="https://plausible.io/js/script.js"></script>
     <style is:global>
+      html {
+        background: linear-gradient(#9687fa, #fbb8fe);
+        min-height: 100%;
+      }
       :root {
         --color-neon-glow: #ffbf00;
         --color-neon-fill: #f3e5bc;
@@ -186,6 +190,7 @@ const {
         flex-direction: column;
         margin: 0;
         position: relative;
+        isolation: isolate;
         --content-margin: 230px;
       }
       body::before {

@@ -1,0 +1,11 @@
+name: crismlt
+avatar: "./avatars/crismlt.png"
+type: contractor
+roles:
+  AskFujo:
+    - role: Artist
+      details: Game Box Coloring
+    - role: Artist
+      details: Boba-tan Yugioh Chibi
+contacts:
+  - https://cristinamlt.tumblr.com/

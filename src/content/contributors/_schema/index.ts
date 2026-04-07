@@ -23,7 +23,7 @@ const Roles = z
       PROJECTS.map((project) => [
         project,
         Role(
-          PROJECT_ROLES[project]?.length
+          PROJECT_ROLES[project]
             ? z.enum(PROJECT_ROLES[project] as [string, ...string[]])
             : z.string()
         )

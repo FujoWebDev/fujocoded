@@ -6,6 +6,7 @@ import {
 } from "./fujoguide";
 
 import { FANDOM_COOKIES_ROLES } from "./fandom-cookies";
+import { ASKFUJO_ROLES } from "./askfujo";
 
 export {
   VOLUME_0_KICKSTARTER_ROLES,
@@ -15,6 +16,7 @@ export {
 } from "./fujoguide";
 
 export { FANDOM_COOKIES_ROLES } from "./fandom-cookies";
+export { ASKFUJO_ROLES } from "./askfujo";
 
 export const FUJOCODED_ROLES = ["HimeOps", "FujoCoded", "Project Manager"];
 export const LEARN_AT_ROLES = ["Article Writer", "Writers Coordinator"];
@@ -29,6 +31,7 @@ export const PROJECTS = [
   "FujoCoded",
   "Learn@",
   "Code Contributor",
+  "AskFujo",
 ] as const;
 export type Project = (typeof PROJECTS)[number];
 
@@ -41,6 +44,7 @@ export const PROJECT_ROLES: Record<Project, string[]> = {
   FujoCoded: FUJOCODED_ROLES,
   "Learn@": LEARN_AT_ROLES,
   "Code Contributor": CODE_CONTRIBUTOR_ROLES,
+  AskFujo: ASKFUJO_ROLES,
 };
 
 export default PROJECTS;

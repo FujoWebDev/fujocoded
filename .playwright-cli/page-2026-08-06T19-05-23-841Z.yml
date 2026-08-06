@@ -1,0 +1,339 @@
+- generic [active] [ref=e1]:
+  - link [ref=e2] [cursor=pointer]:
+    - /url: /
+  - generic:
+    - navigation [ref=e19]:
+      - link "Home" [ref=e20] [cursor=pointer]:
+        - /url: /
+      - link "Projects" [ref=e28] [cursor=pointer]:
+        - /url: /projects
+      - link "About" [ref=e30] [cursor=pointer]:
+        - /url: /about
+      - link "Fujoshi" [ref=e32] [cursor=pointer]:
+        - /url: /fujoshi
+      - link "Updates" [ref=e34] [cursor=pointer]:
+        - /url: /updates
+      - link "Support us" [ref=e36] [cursor=pointer]:
+        - /url: /support
+    - main [ref=e38]:
+      - generic [ref=e39]:
+        - generic [ref=e40]:
+          - paragraph [ref=e41]:
+            - text: Get 'em in your
+            - emphasis [ref=e42]: inbox
+            - text: ❤︎
+          - generic [ref=e43]:
+            - textbox "email" [ref=e44]:
+              - /placeholder: boba-tan@fujocoded.com
+            - button "Subscribe" [ref=e45] [cursor=pointer]
+          - paragraph [ref=e46]:
+            - text: Too many emails?
+            - link [ref=e47] [cursor=pointer]:
+              - /url: https://twitter.com/fujoc0ded
+            - link [ref=e50] [cursor=pointer]:
+              - /url: https://www.tumblr.com/fujocoded
+            - link [ref=e53] [cursor=pointer]:
+              - /url: https://bsky.app/profile/fujocoded.bsky.social
+            - link [ref=e56] [cursor=pointer]:
+              - /url: https://blorbo.social/@fujocoded
+        - list [ref=e59]:
+          - listitem [ref=e60]:
+            - article [ref=e61]:
+              - generic [ref=e62]: April 12, 2026
+              - heading [level=2] [ref=e63]:
+                - link "Fujo University, Clicking Division is now enrolling 🎓 Last 48 hours for AskFujo (again)!" [ref=e64] [cursor=pointer]:
+                  - /url: /updates/26-04-12-fujo-university-clicking-division
+              - list [ref=e66]:
+                - listitem [ref=e67]:
+                  - generic [ref=e68]:
+                    - img "close menu" [ref=e69]
+                    - text: newsletter
+          - listitem [ref=e71]:
+            - article [ref=e72]:
+              - generic [ref=e73]: April 1, 2026
+              - heading [level=2] [ref=e74]:
+                - 'link "Meet AskFujo: Your Very own IRL Tumblr Askbox" [ref=e75] [cursor=pointer]':
+                  - /url: /updates/26-04-01-meet-askfujo
+              - list [ref=e77]:
+                - listitem [ref=e78]:
+                  - generic [ref=e79]:
+                    - img "close menu" [ref=e80]
+                    - text: newsletter
+          - listitem [ref=e82]:
+            - article [ref=e83]:
+              - generic [ref=e84]: March 9, 2026
+              - heading [level=2] [ref=e85]:
+                - link "Everything, Everywhere, All at Once...just fashionably late" [ref=e86] [cursor=pointer]:
+                  - /url: /updates/26-03-09-the-one-where-we-rush
+              - paragraph [ref=e87]: We tore our chapters apart, gave our articles a license, and extended our late Valentine's Day Sale to end March 14th. As we do.
+              - list [ref=e89]:
+                - listitem [ref=e90]:
+                  - generic [ref=e91]:
+                    - img "close menu" [ref=e92]
+                    - text: newsletter
+          - listitem [ref=e94]:
+            - article [ref=e95]:
+              - generic [ref=e96]: February 24, 2026
+              - heading [level=2] [ref=e97]:
+                - 'link "Special (Offer) Edition — Certified In Love: The Return 💕 (+ 🍋 CitrusCon Q&A)" [ref=e98] [cursor=pointer]':
+                  - /url: /updates/26-02-23-my-endless-valentine
+              - paragraph [ref=e99]: A special offer for you... just (not) in time for Valentine's Day.
+              - list [ref=e101]:
+                - listitem [ref=e102]:
+                  - generic [ref=e103]:
+                    - img "close menu" [ref=e104]
+                    - text: newsletter
+          - listitem [ref=e106]:
+            - article [ref=e107]:
+              - generic [ref=e108]: December 23, 2025
+              - heading [level=2] [ref=e109]:
+                - link "Digital pack launch, Garage Sale 📦, and... so. many. articles." [ref=e110] [cursor=pointer]:
+                  - /url: /updates/25-12-23-tis-the-season
+              - paragraph [ref=e111]: Between stores and writing processes, betas and autoreleases, there's a lot of ground to cover. We hope you brought a shovel (or a Project Manager) ❄️🏂
+              - list [ref=e113]:
+                - listitem [ref=e114]:
+                  - generic [ref=e115]:
+                    - img "close menu" [ref=e116]
+                    - text: newsletter
+          - listitem [ref=e118]:
+            - article [ref=e119]:
+              - generic [ref=e120]: August 28, 2025
+              - heading [level=2] [ref=e121]:
+                - 'link "New Ones Come in Pairs: NPM Articles, Patreon Tiers (& Catboys)" [ref=e122] [cursor=pointer]':
+                  - /url: /updates/25-08-16-sisyphus-rises
+              - paragraph [ref=e123]: This month more than ever, “everything” happens so much! And by everything, we mean our new updates.
+              - list [ref=e125]:
+                - listitem [ref=e126]:
+                  - generic [ref=e127]:
+                    - img "close menu" [ref=e128]
+                    - text: newsletter
+          - listitem [ref=e130]:
+            - article [ref=e131]:
+              - generic [ref=e132]: June 17, 2025
+              - heading [level=2] [ref=e133]:
+                - link "Careers, Cons, and Cookies (again) — 🏦 We're Hiring! 🏦" [ref=e134] [cursor=pointer]:
+                  - /url: /updates/25-06-14-cookies-and-cons
+              - paragraph [ref=e135]: Boba-tan Wants YOU! ...and her blorbos! (but mostly you)
+              - list [ref=e137]:
+                - listitem [ref=e138]:
+                  - generic [ref=e139]:
+                    - img "close menu" [ref=e140]
+                    - text: newsletter
+          - listitem [ref=e142]:
+            - article [ref=e143]:
+              - generic [ref=e144]: April 24, 2025
+              - heading [level=2] [ref=e145]:
+                - 'link "FujoCoded LLC: Geese, Guides, and Good Luck Cookies 🪿📔🥠" [ref=e146] [cursor=pointer]':
+                  - /url: /updates/25-04-22-geese-guides-cookies
+              - paragraph [ref=e147]: Growing bigger, better, and beta!
+              - list [ref=e149]:
+                - listitem [ref=e150]:
+                  - generic [ref=e151]:
+                    - img "close menu" [ref=e152]
+                    - text: newsletter
+          - listitem [ref=e154]:
+            - article [ref=e155]:
+              - generic [ref=e156]: April 1, 2025
+              - heading [level=2] [ref=e157]:
+                - link "Fandom Cookies — Satiate your hunger, so you can quench your thirst" [ref=e158] [cursor=pointer]:
+                  - /url: /updates/25-04-01-fandom-cookies
+              - paragraph [ref=e159]: This April 1st, treat yourself to a delicious treat!
+              - list [ref=e161]:
+                - listitem [ref=e162]:
+                  - generic [ref=e163]:
+                    - img "close menu" [ref=e164]
+                    - text: FujoCoded LLC fundraiser
+                - listitem [ref=e166]:
+                  - generic [ref=e167]:
+                    - img "close menu" [ref=e168]
+                    - text: April 1st
+          - listitem [ref=e170]:
+            - article [ref=e171]:
+              - generic [ref=e172]: March 16, 2025
+              - heading [level=2] [ref=e173]:
+                - 'link "FujoCoded LLC: Baby''s First Year 🍼" [ref=e174] [cursor=pointer]':
+                  - /url: /updates/25-03-15-one-year-anniversary
+              - paragraph [ref=e175]: Baby step by baby step, the journey carries on!
+              - list [ref=e177]:
+                - listitem [ref=e178]:
+                  - generic [ref=e179]:
+                    - img "close menu" [ref=e180]
+                    - text: newsletter
+          - listitem [ref=e182]:
+            - article [ref=e183]:
+              - generic [ref=e184]: February 13, 2025
+              - heading [level=2] [ref=e185]:
+                - link "So...how was the con?" [ref=e186] [cursor=pointer]:
+                  - /url: /updates/25-02-13-how-was-con
+              - paragraph [ref=e187]: Catch up on our Escapade experience, FujoGuide progress, and new connections with other web projects. We’re also recruiting artists!
+              - list [ref=e189]:
+                - listitem [ref=e190]:
+                  - generic [ref=e191]:
+                    - img "close menu" [ref=e192]
+                    - text: newsletter
+          - listitem [ref=e194]:
+            - article [ref=e195]:
+              - generic [ref=e196]: January 14, 2025
+              - heading [level=2] [ref=e197]:
+                - link "Join FujoCoded at Escapade, the original slash slumber party!" [ref=e198] [cursor=pointer]:
+                  - /url: /updates/25-01-10-escapade
+              - paragraph [ref=e199]: Escapade 35, a slash and shipping convention with over three decades of fannish history behind it, kicks off in Los Angeles on the 31st of January!
+              - list [ref=e201]:
+                - listitem [ref=e202]:
+                  - generic [ref=e203]:
+                    - img "close menu" [ref=e204]
+                    - text: event announcement
+          - listitem [ref=e206]:
+            - article [ref=e207]:
+              - generic [ref=e208]: December 4, 2024
+              - heading [level=2] [ref=e209]:
+                - link "Never mind November, let's do December!" [ref=e210] [cursor=pointer]:
+                  - /url: /updates/24-12-04-lets-do-december
+              - paragraph [ref=e211]: With the year coming to a close, it's time for schedule changes, store promotions, and BlueSky hacking.
+              - list [ref=e213]:
+                - listitem [ref=e214]:
+                  - generic [ref=e215]:
+                    - img "close menu" [ref=e216]
+                    - text: newsletter
+          - listitem [ref=e218]:
+            - article [ref=e219]:
+              - generic [ref=e220]: October 20, 2024
+              - heading [level=2] [ref=e221]:
+                - link [ref=e222] [cursor=pointer]:
+                  - /url: /updates/24-10-20-print-zine
+                  - text: "October Surprise:"
+                  - code [ref=e223]: print("zine");
+              - paragraph [ref=e224]: The horrors are relentless, but we stay silly! We've got one momentous accomplishment and many minor ones to cover in this month's update.
+              - list [ref=e226]:
+                - listitem [ref=e227]:
+                  - generic [ref=e228]:
+                    - img "close menu" [ref=e229]
+                    - text: newsletter
+          - listitem [ref=e231]:
+            - article [ref=e232]:
+              - generic [ref=e233]: September 19, 2024
+              - heading [level=2] [ref=e234]:
+                - 'link "Eternal September: These are getting kinda long, huh" [ref=e235] [cursor=pointer]':
+                  - /url: /updates/24-09-19-updates-getting-long
+              - paragraph [ref=e236]: We can't help that we have so much to share! Learn about our new intern, new store, new cover art, and much more in this month's update.
+              - list [ref=e238]:
+                - listitem [ref=e239]:
+                  - generic [ref=e240]:
+                    - img "close menu" [ref=e241]
+                    - text: newsletter
+          - listitem [ref=e243]:
+            - article [ref=e244]:
+              - generic [ref=e245]: August 15, 2024
+              - heading [level=2] [ref=e246]:
+                - 'link "August Update: Getting Conned" [ref=e247] [cursor=pointer]':
+                  - /url: /updates/24-08-15-getting-conned
+              - paragraph [ref=e248]: ..."getting invited to speak at a con," that is.
+              - list [ref=e250]:
+                - listitem [ref=e251]:
+                  - generic [ref=e252]:
+                    - img "close menu" [ref=e253]
+                    - text: newsletter
+          - listitem [ref=e255]:
+            - article [ref=e256]:
+              - generic [ref=e257]: July 21, 2024
+              - heading [level=2] [ref=e258]:
+                - 'link "July Progress: With Digital Goodies For All" [ref=e259] [cursor=pointer]':
+                  - /url: /updates/24-07-21-digital-goodies
+              - paragraph [ref=e260]: Check out the progress we made this month as we get closer to delivering the FujoCoded LLC campaign rewards
+              - list [ref=e262]:
+                - listitem [ref=e263]:
+                  - generic [ref=e264]:
+                    - img "close menu" [ref=e265]
+                    - text: newsletter
+          - listitem [ref=e267]:
+            - article [ref=e268]:
+              - generic [ref=e269]: June 17, 2024
+              - heading [level=2] [ref=e270]:
+                - link "Survey Alert, Sociocracy, and Shipping Issue 1" [ref=e271] [cursor=pointer]:
+                  - /url: /updates/24-06-17-survey-alert
+              - paragraph [ref=e272]: "It's finally time: the FujoCoded LLC campaign rewards survey is now out!"
+              - list [ref=e274]:
+                - listitem [ref=e275]:
+                  - generic [ref=e276]:
+                    - img "close menu" [ref=e277]
+                    - text: newsletter
+          - listitem [ref=e279]:
+            - article [ref=e280]:
+              - generic [ref=e281]: May 16, 2024
+              - heading [level=2] [ref=e282]:
+                - 'link "FujoCoded, LLC: Down to Business" [ref=e283] [cursor=pointer]':
+                  - /url: /updates/24-05-16-fujocoded-llc-down-to-business
+              - paragraph [ref=e284]: It's time for our first newsletter, with all the latest updates on what we've been up to!
+              - list [ref=e286]:
+                - listitem [ref=e287]:
+                  - generic [ref=e288]:
+                    - img "close menu" [ref=e289]
+                    - text: newsletter
+          - listitem [ref=e291]:
+            - article [ref=e292]:
+              - generic [ref=e293]: April 11, 2024
+              - heading [level=2] [ref=e294]:
+                - link "End of Fundraiser – 9,258 Times Thank You 💜" [ref=e295] [cursor=pointer]:
+                  - /url: /updates/24-04-11-fundraiser-end
+              - paragraph [ref=e296]: Like many good things, our fast-paced, thrilling, overwhelmingly successful seed campaign has now come to an end.
+              - list [ref=e298]:
+                - listitem [ref=e299]:
+                  - generic [ref=e300]:
+                    - img "close menu" [ref=e301]
+                    - text: FujoCoded LLC fundraiser
+          - listitem [ref=e303]:
+            - article [ref=e304]:
+              - generic [ref=e305]: April 1, 2024
+              - heading [level=2] [ref=e306]:
+                - link "Welcome to FujoCoded LLC – Now Raising on BackerKit!" [ref=e307] [cursor=pointer]:
+                  - /url: /updates/24-04-01-backerkit-campaign
+              - paragraph [ref=e308]: It's launch day! And as with every April 1st, the joke is we're serious.
+              - list [ref=e310]:
+                - listitem [ref=e311]:
+                  - generic [ref=e312]:
+                    - img "close menu" [ref=e313]
+                    - text: FujoCoded LLC fundraiser
+                - listitem [ref=e315]:
+                  - generic [ref=e316]:
+                    - img "close menu" [ref=e317]
+                    - text: April 1st
+  - contentinfo [ref=e319]:
+    - img "Shield" [ref=e320]
+    - generic [ref=e321]: Copyright © 2026 FujoCoded LLC
+    - generic [ref=e323]:
+      - link [ref=e324] [cursor=pointer]:
+        - /url: https://github.com/FujoWebDev
+      - link [ref=e327] [cursor=pointer]:
+        - /url: https://twitter.com/fujoc0ded
+      - link [ref=e330] [cursor=pointer]:
+        - /url: https://www.tumblr.com/fujocoded
+      - link [ref=e333] [cursor=pointer]:
+        - /url: https://bsky.app/profile/fujocoded.bsky.social
+      - link [ref=e336] [cursor=pointer]:
+        - /url: https://blorbo.social/@fujocoded
+      - link [ref=e339] [cursor=pointer]:
+        - /url: https://fujocoded.dreamwidth.org/
+      - link [ref=e342] [cursor=pointer]:
+        - /url: mailto:contacts@fujocoded.com
+    - generic [ref=e345]:
+      - button "↑" [ref=e346] [cursor=pointer]
+      - button "↑" [ref=e347] [cursor=pointer]
+      - button "↓" [ref=e348] [cursor=pointer]
+      - button "↓" [ref=e349] [cursor=pointer]
+      - button "←" [ref=e350] [cursor=pointer]
+      - button "→" [ref=e351] [cursor=pointer]
+      - button "←" [ref=e352] [cursor=pointer]
+      - button "→" [ref=e353] [cursor=pointer]
+      - button "B" [ref=e354] [cursor=pointer]
+      - button "A" [ref=e355] [cursor=pointer]
+  - button "scroll to top" [ref=e356] [cursor=pointer]
+  - generic [ref=e359]:
+    - link "Support our work today!" [ref=e361] [cursor=pointer]:
+      - /url: /support
+    - img "Corner buddy" [ref=e363]
+  - generic [ref=e366]:
+    - button [ref=e367]
+    - button [ref=e373]
+    - button [ref=e377]
+    - button [ref=e385]
+    - button [ref=e392]

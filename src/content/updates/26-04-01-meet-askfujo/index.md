@@ -1,6 +1,6 @@
 ---
 title: "Meet AskFujo: Your Very own IRL Tumblr Askbox"
-tagline: "A 100% real April Fools joke you can buy: 40 questions for friends, foes and all the fun inbetweens"
+tagline: "A 100% real April Fools joke you can buy: 40 questions for friends, foes and all the fun inbetweens."
 created_at: 2026-04-01T00:00:00.000Z
 tags:
   - newsletter

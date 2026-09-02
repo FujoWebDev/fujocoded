@@ -1,3 +1,8 @@
+# ────────────────────────────────────────────────────────────
+# DO NOT EDIT — synced from FujoWebDev/contributors @ 305b05cffbce
+# Source: contributors/wiredferret.yaml
+# Refresh: pnpm sync
+# ────────────────────────────────────────────────────────────
 name: wiredferret
 avatar: "./avatars/wiredferret.png"
 type: community

@@ -12,8 +12,7 @@ websites:
   - https://www.bobaboard.com/
   - https://twitter.com/bobaboard
   - https://bobaboard.tumblr.com
-  - url: https://tech.lgbt/@bobaboard
-    platform: mastodon
+  - https://tech.lgbt/@bobaboard
   - url: https://store.bobaboard.com
     icon: "lucide:store"
 description: BobaBoard is a web-based forum software that is

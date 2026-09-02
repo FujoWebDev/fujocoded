@@ -1,10 +1,14 @@
+# ────────────────────────────────────────────────────────────
+# DO NOT EDIT — synced from FujoWebDev/contributors @ 305b05cffbce
+# Source: contributors/leedie.yaml
+# Refresh: pnpm sync
+# ────────────────────────────────────────────────────────────
 name: Leedie
 avatar: ./avatars/leedie.png
 type: community
 roles:
-  Websites:
-    - role: fujoweb.dev
-      details: Data Collector
+  fujoweb.dev:
+    - Data Collector
   Volume 0 Issue 1:
     - Tasks Coordinator
 contacts:

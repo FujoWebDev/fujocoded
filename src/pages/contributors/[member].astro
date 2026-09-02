@@ -2,55 +2,58 @@
 import type { GetStaticPaths } from "astro";
 import { type CollectionEntry, getCollection, getEntry } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
-import TeamCard from "../../components/team/TeamCard.astro";
+import ContributorCard from "../../components/contributors/ContributorCard.astro";
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const contributorsCollection = await getCollection("contributors");
-  const teamCollection = await getCollection("team");
-  // For now we merge them so we get the legacy ones in too
-  const team = [
-    ...contributorsCollection,
-    ...teamCollection.filter(
-      (member) =>
-        !contributorsCollection.some(
-          (contributor) => member.id == contributor.id
-        )
-    ),
-  ];
-  return team.map((member, index) => {
-    return {
+  return contributorsCollection.flatMap((member, index) => {
+    const contributorAliases = [
+      ...new Set([member.id, ...member.data.aliases]),
+    ];
+
+    return contributorAliases.map((alias) => ({
       params: {
-        member: member.id,
+        member: alias,
       },
       props: {
-        next: index < team.length - 1 ? team[index + 1].id : null,
-        previous: index > 0 ? team[index - 1].id : null,
+        contributorId: member.id,
+        next:
+          index < contributorsCollection.length - 1
+            ? contributorsCollection[index + 1].id
+            : null,
+        previous: index > 0 ? contributorsCollection[index - 1].id : null,
       },
-    };
+    }));
   });
 };
 
-const { member } = Astro.params;
-const { previous, next } = Astro.props;
+const {
+  contributorId,
+  previous,
+  next,
+} = Astro.props as {
+  contributorId: string;
+  previous: string | null;
+  next: string | null;
+};
 
-let memberEntry: CollectionEntry<"contributors"> | CollectionEntry<"team"> =
-  await getEntry(
-    "contributors",
-    member as CollectionEntry<"contributors">["id"]
-  );
+const memberEntry = await getEntry(
+  "contributors",
+  contributorId as CollectionEntry<"contributors">["id"],
+);
 
 if (!memberEntry) {
-  memberEntry = await getEntry("team", member as CollectionEntry<"team">["id"]);
+  throw new Error(`Missing contributor content entry for "${contributorId}".`);
 }
 ---
 
-<Layout title="Fujocoded LLC – Our team">
+<Layout title={`${memberEntry.data.name} | FujoCoded LLC`}>
   <article class="w-full rounded-xl bg-white drop-shadow-purple">
     <a href="/contributors">
-      <h1>Our <em>team</em> & contributors</h1>
+      <h1>Our <em>contributors</em></h1>
     </a>
     <div>
-      <TeamCard {...memberEntry.data} slug={memberEntry.id} />
+      <ContributorCard {...memberEntry.data} slug={memberEntry.id} />
       <nav>
         <a
           class:list={{

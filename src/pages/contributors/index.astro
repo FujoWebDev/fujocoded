@@ -1,45 +1,161 @@
 ---
-import TeamCard from "../../components/team/TeamCard.astro";
+import ContributorCard from "../../components/contributors/ContributorCard.astro";
 import Layout from "../../layouts/Layout.astro";
 import { getCollection } from "astro:content";
 
-const team = await getCollection("contributors");
+type Member = Awaited<ReturnType<typeof getCollection<"contributors">>>[number];
+type MemberType = Member["data"]["type"][number];
+
+const contributors = await getCollection("contributors");
+const byType = (type: MemberType) =>
+  contributors.filter((member) => member.data.type.includes(type));
+
+const founders = byType("founder");
+const contractors = byType("contractor");
+const community = byType("community").filter(
+  (member) => !member.data.type.includes("contractor"),
+);
+
+// Estimate card height so we can balance columns deterministically and avoid
+// orphan whitespace that CSS columns leaves at the bottom of a short column.
+const estimateCardHeight = (member: Member) => {
+  const base = 100; // header + role chips + padding
+  const contactsHeight = (member.data.contacts?.length ?? 0) * 36;
+  return base + contactsHeight;
+};
+
+const splitIntoColumns = (members: Member[], columnCount: number) => {
+  const columns: { items: Member[]; height: number }[] = Array.from(
+    { length: columnCount },
+    () => ({ items: [], height: 0 }),
+  );
+  for (const member of members) {
+    const target = columns.reduce((min, col) =>
+      col.height < min.height ? col : min,
+    );
+    target.items.push(member);
+    target.height += estimateCardHeight(member);
+  }
+  return columns.map((col) => col.items);
+};
+
+const contractorColumns = splitIntoColumns(contractors, 2);
+const communityColumns = splitIntoColumns(community, 2);
 ---
 
-<Layout>
+<Layout title="Contributors | FujoCoded LLC">
   <article class="rounded-xl bg-white drop-shadow-purple">
     <a href="/contributors">
-      <h1>Our <em>team</em> & contributors</h1>
+      <h1>Our <em>contributors</em></h1>
     </a>
+    <p class="wip-note">
+      Heads up: these pages are a work in progress. Not everyone is here
+      yet!
+    </p>
     <section class="mb-12 mt-6 flex flex-col gap-6 md:items-center">
       <h2 class="col-span-2 text-center">Our founder</h2>
       {
-        team
-          .filter((member) => member.data.type.includes("founder"))
-          .map((member) => (
-            <TeamCard {...member.data} slug={member.id} mode="link" />
-          ))
+        founders.map((member) => (
+          <ContributorCard {...member.data} slug={member.id} mode="link" />
+        ))
       }
     </section>
-    <section class="mb-12 mt-6 flex flex-col gap-6 md:grid md:grid-cols-2">
-      <h2 class="col-span-2 text-center">Our contractors</h2>
-      {
-        team
-          .filter((member) => member.data.type.includes("contractor"))
-          .map((member) => (
-            <TeamCard {...member.data} slug={member.id} mode="link" />
+    <section class="mb-12 mt-6">
+      <h2 class="text-center">Our contractors</h2>
+      <p class="section-blurb">
+        These are the people we've hired to help us build our projects, 
+        create our characters, write our content, and more! We owe them 
+        our success...and you, your thirst.
+      </p>
+      <div class="balanced-grid">
+        {
+          contractorColumns.map((column) => (
+            <div class="balanced-column">
+              {column.map((member) => (
+                <ContributorCard
+                  {...member.data}
+                  slug={member.id}
+                  mode="link"
+                />
+              ))}
+            </div>
           ))
-      }
+        }
+      </div>
     </section>
-    <section class="mb-12 mt-6 flex flex-col gap-6 md:grid md:grid-cols-2">
-      <h2 class="col-span-2 text-center">Our community contributors</h2>
-      {
-        team
-          .filter((member) => member.data.type.includes("community"))
-          .map((member) => (
-            <TeamCard {...member.data} slug={member.id} mode="link" />
+    <section class="mb-12 mt-6">
+      <h2 class="text-center">Our community contributors</h2>
+      <p class="section-blurb">
+        Our valiant community members have generously contributed their time, energy, 
+        and expertise to help us make the web a better place for everyone. 
+      </p>
+      <div class="balanced-grid">
+        {
+          communityColumns.map((column) => (
+            <div class="balanced-column">
+              {column.map((member) => (
+                <ContributorCard
+                  {...member.data}
+                  slug={member.id}
+                  mode="link"
+                />
+              ))}
+            </div>
           ))
-      }
+        }
+      </div>
     </section>
   </article>
 </Layout>
+
+<style>
+  @reference "../../styles/global.css";
+
+  .balanced-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .balanced-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .balanced-column {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    min-width: 0;
+  }
+
+  .balanced-column :global(.outer-box) {
+    width: 100%;
+  }
+
+  .section-blurb {
+    margin: 0.25rem auto 1.5rem;
+    max-width: 32rem;
+    color: var(--color-fujo-purple, #4d2e91);
+    font-size: 1rem;
+    line-height: 1.5;
+    text-align: center;
+    text-wrap: pretty;
+    opacity: 0.85;
+  }
+
+  .wip-note {
+    margin: 0.5rem auto 0;
+    max-width: 36rem;
+    padding: 0.625rem 1rem;
+    border: 1px dashed rgba(77, 46, 145, 0.35);
+    border-radius: 0.75rem;
+    background: rgba(255, 255, 255, 0.4);
+    color: var(--color-fujo-purple, #4d2e91);
+    font-size: 0.9375rem;
+    line-height: 1.45;
+    text-align: center;
+    text-wrap: pretty;
+  }
+</style>

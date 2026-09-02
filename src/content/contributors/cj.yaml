@@ -1,3 +1,8 @@
+# ────────────────────────────────────────────────────────────
+# DO NOT EDIT — synced from FujoWebDev/contributors @ 305b05cffbce
+# Source: contributors/cj.yaml
+# Refresh: pnpm sync
+# ────────────────────────────────────────────────────────────
 name: CJ
 avatar: "./avatars/cj.png"
 type: community
@@ -7,5 +12,5 @@ roles:
 contacts:
   - url: https://gamedev.lgbt/@illuminesce
     platform: mastodon
-    username: illuminesce  
+    username: illuminesce
   - https://illuminesce.net/

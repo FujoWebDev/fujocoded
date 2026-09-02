@@ -1,8 +1,16 @@
+# ────────────────────────────────────────────────────────────
+# DO NOT EDIT — synced from FujoWebDev/contributors @ 305b05cffbce
+# Source: contributors/catbathingsun.yaml
+# Refresh: pnpm sync
+# ────────────────────────────────────────────────────────────
 name: CatBathingSun
 avatar: "./avatars/default.png"
-type: 
+type:
   - community
 roles:
+  AskFujo:
+    - role: Designer
+      details: Designer Eye and Hands
   Fandom Cookies:
     - CSS & Design
     - Cookie Catcher Design

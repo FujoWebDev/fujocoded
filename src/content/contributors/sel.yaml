@@ -1,3 +1,8 @@
+# ────────────────────────────────────────────────────────────
+# DO NOT EDIT — synced from FujoWebDev/contributors @ 305b05cffbce
+# Source: contributors/sel.yaml
+# Refresh: pnpm sync
+# ────────────────────────────────────────────────────────────
 name: Sel
 avatar: "./avatars/default.png"
 type:

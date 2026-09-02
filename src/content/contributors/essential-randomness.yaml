@@ -1,5 +1,11 @@
+# ────────────────────────────────────────────────────────────
+# DO NOT EDIT — synced from FujoWebDev/contributors @ 305b05cffbce
+# Source: contributors/essential-randomness.yaml
+# Refresh: pnpm sync
+# ────────────────────────────────────────────────────────────
 name: Ms Boba
-alias: essential-randomness
+aliases:
+  - essential-randomness
 type:
   - founder
 avatar: "./avatars/essential-randomness.png"
@@ -19,18 +25,18 @@ roles:
     - Scenario Writer
     - role: Artist
       details: Beta Sketches
-  Websites:
-    - role: fujoweb.dev
-      details: Web Mistress
-    - role: fujoweb.dev
-      details: Coder
-    - role: fujoweb.dev
-      details: Copy Writer
+  fujoweb.dev:
+    - Web Mistress
+    - Coder
+    - Copy Writer
   Fandom Cookies:
     - role: Programming
       details: General Coding
     - Cookie Catcher Design
     - Digital Item Pack Assembly
+  AskFujo:
+    - role: Project Lead
+      details: Concept, Coding, Chaos & General Shitposting
 contacts:
   - https://essentialrandomness.com
   - https://essential-randomness.tumblr.com

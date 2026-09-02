@@ -1,10 +1,15 @@
+# ────────────────────────────────────────────────────────────
+# DO NOT EDIT — synced from FujoWebDev/contributors @ 305b05cffbce
+# Source: contributors/bignaturals.yaml
+# Refresh: pnpm sync
+# ────────────────────────────────────────────────────────────
 name: Big Naturals
 avatar: "./avatars/default.png"
-type: 
+type:
   - community
 roles:
   Fandom Cookies:
-    - role: Extra 
+    - role: Extra
       details: Alt Text
 contacts:
   - url: https://blorbo.social/@xieliansbignaturals

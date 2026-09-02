@@ -1,3 +1,8 @@
+# ────────────────────────────────────────────────────────────
+# DO NOT EDIT — synced from FujoWebDev/contributors @ 305b05cffbce
+# Source: contributors/playerprophet.yaml
+# Refresh: pnpm sync
+# ────────────────────────────────────────────────────────────
 name: playerprophet
 avatar: "./avatars/default.png"
 type: community

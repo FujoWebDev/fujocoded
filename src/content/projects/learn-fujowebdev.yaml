@@ -1,0 +1,13 @@
+name: Learn @ FujoWeb.Dev
+preview: ./previews/learn-fujowebdev.png
+categories:
+  - education
+tags:
+  - free
+  - beginner friendly
+graduated: false
+websites:
+  - https://learn.fujoweb.dev/
+description:
+  Free (but mighty) companion guides to [The Fujoshi Guide to Web Development](https://fujoweb.dev),
+  covering the terminal, Git, Node, NPM and beyond. Now in beta!

@@ -1,0 +1,14 @@
+name: FujoCoded Plugins
+preview: ./previews/fujocoded-plugins.svg
+categories:
+  - library
+tags:
+  - free
+  - open source
+  - contributors welcome
+graduated: false
+websites:
+  - https://github.com/FujoWebDev/fujocoded-plugins
+description:
+  A repository of remark/rehype, Zod, and Astro plugins for all webdev fujin.
+  Built for our own sites, shared with everyone.

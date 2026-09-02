@@ -90,7 +90,7 @@ Let's dive right in!
   [Patreon $upporters](https://www.patreon.com/fujocoded)’s inboxes**, right
   after you read this\! Hopefully fully vaccinated and neutered, though they’re
   not happy about that last one. Huge thanks to
-  [brokemycrown](https://www.fujoweb.dev/team/brokemycrown) for another two hot
+  [brokemycrown](https://www.fujoweb.dev/contributors/brokemycrown) for another two hot
   catboys hot off the art presses, they look great\!
 
   ![file:](./images/catboys.png)

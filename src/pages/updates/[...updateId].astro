@@ -1,5 +1,5 @@
 ---
-import { getCollection } from "astro:content";
+import { getCollection, render } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
 import { Icon } from "astro-icon/components";
 import SubscriptionForm from "../../components/SubscriptionForm.astro";
@@ -9,10 +9,10 @@ export async function getStaticPaths() {
   return Promise.all(
     updates.map(async (update) => ({
       params: {
-        updateId: update.slug,
+        updateId: update.id,
       },
       props: {
-        Content: (await update.render()).Content,
+        Content: (await render(update)).Content,
         data: update.data,
       },
     })),
@@ -122,6 +122,8 @@ const { Content, data } = Astro.props;
 </Layout>
 
 <style>
+  @reference "../../styles/global.css";
+
   .prose :global(h2) :global(a) {
     @apply text-fujo-pink;
     text-decoration: none;

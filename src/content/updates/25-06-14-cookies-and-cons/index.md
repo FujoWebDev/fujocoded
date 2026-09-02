@@ -6,8 +6,7 @@ tags:
   - newsletter
 socials:
   - https://bsky.app/profile/fujocoded.bsky.social/post/3lrtlucis2c2n
-  - platform: mastodon
-    url: https://blorbo.social/@fujocoded/114701235460383452
+  - https://blorbo.social/@fujocoded/114701235460383452
   - https://www.tumblr.com/fujocoded/786643398946930688/the-fujocoded-mune-jay-newsletter-is-out?source=share
   - https://x.com/fujoc0ded/status/1935114651660075136
 ---
@@ -63,7 +62,7 @@ See below for more details!
 
 - **Bunches of Badges:** That said, we would never leave you empty-handed, so we’ve created two additional rewards: the first one is **a new website badge _exclusively_ for those who donated to our FujoGuide Kickstarter**, which will pair up nicely with the one you already have that we give out to everyone who buys the zine...
 
-- **A Glaring of Catboys:** ...and the second reward is we’re finishing up our catboys pantheon (_penta_-on? Panther-on?), with the last 2 catboys of 5: **Gitea + Forgejo now have their own character sheets,** as well as exclusive designs by our own resident catboy wrangler [BrokeMyCrown](https://www.fujoweb.dev/team/brokemycrown), who authored our whole cat-ty lineup.
+- **A Glaring of Catboys:** ...and the second reward is we’re finishing up our catboys pantheon (_penta_-on? Panther-on?), with the last 2 catboys of 5: **Gitea + Forgejo now have their own character sheets,** as well as exclusive designs by our own resident catboy wrangler [BrokeMyCrown](https://www.fujoweb.dev/contributors/brokemycrown), who authored our whole cat-ty lineup.
 
   These two twins have been at each other's throats since Gitea sold out to Big Daddy Microsoft and became a teaboo, but we’re planning to corral them into your rewards folder soon (or email inbox if you’ve lost that).
 

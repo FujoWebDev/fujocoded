@@ -171,6 +171,8 @@ const { pathname } = Astro.url;
 </dialog>
 
 <style>
+  @reference "../styles/global.css";
+
   nav.big-screen::before,
   .menu::before {
     background: radial-gradient(circle at center, #4360f7, #70a8e4);
@@ -245,7 +247,7 @@ const { pathname } = Astro.url;
   .lemon span :global(svg) {
     width: 24px;
     height: 24px;
-    stroke: theme("colors.fujo-pink");
+    stroke: var(--color-fujo-pink);
     filter: drop-shadow(2px 2px 3px #ff38eb66);
   }
   .lemon.current[aria-current] :global(svg) {

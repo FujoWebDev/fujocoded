@@ -1,5 +1,7 @@
-import { SocialLinks } from "@fujocoded/zod-transform-socials";
-import { defineCollection, z } from "astro:content";
+import { SocialLinks } from "../contributors/_schema/socials";
+import { defineCollection } from "astro:content";
+import { glob } from "astro/loaders";
+import { z } from "zod/v4";
 
 const Pledge = z.union([
   z.object({
@@ -13,7 +15,10 @@ const Pledge = z.union([
 ]);
 
 export const collection = defineCollection({
-  type: "data",
+  loader: glob({
+    pattern: "*.{yaml,yml}",
+    base: "./src/content/sponsors",
+  }),
   schema: (tools) =>
     z.object({
       name: z.string(),

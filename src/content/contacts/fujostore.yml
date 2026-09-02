@@ -7,8 +7,7 @@ websites:
     icon: "lucide:store"
   - url: https://www.fujoboard.com/
     icon: "lucide:store"
-  - url: https://blorbo.social/@fujostore/
-    platform: mastodon
+  - https://blorbo.social/@fujostore/
   - https://twitter.com/fujoboard
   - https://fujoboard.tumblr.com/
   - https://bsky.app/profile/fujostore.bsky.social

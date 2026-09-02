@@ -13,12 +13,17 @@ import HangingLogo from "../components/HangingLogo.astro";
 import ToTopArrow from "../components/ToTopArrow.astro";
 import Footer from "../components/Footer.astro";
 import HallOfSponsors from "../components/sponsors-hall/HallOfSponsors.astro";
+import "../styles/global.css";
 
 const {
   title = "FujoCoded LLC – A Better Web, Together",
   description,
-  preview = "http://fujocoded.com/og-image.png",
+  preview = "https://fujocoded.com/og-image.png",
 } = Astro.props;
+
+const absolutePreview = preview.startsWith("/")
+  ? new URL(preview, "https://fujocoded.com").toString()
+  : preview;
 ---
 
 <html lang="en">
@@ -38,8 +43,8 @@ const {
     <meta property="og:description" content={decode(description)} />
     <meta property="twitter:description" content={decode(description)} />
 
-    <meta property="og:image" content={preview} />
-    <meta name="twitter:image" content={preview} />
+    <meta property="og:image" content={absolutePreview} />
+    <meta name="twitter:image" content={absolutePreview} />
 
     <meta property="twitter:card" content="summary_large_image" />
     <link rel="stylesheet" href="https://use.typekit.net/ruy6yjo.css" />
@@ -76,6 +81,8 @@ const {
       data-domain="fujocoded.com"
       src="https://plausible.io/js/script.js"></script>
     <style is:global>
+      @reference "../styles/global.css";
+
       html {
         background: linear-gradient(#9687fa, #fbb8fe);
         min-height: 100%;
@@ -93,63 +100,65 @@ const {
         }
       }
 
-      h1 {
-        @apply mb-8 text-center font-hatch font-medium text-fujo-pink sm:mb-11;
-        font-size: clamp(2.25rem, 8vw, 3rem);
-        line-height: clamp(2.5rem, 8vw, 3rem);
-      }
+      @layer base {
+        h1 {
+          @apply mb-8 text-center font-hatch font-medium text-fujo-pink sm:mb-11;
+          font-size: clamp(2.25rem, 8vw, 3rem);
+          line-height: clamp(2.5rem, 8vw, 3rem);
+        }
 
-      h2 {
-        @apply mb-4 mt-11 font-hatch font-light italic text-fujo-pink;
-        font-size: clamp(1.5rem, 5vw, 1.875rem);
-        line-height: 2rem;
-        font-weight: 400;
-      }
+        h2 {
+          @apply mb-4 mt-11 font-hatch font-light italic text-fujo-pink;
+          font-size: clamp(1.5rem, 5vw, 1.875rem);
+          line-height: 2rem;
+          font-weight: 400;
+        }
 
-      h3 {
-        @apply mb-2 mt-6 font-hatch font-light italic text-fujo-pink;
-        font-size: clamp(1.3rem, 5vw, 1.6rem);
-        line-height: 2rem;
-        font-weight: 400;
-      }
+        h3 {
+          @apply mb-2 mt-6 font-hatch font-light italic text-fujo-pink;
+          font-size: clamp(1.3rem, 5vw, 1.6rem);
+          line-height: 2rem;
+          font-weight: 400;
+        }
 
-      .content > section,
-      article {
-        @apply font-macho text-fujo-purple;
-        font-size: clamp(1rem, 3.5vw, 1.25rem);
-        padding-top: clamp(2rem, 8vw, 4rem);
-        padding-left: clamp(2rem, 8vw, 7rem);
-        padding-right: clamp(2rem, 8vw, 7rem);
-        padding-bottom: clamp(2rem, 8vw, 7rem);
-      }
-      p + p,
-      ul + p {
-        @apply mt-7;
-      }
-      :where(h1, h2, h3) em {
-        color: white;
-        background: linear-gradient(#ff38eb, #4360f7);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-      }
-      li {
-        @apply mt-4;
-      }
+        .content > section,
+        article {
+          @apply font-macho text-fujo-purple;
+          font-size: clamp(1rem, 3.5vw, 1.25rem);
+          padding-top: clamp(2rem, 8vw, 4rem);
+          padding-left: clamp(2rem, 8vw, 7rem);
+          padding-right: clamp(2rem, 8vw, 7rem);
+          padding-bottom: clamp(2rem, 8vw, 7rem);
+        }
+        p + p,
+        ul + p {
+          @apply mt-7;
+        }
+        :where(h1, h2, h3) em {
+          color: white;
+          background: linear-gradient(#ff38eb, #4360f7);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+        li {
+          @apply mt-4;
+        }
 
-      .content a {
-        @apply text-fujo-purple;
-        text-decoration: underline;
-        text-underline-offset: 2px;
-      }
-      .content a:has(h1, h2, h3) {
-        @apply no-underline;
-      }
+        .content a {
+          @apply text-fujo-purple;
+          text-decoration: underline;
+          text-underline-offset: 2px;
+        }
+        .content a:has(h1, h2, h3) {
+          @apply no-underline;
+        }
 
-      .prose-lg figure img {
-        @apply mx-auto my-0;
-      }
-      figure figcaption {
-        @apply text-center;
+        .prose-lg figure img {
+          @apply mx-auto my-0;
+        }
+        figure figcaption {
+          @apply text-center;
+        }
       }
 
       @keyframes smoothLater {

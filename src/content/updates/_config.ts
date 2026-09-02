@@ -1,10 +1,16 @@
-import { defineCollection, z } from "astro:content";
-import { SocialLinks } from "@fujocoded/zod-transform-socials";
+import { defineCollection } from "astro:content";
+import { glob } from "astro/loaders";
+import { SocialLinks } from "../contributors/_schema/socials";
 
 import { parseInline } from "marked";
+import { z } from "zod/v4";
 
 export const updates = defineCollection({
-  type: "content",
+  loader: glob({
+    pattern: "**/index.{md,mdx}",
+    base: "./src/content/updates",
+    generateId: ({ entry }) => entry.replace(/\/index\.(mdx?)$/, ""),
+  }),
   schema: ({ image }) =>
     z.object({
       title: z.string().transform((title) => parseInline(title) ?? ""),

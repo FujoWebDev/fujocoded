@@ -13,7 +13,7 @@ const updates = (
 });
 ---
 
-<Layout>
+<Layout title="Updates | FujoCoded LLC">
   <SubscriptionForm />
   <ol class="flex flex-col gap-4">
     {
@@ -33,7 +33,7 @@ const updates = (
               </date>
               <h2 class="mb-1 mt-1 font-hatch text-fujo-pink">
                 <a
-                  href={`/updates/${update.slug}`}
+                  href={`/updates/${update.id}`}
                   set:html={update.data.title}
                   class="!not-italic !text-fujo-pink !no-underline"
                 />

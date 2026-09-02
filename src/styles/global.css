@@ -1,0 +1,36 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  --font-hatch: "Hatch", serif;
+  --font-zeitung: "zeitung-mono", sans-serif;
+  --font-macho: "Macho", sans-serif;
+  --font-hydrophilia: "hydrophilia-iced", sans-serif;
+
+  --color-lemon-dark: #ffbf00;
+  --color-lemon-dark-transparent: #ffbf0080;
+  --color-lemon: #f6d880;
+  --color-teal-dark: #5a99dc;
+  --color-teal: #5be2ef;
+  --color-teal-light: #c8f4f4;
+  --color-fujo-blue: #4360f7;
+  --color-fujo-pink: #ff38eb;
+  --color-fujo-purple: #4d2e91;
+  --color-fujo-green: #a7ff90;
+  --color-kickstarter-green: #05ce78;
+  --color-nyancat-blue: #013466;
+
+  --drop-shadow-purple: 0px 1px 1.5px #5514e0e5;
+}
+
+.prose-lg {
+  color: inherit;
+}
+
+.prose-lg :where(h1, h2) {
+  color: var(--color-fujo-pink);
+}
+
+.prose-lg :where(h3, h4, h5, h6, strong) {
+  color: inherit;
+}

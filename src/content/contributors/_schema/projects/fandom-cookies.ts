@@ -1,16 +1,26 @@
-export const FANDOM_COOKIES_ROLES = [
-  "Additional Research, Feedback, Development, and Assistance",
-  "Alt Text",
-  "Art Direction",
-  "Artist",
-  "Cookie Catcher Design",
-  "CSS & Design",
-  "Digital Item Pack Assembly",
-  "Digital Item Pack Wallpapers",
-  "Extra",
-  "Extra Hands (and Brains)",
-  "Feedback",
-  "Programming",
-  "Project Management",
-  "Promo Campaign Assistance",
-];
+// ────────────────────────────────────────────────────────────
+// DO NOT EDIT — synced from FujoWebDev/contributors @ 305b05cffbce
+// Source: contributors/_schema/projects/fandom-cookies.ts
+// Refresh: pnpm sync
+// ────────────────────────────────────────────────────────────
+import type { Chip } from "../chips.ts";
+
+export const FANDOM_COOKIES_ROLES = {
+  "Additional Research, Feedback, Development, and Assistance": [
+    "Research",
+    "Coding",
+  ],
+  "Alt Text": ["Writing"],
+  "Art Direction": ["Art"],
+  Artist: ["Art"],
+  "Cookie Catcher Design": ["Design"],
+  "CSS & Design": ["Coding", "Design"],
+  "Digital Item Pack Assembly": ["Design"],
+  "Digital Item Pack Wallpapers": ["Art"],
+  Extra: [],
+  "Extra Hands (and Brains)": [],
+  Feedback: ["Research"],
+  Programming: ["Coding"],
+  "Project Management": ["PM"],
+  "Promo Campaign Assistance": ["Comms"],
+} as const satisfies Record<string, readonly Chip[]>;

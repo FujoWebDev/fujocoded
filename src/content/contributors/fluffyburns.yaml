@@ -1,6 +1,11 @@
+# ────────────────────────────────────────────────────────────
+# DO NOT EDIT — synced from FujoWebDev/contributors @ 305b05cffbce
+# Source: contributors/fluffyburns.yaml
+# Refresh: pnpm sync
+# ────────────────────────────────────────────────────────────
 name: Fluffyburns
 avatar: "./avatars/default.png"
-type: 
+type:
   - contractor
 roles:
   Fandom Cookies:

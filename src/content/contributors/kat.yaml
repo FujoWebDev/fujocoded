@@ -1,11 +1,19 @@
+# ────────────────────────────────────────────────────────────
+# DO NOT EDIT — synced from FujoWebDev/contributors @ 305b05cffbce
+# Source: contributors/kat.yaml
+# Refresh: pnpm sync
+# ────────────────────────────────────────────────────────────
 name: kat
 avatar: ./avatars/kat.jpg
-type: 
+type:
   - community
   - contractor
 roles:
   FujoCoded:
-  - HimeOps
+    - HimeOps
+  AskFujo:
+    - role: General Help
+      details: Copy Help, Alt Text and Logistics Aid
 contacts:
   - https://bsky.app/profile/katproto.girlonthemoon.xyz
   - https://github.com/xxwhirlpool/

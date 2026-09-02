@@ -1,0 +1,15 @@
+name: AtFujo — ATmosphere Experiments
+preview: ./previews/atfujo.png
+categories:
+  - software
+  - education
+tags:
+  - free
+  - open source
+graduated: false
+websites:
+  - https://atfujo.fujocoded.com/
+description: >-
+  Our AT Protocol experiments—content labelers, guestbooks, and more—empower
+  the web citizens of today with the tools to build the web of tomorrow.
+  (Warning: site is currently out of date!)

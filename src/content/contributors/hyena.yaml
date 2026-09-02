@@ -1,6 +1,11 @@
+# ────────────────────────────────────────────────────────────
+# DO NOT EDIT — synced from FujoWebDev/contributors @ 305b05cffbce
+# Source: contributors/hyena.yaml
+# Refresh: pnpm sync
+# ────────────────────────────────────────────────────────────
 name: Hyena
 avatar: "./avatars/hyena.png"
-type: 
+type:
   - community
   - contractor
 roles:
@@ -9,6 +14,9 @@ roles:
       details: Cookie Eater, Raccoon Creature
     - Digital Item Pack Wallpapers
     - Feedback
+  AskFujo:
+    - role: Artist
+      details: Box Art, Squad Games Sketches & General Art Brainstorming
 contacts:
   - https://fluffyhyena.neocities.org/
   - https://ko-fi.com/chyenadraws
@@ -16,4 +24,3 @@ contacts:
   - url: https://blorbo.social/@chyena
     platform: mastodon
     username: chyena
-  

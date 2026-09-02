@@ -1,13 +1,20 @@
 // ────────────────────────────────────────────────────────────
 // DO NOT EDIT — synced from FujoWebDev/contributors @ 305b05cffbce
-// Source: contributors/_schema/projects/askfujo.ts
+// Source: contributors/_schema/socials.ts
 // Refresh: pnpm sync
 // ────────────────────────────────────────────────────────────
-import type { Chip } from "../chips.ts";
+import { createSocialsTransformer } from "@fujocoded/zod-transform-socials/zod4";
 
-export const ASKFUJO_ROLES = {
-  Artist: ["Art"],
-  Designer: ["Design"],
-  "General Help": [],
-  "Project Lead": ["PM"],
-} as const satisfies Record<string, readonly Chip[]>;
+export const { SocialLinks, SocialsSchema, transformSocial } =
+  createSocialsTransformer({
+    domains: {
+      mastodon: [
+        "blorbo.social",
+        "fandom.ink",
+        "gamedev.lgbt",
+        "hachyderm.io",
+        "indiepocalypse.social",
+        "tech.lgbt",
+      ],
+    },
+  });

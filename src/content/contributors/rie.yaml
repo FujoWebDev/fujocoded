@@ -1,3 +1,8 @@
+# ────────────────────────────────────────────────────────────
+# DO NOT EDIT — synced from FujoWebDev/contributors @ 305b05cffbce
+# Source: contributors/rie.yaml
+# Refresh: pnpm sync
+# ────────────────────────────────────────────────────────────
 name: Rie
 avatar: "./avatars/rie.png"
 type:
@@ -9,5 +14,8 @@ roles:
       details: Style Guide Author & Process Coordinator
     - role: Article Writer
       details: Introduction to NodeJS
+  AskFujo:
+    - role: General Help
+      details: Copy Help, Alt Text and Logistics Aid
 contacts:
   - https://notavodkashot.carrd.co/

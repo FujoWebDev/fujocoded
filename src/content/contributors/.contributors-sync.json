@@ -1,0 +1,457 @@
+{
+  "source": {
+    "repo": "git@fujoat:contributors",
+    "sha": "305b05cffbce55c37d0982372a9f0d67c92d6319",
+    "syncedAt": "2026-09-02T08:02:09.452Z"
+  },
+  "files": [
+    {
+      "path": "_schema/chips.ts",
+      "sha256": "26efa08b2fef79905057f3b8838d2f0fdb087a4ab23d2a1417271289991791d7"
+    },
+    {
+      "path": "_schema/index.ts",
+      "sha256": "228c1af9ea89797f06f51dd00c0143c1ba6fd46d8eb384a6f11706460edbab26"
+    },
+    {
+      "path": "_schema/projects/askfujo.ts",
+      "sha256": "abb4dc6a1cb55695a561599f861a35ce1c65e1b42356a20e05b89d875a0f0881"
+    },
+    {
+      "path": "_schema/projects/fandom-cookies.ts",
+      "sha256": "57afcf9defcb494b27ec384ccbca6d4cd5784bfba9cb31aeeb56fdfdbd4fbb3d"
+    },
+    {
+      "path": "_schema/projects/index.ts",
+      "sha256": "fc8aba3899364f3547667c8a6b88931359ab80b87f4b7021b9af4192c0c1fd7d"
+    },
+    {
+      "path": "_schema/projects/volume-zero.ts",
+      "sha256": "961a7aed7e12d5ffb1f03acf3962fdb52b9ed239ac83e946664e538cc8cfd157"
+    },
+    {
+      "path": "_schema/projects/websites.ts",
+      "sha256": "18c2c485f4bb3b47bc2ae2eb4d556d51fc2d9a259f17e534d9cf8c7bc0b7ed99"
+    },
+    {
+      "path": "_schema/socials.ts",
+      "sha256": "94bf264835bbb0c62827e1262882265039b869fe65bed63b21a208e680a3e492"
+    },
+    {
+      "path": "argent.yaml",
+      "sha256": "715996c22710190df5c8e0802a6a6dece6df2b4440a0ac4816b392b278ed8d51"
+    },
+    {
+      "path": "avatars/8190.png",
+      "sha256": "57c7c05743ca905f66a298a441fbf7ec9034e82d3cad5d8a36ae69ef5a9be913"
+    },
+    {
+      "path": "avatars/brokemycrown.jpg",
+      "sha256": "4ee5592d9a46ef3ea71ff17d324b2956ec43c1f36e216076e876bfa55f80d532"
+    },
+    {
+      "path": "avatars/citro.webp",
+      "sha256": "40b90571f1f5867995b7190e00583ed8d0400ab491bfcb8b066e0262dd0a2cbb"
+    },
+    {
+      "path": "avatars/cj.png",
+      "sha256": "8d464dbe8b9d79b583027476efec01d76ccbff277b74b42de18bee2c32f54ced"
+    },
+    {
+      "path": "avatars/cmdonovann.png",
+      "sha256": "cfdeb518da8ff4454afe3cada1f2378e77e5770fdc98b223ad83addfc8005d6c"
+    },
+    {
+      "path": "avatars/crismlt.png",
+      "sha256": "646278c6d4bf6ff98bdabc0ce67f0b24d3f1b804a5c3867f022e30c4c91d49dc"
+    },
+    {
+      "path": "avatars/default.png",
+      "sha256": "39400a2525c392675a890ca396cf60c76d4668988e8be950b50b88949be51690"
+    },
+    {
+      "path": "avatars/default.png",
+      "sha256": "39400a2525c392675a890ca396cf60c76d4668988e8be950b50b88949be51690"
+    },
+    {
+      "path": "avatars/default.png",
+      "sha256": "39400a2525c392675a890ca396cf60c76d4668988e8be950b50b88949be51690"
+    },
+    {
+      "path": "avatars/default.png",
+      "sha256": "39400a2525c392675a890ca396cf60c76d4668988e8be950b50b88949be51690"
+    },
+    {
+      "path": "avatars/default.png",
+      "sha256": "39400a2525c392675a890ca396cf60c76d4668988e8be950b50b88949be51690"
+    },
+    {
+      "path": "avatars/default.png",
+      "sha256": "39400a2525c392675a890ca396cf60c76d4668988e8be950b50b88949be51690"
+    },
+    {
+      "path": "avatars/default.png",
+      "sha256": "39400a2525c392675a890ca396cf60c76d4668988e8be950b50b88949be51690"
+    },
+    {
+      "path": "avatars/default.png",
+      "sha256": "39400a2525c392675a890ca396cf60c76d4668988e8be950b50b88949be51690"
+    },
+    {
+      "path": "avatars/default.png",
+      "sha256": "39400a2525c392675a890ca396cf60c76d4668988e8be950b50b88949be51690"
+    },
+    {
+      "path": "avatars/default.png",
+      "sha256": "39400a2525c392675a890ca396cf60c76d4668988e8be950b50b88949be51690"
+    },
+    {
+      "path": "avatars/default.png",
+      "sha256": "39400a2525c392675a890ca396cf60c76d4668988e8be950b50b88949be51690"
+    },
+    {
+      "path": "avatars/elendraug.png",
+      "sha256": "224b51641b056dfcd031f65c8f34e7a7e6cb0d554de9f104f104ac0bf8f4ec02"
+    },
+    {
+      "path": "avatars/elf-herself.png",
+      "sha256": "c5a2dd4ce33d2702fa490f2e6adcc8576e7268254e4306a62174cb2e6313c791"
+    },
+    {
+      "path": "avatars/enigmalea.png",
+      "sha256": "c57210fa3eaf7eb186e7bbf26d60235f375418703bed6a7844efaa7597d5dd5c"
+    },
+    {
+      "path": "avatars/ererifan195.jpg",
+      "sha256": "f78565a86705b1c0e85cc36b8015b905c76052518041e3aa8025a5854074f120"
+    },
+    {
+      "path": "avatars/essential-randomness.png",
+      "sha256": "a7d2780566ed3fde5ee8dc4a7f20b0e8ba0bd183adcb7ef95b70cff59f88a731"
+    },
+    {
+      "path": "avatars/ev.png",
+      "sha256": "5b9d355a00e88ccba30b98ec168d1a61db2db8e764d5a51bb761eb7a6ac1c22d"
+    },
+    {
+      "path": "avatars/foxinboots.png",
+      "sha256": "b657161d4dbf761060ce2343cda6206a30cdf3eda5ddb621ce580010bcddb89a"
+    },
+    {
+      "path": "avatars/gqueercatboy.jpg",
+      "sha256": "07f8887c9a353d08157b46102803bdc6219fdea2aa171b08109b97bd1131b754"
+    },
+    {
+      "path": "avatars/grubdog.png",
+      "sha256": "1321474f98781129386e9ac36ac6871fc3144d8e313a3e45b8faa69783947493"
+    },
+    {
+      "path": "avatars/haetae.png",
+      "sha256": "d0712a2603a5fadb20e816fc75067da0cfa3561bfdd74ed40ff7860a6843ef0a"
+    },
+    {
+      "path": "avatars/hyena.png",
+      "sha256": "db542ce67aaabadc2cc37496704eb6d3ac465bcd56909d6edb69e9501c5fb0e2"
+    },
+    {
+      "path": "avatars/ikam177.jpg",
+      "sha256": "760c4e2e8f3d8b51c48cf5e496b73d9947088e3e02fd8998f0c86d122ceea74c"
+    },
+    {
+      "path": "avatars/james.png",
+      "sha256": "a1336459c66d4a4e1cc08dbd82f13f9736aff0ac5129b5441b2bdd128ce356db"
+    },
+    {
+      "path": "avatars/kat.jpg",
+      "sha256": "60d22e3ed38b6e33ba662d3192871c745714f15dea0e4aca45e45715392c4b62"
+    },
+    {
+      "path": "avatars/kiwipon.png",
+      "sha256": "86ebc789d2847a95d9a4822021977d829104f245bf2a549828354ba27babfe64"
+    },
+    {
+      "path": "avatars/leedie.png",
+      "sha256": "d78a382a15a49e4bb3b22b3aa1aa3875d12f4b0aefbb63b393311bb02309cda1"
+    },
+    {
+      "path": "avatars/merelydovely.png",
+      "sha256": "01ae83901bff2340e795bf9b3bd47ca1e5ff184bbf07781c0756955a0bae3563"
+    },
+    {
+      "path": "avatars/michelle.png",
+      "sha256": "9130ccf54435a7ebc738e8f0f9bd89f1b6b407670f0764281f67b51a80166053"
+    },
+    {
+      "path": "avatars/pamuya.png",
+      "sha256": "980cd411e9b6ebdcfce0dcc540253d9a8e8ca557fad2bed9e2217d8865942457"
+    },
+    {
+      "path": "avatars/riazaia.png",
+      "sha256": "eea8a16f0b7c07cf32515f43e432a819f43a61488213bcb0082ae05f397c7235"
+    },
+    {
+      "path": "avatars/rie.png",
+      "sha256": "fdd566cae83b9bdea9ada8aa22d752028ae7c993d0191a0b1e5601672db8a18e"
+    },
+    {
+      "path": "avatars/rudy-tuesday.png",
+      "sha256": "60594c27ad8387cdf2914a3a264090d382aeadacdcc2141b47de7f265a38e169"
+    },
+    {
+      "path": "avatars/secret-final-boss.png",
+      "sha256": "f5d4a69b2b240f39e9d5dff65b2dd68bd92c8e53bee5d12c68dee0302e034e9c"
+    },
+    {
+      "path": "avatars/sgt-spank.jpg",
+      "sha256": "ba83fa4c7668d5b2cfd807bf2120d8dbd3dcb987f9398e70b76a8463385e54b0"
+    },
+    {
+      "path": "avatars/slogbait.png",
+      "sha256": "a2db2325eb0ef67c7eb1f68fbb09a43fc16640ad0d4e35bfd6060949e56d05e4"
+    },
+    {
+      "path": "avatars/spillingdown.png",
+      "sha256": "6e834fe4778070cf4a5e2b06c179c759bb4868bc5640a4cbfafe49f1d743713b"
+    },
+    {
+      "path": "avatars/straycatalyst.jpg",
+      "sha256": "3bbc1f926ef6d2148c0d89eedf85ba9e5a1f40f4ef78e150e5ff3936fe0f04c7"
+    },
+    {
+      "path": "avatars/the-bi-ballerina.png",
+      "sha256": "c4f47bb8d58e9cffbb3fea255d3693d4c4b33269525110efa698cfdcb290ce18"
+    },
+    {
+      "path": "avatars/the-jennster.png",
+      "sha256": "65c09c9bce234667af5c28a23169703b2b0741b7c54b9a4c09ec975e2f2eb915"
+    },
+    {
+      "path": "avatars/thunder-the-wolf.jpg",
+      "sha256": "6edb5cfd3c2cd929468311f85e5db86f58dc06d5ca4c16e50fa7a1919453e578"
+    },
+    {
+      "path": "avatars/tovanish.png",
+      "sha256": "f36de3855234186426b7f4b31be74b6cf6791f1bc6b8f04106f7a072bb08f58d"
+    },
+    {
+      "path": "avatars/vcat.jpg",
+      "sha256": "230ef20dd759122174532eaf752882ee888ca2a432e7a8f3fdc3f5bec79dad1f"
+    },
+    {
+      "path": "avatars/wiredferret.png",
+      "sha256": "51753fc7a92025d0a704ab8baeebdb6d709aa4abcd631e7b52a1a7045f88c634"
+    },
+    {
+      "path": "avatars/ymkse.jpg",
+      "sha256": "320387024e9f9a19ace6b9a8f06659c9171a1aeb70f7de8e191d32c3b96991b5"
+    },
+    {
+      "path": "avatars/yuu.png",
+      "sha256": "1784c9ca1c50e813b767a0fd8ff37e00d6a7e3bf50005c0da269037a831d8c16"
+    },
+    {
+      "path": "bignaturals.yaml",
+      "sha256": "f4bb29bf5b6a920684cc6cc632318e980252fd4bdcf0cf41dc0098525fa7a798"
+    },
+    {
+      "path": "brokemycrown.yaml",
+      "sha256": "8e9f1874916444be9c35d52c1adb46bf329e8d18de67da032b58cedcd7370fd7"
+    },
+    {
+      "path": "candle.yaml",
+      "sha256": "3eecfacd69747d6425f80ff569147945a2b2be62cacd825fc4410f4ece9abb1a"
+    },
+    {
+      "path": "catbathingsun.yaml",
+      "sha256": "367abfbf3a0044033e3259c22f2dcf18e3b9500085eb062e0389232db2c3c988"
+    },
+    {
+      "path": "citro.yaml",
+      "sha256": "7f62511d92b3ca515a87c732af2dfb96939a40fad55c3aa402d179f6d2e761f8"
+    },
+    {
+      "path": "cj.yaml",
+      "sha256": "5471a166ed5fea31a66260938b61798071ae1666f401672439bc8f82323fb17e"
+    },
+    {
+      "path": "cmdonovann.yaml",
+      "sha256": "aab788b292d0c0aa218bfd93a87dd03a386be571cabdcc254f18eb7081e73dfa"
+    },
+    {
+      "path": "crismlt.yaml",
+      "sha256": "405a5f7b87b8ae4be2c31cb8e00660b3bc994e8c7d7719dcd40ab2566cb67ddc"
+    },
+    {
+      "path": "elendraug.yaml",
+      "sha256": "9726383f048a315b18ea465aa81754cee29f8fa160ea9c64b9ad98e19a681fdc"
+    },
+    {
+      "path": "elf-herself.yaml",
+      "sha256": "3f1f16a278b7db148158994e6da4273533d2a12a2da5a34e3d1af4a106daac2b"
+    },
+    {
+      "path": "enigmalea.yaml",
+      "sha256": "3efdee850941a1a33ba5359a6b03b1a994abfca9ecab0b7aacd669f6871a466e"
+    },
+    {
+      "path": "ererifan195.yaml",
+      "sha256": "4472d73207b3b72a9430d834758baafc361b9d2f3adeef4c12d8e16cfda57d89"
+    },
+    {
+      "path": "essential-randomness.yaml",
+      "sha256": "c76aca0747b5bc29205605215b3ac3d927dd1dd4943bf1534930e4ad9bd59cb7"
+    },
+    {
+      "path": "ev.yaml",
+      "sha256": "5e1ab73e09c6c0fc4465ee031abcae062d465cb658177e2395b283ad413c6dfd"
+    },
+    {
+      "path": "fluffyburns.yaml",
+      "sha256": "80a234d6e1c9643fabf95f73acbbae94920f1395c663c47b6eeed80cd4eeb3ea"
+    },
+    {
+      "path": "foxinboots.yaml",
+      "sha256": "568fdce2dee7ddc7b1dd8cfa1315efae86407c30576506bd175783db583a9c54"
+    },
+    {
+      "path": "gqueercatboy.yaml",
+      "sha256": "c9af0735e4fd7dc1d8e0f85558f57e11446b77b71c1b78d7a8b2df45d872bd77"
+    },
+    {
+      "path": "grubdog.yaml",
+      "sha256": "91102338537925ccd5fef86a68e7b441fb58bae6a21ec184fa4c8ac8344b3379"
+    },
+    {
+      "path": "haetae.yaml",
+      "sha256": "d945c59e320b1c8ec6caffec00ad1f0b874852cea8d84cb046122fce31af8f7e"
+    },
+    {
+      "path": "hyena.yaml",
+      "sha256": "5480b73bba4c1a0faba378d18d2f4d3832b7a92b639324d431f68c34d6232ec3"
+    },
+    {
+      "path": "ikam177.yaml",
+      "sha256": "453758f131f70b8799b4b7220bf8bbe2564bd9f355048c8933cce0d5be299dd8"
+    },
+    {
+      "path": "james.yaml",
+      "sha256": "fe08c23a3a819abf107227c787d9ac3e94eead95e673e84621f4432feb288c04"
+    },
+    {
+      "path": "kat.yaml",
+      "sha256": "af228a64b79980cfe1ad20b6cb5954756170712901d0cda30cd071a0d0a9345a"
+    },
+    {
+      "path": "kiwipon.yaml",
+      "sha256": "f1672c6bfe20e27aa7c11e636e59a11f3c8a5fc44ef9144163c63a24aac903a0"
+    },
+    {
+      "path": "leedie.yaml",
+      "sha256": "674b25733199f7b3ff0423ed85a48d92f037ea74a0a6a90c9247a65a6893e61d"
+    },
+    {
+      "path": "loconita.yaml",
+      "sha256": "78b6dff14b514d29922cee7eefdef95b86b417d26c497f0ce28cc61f55cee128"
+    },
+    {
+      "path": "marinehaddock.yaml",
+      "sha256": "2554d98464d6b3e14dd03c5d3f761241bcd7e94b2a232e49f95b92e6bf010d1c"
+    },
+    {
+      "path": "merelydovely.yaml",
+      "sha256": "ed58307b5277aeb69475376546bf397b0a9fc1b6efcebe6209c8b5406ce16573"
+    },
+    {
+      "path": "michelle.yaml",
+      "sha256": "c088048cfab8039ddf10a8130279d08b2c449e85a1a4f9c4a00178e3e0dac8bc"
+    },
+    {
+      "path": "moon.yaml",
+      "sha256": "c60812f338676d9384ff63d7a1d07bb041f95e8f9cfa36665c235fe34ef044f6"
+    },
+    {
+      "path": "mori.yaml",
+      "sha256": "a75141a57b5989bd77ded2fb4c2bcbf1602832d398b0cc91e01440bca98b58a1"
+    },
+    {
+      "path": "pamuya.yaml",
+      "sha256": "6f4708b7c16aace5b69c0bb26c2dd004c427bb6d34c9c0efdbd16d702bc36e43"
+    },
+    {
+      "path": "playerprophet.yaml",
+      "sha256": "b71e06aa8888f9392740acb3e512f5c277916b4cc35f067ee3a29d32eb295740"
+    },
+    {
+      "path": "ria.yaml",
+      "sha256": "bec03f0705e2572aea03c203ecb6938d8a2517d38514d1e802b18ef354862016"
+    },
+    {
+      "path": "rie.yaml",
+      "sha256": "490d00f4a0a2074e1719c35addf459a468434e0c9979a02879cd057417a640d2"
+    },
+    {
+      "path": "rudy-tuesday.yaml",
+      "sha256": "b138e92debce5868884e106ae824bbc1c6889e547730a635e227f42a0e43aecf"
+    },
+    {
+      "path": "secret-final-boss.yaml",
+      "sha256": "aa398eb7aba58fd79dd8a060d4c81bcdc56df06577b4a9b90c066ac341ffcefb"
+    },
+    {
+      "path": "sel.yaml",
+      "sha256": "594e58052e13a720a4c749df01c71c42478dd987b9e9c38aa14aa24f248d9d09"
+    },
+    {
+      "path": "sgt-spank.yaml",
+      "sha256": "be4240e76e7ff09fe54d3c8afa83b8bdb636bd9542c597e51e182396ea116244"
+    },
+    {
+      "path": "slogbait.yaml",
+      "sha256": "d5945a619837e87f53256cbb366ac6adc2375b379e20916cf667f60769625051"
+    },
+    {
+      "path": "spillingdown.yaml",
+      "sha256": "9f42ca48de8bb043fdd6f21f6cd628ed7b58ddb98d73307e34a8387bd122206f"
+    },
+    {
+      "path": "straycatalyst.yaml",
+      "sha256": "e854a56330ef4f7bf9c79d5dff3ed74f1a5eb7e6d53f78eb1d2a25e35ad10918"
+    },
+    {
+      "path": "the-bi-ballerina.yaml",
+      "sha256": "9df5a764cdd8baa87acbafaa8828525a3f341dad72be90b82aacd2117dcbcfe0"
+    },
+    {
+      "path": "the-jennster.yaml",
+      "sha256": "356bdc1b3cf214bd2222602c41aab8d07882788b145ae874399a48042b699432"
+    },
+    {
+      "path": "thunder-the-wolf.yaml",
+      "sha256": "205920ebff559c4507854cf4049e0a982891a3dd43bcb731ddc09dfbb7eed5ec"
+    },
+    {
+      "path": "tovanish.yaml",
+      "sha256": "43711d5ebf2b0a9814a527345d96851d115e23818621c917f68020149d34b13c"
+    },
+    {
+      "path": "vcat.yaml",
+      "sha256": "ec24ea6a0b83e656aa0141ff5ad1eecebe57fb965cf902b5d2079b14a5482513"
+    },
+    {
+      "path": "wiredferret.yaml",
+      "sha256": "b61b8aafbf004db5bbaf75dc21bfcdc4b94561ba7293c5a9be02e04095200240"
+    },
+    {
+      "path": "ymkse.yaml",
+      "sha256": "c6b7ba232276402666f958e0a97bb01d8a2f32cf29bfe5eda3e6db35eb90be8b"
+    },
+    {
+      "path": "yuu.yaml",
+      "sha256": "682cd2d3e54c45d78d778691fb1e3fc40a04da18c5f0d349dec4d7235586961c"
+    },
+    {
+      "path": "zzz8190.yaml",
+      "sha256": "c58696a8990696e5797e010cb6e7411b8fb4a116b9e302e75199810562cec520"
+    }
+  ]
+}

@@ -1,14 +1,32 @@
 ---
-import TeamCard from "../components/team/TeamCard.astro";
+import ContributorCard from "../components/contributors/ContributorCard.astro";
 import Layout from "../layouts/Layout.astro";
 import { getCollection } from "astro:content";
 
-const team = await getCollection("team");
+type Contributor = Awaited<
+  ReturnType<typeof getCollection<"contributors">>
+>[number];
+type ContributorType = Contributor["data"]["type"][number];
+
+const contributors = await getCollection("contributors");
+const getRandomSample = <T,>(items: T[], count: number) =>
+  [...items].sort(() => Math.random() - 0.5).slice(0, count);
+const byType = (type: ContributorType) =>
+  contributors.filter((member) => member.data.type.includes(type));
+
+const founders = byType("founder");
+const contractors = getRandomSample(byType("contractor"), 4);
+const community = getRandomSample(
+  byType("community").filter(
+    (member) => !member.data.type.includes("contractor"),
+  ),
+  6,
+);
 const description =
   "Meet the people behind the projects designed to build a kinder, more diverse, more collaborative–and, yes, more weird!–internet. ";
 ---
 
-<Layout description={description}>
+<Layout title="About | FujoCoded LLC" description={description}>
   <article class="rounded-xl bg-white drop-shadow-purple">
     <a href="#about-fujocoded-llc">
       <h1 id="about-fujocoded-llc">About <em>FujoCoded LLC</em></h1>
@@ -18,24 +36,33 @@ const description =
         <strong>
           FujoCoded LLC's mission is to build a kinder, more diverse, more
           collaborative–and, yes, <em>more weird</em>!–internet.
-        </strong> To this end, we leverage our extensive experience within online
-        fandom communities, along with the many skills at our disposal, to devise
-        engaging ways to help people take charge of their online world.
+        </strong> We draw on our experience within online
+        fandom communities, our eclectic skills, and our <em>talented friends</em> to help
+        people shape the online world they want to be part of.
       </p>
       <p>
         Our main focuses are:
         <ul class="list-disc pl-6">
           <li>
             <strong>Education</strong>, which gives people the skills to be the
-            change they want to see on the web.
-          </li>
-          <li>
-            <strong>Software</strong>, which gives people the tools to make such
-            changes.
+            change they want to see on the web—like <a
+              href="https://www.fujoweb.dev/">FujoGuide</a
+            >, our fandom-friendly guide to web development.
           </li>
           <li>
             <strong>Community</strong>, which gives people the strength,
-            structure, and support to see those changes through.
+            structure, and support to see those changes through—like <a
+              href="https://www.fancoders.com/">Fandom Coders</a
+            >, our community of coding-curious fandom folks.
+          </li>
+          <li>
+            <strong>Software</strong>, which gives people the tools to make such
+            changes—like <a href="https://github.com/FujoWebDev/AO3.js"
+              >AO3.js</a
+            >, which brings your favorite fics straight to your code, or our <a
+              href="https://github.com/FujoWebDev/fujocoded-plugins"
+              >vast collection of website plugins</a
+            > for more connected personal web.
           </li>
         </ul>
       </p>
@@ -99,11 +126,9 @@ const description =
           class="w-[calc(100% + 80px)] mx-[-40px] mb-12 mt-6 flex flex-col items-center gap-6"
         >
           {
-            team
-              .filter((member) => member.data.type === "founder")
-              .map((member) => (
-                <TeamCard {...member.data} slug={member.id} mode="link" />
-              ))
+            founders.map((member) => (
+              <ContributorCard {...member.data} slug={member.id} mode="link" />
+            ))
           }
         </div>
       </section>
@@ -122,20 +147,18 @@ const description =
           </p>
         </div>
         <div
-          class="mx-[-40px] mb-12 mt-6 flex flex-col items-center gap-6 md:grid md:grid-cols-2 md:items-stretch"
+          class="mx-[-40px] mb-12 mt-6 flex flex-col items-center gap-6 md:grid md:grid-cols-2 md:items-stretch md:justify-items-center"
         >
           {
-            team
-              .filter((member) => member.data.type === "contractor")
-              .map((member) => (
-                <TeamCard {...member.data} slug={member.id} mode="link" />
-              ))
+            contractors.map((member) => (
+              <ContributorCard {...member.data} slug={member.id} mode="link" />
+            ))
           }
         </div>
         <div
           class="text-center font-hatch text-2xl font-[400] italic text-fujo-pink"
         >
-          ... and more.
+          <a href="/contributors">See them all</a>
         </div>
       </section>
       <section>
@@ -152,20 +175,18 @@ const description =
           development, and so much more.
         </p>
         <div
-          class="mx-[-40px] mb-12 mt-6 flex flex-col items-center gap-6 md:grid md:grid-cols-2 md:items-stretch"
+          class="mx-[-40px] mb-12 mt-6 flex flex-col items-center gap-6 md:grid md:grid-cols-2 md:items-stretch md:justify-items-center"
         >
           {
-            team
-              .filter((member) => member.data.type === "community")
-              .map((member) => (
-                <TeamCard {...member.data} slug={member.id} mode="link" />
-              ))
+            community.map((member) => (
+              <ContributorCard {...member.data} slug={member.id} mode="link" />
+            ))
           }
         </div>
         <div
           class="text-center font-hatch text-2xl font-[400] italic text-fujo-pink"
         >
-          ... and more.
+          <a href="/contributors">See them all</a>
         </div>
       </section>
     </section>
@@ -173,6 +194,8 @@ const description =
 </Layout>
 
 <style>
+  @reference "../styles/global.css";
+
   details::before {
     /* background: linear-gradient(180deg, #ff21e9 0%, #4360f7 100%); */
     background: radial-gradient(circle at center, #ff21e9, #4360f7);

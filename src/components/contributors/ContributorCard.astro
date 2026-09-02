@@ -3,20 +3,43 @@ import { Icon } from "astro-icon/components";
 import { Image } from "astro:assets";
 import type { CollectionEntry } from "astro:content";
 
-type ContributorData =
-  | CollectionEntry<"team">["data"]
-  | CollectionEntry<"contributors">["data"];
+type ContributorData = CollectionEntry<"contributors">["data"];
+type ContributorRoles = CollectionEntry<"contributors">["data"]["roles"];
 
 interface Props {
   slug: string;
   name: ContributorData["name"];
   contacts: ContributorData["contacts"];
   avatar: ContributorData["avatar"];
+  roles?: ContributorRoles;
+  chips: ContributorData["chips"];
   mode?: "link" | "display";
 }
 
-const { name, contacts, avatar, slug, mode = "display" } = Astro.props;
+const {
+  name,
+  contacts,
+  avatar,
+  slug,
+  roles,
+  chips,
+  mode = "display",
+} = Astro.props;
 const isLinkMode = mode === "link";
+const hasContacts = contacts.length > 0;
+
+const allRoles = Object.values(roles ?? {}).flat();
+
+const characterDesignTags = allRoles
+  .filter((r) => r.chips.includes("Character Design") && r.details)
+  .map((r) => `Character Design: ${r.details}`);
+
+const roleTags = [
+  ...new Set<string>([
+    ...chips.filter((chip) => chip !== "Character Design"),
+    ...characterDesignTags,
+  ]),
+].slice(0, 4);
 
 const getContactLabel = (
   contact: ContributorData["contacts"][number],
@@ -29,39 +52,39 @@ const getContactLabel = (
 
 <div
   class:list={[
-    "outer-box group relative z-10 flex w-80 min-w-72 max-w-full flex-col gap-4 rounded-xl md:pb-[1.125rem]",
+    "outer-box group relative z-10 flex w-80 min-w-72 max-w-full flex-col rounded-2xl",
     isLinkMode ? "link-mode" : "display-mode",
+    !hasContacts && "compact-card",
   ]}
 >
   <h3
-    class="header-row m-0 flex items-center gap-3 self-center text-xl not-italic"
+    class="header-row m-0 flex items-center gap-3 self-center text-balance text-xl not-italic"
     id={`${slug}`}
   >
     {
       isLinkMode ? (
         <a
           href={`/contributors/${slug}`}
-          class="card-link flex items-center gap-4 !no-underline"
+          class="card-link flex items-center justify-center gap-3 !no-underline"
         >
-          <span class="card-name -mt-1 font-zeitung text-fujo-pink">
-            {name}
-          </span>
           <Image
             class="rounded-xl object-cover"
             width={40}
             height={40}
             src={avatar}
-            alt="Avatar of the contributor"
+            alt=""
           />
+          <span class="card-name -mt-1 text-balance text-center font-zeitung text-fujo-pink">
+            {name}
+          </span>
           <Icon
             name="lucide:arrow-right"
             size={20}
-            class="arrow-icon -ml-2 text-fujo-pink opacity-40 transition-all"
+            class="arrow-icon -ml-1 text-fujo-pink opacity-40 transition-all"
           />
         </a>
       ) : (
-        <div class="flex items-center gap-4">
-          <span class="-mt-1 font-zeitung text-fujo-pink">{name}</span>
+        <div class="flex items-center justify-center gap-3">
           <Image
             class="rounded-xl object-cover"
             width={40}
@@ -69,6 +92,9 @@ const getContactLabel = (
             src={avatar}
             alt="Avatar of the contributor"
           />
+          <span class="-mt-1 text-balance text-center font-zeitung text-fujo-pink">
+            {name}
+          </span>
         </div>
       )
     }
@@ -76,7 +102,7 @@ const getContactLabel = (
   {
     !isLinkMode && (
       <button
-        class="copy-button absolute right-3 top-3 flex rounded-lg p-2 text-fujo-pink opacity-40 transition-all hover:opacity-100"
+        class="copy-button absolute right-2 top-2 inline-flex size-10 items-center justify-center rounded-lg text-fujo-pink opacity-40 transition-all hover:opacity-100"
         data-url={`/contributors/${slug}`}
         aria-label="Copy link to this profile"
       >
@@ -85,35 +111,46 @@ const getContactLabel = (
       </button>
     )
   }
-  <ul class="flex flex-col p-4 pb-2.5 pt-0 md:p-6 md:pb-[1.125rem] md:pt-0">
-    {
-      contacts.map((contact) => {
-        const url = new URL(contact.url);
-        return (
-          <li class="contact-row mt-0">
-            <a
-              href={contact.url}
-              class="group/contact flex items-center gap-3 py-1.5 !no-underline"
-            >
-              <div class="flex rounded-lg bg-fujo-purple/10 p-2 group-hover/contact:bg-fujo-purple/20">
-                <Icon
-                  size={24}
-                  aria-label={
-                    contact.platform === "web" ? "website" : contact.platform
-                  }
-                  name={contact.icon ?? "world-www"}
-                  class="flex-shrink-0"
-                />
-              </div>
-              <span class="-mt-1 truncate">
-                {getContactLabel(contact, url)}
-              </span>
-            </a>
-          </li>
-        );
-      })
-    }
-  </ul>
+  {
+    roleTags.length > 0 && (
+      <ul class="role-list flex flex-wrap justify-center gap-1.5 text-balance">
+        {roleTags.map((tag) => (
+          <li class="role-chip mt-0 text-balance">{tag}</li>
+        ))}
+      </ul>
+    )
+  }
+  {
+    hasContacts && (
+      <ul class="contacts-list flex flex-col">
+        {contacts.map((contact) => {
+          const url = new URL(contact.url);
+          return (
+            <li class="contact-row mt-0">
+              <a
+                href={contact.url}
+                class="group/contact flex items-center gap-3 !no-underline"
+              >
+                <div class="flex rounded-lg bg-fujo-purple/10 p-2 group-hover/contact:bg-fujo-purple/20">
+                  <Icon
+                    size={24}
+                    aria-label={
+                      contact.platform === "web" ? "website" : contact.platform
+                    }
+                    name={contact.icon ?? "world-www"}
+                    class="flex-shrink-0"
+                  />
+                </div>
+                <span class="-mt-1 truncate">
+                  {getContactLabel(contact, url)}
+                </span>
+              </a>
+            </li>
+          );
+        })}
+      </ul>
+    )
+  }
 </div>
 
 <script>
@@ -166,6 +203,8 @@ const getContactLabel = (
     --gradient-pink-rgb: 255, 33, 233;
     --gradient-blue-rgb: 67, 96, 247;
     border: 2px solid transparent;
+    padding: 0.625rem 0.625rem 0.75rem;
+    gap: 0.5rem;
     background:
       linear-gradient(white, white) padding-box,
       conic-gradient(
@@ -177,9 +216,13 @@ const getContactLabel = (
           rgba(var(--gradient-pink-rgb), 0.8)
         )
         border-box;
-    transition:
-      box-shadow 0.2s ease,
-      transform 0.2s ease;
+    transition: box-shadow 0.2s ease;
+  }
+
+  @media (min-width: 768px) {
+    .outer-box {
+      padding: 0.75rem 0.75rem 0.875rem;
+    }
   }
 
   .link-mode {
@@ -212,11 +255,42 @@ const getContactLabel = (
 
   .link-mode:hover {
     box-shadow: 0 0 15px rgba(var(--gradient-pink-rgb), 0.15);
-    transform: translateY(-4px) scale(1.02);
   }
 
   .display-mode {
     cursor: default;
+  }
+
+  .compact-card .card-link {
+    flex-wrap: wrap;
+    row-gap: 0.375rem;
+  }
+
+  .role-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .contacts-list {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.125rem;
+  }
+
+  .role-chip {
+    border: 1px solid rgba(var(--gradient-pink-rgb), 0.2);
+    border-radius: 999px;
+    background: rgba(var(--gradient-blue-rgb), 0.06);
+    padding: 0.1875rem 0.5rem;
+    color: rgb(var(--gradient-blue-rgb));
+    font-size: 0.75rem;
+    font-weight: 600;
+    line-height: 1.15;
+    text-align: center;
+    text-wrap: balance;
   }
 
   .copy-button:hover {
@@ -229,15 +303,14 @@ const getContactLabel = (
 
   /* Shared styles */
   .header-row {
-    border-radius: 0.5rem;
-    margin-top: 0.5rem;
-    padding: 0.5rem 1rem;
+    border-radius: 0.875rem;
+    padding: 0.375rem 0.75rem 0.5rem;
     transition: background 0.15s ease;
   }
 
   .contact-row {
-    border-radius: 0.5rem;
-    padding-left: 0.5rem;
+    border-radius: 0.625rem;
+    padding: 0.25rem 0.375rem;
     transition: background 0.15s ease;
   }
 

@@ -1,10 +1,14 @@
+# ────────────────────────────────────────────────────────────
+# DO NOT EDIT — synced from FujoWebDev/contributors @ 305b05cffbce
+# Source: contributors/merelydovely.yaml
+# Refresh: pnpm sync
+# ────────────────────────────────────────────────────────────
 name: Dove
 avatar: ./avatars/merelydovely.png
 type: community
 roles:
-  Websites:
-    - role: fujoweb.dev
-      details: Copy Writer
+  fujoweb.dev:
+    - Copy Writer
   Volume 0 Issue 1:
     - Communications
     - Beta Reader

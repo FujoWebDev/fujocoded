@@ -5,172 +5,119 @@ import we_want_you from "../images/we_want_you.png";
 import SubscriptionForm from "../components/SubscriptionForm.astro";
 
 const description =
-  "FujoCoded LLC builds projects that make the internet weirder and kinder. Help us by supporting us on our Patreon and store!";
+  "FujoCoded hires artists, writers, and web developers for small paid projects. Join our contributor roster and hear about new opportunities.";
 ---
 
-<Layout description={description}>
+<Layout title="Paid Opportunities | FujoCoded LLC" description={description}>
   <article class="rounded-xl bg-white drop-shadow-purple">
-    <h1>Paid Opportunities: You can help!</h1>
+    <h1>Paid <em>opportunities</em></h1>
 
-    <p class="text-pretty">
-      <strong
-        >FujoCoded LLC periodically creates small-gig opportunities for people
-        to pitch in and get paid!</strong
-      > While—<em></em>for full disclosure—we currently operate at loss with a
-      limited budget, these are great opportunities to work on something
-      meaningful, stretch your wings, and (we're told) have a great time. <strong
-        >Non-professionals are encouraged to apply!</strong
-      >
-    </p><p>
-      If you're interested in throwing your <a
-        href="https://store.fujocoded.com/products/paddles">yaoi paddle</a
-      > in the ring, <strong>
-        fill out the forms below 👇 and we'll be in touch when a good match
-        shows up.</strong
-      > We work with folks from all over the world, so don't hesitate!
-    </p>
+    <div class="flex flex-col gap-8 md:flex-row md:items-start">
+      <div class="flex-1">
+        <p class="text-pretty">
+          <strong
+            >FujoCoded regularly hires from our broader community for small paid
+            projects</strong
+          >—including art, character design, writing, web development, project
+          management help, and whatever else the FujoVerse™ needs next. We hire
+          folks <em>from all over the world</em>, and <strong
+            >non-professionals are always welcome</strong
+          >!
+        </p>
+        <p class="text-pretty">
+          <strong
+            >Throw your <a href="https://store.fujocoded.com/products/paddles"
+              >yaoi paddle</a
+            > in the ring👇
+          </strong> And if the perfect opportunity isn't quite there right now, <a
+            href="#business-card-drops">drop your application anyway!</a
+          > We'll get in touch when a project that matches your skills comes along.
+        </p>
+      </div>
 
-    <Image
-      src={we_want_you}
-      alt="A poster showing Boba-tan gleeful in front of fire and under a shower of money, in a very shiny suit jacket and sunglasses doing finger guns and saying 'FujoCoded needs your help!'"
-      class="w-xl mx-auto py-8"
-    />
-    <a href="#hiring-right-now"
-      ><h2 id="hiring-right-now">"Hiring Right Now"</h2></a
-    >
-    <!-- <p>
-      This new, experimental form is to express interest AND availability for <u
-        >a specific open opportunity</u
-      > if you:
-    </p>
-    <ul class="with-discs">
-      <li>
-        Have already filled the out the <a href="#business-card-drops"
-          >long-term forms below</a
-        > OR
-      </li>
-      <li>
-        Are <em>very interested</em> (and a good match) for a specific opportunity
-        with no time to fill out the long forms OR
-      </li>
-      <li>
-        Were sent here because there's no long-term form for the opportunity
-      </li>
-    </ul> -->
-    <p>
-      As of December 2025, we're looking for both volunteers (🙏) and paid
-      contractors (💰):
-    </p>
-    <ul class="with-discs">
-      <li>
-        <strong id="who-ll-wrangle-the-wranglers"
-          ><a href="#who-ll-wrangle-the-wranglers" class="!text-fujo-pink"
-            >[🙏] Who’ll Wrangle the Wranglers?:</a
-          ></strong
-        > Our origin project, <a href="https://bobaboard.com/">BobaBoard</a>, is <strong
-          >looking for a “Volunteer Wranglers” coordinator</strong
-        >! Do you have experience recruiting, organizing, and directing
-        volunteers? Are you excited by the meta-challenge of recruiting,
-        organizing, and directing the volunteers who’ll do this alongside you?
-        And most importantly—<strong
-          >are you willing to do what’s needed to get <em>fandom people</em> working
-          together in pursuit of a better fandom web?</strong
-        > Let us know by filling <a href="https://forms.gle/SmFv19hmamKV6ATXA"
-          >BobaBoard’s Volunteers Coordinator application form</a
-        >.
-      </li>
-      <li>
-        <strong id="betas-seek-alpha"
-          ><a href="#betas-seek-alpha" class="!text-fujo-pink"
-            >[🙏] Betas seek Alpha:</a
-          ></strong
-        > FujoGuide is <strong>looking for a beta readers coordinator</strong>!
-        The task, for those who choose to accept it, is to sit patiently in a
-        Discord group DMs with other 6-7 fannish beginners as they brave our
-        GitHub issue of FujoGuide and (with your guidance) surface unscathed! <strong
-          >You don’t need deep expertise of GitHub to take on this challenge,
-          just be familiar enough with branching, merging, and the pull request
-          process to help people get unstuck.</strong
-        > Ideally, we’d like to keep this a volunteer position as it’s traditionally
-        been, but we’d be happy to barter zines, knowledge, or other merch for payment
-        in kind! DM us or write us at <a href="mailto:contacts@fujocoded.com"
-          >contacts@fujocoded.com</a
-        > to apply.
-      </li>
-      <li>
-        <strong id="technical-project-procyon-manager"
-          ><a href="#technical-project-procyon-manager" class="!text-fujo-pink"
-            >[💰] Technical <del>Project</del> Procyon Manager:</a
-          ></strong
-        > Sun Tzu said, “<em
-          >if you know not yourself, […] you will lose half your battles</em
-        >”. Luckily, we don’t just <em>know</em> our weaknesses, we know how to <em
-          >fix</em
-        > them. So we’ll be starting 2026 <strong
-          >getting Ms Boba some Project Management <del>emotional</del> support</strong
-        >: have experience wrangling milestones in legible dashboards? love
-        pestering (and guiding!) people who owe deliverables? <a
-          href="https://forms.gle/tRwvwFHcBjAphRxr6"
-          >Apply here and <del>save Ms Boba</del></a
-        >
-        <strong
-          >come help FujoCoded move away from project charts only Ms Boba can
-          read</strong
-        >, while freeing her brain from the woes of keeping folks on track! This
-        is a temporary, part-time position to help us regroup and set up a
-        working system.
-      </li>
-    </ul>
-    <p>
-      Make sure you check out <a href="/updates"
-        >the latest edition of our newsletter</a
-      > for the hiring news and job descriptions! We'll do our best to remove opportunities
-      from here and the form as they get filled.
-    </p>
-    <!-- <div class="mt-2 text-center font-bold">
-      <a
-        href="https://docs.google.com/forms/d/e/1FAIpQLSfM0-bD_KygLQYpb0uDFE8a0EYFB5uuXRw_gjqTd8wayxmdPw/viewform"
-        >Go to the "Hiring Right Now" form →</a
-      >
-    </div> -->
-    <a href="#business-card-drops"
-      ><h2 id="business-card-drops">Long-term Business Card Drops</h2></a
-    >
-    <div>
-      These are the long-term forms for specific categories of contributors we
-      recurringly seek to hire.
+      <Image
+        src={we_want_you}
+        alt="A poster showing Boba-tan gleeful in front of fire and under a shower of money, in a very shiny suit jacket and sunglasses doing finger guns and saying 'FujoCoded needs your help!'"
+        class="mx-auto w-64 shrink-0 rotate-2 md:-mr-16 md:ml-0"
+      />
     </div>
-    <ul>
+    <a href="#hiring-right-now"><h2 id="hiring-right-now">Now Hiring:</h2></a>
+    <ul class="with-discs">
       <li>
         <p class="text-pretty">
-          <strong>✏️ Writers assemble!</strong> Do you want to help with our NPM
-          articles? Or maybe, you want to help us <a
+          <strong class="text-fujo-blue">📣 Voice of the Fujos:</strong> We're hiring
+          a <strong>social media writer</strong> to
+          <strike>save our founder</strike> help show our most sociable supporters
+          that yes, indeed, <em>we do things</em>! A lot of them! If you can <strong
+            >write in a fun, casual, and slightly chaotic style</strong
+          >, and have <strong>2hr/week for the cause (and a fee)</strong>, fill
+          out our
+          <a href="https://forms.gle/MopyPns3ZoHgDuWd8"
+            >Social Media Writer (ongoing) Application!</a
+          >
+        </p>
+        <li>
+          <p class="text-pretty">
+            <strong class="text-fujo-blue">🧑‍🎨 Sexy(men) Connoisseur:</strong>
+            Do you have a talent for designing sexy characters? Even better: do you
+            have a talent for designing sexy<em class="text-fujo-pink"
+              >...men</em
+            > (of the <a href="https://en.wikipedia.org/wiki/Tumblr_Sexyman"
+              >Tumblr variety</a
+            >)? Your time has come: <strong
+              >FujoCoded is hiring a character designer</strong
+            > for our official <em>mascot</em>'s official <em>blorbo</em>'s
+            official <em>fansona</em>! <a
+              href="https://forms.gle/Cm2wq9numpBMoUZJA"
+              >Drop your card in our form</a
+            > and take up our challenge: <strong
+              >NAND Cypher, from hit series <em>Binary Calls</em>—human edition!</strong
+            >
+          </p>
+        </li>
+      </li>
+    </ul>
+
+    <a href="#business-card-drops"
+      ><h2 id="business-card-drops">Drop your business card!</h2></a
+    >
+    <p class="text-pretty text-sm">
+      These forms help us find people for future (or current) paid work: once
+      you fill one out, we'll keep your info on file and reach out to you when
+      the right project comes along.
+    </p>
+    <ul class="with-discs">
+      <li>
+        <p class="text-pretty">
+          <strong class="text-fujo-blue">✏️ Writers assemble!</strong> Want to help
+          with our NPM articles? Or maybe you'd rather help us <a
             href="https://www.fujoweb.dev/characters"
-            >sell the lore behind our catboys (and beyond)</a
-          > to the wider public? Our <a
-            href="https://forms.gle/DensB2JHppK4A98M8">Writers Intake Form</a
-          > is for you!
+            >sell the lore behind our catboys</a
+          > (and beyond) to the wider public? <a
+            href="https://forms.gle/DensB2JHppK4A98M8"
+            >Join our writers roster</a
+          >.
         </p>
       </li>
       <li>
         <p class="text-pretty">
-          <strong>💻 WebDev Gigs incoming!</strong> There is <em>a lot</em> going
-          on in the FujoVerse™ and many pages (like the one on <a
-            href="https://www.fujoweb.dev/volume-0">FujoGuide Volume 0</a
-          >) could use some TLC from entry-level HTML/CSS-wranglers. We also
-          have a few other challenges at different levels we’ll be looking to
-          take care of as we grow. <a href="https://forms.gle/HNMHCJ5N5XoV35Y27"
-            >Join the fight here!</a
+          <strong class="text-fujo-blue">💻 WebDev gigs incoming!</strong> There
+          is <em>a lot</em> going on in the FujoVerse™. Many pages (like the one
+          on <a href="https://www.fujoweb.dev/volume-0">FujoGuide Volume 0</a>)
+          could use some TLC from entry-level HTML/CSS wranglers, and we have
+          bigger technical challenges waiting in the wings. <a
+            href="https://forms.gle/HNMHCJ5N5XoV35Y27"
+            >Join our web developer roster</a
           >
         </p>
       </li>
       <li>
         <p class="text-pretty">
-          <strong>🖼️ Art(ist) Archive!</strong> We’ve got some character art needs
-          in the pipeline (don’t we always?), and we’d love to have even more artists
-          on tap for when that gets firmed up—monsterfucking tendencies appreciated
-          but not required. <a href="https://forms.gle/Cm2wq9numpBMoUZJA"
-            >Add your info here!</a
+          <strong class="text-fujo-blue">🖼️ Art(ist) archive!</strong> We’ve got
+          character art needs simmering in the background (don’t we always?), and
+          we’d love to know who to call when they become real projects—monsterfucking
+          tendencies appreciated but not required. <a
+            href="https://forms.gle/Cm2wq9numpBMoUZJA">Join our artist roster</a
           >
         </p>
       </li>
@@ -179,12 +126,12 @@ const description =
     <h2
       class="mb-8 text-center font-hatch text-[34px] font-medium italic text-fujo-pink"
     >
-      None of these catch your eye?
+      Nothing here catches your eye?
     </h2>
 
     <p class="my-4 text-pretty text-center">
-      Hear about future opportunities in
-      <em class="shadow-fujo-pink"> our newsletter! ✨</em>
+      Hear about future opportunities in <a href="/updates">our newsletter</a
+      >—or subscribe below and let them come to you! ✨
     </p>
     <p class="my-4 text-pretty">
       <SubscriptionForm />
@@ -193,12 +140,14 @@ const description =
 </Layout>
 
 <style>
+  @reference "../styles/global.css";
+
   ul.with-discs {
     list-style: disc;
     padding-left: 40px;
-    li {
-      @apply mt-6;
-    }
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
     li:not(:first-child) {
       @apply mt-1;
     }

@@ -1,13 +1,20 @@
-name: FujoStore
-description: Money makes the web go round
-websites:
-  - url: https://store.fujocoded.com/
-    icon: "lucide:store"
-  - url: https://www.robinboob.com/
-    icon: "lucide:store"
-  - url: https://www.fujoboard.com/
-    icon: "lucide:store"
-  - https://blorbo.social/@fujostore/
-  - https://twitter.com/fujoboard
-  - https://fujoboard.tumblr.com/
-  - https://bsky.app/profile/fujostore.bsky.social
+title: FujoCoded Store
+description: Support our artists and the web
+href: https://store.fujocoded.com
+image: ./fujoverse/fujostore.svg
+imageAlt: FujoCoded Store logo
+group: stores
+order: 4
+socials:
+  - label: Bluesky
+    url: https://bsky.app/profile/fujostore.bsky.social
+    icon: simple-icons:bluesky
+  - label: Tumblr
+    url: https://fujoboard.tumblr.com/
+    icon: simple-icons:tumblr
+  - label: Mastodon
+    url: https://blorbo.social/@fujostore/
+    icon: simple-icons:mastodon
+  - label: Twitter
+    url: https://twitter.com/fujoboard
+    icon: simple-icons:twitter

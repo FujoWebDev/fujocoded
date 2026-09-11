@@ -1,111 +1,67 @@
 ---
-import { Icon } from "astro-icon/components";
+import FujoVerseCard from "../components/FujoVerseCard.astro";
 import Layout from "../layouts/Layout.astro";
-import { getCollection } from "astro:content";
+import { getCollection, type CollectionEntry } from "astro:content";
 
-const contacts = await getCollection("contacts");
+const contacts = (await getCollection("contacts")).toSorted(
+  (a, b) => a.data.order - b.data.order,
+);
 
-const SOCIAL_PLATFORMS = ["bsky", "tumblr", "mastodon", "twitter"];
+type FujoVerseLink = CollectionEntry<"contacts">["data"];
 
-const isSocial = (link: { platform?: string }) =>
-  link.platform != null && SOCIAL_PLATFORMS.includes(link.platform);
+type FujoVerseColumn = {
+  title: string;
+  links: FujoVerseLink[];
+};
+
+const FUJOVERSE_COLUMNS: FujoVerseColumn[] = ["projects", "stores"].map(
+  (group) => ({
+    title: group === "projects" ? "Projects" : "Stores",
+    links: contacts
+      .filter((contact) => contact.data.group === group)
+      .map(({ data }) => data),
+  }),
+);
+
+const description =
+  "Find FujoCoded projects, communities, and social spaces across the web.";
 ---
 
-<Layout title="Find Us | FujoCoded LLC">
+<Layout title="Find Us | FujoCoded LLC" description={description}>
   <article class="rounded-xl bg-white text-center drop-shadow-purple">
     <a href="#find-us">
-      <h1 id="find-us">Find Us on the <em>Web</em></h1>
+      <h1 id="find-us">Find us across the <em>FujoVerse</em></h1>
     </a>
-    <section>
-      <p>Wherever you want us, wherever you need us.</p>
-    </section>
-    <section class="mt-8">
-      <ul
-        class="site-cards mx-auto flex max-w-lg list-none flex-col items-center gap-8 p-0 [&>li]:mt-0"
-      >
+    <section
+      class="fujoverse-section mt-10 border-t border-fujo-purple/15 pt-8 text-left sm:pt-10"
+    >
+      <div class="fujoverse-columns">
         {
-          contacts.map((contact, i) => {
-            const sites = contact.data.websites.filter(
-              (link) => !isSocial(link),
-            );
-            const socials = contact.data.websites
-              .filter(isSocial)
-              .sort((a, b) => SOCIAL_PLATFORMS.indexOf(a.platform!) - SOCIAL_PLATFORMS.indexOf(b.platform!));
+          FUJOVERSE_COLUMNS.map((column) => {
+            const headingId = `fujoverse-${column.title.toLowerCase()}`;
             return (
-              <li
-                class="site-card relative z-10 flex w-full flex-col gap-5 overflow-hidden rounded-xl p-7 text-left"
-                style={`--stagger: ${i}`}
+              <section
+                class="fujoverse-column"
+                aria-labelledby={`${headingId}-heading`}
               >
-                <div>
-                  <a href={`#${contact.id}`}>
-                    <h2
-                      id={contact.id}
-                      class="m-0 font-zeitung text-xl not-italic leading-6"
-                    >
-                      {contact.data.name}
-                    </h2>
-                  </a>
-                  <p class="mb-0 mt-1 text-base text-fujo-purple/65">
-                    {contact.data.description}
-                  </p>
-                </div>
-
-                {sites.length > 0 && (
-                  <ul class="flex list-none flex-col">
-                    {sites.map((link) => (
-                      <li class="contact-row m-0 rounded-lg px-2 py-1.5">
-                        <a
-                          href={link.url}
-                          class="group/link flex items-center gap-3 rounded-lg !no-underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-fujo-purple/40"
-                        >
-                          <div class="flex rounded-lg bg-fujo-purple/10 p-2 transition-colors group-hover/link:bg-fujo-purple/20">
-                            <Icon
-                              size={24}
-                              aria-label="website"
-                              name={link.icon ?? "world-www"}
-                              class="flex-shrink-0"
-                            />
-                          </div>
-                          <span class="truncate">
-                            {new URL(link.url).hostname.replace(/^www\./, "")}
-                          </span>
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                )}
-
-                {socials.length > 0 && (
-                  <ul
-                    class:list={[
-                      "flex flex-wrap justify-center gap-2",
-                      sites.length > 0
-                        ? "border-t border-fujo-purple/10 pt-3"
-                        : "",
-                    ]}
-                  >
-                    {socials.map((link) => (
-                      <li class="m-0 list-none">
-                        <a
-                          href={link.url}
-                          aria-label={link.platform ?? "social link"}
-                          class="flex rounded-lg bg-fujo-purple/10 p-2 !no-underline transition-colors hover:bg-fujo-purple/20 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-fujo-purple/40 active:bg-fujo-purple/25"
-                        >
-                          <Icon
-                            size={24}
-                            name={link.icon ?? "world-www"}
-                            class="flex-shrink-0"
-                          />
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                )}
-              </li>
+                <h3 id={`${headingId}-heading`} class="fujoverse-column-title">
+                  {column.title}
+                </h3>
+                <ul class="fujoverse-grid">
+                  {column.links.map((link, i) => (
+                    <li class="m-0 min-w-0">
+                      <FujoVerseCard
+                        link={link}
+                        tilt={i % 2 === 0 ? "-0.5deg" : "0.5deg"}
+                      />
+                    </li>
+                  ))}
+                </ul>
+              </section>
             );
           })
         }
-      </ul>
+      </div>
     </section>
   </article>
 </Layout>
@@ -148,6 +104,40 @@ const isSocial = (link: { platform?: string }) =>
           rgb(var(--gradient-pink-rgb))
         )
         border-box;
+  }
+
+  .fujoverse-columns {
+    display: grid;
+    gap: 2rem;
+    margin: 2rem 0 0;
+  }
+
+  .fujoverse-column {
+    min-width: 0;
+  }
+
+  .fujoverse-column-title {
+    margin: 0 0 0.75rem;
+    color: #4d2e91;
+    font-family: zeitung-mono, monospace;
+    font-size: 1rem;
+    letter-spacing: 0.08em;
+    line-height: 1.2;
+    text-transform: uppercase;
+  }
+
+  .fujoverse-grid {
+    display: grid;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  @media (min-width: 640px) {
+    .fujoverse-columns {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
   }
 
   .contact-row {

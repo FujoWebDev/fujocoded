@@ -1,8 +1,20 @@
-name: FujoCoded
-description: Our main ship
-websites:
-  - https://www.fujocoded.com
-  - https://bsky.app/profile/fujocoded.bsky.social
-  - https://blorbo.social/@fujocoded
-  - https://twitter.com/fujoc0ded/
-  - https://fujocoded.tumblr.com
+title: FujoCoded
+description: Making the fandom web happen
+href: https://fujocoded.com
+image: ./fujoverse/fujocoded.png
+imageAlt: FujoCoded lemon logo
+group: projects
+order: 1
+socials:
+  - label: Bluesky
+    url: https://bsky.app/profile/fujocoded.bsky.social
+    icon: simple-icons:bluesky
+  - label: Tumblr
+    url: https://fujocoded.tumblr.com
+    icon: simple-icons:tumblr
+  - label: Mastodon
+    url: https://blorbo.social/@fujocoded
+    icon: simple-icons:mastodon
+  - label: Twitter
+    url: https://twitter.com/fujoc0ded/
+    icon: simple-icons:twitter

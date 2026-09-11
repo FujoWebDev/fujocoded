@@ -1,0 +1,14 @@
+title: Fujoboard
+description: Cheese paddle for your fujin lifestyle
+href: https://fujoboard.com/
+image: ./fujoverse/fujoboard.png
+imageAlt: Fujoboard favicon
+group: stores
+order: 6
+socials:
+  - label: Tumblr
+    url: https://fujoboard.tumblr.com
+    icon: simple-icons:tumblr
+  - label: Twitter
+    url: https://twitter.com/fujoboard
+    icon: simple-icons:twitter

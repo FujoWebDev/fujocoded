@@ -1,9 +1,20 @@
-name: FujoWebDev
-description: Learn with us...and with yaoi
-websites:
-  - https://fujoweb.dev
-  - https://learn.fujoweb.dev
-  - https://fujowebdev.tumblr.com/
-  - https://twitter.com/fujowebdev
-  - https://blorbo.social/@fujowebdev
-  - https://bsky.app/profile/fujoweb.dev
+title: FujoWeb.dev
+description: Fandom coding zines
+href: https://www.fujoweb.dev/
+image: ./fujoverse/fujoweb.png
+imageAlt: FujoWeb.dev logo
+group: projects
+order: 2
+socials:
+  - label: Bluesky
+    url: https://bsky.app/profile/fujoweb.dev
+    icon: simple-icons:bluesky
+  - label: Tumblr
+    url: https://fujowebdev.tumblr.com/
+    icon: simple-icons:tumblr
+  - label: Mastodon
+    url: https://blorbo.social/@fujowebdev
+    icon: simple-icons:mastodon
+  - label: Twitter
+    url: https://twitter.com/fujowebdev
+    icon: simple-icons:twitter

@@ -24,6 +24,8 @@
     "statusBar.foreground": "#15202b",
     "statusBarItem.hoverBackground": "#f3c950",
     "statusBarItem.remoteBackground": "#0b9572",
-    "statusBarItem.remoteForeground": "#15202b"
+    "statusBarItem.remoteForeground": "#15202b",
+    "activityBar.activeBorder": "#15202b",
+    "activityBarTop.activeBorder": "#15202b"
   }
 }

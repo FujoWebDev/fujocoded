@@ -175,10 +175,10 @@ const { Content, data } = Astro.props;
     @apply font-zeitung;
     letter-spacing: -1.5px;
   }
-  .prose :global(::before) {
+  .prose :global(code::before) {
     content: "";
   }
-  .prose :global(::after) {
+  .prose :global(code::after) {
     content: "";
   }
 

@@ -1,0 +1,1 @@
+An illustrated roadmap for The Fujoshi Guide to Web Development. The FujoGuide logo appears at the top above a central vertical timeline connecting browser, terminal, and Git-style project cards. Visible stages include Pre-work, Art & Code, Issue 1 (Beta 1), Issue 1 (Beta 2), and Digital Preview Assembly.

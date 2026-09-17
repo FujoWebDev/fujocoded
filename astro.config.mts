@@ -41,6 +41,7 @@ export default defineConfig({
     ],
   },
   redirects: {
+    "/hiring-now": "/hiring#hiring-right-now",
     "/team": "/contributors",
     "/team/[member]": "/contributors/[member]",
     "/store": {

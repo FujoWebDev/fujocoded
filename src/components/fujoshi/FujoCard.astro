@@ -2,22 +2,21 @@
 import { Image } from "astro:assets";
 import type { CollectionEntry } from "astro:content";
 
-type Props = CollectionEntry<"fujin">["data"];
+type Props = CollectionEntry<"fujin">["data"] & { anchor: string };
 
-const { name, avatar, description } = Astro.props;
+const { name, avatar, description, anchor } = Astro.props;
 ---
 
 <div
-  class="text-lg text-fujo-purple flex gap-4 items-center md:flex-col md:items-start"
+  class="flex items-center gap-4 text-lg text-fujo-purple md:flex-col md:items-start"
 >
-  <Image
-    class="block h-auto max-w-[100px] rounded-xl"
-    src={avatar}
-    alt={name}
-  />
+  <Image class="max-w-25 block h-auto rounded-xl" src={avatar} alt={name} />
   <div class="flex flex-col justify-center">
-    <h3 class="font-macho font-bold not-italic text-xl text-fujo-purple mt-0">
-      {name}
+    <h3 class="mt-0 font-macho text-xl font-bold not-italic text-fujo-purple">
+      <a
+        class="text-inherit no-underline hover:text-fujo-pink focus-visible:rounded focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-fujo-blue"
+        href={`#${anchor}`}>{name}</a
+      >
     </h3>
     <p set:html={description} />
   </div>
